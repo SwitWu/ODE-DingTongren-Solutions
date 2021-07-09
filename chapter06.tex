@@ -1,0 +1,889 @@
+\chapter{线性微分方程组}
+
+
+\section{一般理论}
+
+
+\subsection{证明与总结}
+
+
+P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
+\begin{proof} 首先显然$H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)\in\mathcal{S}$, 
+又由引理6.1知$C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)\in\mathcal{S}$.然后又因为
+\[\begin{split}\left(H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)\right)(x_0)&=C_1\bm{y}_1^0+C_2\bm{y}_2^0\\
+\left(C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)\right)(x_0)&=C_1\bm{y}_1^0+C_2\bm{y}_2^0
+\end{split}\]
+由解的唯一性知$H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
+
+注意解矩阵的行列式就是其对应的解组的Wronsky行列式.
+\end{proof}
+
+推论6.2的证明:
+
+\begin{proof}
+(1)记$\bm{C}=(\bm{c}_1,\cdots,\bm{c}_n)$, 则$\bm{\varPhi}(x)\bm{C}=(\bm{\varPhi}(x)\bm{c}_1,\cdots,\bm{\varPhi}(x)\bm{c}_n)$, 由(6.15)式知$\forall1\leq i\leq n,\bm{\varPhi}(x)\bm{c}_i$是方程(6.2)的解, 也即$\{\bm{\varPhi}(x)\bm{c}_i|1\leq i\leq n\}$为(6.2)的解组. 记$\bmitPhi(x)$对应的基本解组的Wronsky行列式为$W(x)$, 则$\bmitPhi(x)\bm{C}$对应的解组的Wronsky行列式为:
+\[W_1(x)=|\bmitPhi(x)\bm{c}_1\cdots\bmitPhi(x)\bm{c}_n|=|\bmitPhi(x)|\cdot|\bm{C}|=W(x)|\bm{C}|\neq0\]
+故$\bmitPhi(x)\bm{C}$也是基解矩阵.
+
+(2)$\bmitPhi(x)$和$\bmitPsi(x)$都是基解矩阵, 
+设$\bmitPhi(x)=(\bm{y}_1(x),\cdots,\bm{y}_n(x)),\bmitPsi(x)=(\bm{y}_1^*(x),\cdots,\bm{y}_n^*(x))$. 
+因为$\bmitPhi(x)$是基解矩阵, 所以$\bm{y}_1(x),\cdots,\bm{y}_n(x)$是(6.2)的基本解组, 
+故存在$\{c_{ij}|1\leq i,j\leq n\}$使得\[\bm{y}_i^*(x)=\sum_{j=1}^nc_{ji}\bm{y}_j(x),1\leq i\leq n\]
+即\[(\bm{y}_1^*(x),\cdots,\bm{y}_n^*(x))=(\bm{y}_1(x),\cdots,\bm{y}_n(x))
+\begin{pmatrix}
+c_{11}&c_{12}&\cdots&c_{1n}\\
+c_{21}&c_{22}&\cdots&c_{2n}\\
+\vdots&\vdots&&\vdots\\
+c_{n1}&c_{n2}&\cdots&c_{nn}
+\end{pmatrix}\]
+也即\[\bmitPsi(x)=\bmitPhi(x)\bm{C}\]
+其中$\bm{C}=(c_{ij})_{n\times n}$, 在上述等式两边同时取行列式得$|\bmitPsi|=|\bmitPhi|\cdot|\bm{C}|$, 
+由$|\bmitPsi|\neq0,|\bmitPhi|\neq0$知$|\bm{C}|\neq0$.
+\end{proof}
+
+
+\subsection{习题}
+
+
+1.求出齐次线性微分方程组\[\frac{\diff\bm{y}}{\diff x}=\bm{A}(t)\bm{y}\]
+的通解, 其中$\bm{A}(t)$分别为:
+\begin{enumerate}[(1)]
+\item $\displaystyle\bm{A}(t)=\begin{pmatrix}\frac{1}{t}&0\\0&\frac{1}{t}\end{pmatrix},t\neq0$;
+\item $\displaystyle\bm{A}(t)=\begin{pmatrix}1&1\\0&1\end{pmatrix}$;
+\item $\displaystyle\bm{A}(t)=\begin{pmatrix}0&1\\-1&0\end{pmatrix}$;
+\item $\displaystyle\bm{A}(t)=\begin{pmatrix}0&0&1\\0&1&0\\1&0&0\end{pmatrix}$.
+\end{enumerate}
+
+\begin{solve}
+(1)$\displaystyle\frac{\diff}{\diff t}\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}\frac{1}{t}&0\\0&\frac{1}{t}\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}$, 
+分量形式为$\displaystyle\frac{\diff y_1}{\diff t}=\frac{y_1}{t},\frac{\diff y_2}{\diff t}=\frac{y_2}{t}$, 
+解得$y_1=kt,y_2=kt$, 不妨取基解矩阵为$\begin{pmatrix}0&t\\t&0\end{pmatrix}$, 则通解为
+\[\bm{y}(t)=C_1\begin{pmatrix}0\\t\end{pmatrix}+C_2\begin{pmatrix}t\\0\end{pmatrix}\]
+
+(2)$\displaystyle\frac{\diff}{\diff t}\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}$, 
+分量形式为$\displaystyle\frac{\diff y_1}{\diff t}=y_1+y_2,\frac{\diff y_2}{\diff t}=y_2$, 
+由$\displaystyle\frac{\diff y_2}{\diff t}=y_2$解得$y_2=C\e^t$, 先取$y_2=0$得$y_1=C\e^t$, 
+再取$y_2=\e^t$得$y_1=C\e^t+t\e^t$, 不妨取基解矩阵为$\begin{pmatrix}\e^t&t\e^t\\0&\e^t\end{pmatrix}$, 则通解为
+\[\bm{y}(t)=C_1\begin{pmatrix}\e^t\\0\end{pmatrix}+C_2\begin{pmatrix}t\e^t\\\e^t\end{pmatrix}\]
+
+(3)$\displaystyle\frac{\diff}{\diff t}\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}0&1\\-1&0\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}$, 
+分量形式为$\displaystyle\frac{\diff y_1}{\diff t}=y_2,\frac{\diff y_2}{\diff t}=-y_1$, 
+故$\displaystyle\frac{\diff^2y_1}{\diff t}=\frac{\diff y_2}{\diff t}=-y_1\Rightarrow y_1=C_1\sin t+C_2\cos t,y_2=C_1\cos t-C_2\sin t$, 
+不妨取基解矩阵为$\begin{pmatrix}\sin t&\cos t\\\cos t&-\sin t\end{pmatrix}$, 则通解为
+\[\bm{y}(t)=C_1\begin{pmatrix}\sin t\\\cos t\end{pmatrix}+C_2\begin{pmatrix}\cos t\\-\sin t\end{pmatrix}\]
+
+(4)$\displaystyle\frac{\diff}{\diff t}\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix}=\begin{pmatrix}0&0&1\\0&1&0\\1&0&0\end{pmatrix}\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix}$, 
+分量形式为$\displaystyle\frac{\diff y_1}{\diff t}=y_3,\frac{\diff y_2}{\diff t}=y_2,\frac{\diff y_3}{\diff t}=y_1$, 
+由$\displaystyle\frac{\diff y_2}{\diff t}=y_2$
+得$y_2=C\e^t$, 又$\displaystyle\frac{\diff^2y_1}{\diff t^2}=\frac{\diff y_3}{\diff t}=y_1\Rightarrow y_1=C_1\e^t+C_2\e^{-t}$, 
+取$y_1=\e^t$, 得$y_3=\e^t$, 取$y_1=\e^{-t}$, 得$y_3=-\e^{-t}$, 
+不妨取基解矩阵为$\begin{pmatrix}\e^t&0&\e^{-t}\\0&\e^t&0\\\e^t&0&-\e^{-t}\end{pmatrix}$, 则通解为
+\[\bm{y}(t)=C_1\begin{pmatrix}\e^t\\0\\\e^t\end{pmatrix}+C_2\begin{pmatrix}0\\\e^t\\0\end{pmatrix}+C_3\begin{pmatrix}\e^{-t}\\0\\-\e^{-t}\end{pmatrix}\qedhere\]
+\end{solve}
+
+
+2.求解非齐次线性微分方程组的初值问题:
+
+(1)$\displaystyle\begin{cases}\frac{\diff x}{\diff t}=1-\frac{2}{t}x,\frac{\diff y}{\diff t}=x+y-1+\frac{2}{t}x(t>0),\\x(1)=\frac{1}{3},y(1)=-\frac{1}{3};\end{cases}$
+
+(2)$\begin{cases}
+\frac{\diff x}{\diff t}=\frac{2t}{1+t^2}x,\frac{\diff y}{\diff t}=-\frac{1}{t}y+x+t(t>0),\\
+x(1)=0,y(1)=\frac{4}{3}.
+\end{cases}$.
+
+\begin{solve}
+(1)由$\frac{\diff x}{\diff t}=1-\frac{2}{t}x$得$x=\e^{-\int\frac{2}{t}\diff t}\left(C+\int\e^{\int\frac{2}{t}\diff t}\diff t\right)=\frac{t}{3}+\frac{C}{t^2}$, 
+代入初值条件$x(1)=\frac{1}{3}$得$x(t)=\frac{t}{3}$. 又$\frac{\diff}{\diff t}(x+y)=x+y$且$(x+y)(1)=0$, 
+故$x+y\equiv0$, 故$y(t)=-\frac{t}{3}$.
+
+(2)由$\frac{\diff x}{\diff t}=\frac{2t}{1+t^2}x$得$x(t)=C(1+t^2)$, 
+代入初值条件$x(1)=0$得$x(t)\equiv0$, 故$\frac{\diff y}{\diff t}=-\frac{y}{t}+t$, 
+解得$y(t)=\frac{C}{t}+\frac{t^2}{3}$, 代入初值条件$y(1)=\frac{4}{3}$得$y(t)=\frac{1}{t}+\frac{t^2}{3}$.
+\end{solve}
+
+
+3.试证向量函数组
+\[\begin{pmatrix}1\\0\\0\end{pmatrix},\begin{pmatrix}x\\0\\0\end{pmatrix},\begin{pmatrix}x^2\\0\\0\end{pmatrix}\]
+在任意区间$a<x<b$上线性无关.(显然, 它们的朗斯基行列式$W(x)\equiv0$. 对照定理6.2可知, 
+上述三个线性无关的向量函数不可能同时满足任意一个三阶的齐次线性微分方程组.)
+
+\begin{proof}
+设$k_1,k_2,k_3$满足
+\[k_1\begin{pmatrix}1\\0\\0\end{pmatrix}+k_2\begin{pmatrix}x\\0\\0\end{pmatrix}+k_3\begin{pmatrix}x^2\\0\\0\end{pmatrix}=\bm{0},a<x<b\]
+即$k_1+k_2x+k_3x^2=0,a<x<b$, 显然必有$k_1=k_2=k_3=0$, 故该向量函数组线性无关.
+\end{proof}
+
+
+4.试证基解矩阵完全决定齐次线性微分方程组, 即如果方程组
+\[\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}\quad\mbox{与}\quad\frac{\diff\bm{y}}{\diff x}=\bm{B}(x)\bm{y}\]
+有一个相同的基解矩阵, 则$\bm{A}(x)\equiv\bm{B}(x)$.
+
+\begin{proof} 
+设相同的基解矩阵为$\bmitPhi(x)$, 则
+\[\frac{\diff}{\diff x}\bmitPhi(x)=\bm{A}(x)\bmitPhi(x)=\bm{B}(x)\bmitPhi(x)\]
+由于$\bmitPhi(x)$可逆, 故$\bm{A}(x)\equiv\bm{B}(x)$.
+\end{proof}
+
+
+5.设$\bmitPhi(x)$是齐次线性微分方程组(6.2)的一个基解矩阵, 
+并且$n$为向量函数$\bm{f}(x,\bm{y})$在区域$E(a<x<b,|y|<\infty)$上连续. 则求解初值问题
+\[\begin{cases}
+\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}+\bm{f}(x,\bm{y}),\\\bm{y}(x_0)=\bm{y}_0
+\end{cases}\]
+等价于求解(向量形式的)积分方程
+\[\bm{y}(x)=\bmitPhi(x)\bmitPhi^{-1}(x_0)\bm{y}_0+\int_{x_0}^x\bmitPhi(x)\bmitPhi^{-1}(s)\bm{f}(s,\bm{y}(s))\diff s,\]
+其中$x_0\in(a,b)$.
+
+\begin{proof} 由$\bmitPhi^{-1}(x)\bmitPhi(x)=\bm{I}$, 求导得
+\[\bmitPhi^{-1}(x)\frac{\diff\bmitPhi(x)}{\diff x}+\frac{\diff\bmitPhi^{-1}(x)}{\diff x}\bmitPhi(x)=\bm{0}\]
+又\[\frac{\diff\bmitPhi(x)}{\diff x}=\bm{A}(x)\bmitPhi(x)\]
+故\[\bmitPhi^{-1}(x)\bm{A}(x)+\frac{\diff\bmitPhi^{-1}(x)}{\diff x}=\bm{0}\]
+设$\bm{y}(x)$是初值问题的解, 则
+\[\begin{split}
+&\frac{\diff\bm{y}(x)}{\diff x}=\bm{A}(x)\bm{y}(x)+\bm{f}(x,\bm{y}(x)),\bm{y}(x_0)=\bm{y}_0\\
+\Leftrightarrow&\bmitPhi^{-1}(x)\frac{\diff\bm{y}(x)}{\diff x}=\bmitPhi^{-1}(x)\bm{A}(x)\bm{y}(x)+\bmitPhi^{-1}(x)\bm{f}(x,\bm{y}(x)),\bm{y}(x_0)=\bm{y}_0\\
+\Leftrightarrow&\bmitPhi^{-1}(x)\frac{\diff\bm{y(x)}}{\diff x}+\frac{\diff\bmitPhi^{-1}(x)}{\diff x}\bm{y}(x)=\bmitPhi^{-1}(x)\bm{f}(x,\bm{y}(x)),\bm{y}(x_0)=\bm{y}_0\\
+\Leftrightarrow&\frac{\diff}{\diff x}\left(\bmitPhi^{-1}(x)\bm{y}(x)\right)=\bmitPhi^{-1}(x)\bm{f}(x,\bm{y}(x)),\bm{y}(x_0)=\bm{y}_0\\
+\Leftrightarrow&\bmitPhi^{-1}(x)\bm{y}(x)=\bmitPhi^{-1}(x_0)\bm{y}_0+\int_{x_0}^x\bmitPhi^{-1}(s)\bm{f}(s,\bm{y}(s))\diff s\\
+\Leftrightarrow&\bm{y}(x)=\bmitPhi(x)\bmitPhi^{-1}(x_0)\bm{y}_0+\int_{x_0}^x\bmitPhi(x)\bmitPhi^{-1}(s)\bm{f}(s,\bm{y}(s))\diff s
+\end{split}\]
+故$\bm{y}(x)$是初值问题的解等价于$\bm{y}(x)$是积分方程的解.
+\end{proof}
+
+
+6.设当$a<x<b$时, 非齐次线性微分方程组(6.1)中的$\bm{f}(x)$不恒为零. 证明(6.1)有且至多有$n+1$个线性无关解.
+
+\begin{proof}
+(i)设$\bm{\phi}_1(x),\cdots,\bm{\phi}_n(x)$为相应的齐次线性微分方程组的一个基本解组, 
+$\bm{\phi}_*(x)$为(6.1)的一个特解, 
+则$\bm{y}_0(x)=\bm{\phi}_*(x),\bm{y}_1(x)=\bm{\phi}_1(x)+\bm{\phi}_*(x),\cdots,\bm{y}_n(x)=\bm{\phi}_n(x)+\bm{\phi}_*(x)$
+是(6.1)的$n+1$个解, 下证这$n+1$个解线性无关, 设
+\[\sum_{i=0}^nk_i\bm{y}_i(x)=\sum_{i=1}^nk_i\bm{\phi}_i(x)+\left(\sum_{i=0}^nk_i\right)\bm{\phi}_*(x)=\bm{0}\cdots(*)\]
+对上式求导得
+\[\begin{split}
+&\sum_{i=1}^nk_1\bm{A}(x)\bm{\phi}_i(x)+\left(\sum_{i=0}^nk_i\right)\left(\bm{A}(x)\bm{\phi}_*(x)+\bm{f}(x)\right)\\
+=&\bm{A}(x)\left(\sum_{i=1}^nk_i\bm{\phi}_i(x)+\left(\sum_{i=0}^nk_i\right)\bm{\phi}_*(x)\right)+\left(\sum_{i=0}^nk_i\right)\bm{f}(x)\\
+=&\left(\sum_{i=0}^nk_i\right)\bm{f}(x)=\bm{0}\Rightarrow\sum_{i=0}^nk_i=0
+\end{split}\]
+代回$(*)$式得$\sum_{i=1}^nk_i\bm{\phi}_i(x)=0$, 故$k_i=0(i=0,1,\cdots,n)$, 从而这$n+1$个解线性无关.\\
+(ii)设$\bm{\phi}(x)$是(6.1)的任意一个解, 则$\bm{\phi}(x)-\bm{y}_0(x),\cdots,\bm{\phi}(x)-\bm{y}_n(x)$是相应的齐次线性微分方程组的$n+1$个解, 故其必线性相关, 即存在不全为零的$k_0,k_1,\cdots,k_n$使得
+\[\sum_{i=0}^nk_i(\bm{\phi}(x)-\bm{y}_i(x))=\left(\sum_{i=0}^nk_i\right)\bm{\phi}(x)-\sum_{i=0}^nk_i\bm{y}_i(x)=0\]
+显然$\sum_{i=0}^nk_i\neq0$, 否则与$\bm{y}_0(x),\cdots,\bm{y}_n(x)$ 的线性无关性矛盾, 故
+\[\bm{\phi}(x)=\sum_{j=0}^n\frac{k_j}{\sum_{i=0}^nk_i}\bm{y}_j(x)\]
+因此线性无关解个数不超过$n+1$.
+\end{proof}
+
+
+\section{常系数线性微分方程组}
+
+
+\subsection{证明与总结}
+
+
+证明: $(\mathcal{M},\|\cdot\|)$是Banach空间.
+
+\begin{proof}
+设$\{A_n\}_{n\geq1}$是$\mathcal{M}$中的Cauchy序列,即$\forall\epsilon>0,\exists N>0,\forall m,n>N$, 有
+\[\|A_m-A_n\|=\sum_{i,j=1}^n|a_{ij}^m-a_{ij}^n|<\epsilon\]
+故对任意给定的$i,j$, 序列$\left\{a_{ij}^n\right\}_{n\geq1}$是$\mathbb{R}$中的Cauchy序列, 故收敛, 记为$a_{ij}^n\to a_{ij}(n\to\infty)$, 则$A_n\to A=(a_{ij})_{n\times n}$, 因此$(\mathcal{M},\|\cdot\|)$是Banach空间.
+\end{proof}
+
+命题1证明:
+
+\begin{proof}
+\[\begin{split}
+&\|\bm{E}\|+\|\bm{A}\|+\|\frac{1}{2!}\bm{A}^2\|+\cdots+\|\frac{1}{k!}\bm{A}^k\|+\cdots\\
+\leq&\|\bm{E}\|+\|\bm{A}\|+\frac{1}{2!}\|\bm{A}\|^2+\cdots+\frac{1}{k!}\|\bm{A}\|^k+\cdots\\
+=&n+\e^{\|\bm{A}\|}-1<\infty
+\end{split}\]
+故矩阵$\bm{A}$的幂级数$\displaystyle\bm{E}+\bm{A}+\frac{1}{2!}\bm{A}^2+\cdots+\frac{1}{k!}\bm{A}^k+\cdots$绝对收敛.\\
+结合泛函分析中定理: 赋范空间完备当且仅当绝对收敛级数必收敛. 
+故幂级数$\displaystyle\bm{E}+\bm{A}+\frac{1}{2!}\bm{A}^2+\cdots+\frac{1}{k!}\bm{A}^k+\cdots$收敛, 将其和记为$\e^{\bm{A}}$.
+\end{proof}
+
+命题2证明:
+
+\begin{proof}
+(1)\[\begin{split}
+\e^{\bm{A}}\e^{\bm{B}}&=\left(\sum_{k=0}^{\infty}\frac{\bm{A}^k}{k!}\right)\left(\sum_{k=0}^{\infty}\frac{\bm{B}^k}{k!}\right)=\sum_{k=0}^{\infty}\sum_{i+j=k}\frac{\bm{A}^i}{i!}\frac{\bm{B}^j}{j!}=\sum_{k=0}^{\infty}\sum_{i=0}^k\frac{\bm{A}^i\bm{B}^{k-i}}{i!(k-i)!}\\
+&=\sum_{k=0}^{\infty}\sum_{i=0}^k\frac{1}{k!}C_k^i\bm{A}^i\bm{B}^{k-i}=\sum_{k=0}^{\infty}\frac{1}{k!}(\bm{A}+\bm{B})^k=\e^{\bm{A}+\bm{B}}
+\end{split}\]
+
+(2)由于$\bm{A}$与$-\bm{A}$可交换, 故
+\[\e^{\bm{A}}\e^{-\bm{A}}=\e^{\bm{0}}=\bm{E}\]
+所以$\left(\e^{\bm{A}}\right)^{-1}=\e^{-\bm{A}}$.
+
+(3)\[\e^{\bm{P}\bm{A}\bm{P}^{-1}}=\sum_{k=0}^{\infty}\frac{\left(\bm{P}\bm{A}\bm{P}^{-1}\right)^k}{k!}=\sum_{k=0}^{\infty}\frac{\bm{P}\bm{A}^k\bm{P}^{-1}}{k!}=\bm{P}\e^{\bm{A}}\bm{P}^{-1}\qedhere\]
+\end{proof}
+
+
+本节引进新的概念: 矩阵指数函数$\e^{\bm{A}}$, 
+容易证明$\e^{x\bm{A}}$是常系数齐次线性微分方程组
+$\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$的标准基解矩阵, 
+然后利用若尔当标准型找到实际计算基解矩阵$\e^{x\bm{A}}$的一个方法:
+\[\e^{x\bm{A}}=\e^{x\bm{P}\bm{J}\bm{P}^{-1}}=\bm{P}\e^{x\bm{J}}\bm{P}^{-1}\]
+从而\[\e^{x\bm{A}}\bm{P}=\bm{P}\e^{x\bm{J}}=\bm{P}\begin{pmatrix}
+\e^{x\bm{J}_1}&&&\\&\e^{x\bm{J}_2}&&\\&&\ddots&\\&&&\e^{x\bm{J}_m}
+\end{pmatrix}\]
+也是常系数齐次线性微分方程组的一个基解矩阵, 但是上述结果计算量较大, 将之再细致分析, 得到下面求基解矩阵的具体计算方法:
+
+由$|\bm{A}-\lambda\bm{E}|=0$求出特征值$\lambda$, 分两种情况:
+
+(I)若全为单根$\lambda_1,\cdots,\lambda_n$, 
+则基解矩阵为$\bm{\mathit{\Phi}}(x)=\left(\e^{\lambda_1x}\bm{r}_1,\e^{\lambda_2x}\bm{r}_2,\cdots,\e^{\lambda_nx}\bm{r}_n\right)$, 
+其中$\bm{r}_i$是与$\lambda_i$对应的特征向量.
+
+(II)若有重根, 设$\lambda_1,\cdots,\lambda_s$相应的重数分别为$n_1,\cdots,n_s$, 
+则由$(\bm{A}-\lambda_i\bm{E})^{n_i}\bm{r}=0$算出$n_i$个线性无关的特征向量$\bm{r}_{10}^{(i)},\cdots,\bm{r}_{n_i0}^{(i)}$, 再由
+\[\bm{r}_{jk}^{(i)}=(\bm{A}-\lambda_i\bm{E})\bm{r}_{j,k-1}^{(i)}(k=1,2,\cdots,n_i-1;j=1,2,\cdots,n_i;i=1,2,\cdots,s)\]
+算出其它所需向量, 则基解矩阵为
+\[\left(\e^{\lambda_1x}P_1^{(1)}(x),\cdots,\e^{\lambda_1x}P_{n_1}^{(1)}(x);\cdots;\e^{\lambda_sx}P_1^{(s)}(x),\cdots,\e^{\lambda_sx}P_{n_s}^{(s)}(x)\right)\]
+其中$\displaystyle P_j^{(i)}(x)=\bm{r}_{j0}^{(i)}+\frac{x}{1!}\bm{r}_{j1}^{(i)}+\frac{x^2}{2!}\bm{r}_{j2}^{(i)}+\cdots+\frac{x^{n_i-1}}{(n_i-1)!}\bm{r}_{j,n_i-1}^{(i)}$.
+
+
+\subsection{习题}
+
+
+1.求出常系数齐次线性微分方程组(6.25)的通解, 其中的矩阵$\bm{A}$分别为:
+\begin{exer}
+\item $\displaystyle\begin{pmatrix}3&4\\5&2\end{pmatrix}$;
+\item $\displaystyle\begin{pmatrix}0&a\\-a&0\end{pmatrix}$;
+\item $\displaystyle\begin{pmatrix}-1&1&0\\0&-1&0\\1&0&-4\end{pmatrix}$;
+\item $\displaystyle\begin{pmatrix}-5&-10&-20\\5&5&10\\2&4&9\end{pmatrix}$;\\
+\item $\displaystyle\begin{pmatrix}1&\frac{2}{3}&-\frac{2}{3}\\0&\frac{2}{3}&\frac{1}{3}\\0&-\frac{1}{3}&\frac{4}{3}\end{pmatrix}$;
+\item $\displaystyle\begin{pmatrix}1&1&1&1\\1&1&-1&-1\\1&-1&1&-1\\1&-1&-1&1\end{pmatrix}$.
+\end{exer}
+
+\begin{solve}
+(1)$|\bm{A}-\lambda\bm{E}|=(\lambda-7)(\lambda+2)=0\Rightarrow\lambda=7$或$\lambda=-2$.
+
+当$\lambda=7$时, $\begin{pmatrix}-4&4\\5&-5\end{pmatrix}\to\begin{pmatrix}1&-1\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}1\\1\end{pmatrix}.$
+
+当$\lambda=-2$时, $\begin{pmatrix}5&4\\5&4\end{pmatrix}\to\begin{pmatrix}5&4\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}4\\-5\end{pmatrix}.$
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^{7x}&4\e^{-2x}\\\e^{7x}&-5\e^{-2x}\end{pmatrix}\]
+
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}\e^{7x}\\\e^{7x}\end{pmatrix}+C_2\begin{pmatrix}4\e^{-2x}\\-5\e^{-2x}\end{pmatrix}\]
+
+(2)$|\bm{A}-\lambda\bm{E}|=\lambda^2+a^2=0\Rightarrow\lambda=\pm a\ii$.
+
+当$\lambda=a\ii$时, $\begin{pmatrix}-a\ii&a\\-a&-a\ii\end{pmatrix}\to\begin{pmatrix}-\ii&1\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}1\\\ii\end{pmatrix}$.
+
+当$\lambda=-a\ii$时, $\begin{pmatrix}a\ii&a\\-a&a\ii\end{pmatrix}\to\begin{pmatrix}\ii&1\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}\ii\\1\end{pmatrix}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^{\ii ax}&\ii\e^{-\ii ax}\\\ii\e^{\ii ax}&\e^{-\ii ax}\end{pmatrix}\Rightarrow\widetilde{\bmitPhi}(x)=\begin{pmatrix}\cos ax&\sin ax\\-\sin ax&\cos ax\end{pmatrix}\]
+
+从而通解为
+\[\bm{y}=C_1\begin{pmatrix}\cos ax\\-\sin ax\end{pmatrix}+C_2\begin{pmatrix}\sin ax\\\cos ax\end{pmatrix}\]
+
+(3)由$\displaystyle\frac{\diff y_2}{\diff x}=-y_2$, 得$y_2=C_1\e^{-x}$; 
+再由$\displaystyle\frac{\diff y_1}{\diff x}=-y_1+y_2=-y_1+C_1\e^{-x}$, 得
+\[\displaystyle y_1=\e^{-\int\diff x}\left(C_2+\int C_1\e^{-x}\e^{\int\diff x}\diff x\right)=C_1x\e^{-x}+C_2\e^{-x}\]
+再由$\displaystyle\frac{\diff y_3}{\diff x}=y_1-4y_3=-4y_3+C_1x\e^{-x}+C_2\e^{-x}$, 得
+\[\displaystyle y_3=\e^{-\int4\diff x}\left(C_3+\int\left(C_1x\e^{-x}+C_2\e^{-x}\right)\e^{\int4\diff x}\diff x\right)=C_1\left(\frac{x}{3}-\frac{1}{9}\right)\e^{-x}+\frac{1}{3}C_2\e^{-x}+C_3\e^{-4x}\]
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}x\\1\\\frac{x}{3}-\frac{1}{9}\end{pmatrix}\e^{-x}+C_2\begin{pmatrix}1\\0\\\frac{1}{3}\end{pmatrix}\e^{-x}+C_3\begin{pmatrix}0\\0\\1\end{pmatrix}\e^{-4x}\]
+
+(4)$\displaystyle|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}-5-\lambda&-10&-20\\5&5-\lambda&10\\2&4&9-\lambda\end{vmatrix}=-(\lambda-5)(\lambda^2-4\lambda+5)=0\Rightarrow\lambda=5,2\pm\ii$.
+
+当$\lambda=5$时, 
+$\begin{pmatrix}-10&-10&-20\\5&0&10\\2&4&4\end{pmatrix}\to\begin{pmatrix}1&0&2\\0&1&0\\0&0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}2\\0\\-1\end{pmatrix}$.
+
+当$\lambda=2+\ii$时, 
+$\begin{pmatrix}-7-\ii&-10&-20\\5&3-\ii&10\\2&4&7-\ii\end{pmatrix}\to\begin{pmatrix}1&0&\frac{1}{2}(3+\ii)\\0&1&\frac{1}{2}(2-\ii)\\0&0&0\end{pmatrix}$(这里的矩阵行变换也不是很复杂, 主要就是凑出1), 
+取特征向量为$\bm{r}=\begin{pmatrix}3+\ii\\2-\ii\\-2\end{pmatrix}$, 故对于特征值$\lambda=2-\ii$可以取到特征向量$\bm{r}=\begin{pmatrix}3-\ii\\2+\ii\\-2\end{pmatrix}$.
+
+故基解矩阵为
+\[\begin{split}
+&\bmitPhi(x)=\begin{pmatrix}2\e^{5x}&(3+\ii)\e^{(2+\ii)x}&(3-\ii)\e^{(2-\ii)x}\\0&(2-\ii)\e^{(2+\ii)x}&(2+\ii)\e^{(2-\ii)x}\\-\e^{5x}&-2\e^{(2+\ii)x}&-2\e^{(2-\ii)x}\end{pmatrix}\\
+\Rightarrow&\widetilde{\bmitPhi}(x)\begin{pmatrix}2\e^{5x}&(3\cos x-\sin x)\e^{2x}&(\cos x+3\sin x)\e^{2x}\\0&(2\cos x+\sin x)\e^{2x}&(-\cos x+2\sin x)\e^{2x}\\\e^{5x}&-2\cos x\e^{2x}&-2\sin x\e^{2x}\end{pmatrix}
+\end{split}\]
+从而通解为
+\[\bm{y}=C_1\begin{pmatrix}2\\0\\-1\end{pmatrix}\e^{5x}+C_2\begin{pmatrix}3\cos x-\sin x\\2\cos x+\sin x\\-2\cos x\end{pmatrix}\e^{2x}+C_3\begin{pmatrix}\cos x+3\sin x\\-\cos x+2\sin x\\-2\sin x\end{pmatrix}\e^{2x}\]
+
+(5)$|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}1-\lambda&\frac{2}{3}&-\frac{2}{3}\\0&\frac{2}{3}-\lambda&\frac{1}{3}\\0&-\frac{1}{3}&\frac{4}{3}-\lambda\end{vmatrix}=-(\lambda-1)^3=0\Rightarrow\lambda_{1,2,3}=1$, 
+由于$(\bm{A}-\bm{E})^3=\bm{0}$, 
+故由$(\bm{A}-\bm{E})^3\bm{r}=\bm{0}$得到三个线性无关的特征向量
+$\bm{r}_{10}=\begin{pmatrix}1\\0\\0\end{pmatrix},\bm{r}_{20}=\begin{pmatrix}0\\1\\0\end{pmatrix},\bm{r}_{30}=\begin{pmatrix}0\\0\\1\end{pmatrix}$, 
+且$\bm{r}_{11}=\bm{r}_{12}=\bm{0}$, $\bm{r}_{21}=\begin{pmatrix}\frac{2}{3}\\-\frac{1}{3}\\-\frac{1}{3}\end{pmatrix}$,
+$\bm{r}_{22}=\bm{0}$, $\bm{r}_{31}=\begin{pmatrix}-\frac{2}{3}\\\frac{1}{3}\\\frac{1}{3}\end{pmatrix}$,
+$\bm{r}_{32}=\bm{0}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^x&\frac{2}{3}x\e^x&-\frac{2}{3}x\e^x\\
+0&\left(1-\frac{1}{3}x\right)\e^x&\frac{1}{3}x\e^x\\
+0&-\frac{1}{3}x\e^x&\left(1+\frac{1}{3}x\right)\e^x\end{pmatrix}\]
+
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}1\\0\\0\end{pmatrix}\e^x+C_2\begin{pmatrix}\frac{2}{3}x\\1-\frac{1}{3}x\\-\frac{1}{3}x\end{pmatrix}\e^x+C_3\begin{pmatrix}-\frac{2}{3}x\\\frac{1}{3}x\\1+\frac{1}{3}x\end{pmatrix}\e^x\]
+
+(6)$|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}1-\lambda&1&1&1\\1&1-\lambda&-1&-1\\1&-1&1-\lambda&-1\\1&-1&-1&1-\lambda\end{vmatrix}=(\lambda+2)(\lambda-2)^3=0\Rightarrow\lambda_{1,2,3}=2,\lambda_4=-2$.
+
+当$\lambda=2$时, $(\bm{A}-2\bm{E})^3=\begin{pmatrix}-16&16&16&16\\16&-16&-16&-16\\16&-16&-16&-16\\16&-16&-16&-16\end{pmatrix}\to\begin{pmatrix}1&-1&-1&-1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix}$, 由$(\bm{A}-2\bm{E})^3\bm{r}=0$
+得到三个线性无关的特征向量$\bm{r}_{10}=\begin{pmatrix}1\\1\\0\\0\end{pmatrix}$,
+$\bm{r}_{20}=\begin{pmatrix}1\\0\\1\\0\end{pmatrix}$,
+$\bm{r}_{30}=\begin{pmatrix}1\\0\\0\\1\end{pmatrix}$, 	
+且$\bm{r}_{ij}=\bm{0}(i=1,2,3;j=1,2)$.
+
+当$\lambda=-2$时, $\bm{A}+2\bm{E}=\begin{pmatrix}3&1&1&1\\1&3&-1&-1\\1&-1&3&-1\\1&-1&-1&3\end{pmatrix}\to\begin{pmatrix}1&0&0&1\\0&1&0&-1\\0&0&1&-1\\0&0&0&0\end{pmatrix}$, 
+由$(\bm{A}+2\bm{E})\bm{r}=\bm{0}$得特征向量$\bm{r}=\begin{pmatrix}-1\\1\\1\\1\end{pmatrix}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^{2x}&\e^{2x}&\e^{2x}&-\e^{-2x}\\\e^{2x}&0&0&\e^{-2x}\\0&\e^{2x}&0&\e^{-2x}\\0&0&\e^{2x}&\e^{-2x}\end{pmatrix}\]
+
+故通解为
+
+\[\bm{y}=C_1\begin{pmatrix}1\\1\\0\\0\end{pmatrix}\e^{2x}+C_2\begin{pmatrix}1\\0\\1\\0\end{pmatrix}\e^{2x}+C_3\begin{pmatrix}1\\0\\0\\1\end{pmatrix}\e^{2x}+C_4\begin{pmatrix}-1\\1\\1\\1\end{pmatrix}\e^{-2x}.\qedhere\]
+\end{solve}
+
+
+2.求出常系数非齐次线性微分方程组(6.24)的通解, 其中:
+\begin{enumerate}[(1)]
+\item $\bm{A}=\begin{pmatrix}2&1\\0&2\end{pmatrix},\bm{f}(x)=\begin{pmatrix}1\\0\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}0&-n^2\\-n^2&0\end{pmatrix},\bm{f}(x)=\begin{pmatrix}\cos nx\\\sin nx\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}2&-1\\1&0\end{pmatrix},\bm{f}(x)=\begin{pmatrix}0\\2\e^x\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}2&1&-2\\-1&0&0\\1&1&-1\end{pmatrix},\bm{f}(x)=\begin{pmatrix}2-x\\0\\1-x\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}-1&-1&0\\0&-1&-1\\0&0&-1\end{pmatrix},\bm{f}(x)=\begin{pmatrix}x^2\\2x\\x\end{pmatrix}$.
+\end{enumerate}
+
+\begin{solve}
+(1)$|\bm{A}-\lambda\bm{E}|=(\lambda-2)^2=0\Rightarrow\lambda_{1,2}=2$. 
+由$(\bm{A}-2\bm{E})^2\bm{r}=0$得到两个线性无关的特征向量
+$\bm{r}_{10}=\begin{pmatrix}1\\0\end{pmatrix}$,
+$\bm{r}_{20}=\begin{pmatrix}0\\1\end{pmatrix}$, 
+且$\bm{r}_{11}=\begin{pmatrix}0\\0\end{pmatrix},\bm{r}_{21}=\begin{pmatrix}1\\0\end{pmatrix}$, 故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^{2x}&x\e^{2x}\\0&\e^{2x}\end{pmatrix}\]
+
+通解为\[\begin{split}\bm{y}
+&=\bmitPhi(x)\bm{c}+\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x\\
+&=C_2\begin{pmatrix}1\\0\end{pmatrix}\e^{2x}+C_2\begin{pmatrix}x\\1\end{pmatrix}\e^{2x}-\begin{pmatrix}\frac{1}{2}\\0\end{pmatrix}
+\end{split}\]
+
+(2)$|\bm{A}-\lambda\bm{E}|=\lambda^2-n^4=0\Rightarrow\lambda=\pm n^2$.
+
+当$\lambda=n^2$时, $\begin{pmatrix}-n^2&-n^2\\-n^2&-n^2\end{pmatrix}\to\begin{pmatrix}1&1\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}1\\-1\end{pmatrix}$.
+
+当$\lambda=-n^2$时, $\begin{pmatrix}n^2&-n^2\\-n^2&n^2\end{pmatrix}\to\begin{pmatrix}1&-1\\0&0\end{pmatrix}$,
+取特征向量为$\bm{r}=\begin{pmatrix}1\\1\end{pmatrix}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^{n^2x}&\e^{-n^2x}\\-\e^{n^2x}&\e^{-n^2x}\end{pmatrix}\]
+
+其逆矩阵为
+\[\bmitPhi^{-1}(x)=\frac{1}{2}\begin{pmatrix}\e^{-n^2x}&-\e^{-n^2x}\\\e^{n^2x}&\e^{n^2x}\end{pmatrix}\]
+故
+\[\bmitPhi(x)^{-1}\bm{f}(x)=\frac{1}{2}\begin{pmatrix}\e^{-n^2x}\cos nx-\e^{-n^2x}\sin nx\\\e^{n^2x}\cos nx+\e^{n^2x}\sin nx\end{pmatrix}\]
+利用不定积分公式
+\[\begin{cases}\displaystyle
+\int\e^{\alpha x}\sin\beta x\diff x=\frac{\alpha}{\alpha^2+\beta^2}\e^{\alpha x}\sin\beta x-\frac{\beta}{\alpha^2+\beta^2}\e^{\alpha x}\cos\beta x+C\\
+\displaystyle\int\e^{\alpha x}\cos\beta x\diff x=\frac{\alpha}{\alpha^2+\beta^2}\e^{\alpha x}\cos\beta x+\frac{\beta}{\alpha^2+\beta^2}\e^{\alpha x}\sin\beta x+C
+\end{cases}\]
+得\[\int\bmitPhi(x)^{-1}\bm{f}(x)\diff x=\frac{1}{2}\begin{pmatrix}\frac{n+1}{n^3+n}\e^{-n^2x}\sin nx+\frac{-n+1}{n^3+n}\e^{-n^2x}\cos nx\\
+\frac{n+1}{n^3+n}\e^{n^2x}\sin nx+\frac{n-1}{n^3+n}\e^{n^2x}\cos nx
+\end{pmatrix}\]
+
+故\[\bmitPhi(x)\int\bmitPhi(x)^{-1}\bm{f}(x)\diff x=\begin{pmatrix}\frac{n+1}{n^3+n}\sin nx\\
+\frac{n-1}{n^3+n}\cos nx\end{pmatrix}\]
+
+因此通解为
+\[\bm{y}=C_1\begin{pmatrix}1\\-1\end{pmatrix}\e^{n^2x}+C_2\begin{pmatrix}1\\1\end{pmatrix}\e^{-n^2x}+\begin{pmatrix}\frac{n+1}{n^3+n}\sin nx\\
+\frac{n-1}{n^3+n}\cos nx\end{pmatrix}\]
+
+(3)$|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}2-\lambda&-1\\1&-\lambda\end{vmatrix}=(\lambda-1)^2=0\Rightarrow\lambda=1$, 由$(\bm{A}-\bm{E})^2\bm{r}=0$得到两个线性无关得特征向量$\bm{r}_{10}=\begin{pmatrix}1\\0\end{pmatrix},\bm{r}_{20}=\begin{pmatrix}0\\1\end{pmatrix}$, 且$\bm{r}_{11}=\begin{pmatrix}1\\1\end{pmatrix},\bm{r}_{21}=\begin{pmatrix}-1\\-1\end{pmatrix}$.\\
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}(x+1)\e^x&-x\e^x\\x\e^x&(1-x)\e^x\end{pmatrix}\]
+故
+\[\bmitPhi(x)\int\bmitPhi(x)^{-1}\bm{f}(x)\diff x=\begin{pmatrix}-x^2\e^x\\(-x^2+2x)\e^x\end{pmatrix}\]
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}x+1\\x\end{pmatrix}\e^x+C_2\begin{pmatrix}-x\\-x+1\end{pmatrix}\e^x+\begin{pmatrix}-x^2\e^x\\(-x^2+2x)\e^x\end{pmatrix}\]
+
+(4)$|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}2-\lambda&1&-2\\-1&-\lambda&0\\1&1&-1-\lambda\end{vmatrix}=-(\lambda-1)(\lambda^2+1)=0\Rightarrow\lambda=1,\pm\ii$.
+
+当$\lambda=1$时, $\begin{pmatrix}1&1&-2\\-1&-1&0\\1&1&-2\end{pmatrix}\to\begin{pmatrix}1&1&0\\0&0&1\\0&0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}1\\-1\\0\end{pmatrix}$.
+
+当$\lambda=\ii$时, $\begin{pmatrix}2-\ii&1&-2\\-1&-\ii&0\\1&1&-1-\ii\end{pmatrix}\to\begin{pmatrix}1&0&-1\\0&1&\ii\\0&0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}1\\\ii\\1\end{pmatrix}$.
+
+当$\lambda=-\ii$时, 可取特征向量为$\bm{r}=\begin{pmatrix}\ii\\1\\\ii\end{pmatrix}$(注意共轭特征向量为共轭特征值的特征向量).
+
+故基解矩阵为
+\[\widetilde{\bmitPhi}(x)=\begin{pmatrix}\e^x&\e^{\ii x}&\ii\e^{-\ii x}\\-\e^x&\ii\e^{\ii x}&\e^{-\ii x}\\0&\e^{\ii x}&\ii\e^{-\ii x}\end{pmatrix}\Rightarrow\bmitPhi(x)=\begin{pmatrix}\e^x&\cos x&\sin x\\-\e^x&-\sin x&\cos x\\0&\cos x&\sin x\end{pmatrix}\]
+故\[\bmitPhi^{-1}(x)=\begin{pmatrix}\e^{-x}&0&-\e^{-x}\\-\sin x&-\sin x&\sin x+\cos x\\\cos x&\cos x&\sin x-\cos x\end{pmatrix}\]
+故\[\bmitPhi^{-1}(x)\bm{f}(x)=\begin{pmatrix}\e^{-x}\\(1-x)\cos x-\sin x\\(1-x)\sin x+\cos x\end{pmatrix}\Rightarrow\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}-\e^{-x}\\(1-x)\sin x\\(x-1)\cos x\end{pmatrix}\]
+故\[\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}-1\\x\\0\end{pmatrix}\]
+故通解为\[\bm{y}=C_1\begin{pmatrix}1\\-1\\0\end{pmatrix}\e^x+C_2\begin{pmatrix}\cos x\\-\sin x\\\cos x\end{pmatrix}+C_3\begin{pmatrix}\sin x\\\cos x\\\sin x\end{pmatrix}+\begin{pmatrix}-1\\x\\0\end{pmatrix}\]
+
+(5)$|\bm{A}-\lambda\bm{E}|=-(\lambda+1)^3=0\Rightarrow\lambda_{1,2,3}=-1$.
+
+由$(\bm{A}+\bm{E})^3\bm{r}=0$得到三个线性无关的特征向量
+$\bm{r}_{10}=\begin{pmatrix}1\\0\\0\end{pmatrix}$,
+$\bm{r}_{20}=\begin{pmatrix}0\\1\\0\end{pmatrix}$,
+$\bm{r}_{30}=\begin{pmatrix}0\\0\\1\end{pmatrix}$, 
+且$\bm{r}_{11}=\bm{r}_{12}=\bm{r}_{22}=\bm{0}$,
+$\bm{r}_{21}=\begin{pmatrix}-1\\0\\0\end{pmatrix}$,
+$\bm{r}_{31}=\begin{pmatrix}0\\-1\\0\end{pmatrix}$,
+$\bm{r}_{32}=\begin{pmatrix}1\\0\\0\end{pmatrix}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^{-x}&-x\e^{-x}&\frac{1}{2}x^2\e^{-x}\\0&\e^{-x}&-x\e^{-x}\\0&0&\e^{-x}\end{pmatrix}\]
+故\[\bmitPhi^{-1}(x)=\begin{pmatrix}\e^x&x\e^x&\frac{1}{2}x^2\e^x\\0&\e^x&x\e^x\\0&0&\e^x\end{pmatrix}\]
+故\[\bmitPhi^{-1}(x)\bm{f}(x)=\begin{pmatrix}3x^2\e^x+\frac{1}{2}x^3\e^x\\2x\e^x+x^2\e^x\\x\e^x\end{pmatrix}\Rightarrow\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}\left(\frac{1}{2}x^3+\frac{3}{2}x^2-3x+3\right)\e^x\\x^2\e^x\\(x-1)\e^x\end{pmatrix}\]
+故\[\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}x^2-3x+3\\x\\x-1\end{pmatrix}\]
+
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}1\\0\\0\end{pmatrix}\e^{-x}+C_2\begin{pmatrix}-x\\1\\0\end{pmatrix}\e^{-x}+C_3\begin{pmatrix}x^2\\-2x\\2\end{pmatrix}\e^{-x}+\begin{pmatrix}x^2-3x+3\\x\\x-1\end{pmatrix}\qedhere\]
+\end{solve}
+
+
+3.求出微分方程组(6.24)满足初值条件 $\bm{y}(0)=\bm{\eta}$ 的解, 其中:
+\begin{enumerate}[(1)]
+\item $\bm{A}=\begin{pmatrix}-5&-1\\1&-3\end{pmatrix},\bm{f}(x)=\begin{pmatrix}\e^x\\\e^{2x}\end{pmatrix},\bm{\eta}=\begin{pmatrix}1\\0\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}0&-2\\2&0\end{pmatrix},\bm{f}(x)=\begin{pmatrix}3x\\4\end{pmatrix},\bm{\eta}=\begin{pmatrix}2\\3\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}4&-3\\2&-1\end{pmatrix},\bm{f}(x)=\begin{pmatrix}\sin x\\-2\cos x\end{pmatrix},\bm{\eta}=\begin{pmatrix}0\\0\end{pmatrix}$;
+\item $\bm{A}=\begin{pmatrix}16&14&38\\-9&-7&-18\\-4&-4&-11\end{pmatrix},\bm{f}(x)=\begin{pmatrix}-2\e^{-x}\\-3\e^{-x}\\2\e^{-x}\end{pmatrix},\bm{\eta}=\begin{pmatrix}0\\0\\0\end{pmatrix}$.
+\end{enumerate}
+
+\begin{solve}
+(1)$|\bm{A}-\lambda\bm{E}|=(\lambda+4)^2=0\Rightarrow\lambda_{1,2}=-4$.
+
+由$(\bm{A}+4\bm{E})^2\bm{r}=0$得两个线性无关的特征向量
+$\bm{r}_{10}=\begin{pmatrix}1\\0\end{pmatrix}$,
+$\bm{r}_{20}=\begin{pmatrix}0\\1\end{pmatrix}$, 
+且$\bm{r}_{11}=\begin{pmatrix}-1\\1\end{pmatrix},\bm{r}_{21}=\begin{pmatrix}-1\\1\end{pmatrix}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}(1-x)\e^{-4x}&-x\e^{-4x}\\x\e^{-4x}&(1+x)\e^{-4x}\end{pmatrix}\]
+故
+\[\bmitPhi^{-1}(x)=\begin{pmatrix}(1+x)\e^{4x}&x\e^{4x}\\-x\e^{4x}&(1-x)\e^{4x}\end{pmatrix}\]
+故
+\[\bmitPhi^{-1}(x)\bm{f}(x)=\begin{pmatrix}(1+x)\e^{5x}+x\e^{6x}\\-x\e^{5x}+(1-x)\e^{6x}\end{pmatrix}\Rightarrow\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=
+\renewcommand\arraystretch{1.2}\begin{pmatrix}\frac{4}{25}\e^{5x}+\frac{1}{5}x\e^{5x}-\frac{1}{36}\e^{6x}+\frac{1}{6}x\e^{6x}\\-\frac{1}{5}x\e^{5x}+\frac{1}{25}\e^{5x}+\frac{7}{36}\e^{6x}-\frac{1}{6}x\e^{6x}\end{pmatrix}\]
+故
+\[\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=
+\renewcommand\arraystretch{1.2}\begin{pmatrix}\frac{4}{25}\e^x-\frac{1}{36}\e^{2x}\\\frac{1}{25}\e^x+\frac{7}{36}\e^{2x}\end{pmatrix}\]
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}(1-x)\e^{-4x}\\x\e^{-4x}\end{pmatrix}+C_2\begin{pmatrix}-x\e^{-4x}\\(1+x)\e^{-4x}\end{pmatrix}+\renewcommand\arraystretch{1.2}\begin{pmatrix}\frac{4}{25}\e^x-\frac{1}{36}\e^{2x}\\\frac{1}{25}\e^x+\frac{7}{36}\e^{2x}\end{pmatrix}\]
+结合初值条件:
+\[C_1\begin{pmatrix}1\\0\end{pmatrix}+C_2\begin{pmatrix}0\\1\end{pmatrix}+\begin{pmatrix}\frac{4}{25}-\frac{1}{36}\\\frac{1}{25}+\frac{7}{36}\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}\]
+得$C_1=\frac{781}{900},C_2=\frac{-211}{900}$, 故初值问题的解为
+\[\bm{y}=\frac{781}{900}\begin{pmatrix}1-x\\x\end{pmatrix}\e^{-4x}+\frac{-211}{900}\begin{pmatrix}-x\\1+x\end{pmatrix}\e^{-4x}+\renewcommand\arraystretch{1.2}
+\begin{pmatrix}\frac{4}{25}\e^x-\frac{1}{36}\e^{2x}\\\frac{1}{25}\e^x+\frac{7}{36}\e^{2x}\end{pmatrix}.\]
+
+(2)$|\bm{A}-\lambda\bm{E}|=\lambda^2+4=0\Rightarrow\lambda=\pm2\ii$.
+
+当$\lambda=2\ii$时, $\begin{pmatrix}-2\ii&-2\\2&-2\ii\end{pmatrix}\to\begin{pmatrix}1&-\ii\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}\ii\\1\end{pmatrix}$.
+
+当$\lambda=-2\ii$时, 取特征向量为$\bm{r}=\begin{pmatrix}1\\\ii\end{pmatrix}$.
+
+故基解矩阵为
+\[\widetilde{\bmitPhi}(x)=\begin{pmatrix}\ii\e^{2\ii x}&\e^{-2\ii x}\\\e^{2\ii x}&\ii\e^{-2\ii x}\end{pmatrix}\Rightarrow\bmitPhi(x)=\begin{pmatrix}\cos2x&-\sin2x\\\sin2x&\cos2x\end{pmatrix}\]
+故
+\[\bmitPhi^{-1}(x)=\begin{pmatrix}\cos2x&\sin2x\\-\sin2x&\cos2x\end{pmatrix}\]
+故
+\[\bmitPhi^{-1}(x)\bm{f}(x)=\begin{pmatrix}3x\cos2x+4\sin2x\\-3x\sin2x+4\cos2x\end{pmatrix}\Rightarrow\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}\frac{3}{2}x\sin2x-\frac{5}{4}\cos2x\\\frac{3}{2}x\cos2x+\frac{5}{4}\sin2x\end{pmatrix}\]
+故
+\[\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}-\frac{5}{4}\\\frac{3}{2}x\end{pmatrix}\]
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}\cos2x\\\sin2x\end{pmatrix}+C_2\begin{pmatrix}-\sin2x\\\cos2x\end{pmatrix}+\begin{pmatrix}-\frac{5}{4}\\\frac{3}{2}x\end{pmatrix}\]
+结合初值条件:
+\[C_1\begin{pmatrix}1\\0\end{pmatrix}+C_2\begin{pmatrix}0\\1\end{pmatrix}+\begin{pmatrix}-\frac{5}{4}\\0\end{pmatrix}=\begin{pmatrix}2\\3\end{pmatrix}\]
+得$C_1=\frac{13}{4},C_2=3$, 故初值问题的解为
+\[\bm{y}=\frac{13}{4}\begin{pmatrix}\cos2x\\\sin2x\end{pmatrix}+3\begin{pmatrix}-\sin2x\\\cos2x\end{pmatrix}+\begin{pmatrix}-\frac{5}{4}\\\frac{3}{2}x\end{pmatrix}\]
+
+(3)$|\bm{A}-\lambda\bm{E}|=(\lambda-1)(\lambda-2)=0\Rightarrow\lambda_1=1,\lambda_2=2$.
+
+当$\lambda=1$时, $\begin{pmatrix}3&-3\\2&-2\end{pmatrix}\to\begin{pmatrix}1&-1\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}1\\1\end{pmatrix}$.
+
+当$\lambda=2$时, $\begin{pmatrix}2&-3\\2&-3\end{pmatrix}\to\begin{pmatrix}2&-3\\0&0\end{pmatrix}$, 取特征向量为$\bm{r}=\begin{pmatrix}3\\2\end{pmatrix}$.
+
+故基解矩阵为
+\[\bmitPhi(x)=\begin{pmatrix}\e^x&3\e^{2x}\\\e^x&2\e^{2x}\end{pmatrix}\]
+故\[\bmitPhi^{-1}(x)=\begin{pmatrix}-2\e^{-x}&3\e^{-x}\\\e^{-2x}&-\e^{-2x}\end{pmatrix}\]
+故\[\bmitPhi^{-1}(x)\bm{f}(x)=\begin{pmatrix}-2\e^{-x}\sin x-6\e^{-x}\cos x\\\e^{-2x}\sin x+2\e^{-2x}\cos x\end{pmatrix}\Rightarrow\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}-2\e^{-x}\sin x+4\e^{-x}\cos x\\-2\e^{-2x}\cos x\end{pmatrix}\]
+故\[\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x=\begin{pmatrix}-2\sin x+\cos x\\-2\sin x+2\cos x\end{pmatrix}\]
+故通解为
+\[\bm{y}=C_1\begin{pmatrix}1\\1\end{pmatrix}\e^x+C_2\begin{pmatrix}3\\2\end{pmatrix}\e^{2x}+\begin{pmatrix}-2\sin x+\cos x\\-2\sin x+2\cos x\end{pmatrix}\]
+结合初值条件:
+\[C_1\begin{pmatrix}1\\1\end{pmatrix}+C_2\begin{pmatrix}3\\2\end{pmatrix}+\begin{pmatrix}1\\2\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}\]
+得$C_1=-4,C_2=1$, 故初值问题的解为
+\[\bm{y}=-4\begin{pmatrix}1\\1\end{pmatrix}\e^x+\begin{pmatrix}3\\2\end{pmatrix}\e^{2x}+\begin{pmatrix}-2\sin x+\cos x\\-2\sin x+2\cos x\end{pmatrix}\]
+(4)$(-2x,-3x,2x)\e^{-x}$.
+\end{solve}
+
+
+4.求解微分方程组
+\[\frac{\diff}{\diff t}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}a&-b\\b&a\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}\]
+其中$a$和$b$为实常数, 而且$b\neq0$.
+
+\begin{solve}
+$\begin{vmatrix}a-\lambda&-b\\b&a-\lambda\end{vmatrix}=(a-\lambda)^2+b^2=0\Rightarrow\lambda=a\pm b\ii$.
+
+当$\lambda=a+b\ii$时, $\begin{pmatrix}-b\ii&-b\\b&-b\ii\end{pmatrix}\to\begin{pmatrix}\ii&1\\0&0\end{pmatrix}$, 
+取特征向量为$\bm{r}=\begin{pmatrix}\ii\\1\end{pmatrix}$.
+
+当$\lambda=a-b\ii$时, 取特征向量为$\bm{r}=\begin{pmatrix}1\\\ii\end{pmatrix}$.
+
+故基解矩阵为
+\[\widetilde{\bmitPhi}(t)=\begin{pmatrix}\ii\e^{(a+b\ii)t}&\e^{(a-b\ii)t}\\\e^{(a+b\ii)t}&\ii\e^{(a-b\ii)t}\end{pmatrix}\Rightarrow\bmitPhi(t)=\begin{pmatrix}\e^{at}\cos bt&-\e^{at}\sin bt\\ \e^{at}\sin bt&\e^{at}\cos bt\end{pmatrix}\]
+故通解为
+\[\begin{pmatrix}x\\y\end{pmatrix}=C_1\begin{pmatrix}\e^{at}\cos bt\\\e^{at}\sin bt\end{pmatrix}+C_2\begin{pmatrix}-\e^{at}\sin bt\\\e^{at}\cos bt\end{pmatrix}.\qedhere\]
+\end{solve}
+
+
+5.证明: 常系数齐次线性微分方程组$\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$
+的任何解当$x\to+\infty$时都趋于零, 当且仅当它的系数矩阵$\bm{A}$的所有特征根都具有负的实部.
+
+\begin{proof}方程的基解矩阵为
+\[\left(\e^{\lambda_1x}P_1^{(1)}(x),\cdots,\e^{\lambda_1x}P_{n_1}^{(1)}(x);\cdots;\e^{\lambda_sx}P_1^{(s)}(x),\cdots,\e^{\lambda_sx}P_{n_s}^{(s)}(x)\right)\]
+故
+\[\begin{split}
+&\mbox{当}x\to+\infty\mbox{时任何解都趋于零}\\
+\iff&\e^{\lambda_ix}\to0(x\to+\infty)(i=1,2,\cdots,s)\\
+\iff&\mathrm{Re}(\lambda_i)<0(i=1,2,\cdots,s)
+\end{split}\]
+证毕.
+\end{proof}
+
+
+\section{高阶线性微分方程}
+
+
+\subsection{证明与总结}
+
+
+高阶线性微分方程: $y^{(n)}+a_1(x)y^{(n-1)}+\cdots+a_{n-1}(x)y'+a_n(x)y=f(x)$.\\
+令$y_1=y,y_2=y',\cdots,y_n=y^{(n-1)}$, 记$\bm{y}=(y_1,\cdots,y_n)^{\T}$ 则
+\[\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}+\bm{f}(x)=\begin{pmatrix}0&1&0&\cdots&0\\0&0&1&\cdots&0\\
+\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\-a_n(x)&-a_{n-1}(x)&-a_{n-2}(x)&\cdots&-a_1(x)\end{pmatrix}\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}+\begin{pmatrix}0\\0\\\vdots\\f(x)\end{pmatrix}\]
+
+(I)齐次方程: 有$n$个线性无关的解$\varphi_1(x),\cdots,\varphi_n(x)$, 解组的朗斯基行列式
+\[W(x)=W(x_0)\e^{-\int_{x_0}^xa_1(s)\diff s}\]
+(一个运用: 二阶齐次线性微分方程组$y''+p(x)y'+q(x)=0$若知道一个特解可以求出通解).
+
+(II)非齐次方程: 通解为$y=C_1\varphi_1(x)+\cdots+C_n\varphi_n(x)+\varphi^*(x)$, 其中$\displaystyle\varphi^*(x)=\sum_{k=1}^n\varphi_k(x)\int_{x_0}^x\frac{W_k(s)}{W(s)}f(s)\diff s$, 此公式既可以用前面的公式$\displaystyle\bm{y}=\bmitPhi(x)\left(\bm{c}+\int_{x_0}^x\bmitPhi^{-1}(s)\bm{f}(s)\diff s\right)$取第一个分量导出, 也可以用常数变易法导出(见习题 6).\\
+esp: 常系数高阶线性微分方程, 其系数矩阵为
+\[\bm{A}=\begin{pmatrix}0&1&0&\cdots&0\\0&0&1&\cdots&0\\
+\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\-a_n&-a_{n-1}&-a_{n-2}&\cdots&-a_1\end{pmatrix}\]
+由$|\bm{A}-\lambda\bm{E}|=\lambda^n+a_1\lambda^{n-1}+\cdots+a_{n-1}\lambda+a_n=0$算出特征值$\lambda_1,\lambda_2,\cdots,\lambda_s$, 其重数分别为$n_1,n_2,\cdots,n_s(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
+\[\begin{cases}
+\e^{\lambda_1x},x\e^{\lambda_1x},\cdots,x^{n_1-1}\e^{\lambda_1x};\\
+\cdots\cdots\cdots\\
+\e^{\lambda_sx},x\e^{\lambda_sx},\cdots,x^{n_s-1}\e^{\lambda_sx}
+\end{cases}\]
+
+对于非齐次方程, 还需要求出特解, 一般用上述特解求解公式, 在$f(x)$形式特殊时, 可以用待定系数法:
+
+$f(x)=P_m(x)\e^{\mu x}\Rightarrow\varphi^*(x)=x^kQ_m(x)\e^{\mu x}$($\mu$为$k$重特征根);
+
+$f(x)=[A_m(x)\cos(\beta x)+B_l(x)\sin(\beta x)]\e^{\alpha x}\Rightarrow\varphi^*(x)=x^k[C_n(x)\cos(\beta x)+D_n(x)\sin(\beta x)]\e^{\alpha x}$($\alpha\pm\ii\beta$为$k$重特征根,$n=\max\{m,l\}$).
+
+
+\subsection{习题}
+
+
+1.证明函数组
+\[\varphi_1(x)=\begin{cases}x^2,&\mbox{当}x\geq0,\\0,&\mbox{当}x<0;\end{cases}\varphi_2(x)=\begin{cases}0,&\mbox{当}x\geq0,\\x^2,&\mbox{当}x<0\end{cases}\]
+在区间$(-\infty,+\infty)$上线性无关, 但它们的朗斯基行列式恒等于零. 这与本节的定理$6.2^*$是否矛盾? 如果并不矛盾, 那么它说明了什么?
+
+\begin{proof} 
+设$k_1\varphi_1(x)+k_2\varphi_2(x)=0(\forall x)$, 当$x\geq0$时, $k_1x^2=0\Rightarrow k_1=0$, 
+当$x<0$时, $k_2x^2=0\Rightarrow k_2=0$, 故$\varphi_1(x)$与$\varphi_2(x)$在$(-\infty,+\infty)$上线性无关, 
+不矛盾, 这说明不存在二阶齐次线性微分方程使得它以$\varphi_1(x)$与$\varphi_2(x)$为解组.
+\end{proof}
+
+
+2.证明命题5.
+
+\begin{proof} 
+($\Rightarrow$)显然
+
+($\Leftarrow$)设$k_1\varphi_1(x)+\cdots+k_n\varphi_n(x)=0$, 则
+\[k_1\varphi_1'(x)+\cdots+k_n\varphi_n'(x)=0\]
+\[\cdots\]
+\[k_1\varphi_1^{(n-1)}(x)+\cdots+k_n\varphi_n^{(n-1)}(x)=0\]
+由向量函数组线性无关即得$k_i=0(i=1,2,\cdots,n)$, 故$\varphi_1(x),\cdots,\varphi_n(x)$线性无关.
+\end{proof}
+
+
+3.考虑微分方程: $y''+q(x)y=0$.
+\begin{enumerate}[(1)]
+\item 设 $y=\varphi(x)$与$y=\psi(x)$是它的两个解, 试证$\varphi(x)$与$\psi(x)$的朗斯基行列式恒等于一个常数.
+\item 设已知方程有一个特解为 $y=\e^x$, 试求这方程的通解, 并确定$q(x)=$?
+\end{enumerate}
+
+\begin{solve}
+(1)$W(x)=W(x_0)\e^{-\int_{x_0}^x0\diff s}=W(x_0)$.
+
+(2)将$y=\e^x$代入原方程得$q(x)=-1$, 即原方程为$y''-y=0$, 解得通解为$y=C_1\e^x+C_2\e^{-x}$.
+\end{solve}
+
+
+4.考虑微分方程\[y''+p(x)y'+q(x)=0\cdots(*)\]
+其中$p(x)$和$q(x)$是区间$I:a<x<b$上的连续函数.
+\begin{enumerate}[(1)]
+\item 设$y=\varphi(x)$是方程$(*)$在区间$I$上的一个非零解(即$\varphi(x)$在区间$I$上不恒等于零), 
+试证$\varphi(x)$在区间$I$上只有简单零点(即: 如果存在$x_0\in I$, 使得$\varphi(x_0)=0$, 那么必有$\varphi'(x_0)\neq0$). 
+并由此进一步证明, $\varphi(x)$在任意有限闭区间上至多有有限个零点, 从而每一个零点都是孤立的.
+\item 在例1中, 对一般的情形证明相应的结论.
+\end{enumerate}
+
+\begin{solve}
+(1)假设存在$x_0\in I$使得$\varphi(x_0)=\varphi'(x_0)=0$, 
+则由解的存在唯一性定理知方程只有零解$y=\varphi(x)=0$, 与$\varphi(x)$是非零解相矛盾, 
+故$\varphi(x)$在区间$I$上只有简单零点.
+
+设$J$是$I$中有限闭区间, 且$\varphi(x)$在区间$J$上有无限个零点, 记为$\{x_n\}_{n\geq 1}$, 
+由 Bolzano-Weierstrass 定理知 $\{x_n\}_{n\geq 1}$ 有收敛子列, 
+不妨就设其本身收敛且 $\lim\limits_{n\to\infty}x_n=x_0\in J$, 由连续性知$\varphi(x_0)=0$, 故
+\[\varphi'(x_0)=\lim_{x_n\to x_0}\frac{\varphi(x_n)-\varphi(x_0)}{x_n-x_0}=0\]
+由存在唯一性定理知$\varphi(x)\equiv0$, 矛盾, 故$\varphi(x)$的每一个零点都是孤立的.
+
+(2)情形1: $\varphi(x)$在区间$I$上恒不为零, 设$y=y(x)$是方程的任意一个解, 则由刘维尔公式得
+\[\begin{vmatrix}\varphi&y\\\varphi'&y'\end{vmatrix}=\varphi y'-\varphi'y=C_2\e^{-\int_{x_0}^xp(t)\diff t}\]
+在上式两边同时乘以$\frac{1}{\varphi^2}$, 则得
+\[\frac{\diff}{\diff x}\left(\frac{y}{\varphi}\right)=\frac{C_2}{\varphi^2}\e^{-\int_{x_0}^xp(t)\diff t}\]
+将上式从$x_0$到$x$积分得
+\[\int_{x_0}^x\frac{\diff}{\diff s}\left(\frac{y}{\varphi}\right)\diff s=\frac{y(x)}{\varphi(x)}-C_1=\int_{x_0}^x\frac{C_2}{\varphi^2(s)}\e^{-\int_{x_0}^sp(t)\diff t}\diff s\]
+故\[y(x)=\varphi(x)\left[C_1+C_2\int_{x_0}^x\frac{1}{\varphi^2(s)}\e^{-\int_{x_0}^sp(t)\diff t}\diff s\right]\]
+其中$C_1,C_2$是任意常数.
+
+情形2: $\varphi(x)$是非零解, 由(1)知$\varphi(x)$的每一个零点都是孤立的, 利用$\varphi(x)$的零点将区间$(a,b)$分割为开区间之并.
+\end{solve}
+
+
+5.设函数$u(x)$和$v(x)$是方程$y''+p(x)y'+q(x)y=0$的一个基本解组, 试证:
+\begin{enumerate}[(1)]
+\item 方程的系数函数$p(x)$和$q(x)$能由这个基本解组唯一地确定.
+\item $u(x)$和$v(x)$没有共同的零点.
+\end{enumerate}
+
+\begin{proof}
+(1)依题意得$\begin{cases}p(x)u'+q(x)u=-u''\\p(x)v'+q(x)v=-v''\end{cases}$, 
+又$\begin{vmatrix}u'&u\\v'&v\end{vmatrix}=-W[u(x),v(x)]\neq0$, 故
+\[p(x)=\frac{\begin{vmatrix}-u''&u\\-v''&v\end{vmatrix}}{\begin{vmatrix}u'&u\\v'&v\end{vmatrix}}=\frac{u''v-uv''}{W[u(x),v(x)]},q(x)=\frac{\begin{vmatrix}u'&-u''\\v'&-v''\end{vmatrix}}{\begin{vmatrix}u'&u\\v'&v\end{vmatrix}}=\frac{u'v''-u''v'}{W[u(x),v(x)]}\]
+也即$p(x)$和$q(x)$能由这个基本解组唯一地确定.
+
+(2)假设$u(x)$和$v(x)$有共同的零点$x_0$, 则$W[u(x_0),v(x_0)]=0$, 与$u(x)$和$v(x)$为基本解组相矛盾, 故$u(x)$和$v(x)$没有共同的零点.
+\end{proof}
+
+
+6.试用常数变易法证明定理$6.3^*$.
+
+\begin{proof} 
+设非齐次线性微分方程的通解为
+\[y=C_1(x)\varphi_1(x)+\cdots+C_n(x)\varphi_n(x)\]
+则\[y'=C_1'(x)\varphi_1(x)+\cdots+C_n'(x)\varphi_n(x)+C_1(x)\varphi_1'(x)+\cdots+C_n(x)\varphi_n'(x)\]
+令$C_1'(x)\varphi_1(x)+\cdots+C_n'(x)\varphi_n(x)=0$, 则
+\[y'=C_1(x)\varphi_1'(x)+\cdots+C_n(x)\varphi_n'(x)\]
+故
+\[y''=C_1'(x)\varphi_1'(x)+\cdots+C_n'(x)\varphi_n'(x)+C_1(x)\varphi_1''(x)+\cdots+C_n(x)\varphi_n''(x)\]
+令$C_1'(x)\varphi_1'(x)+\cdots+C_n'(x)\varphi_n'(x)=0$, 则
+\[y''=C_1(x)\varphi_1''(x)+\cdots+C_n(x)\varphi_n''(x)\]
+
+同理可得\[y^{(n-1)}=C_1(x)\varphi_1^{(n-1)}(x)+\cdots+C_n(x)\varphi_n^{(n-1)}(x)\]
+\[y^{(n)}=C_1'(x)\varphi_1^{(n-1)}(x)+\cdots+C_n'(x)\varphi_n^{(n-1)}(x)+C_1(x)\varphi_1^{(n)}(x)+\cdots+C_n(x)\varphi_n^{(n)}(x)\]
+将$y,y',\cdots,y^{(n)}$的表达式代入$y^{(n)}+a_1(x)y^{(n-1)}+\cdots+a_{n-1}(x)y'+a_n(x)y=f(x)$得
+\[\begin{split}C_1'(x)\varphi_1^{(n-1)}&(x)+\cdots+C_n'(x)\varphi_n^{(n-1)}(x)+\sum_{i=1}^nC_i(x)\bigg(\varphi_i^{(n)}(x)\\&+a_1(x)\varphi_i^{(n-1)}(x)+\cdots+a_n(x)\varphi_i(x)\bigg)=f(x)\end{split}\]
+而\[\sum_{i=1}^nC_i(x)\left(\varphi_i^{(n)}(x)+a_1(x)\varphi_i^{(n-1)}(x)+\cdots+a_n(x)\varphi_i(x)\right)=0\]
+故\[C_1'(x)\varphi_1^{(n-1)}(x)+\cdots+C_n'(x)\varphi_n^{(n-1)}(x)=f(x)\]
+再根据前面所得有
+\[\begin{cases}
+C_1'(x)\varphi_1(x)+\cdots+C_n'(x)\varphi_n(x)=0\\
+C_1'(x)\varphi_1'(x)+\cdots+C_n'(x)\varphi_n'(x)=0\\
+\cdots\cdots\\
+C_1'(x)\varphi_1^{(n-1)}(x)+\cdots+C_n'(x)\varphi_n^{(n-1)}(x)=f(x)
+\end{cases}\]
+上述方程组的系数行列式即为$W(x)$, 故
+\[C_1'(x)=\frac{1}{W(x)}\begin{vmatrix}0&\varphi_2(x)&\cdots&\varphi_n(x)\\
+0&\varphi_2'(x)&\cdots&\varphi_n'(x)\\
+\vdots&\vdots&&\vdots\\
+f(x)&\varphi_2^{(n-1)}(x)&\cdots&\varphi_n^{(n-1)}(x)\end{vmatrix}=\frac{W_1(x)}{W(x)}f(x)\]
+同理可得$\displaystyle C_i'(x)=\frac{W_i(x)}{W(x)}f(x)(i=2,3,\cdots,n)$, 积分得
+\[C_i(x)=\int_{x_0}^x\frac{W_i(s)}{W(s)}f(s)\diff s+C_i\]
+再代回最初的式子即得
+\[y=C_1\varphi_1(x)+\cdots+C_n\varphi_n(x)+\sum_{k=1}^n\varphi_k(x)\int_{x_0}^x\frac{W_k(s)}{W(s)}f(s)\diff s.\qedhere\]
+\end{proof}
+
+
+7.设欧拉方程
+\[x^ny^{(n)}+a_1x^{n-1}y^{(n-1)}+\cdots+a_{n-1}xy'+a_ny=0,\]
+其中$a_1,a_2,\cdots,a_n$都是常数, $x>0$. 试利用适当的变换把它化成常系数的齐次线性微分方程.
+
+\begin{solve} 
+令$x=\e^t$, 则
+\[\begin{split}
+&\frac{\diff y}{\diff x}=\frac{\diff y}{\diff t}\cdot\frac{\diff t}{\diff x}=\e^{-t}\frac{\diff y}{\diff t}\\
+&\frac{\diff^2y}{\diff x^2}=\frac{\diff}{\diff t}\left(\frac{\diff y}{\diff x}\right)\cdot\frac{\diff t}{\diff x}=\e^{-2t}\left(\frac{\diff^2y}{\diff t^2}-\frac{\diff y}{\diff t}\right)
+\end{split}\]
+用归纳法可以证明
+\[\frac{\diff^ky}{\diff x^k}=\e^{-kt}\left(\frac{\diff^ky}{\diff t^k}+\beta_1\frac{\diff^{k-1}y}{\diff t^{k-1}}+\cdots+\beta_{k-1}\frac{\diff y}{\diff t}\right)\cdots(*)\]
+其中$\beta_1,\beta_2,\beta_{k-1}$都是常数. 将其代入原方程就得到常系数齐次线性微分方程
+\[\frac{\diff^ny}{\diff t^n}+b_1\frac{\diff^{n-1}y}{\diff t^{n-1}}+\cdots+b_{n-1}\frac{\diff y}{\diff t}+b_ny=0,\]
+其中$b_1,b_2,\cdots,b_n$是常数. 求解之, 再代回原变量, 便可得原方程通解.
+\end{solve}
+注: $(*)$式其实不太精细, 事实上, 利用归纳法容易证明下列关系式
+\[x^k\frac{\diff^ky}{\diff x^k}=\frac{\diff}{\diff t}\left(\frac{\diff}{\diff t}-1\right)\cdots\left(\frac{\diff}{\diff t}-k+1\right)y\]
+
+
+8.求解有阻尼的弹簧振动方程
+\[m\frac{\diff^2x}{\diff t^2}+r\frac{\diff x}{\diff t}+kx=0,\]
+其中$m,r,k$都是正的常数. 并就$\Delta=r^2-4mk$大于, 等于和小于零的不同情况, 说明相应解的物理意义.
+
+\begin{solve}
+特征方程为\[m\lambda^2+r\lambda+k=0\]
+特征根为\[\lambda_1=\frac{-r+\sqrt{r^2-4mk}}{2m},\lambda_2=\frac{-r-\sqrt{r^2-4mk}}{2m}\]
+\begin{enumerate}[(i)]
+\item $\Delta>0$即大阻尼情形, $\lambda_2<\lambda_1<0$, 通解为
+\[x(t)=C_1\e^{\lambda_1t}+C_2\e^{\lambda_2t},\]
+其中$C_1,C_2$为任意常数. 此时$\lim_{t\to\infty}x(t)=0$, 并且有
+\begin{enumerate}[(a)]
+\item 当常数$C_1$和$C_2$全为零时, 则$x(t)\equiv0$, 即弹簧静止;
+\item 当常数$C_1$和$C_2$有且只有一个为零时, 则$x(t)$保持定号, 即弹簧不能振动;
+\item 当常数$C_1$和$C_2$都不为零时, 此时弹簧最多只能经过一次静止点, 亦即
+\[x(t_0)=C_1\e^{\lambda_1t_0}+C_2\e^{\lambda_2t_0}=0\]
+当且仅当$-1<\frac{C_1}{C_2}<0$异号, 而且$t_0=\frac{1}{\lambda_2-\lambda_1}\ln\left(-\frac{C_1}{C_2}\right)$.
+\end{enumerate}
+\item $\Delta<0$即小阻尼情形, 此时$\lambda_1=\alpha+\ii\beta,\lambda_2=\alpha-\ii\beta$, 其中$\alpha=-\frac{r}{2m}<0,\beta=\frac{\sqrt{-\Delta}}{2m}>0$, 通解为
+\[x(t)=\e^{\alpha t}(C_1\cos\beta t+C_2\sin\beta t)=A\e^{\alpha t}\cos(\beta t-\theta_0)\]
+故$\lim_{t\to\infty}x(t)=0$, 且
+\begin{enumerate}[(a)]
+\item 当$A=0$时, 弹簧静止;
+\item 当$A>0$时, 弹簧振动.
+\end{enumerate}
+\item $\Delta=0$即临界阻尼情形, 有两个相等的特征根$\lambda_1=\lambda_2=-\frac{r}{2m}$, 通解为
+\[x(t)=\e^{-\frac{r}{2m}t}(C_1+C_2t)\]
+此时$\lim_{t\to\infty}x(t)=0$且$x(t)$至多有一个零点, 故弹簧不振动.
+\end{enumerate}
+\end{solve}
+
+
+9.求解弹簧振子在无阻尼下的强迫振动方程
+\[m\frac{\diff^2x}{\diff t^2}+kx=p\cos\omega t,\]
+其中$m,k,p$和$\omega$都是正的常数. 并对外加频率$\omega\neq\omega_0$和$\omega=\omega_0$两种不同的情况, 
+说明解的物理意义, 这里$\omega_0=\sqrt{\frac{k}{m}}$是弹簧振子的固有频率.
+
+\begin{solve}
+特征方程为
+\[m\lambda^2+k=0\]
+解得特征根为$\lambda=\pm\sqrt{\frac{k}{m}}\ii=\pm\omega_0\ii$, 故相应齐次线性微分方程的解为
+\[x(t)=C_1\cos\omega_0t+C_2\sin\omega_0t\]
+当$\omega\neq\omega_0$时, 方程有特解$x(t)=A\cos\omega t+B\sin\omega t$, 代入原方程得$A=\frac{p}{k-m\omega^2},B=0$, 故原方程通解为
+\[x(t)=C_1\cos\omega_0t+C_2\sin\omega_0t+\frac{p}{k-m\omega^2}\cos\omega t\]
+当$\omega=\omega_0$时, 方程有特解$x(t)=t(A\cos\omega_0t+B\sin\omega_0t)$, 代入原方程得$A=0,B=\frac{p}{2m\omega_0}$, 故原方程通解为
+\[x(t)=C_1\cos\omega_0t+C_2\sin\omega_0t+\frac{p}{2m\omega_0}t\sin\omega_0t\]
+此时发生了共振.
+\end{solve}
+
+
+10.求解下列常系数线性微分方程:
+\begin{enumerate}[(1)]
+\item $y''+y'-2y=2x,y(0)=0,y'(0)=1$;
+\item $2y''-4y'-6y=3\e^{2x}$;
+\item $y''+2y'=3+4\sin 2x$;
+\item $y'''+3y'-4y=0$;
+\item $y'''-2y''-3y'+10y=0$;
+\item $y'''-3ay''+3a^2y'-a^3y=0$;
+\item $y^{(4)}-4y'''+8y''-8y'+3y=0$;
+\item $y^{(5)}+2y'''+y'=0$;
+\item $y^{(4)}+2y''+y=\sin x,y(0)=1,y'(0)=-2,y''(0)=3,y'''(0)=0$;
+\item $y^{(4)}+y=2\e^x,y(0)=y'(0)=y''(0)=y'''(0)=1$;
+\item $y''-2y'+2y=4\e^x\cos x$;
+\item $y''-5y'+6y=(12x-7)\e^{-x}$;
+\item $x^2y''+5xy'+13y=0(x>0)$;
+\item $(2x+1)^2y''-4(2x+1)y'+8y=0$.
+\end{enumerate}
+
+\begin{solve}
+(1)$\lambda^2+\lambda-2=0\Rightarrow\lambda_1=-2,\lambda_2=1$, 
+设方程的特解为$y=ax+b$, 代入原方程得$a=-1,b=-\frac{1}{2}$, 故原方程的通解为
+\[y=C_1\e^{-2x}+C_2\e^x-x-\frac{1}{2}\]
+代入初值条件得$C_1=-\frac{1}{2},C_2=1$, 故原方程的解为
+\[y=-\frac{1}{2}\e^{-2x}+\e^x-x-\frac{1}{2}\]
+
+(2)$2\lambda^2-4\lambda-6=0\Rightarrow\lambda_1=3,\lambda_2=-1$, 
+设方程的特解为$y=a\e^{2x}$, 代入原方程得$a=-\frac{1}{2}$, 故原方程的通解为
+\[y=C_1\e^{3x}+C_2\e^{-x}-\frac{1}{2}\e^{2x}\]
+
+(3)$\lambda^2+2\lambda=0\Rightarrow\lambda_1=0,\lambda_2=-2$, 
+设特解为$y=Ax+B\cos 2x+C\sin2x$, 代入原方程得$A=\frac{3}{2},B=C=-\frac{1}{2}$, 故原方程通解为
+\[y=C_1+C_2\e^{-2c}+\frac{3}{2}x-\frac{1}{2}(\sin2x+\cos2x)\]
+
+(4)$\lambda^3+3\lambda-4=0\Rightarrow\lambda=1,\frac{-1\pm\sqrt{15}\ii}{2}$, 
+故方程的实基本解组为$\e^x,\e^{-\frac{1}{2}x}\cos\frac{\sqrt{15}}{2}x,\e^{-\frac{1}{2}x}\sin\frac{\sqrt{15}}{2}x$, 故通解为
+\[y=C_1\e^x+\left(C_2\cos\frac{\sqrt{15}}{2}x+C_3\sin\frac{\sqrt{15}}{2}x\right)\e^{-\frac{1}{2}x}\]
+
+(5)$\lambda^3-2\lambda^2-3\lambda+10=0\Rightarrow\lambda=-2,2\pm\ii$, 
+故实基本解组为$\e^{-2x},\e^{2x}\cos x,\e^{2x}\sin x$, 故通解为
+\[y=C_1\e^{-2x}+(C_2\cos x+C_3\sin x)\e^{2x}\]
+
+(6)$\lambda^3-3a\lambda^2+3a^2\lambda-a^3=(\lambda-a)^3=0\Rightarrow\lambda_{1,2,3}=a$, 故通解为
+\[y=\left(C_1+C_2x+C_3x^2\right)\e^{ax}\]
+
+(7)$\lambda^4-4\lambda^3+8\lambda^2-8\lambda+3=(\lambda-1)^2(\lambda^2-2\lambda+3)=0\Rightarrow\lambda_{1,2}=1,\lambda_3=1+\sqrt{2}\ii,\lambda_4=1-\sqrt{2}\ii$, 故通解为
+\[y=(C_1+C_2x)\e^x+(C_3\cos\sqrt{2}x+C_4\sin\sqrt{2}x)\e^x\]
+
+(8)$\lambda^5+2\lambda^3+\lambda=\lambda(\lambda^2+1)^2=0\Rightarrow\lambda_1=0,\lambda_{2,3}=\ii,\lambda_{4,5}=-\ii$, 
+故复基本解组为$1,\e^{\ii x},x\e^{\ii x},\e^{-\ii x},x\e^{-\ii x}$, 相应的实基本解组为$1,\cos x,\sin x,x\cos x,x\sin x$, 故通解为
+\[y=C_1+(C_2+C_3x)\cos x+(C_4+C_5x)\sin x\]
+
+(9)$\lambda^4+2\lambda^2+1=(\lambda^2+1)^2=0\Rightarrow\lambda_{1,2}=\ii,\lambda_{3,4}=-\ii$, 故对应齐次方程的通解为
+\[\varphi(x)=C_1\sin x+C_2\cos x+C_3x\sin x+C_4x\cos x\]
+设特解为$\varphi^*(x)=x^2(A\cos x+B\sin x)$, 则
+\[\begin{split}
+\left(\varphi^*(x)\right)'&=2x(A\cos x+B\sin x)+x^2(-A\sin x+B\cos x)\\
+\left(\varphi^*(x)\right)''&=(2-x^2)(A\cos x+B\sin x)+4x(-A\sin x+B\cos x)\\
+\left(\varphi^*(x)\right)'''&=-6x(A\cos x+B\sin x)+(6-x^2)(-A\sin x+B\cos x)\\
+\left(\varphi^*(x)\right)^{(4)}&=(x^2-12)(A\cos x+B\sin x)-8x(-A\sin x+B\cos x)
+\end{split}\]
+故$(x^2-12+4-2x^2+x^2)(A\cos x+B\sin x)+(-8x+8x)(-A\sin x+B\cos x)=-8(A\cos x+B\sin x)=\sin x\Rightarrow A=0,B=-\frac{1}{8}$, 
+故$\varphi^*(x)=-\frac{1}{8}x^2\sin x$, 故原方程的通解为
+\[y=C_1\sin x+C_2\cos x+C_3x\sin x+C_4x\cos x-\frac{1}{8}x^2\sin x\]
+再代入初值条件$y(0)=C_2=1,y'(0)=C_1+C_4=-2,y''(0)=-C_2+2C_3=3,y'''(0)=-C_1-3C_4-\frac{3}{4}=0$, 
+解得$C_1=-\frac{21}{8},C_2=1,C_3=2,C_4=\frac{5}{8}$, 故原方程的解为
+\[y=\left(-\frac{1}{8}x^2+2x-\frac{21}{8}\right)\sin x+\left(\frac{5}{8}x+1\right)\cos x\]
+
+(10)$\lambda^4+1=0\Rightarrow\lambda=\e^{\ii\left(\frac{\pi}{4}+\frac{1}{2}k\pi\right)}(k=0,1,2,3)$, 
+也即$\lambda_1=\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\ii,\lambda_2=-\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\ii,\lambda_3=-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\ii,\lambda_4=\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\ii$, 
+故相应的齐次线性微分方程的解为
+\[\varphi(x)=\left(C_1\cos\frac{\sqrt{2}}{2}x+C_2\sin\frac{\sqrt{2}}{2}x\right)\e^{\frac{\sqrt{2}}{2}x}+\left(C_3\cos\frac{\sqrt{2}}{2}x+C_4\sin\frac{\sqrt{2}}{2}x\right)\e^{-\frac{\sqrt{2}}{2}x}\]
+设原方程的特解为$\varphi^*(x)=A\e^x$, 代入原方程得$A=1$, 故特解为$\varphi^*(x)=\e^x$, 因此原方程的通解为
+\[y=\left(C_1\cos\frac{\sqrt{2}}{2}x+C_2\sin\frac{\sqrt{2}}{2}x\right)\e^{\frac{\sqrt{2}}{2}x}+\left(C_3\cos\frac{\sqrt{2}}{2}x+C_4\sin\frac{\sqrt{2}}{2}x\right)\e^{-\frac{\sqrt{2}}{2}x}+\e^x\]
+结合初值条件知$C_i=0(i=1,2,3,4)$, 故原方程满足初值条件的解为$y=\e^x$.
+
+(11)$\lambda^2-2\lambda+2=0\Rightarrow\lambda=1\pm\ii$, 故相应齐次线性微分方程的通解为
+\[\varphi(x)=(C_1\cos x+C_2\sin x)\e^x\]
+设原方程的特解为$\varphi^*(x)=x(A\cos x+B\sin x)\e^x$, 代入原方程得$A=0,B=2$, 故特解为$\varphi^*(x)=2x\e^x\sin x$, 故原方程的通解为
+\[y=(C_1\cos x+C_2\sin x)\e^x+2x\e^x\sin x\]
+
+(12)$\lambda^2-5\lambda+6=0\Rightarrow\lambda_1=2,\lambda_2=3$, 故相应齐次线性微分方程的通解为
+\[\varphi(x)=C_1\e^{2x}+C_2\e^{3x}\]
+设原方程的特解为$\varphi^*(x)=(Ax+B)\e^{-x}$, 代入原方程得$A=1,B=0$, 
+故特解为$\varphi^*(x)=x\e^{-x}$, 因此原方程的通解为
+\[y=C_1\e^{2x}+C_2\e^{3x}+x\e^{-x}\]
+
+(13)令$x=\e^t$, 则原方程化为
+\[\frac{\diff}{\diff t}\left(\frac{\diff}{\diff t}-1\right)y+5\frac{\diff}{\diff t}y+13y=\frac{\diff^2y}{\diff t^2}+4\frac{\diff y}{\diff t}+13y=0\]
+特征方程为$\lambda^2+4\lambda+13=0\Rightarrow\lambda=-2\pm3\ii$, 故实基本解组为$\e^{-2t}\cos3t,\e^{-2t}\sin3t$, 代回原变量即得基本解组为$\frac{1}{x^2}\cos(3\ln x),\frac{1}{x^2}\sin(3\ln x)$, 故通解为
+\[y=\frac{1}{x^2}(C_1\cos(3\ln x)+C_2\sin(3\ln x))\]
+
+(14)令$u=2x+1$, 则
+\[\frac{\diff y}{\diff x}=\frac{\diff y}{\diff u}\frac{\diff u}{\diff x}=2\frac{\diff y}{\diff u}\]
+\[\frac{\diff^2y}{\diff x^2}=\frac{\diff}{\diff u}\left(2\frac{\diff y}{\diff u}\right)\frac{\diff u}{\diff x}=4\frac{\diff^2y}{\diff u^2}\]
+故原方程化为\[u^2\cdot4\frac{\diff^2y}{\diff u^2}-4u\cdot2\frac{\diff y}{\diff u}+8y=0\Rightarrow u^2\frac{\diff^2y}{\diff u^2}-2u\frac{\diff y}{\diff u}+2y=0\]
+令$u=\e^t$, 则上述方程化为
+\[\frac{\diff}{\diff t}\left(\frac{\diff}{\diff t}-1\right)y-2\frac{\diff}{\diff t}y+2y=\frac{\diff^2y}{\diff t^2}-3\frac{\diff y}{\diff t}+2y=0\]
+特征方程为$\lambda^2-3\lambda+2=0\Rightarrow\lambda_1=1,\lambda_2=2$, 故通解为
+\[y=C_1\e^t+C_2\e^{2t}=C_1u+C_2u^2=C_1(2x+1)+C_2(2x+1)^2\qedhere\]
+\end{solve}

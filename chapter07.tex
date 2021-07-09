@@ -1,0 +1,498 @@
+\chapter{幂级数解法}
+
+
+\section{柯西定理}
+
+
+\begin{figure}[htb]
+\caption{柯西定理图示}
+\begin{tikzpicture}
+%\draw[help lines] (0,-2)grid(13,2);
+\draw (0,0)coordinate(a)
+      (0,2)coordinate(b)
+      (9.5,0.3)coordinate(c)
+      (9.5,1.5)coordinate(d)
+      (2.4,0.3)coordinate(e)
+      (2.4,1.5)coordinate(f)
+      (2.4,-0.4)coordinate(g)
+      (3,-1)coordinate(h)
+      (5.3,-0.2)coordinate(i)
+      (7,-1)coordinate(j);
+\draw (a)node[anchor=west]{$(\widehat{E}):\frac{\diff y}{\diff x}=F(x,y),y(x_0)=y_0\xrightarrow{\scriptsize{形式解}}y=y_0+\sum_{n=1}^{\infty}\widehat{C}_n(x-x_0)^n$};
+\draw (b)node[anchor=west]{$(E):\frac{\diff y}{\diff x}=f(x,y),y(x_0)=y_0\xrightarrow{\scriptsize{形式解}}y=y_0+\sum_{n=1}^{\infty}C_n(x-x_0)^n$};
+\draw[<->,thick](c)--(d)node[pos=0.5,anchor=west]{$|C_n|\leq\widehat{C}_n$};
+\draw[<->,thick](e)--(f)node[anchor=west,pos=0.5]{在$R_0$内$F(x,y)$是$f(x,y)$的优函数};
+\draw [->,out=270,in=180,thick](g)to(h)node[anchor=west]{$\frac{M}{\left(1-\frac{x-x_0}{a}\right)\left(1-\frac{y-y_0}{b}\right)}$};
+\draw [->,out=-10,in=180,thick](i)to node[anchor=south,pos=0.5,sloped]{\scriptsize{真实解}}(j);
+\draw (j)node[anchor=west]{$y=y_0+b-b\sqrt{1+\frac{2aM}{b}\ln\left(1-\frac{x-x_0}{a}\right)}(|x-x_0|<\rho)$};
+\end{tikzpicture}
+\end{figure}
+
+1.陈述并详细证明解析微分方程组的柯西定理.
+
+柯西定理:考虑微分方程组的初值问题
+\[(E):\begin{cases}
+\frac{\diff y_1}{\diff x}=f_1(x,y_1,\cdots,y_n),y_1(0)=0\\
+\cdots\\
+\frac{\diff y_n}{\diff x}=f_n(x,y_1,\cdots,y_n),y_n(0)=0
+\end{cases}\]
+其中函数$f_k(k=1,2,\cdots,n)$在区域$R:|x|\leq\alpha,|y_1|\leq\beta,\cdots,|y_n|\leq\beta$内可以展成收敛的幂级数
+\[f_k(x,y_1,\cdots,y_n)=\sum_{i,j_1,\cdots,j_n=0}^{\infty}a_{i,j_1,\cdots,j_n}^{(k)}x^iy_1^{j_1}\cdots y_n^{j_n}\]
+则初值问题$(E)$在邻域$|x|<\rho$内有唯一的解析解$y_k=y_k(x)$, 
+其中$\displaystyle\rho=a\left(1-\e^{\frac{-b}{(n+1)aM}}\right),a<\alpha,b<\beta$.
+
+\begin{proof}
+因为$f_k(x,y_1,\cdots,y_n)$在区域$R$上可以展成收敛的幂级数
+\[f_k(x,y_1,\cdots,y_n)=\sum_{i,j_1,\cdots,j_n=0}^{\infty}a_{i,j_1,\cdots,j_n}^{(k)}x^iy_1^{j_1}\cdots y_n^{j_n}\]
+故对任意的正数$a<\alpha,b<\beta$, 正项级数
+\[\sum_{i,j_1,\cdots,j_n=0}^{\infty}a_{i,j_1,\cdots,j_n}^{(k)}a^ib^{j_1+\cdots+j_n}\]
+收敛, 故其通项有界, 即存在$M>0$使得
+\[\left|a_{i,j_1,\cdots,j_n}^{(k)}\right|a^ib^{j_1+\cdots+j_n}\leq M\Rightarrow\left|a_{i,j_1,\cdots,j_n}^{(k)}\right|\leq\frac{M}{a^ib^{j_1+\cdots+j_n}}\cdots(*)\]
+考虑下述函数在区域$R_0:|x|<a,|y_1|<b,\cdots,|y_n|<b$上的展开式
+\[G(x,y_1,\cdots,y_n)=\frac{M}{\left(1-\frac{x}{a}\right)\left(1-\frac{y_1}{b}\right)\cdots\left(1-\frac{y_n}{b}\right)}=\sum_{i,j_1,\cdots,j_n=0}^{\infty}\frac{M}{a^ib^{j_1+\cdots+j_n}}x^iy_1^{j_1}\cdots y_n^{j_n}\]
+由$(*)$知在$R_0$上$G(x,y_1,\cdots,y_n)$是$f_k(x,y_1,\cdots,y_n)$的优函数.\\
+我们考虑初值问题
+\[(\widehat{E}):\frac{\diff y_k}{\diff x}=G(x,y_1,\cdots,y_n),y_k(0)=0(k=1,2,\cdots,n)\]
+注意到上述方程组的右端函数与$k$无关, 故只要标量函数$y$的初值问题
+\[(\widetilde{E}):\frac{\diff y}{\diff x}=\frac{M}{\left(1-\frac{x}{a}\right)\left(1-\frac{y}{b}\right)^n},y(0)=0\]
+有解$y=y(x)$, 则$y_i=y(x)(i=1,2,\cdots,n)$就是$(\widehat{E})$的解. 容易求得$(\widetilde{E})$的解为
+\[y=b-b\sqrt[n+1]{1+\frac{(n+1)aM}{b}\ln\left(1-\frac{x}{a}\right)}\]
+可以证明当$\displaystyle|x|<\rho=a\left(1-\e^{\frac{-b}{(n+1)aM}}\right)$时, 
+上述解可以展开成收敛的幂级数, 故初值问题$(E)$在$|x|<\rho$上有唯一的解析解.
+\end{proof}
+
+
+2.设初值问题\[(E):y''+p(x)y'+q(x)=0,y(x_0)=y_0,y'(x_0)=y_0',\]
+其中$p(x)$和$q(x)$在区间$|x-x_0|<a$内可以展成$(x-x_0)$的收敛的幂级数, 则$(E)$的解析解$y=y(x)$在$|x-x_0|<a$内存在且唯一.
+\begin{solve} 
+令$y_1=y,y_2=y'$, 则初值问题$(E)$等价于
+\[\begin{cases}
+\frac{\diff y_1}{\diff x}=y_2=f_1(x,y_1,y_2),y_1(x_0)=y_0\\
+\frac{\diff y_2}{\diff x}=-p(x)y_2-q(x)y_1=f_2(x,y_1,y_2),y_2(x_0)=y_0'
+\end{cases}\]
+结合题给条件知$f_i(x,y_1,y_2)(i=1,2)$在区域$R:|x-x_0|<a,|y_1-y_0|<\infty,|y_2-y_0'|<\infty$上可以展开成收敛的幂级数, 由柯西定理知初值问题在$|x-x_0|<\rho$上存在唯一的解析解, 其中
+\[\rho=\tilde{a}\left(1-\e^{\frac{-b}{3\tilde{a}M}}\right),\tilde{a}<a,b<\infty\]
+由于$\lim\limits_{b\to\infty}\rho=\tilde{a}$, 又$\tilde{a}<a$是任意的, 故$(E)$的解析解在$|x-x_0|<a$上存在且唯一.
+\end{solve}
+
+
+3.叙述并证明解析微分方程的解关于初值和参数的解析性定理.
+
+
+\section{幂级数解法}
+
+
+1.求出下列微分方程在$x=x_0$处展开的两个线性无关的幂级数解, 并写出相应的递推公式:
+\begin{enumerate}[(1)]
+\item $y''-xy'-y=0,x_0=0$;
+\item $y''-xy'-y=0,x_0=1$;
+\item $(1-x)y''+y=0,x_0=0$.
+\end{enumerate}
+
+\begin{solve}
+(1)设方程有幂级数解\[y=\sum_{n=0}^{\infty}a_nx^n\] 则
+\[y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n\]
+\[y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n\]
+将之代入原方程得\[\sum_{n=0}^{\infty}[(n+2)(n+1)a_{n+2}-(n+1)a_n]x^n=0\]
+故递推公式为\[(n+2)a_{n+2}-a_n=0(n=0,1,\cdots)\]
+故$a_{2n}=\frac{1}{(2n)!!}a_0,a_{2n+1}=\frac{1}{(2n+1)!!}a_1(n\geq0)$, 从而得方程有幂级数解
+\[y=a_0\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!!}+a_1\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!!}\]
+分别取$a_0=1,a_1=0$和$a_0=0,a_1=1$得两个线性无关的幂级数解
+\[y_1=\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!!},y_2=\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!!}\]
+
+(2)设方程有幂级数解\[y=\sum_{n=0}^{\infty}a_n(x-1)^n\]
+则\[y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}(x-1)^n\]
+\[y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n\]
+将之代入原方程得
+\[\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}-(n+1)(a_{n+1}+a_n)\big](x-1)^n=0\]
+故递推公式为\[a_{n+2}=\frac{a_{n+1}+a_n}{n+2}(n=0,1,\cdots)\]
+分别取$a_0=1,a_1=0$和$a_0=0,a_1=1$可得两个线性无关的解.
+
+(3)所设幂级数形式与(1)相同, 代入原方程可得
+\[\sum_{n=0}^{\infty}[(n+2)(n+1)a_{n+2}-(n+1)na_{n+1}+a_n]x^n=0\]
+故递推公式为
+\[a_{n+2}=\frac{(n+1)na_{n+1}-a_n}{(n+2)(n+1)}(n=0,1,\cdots)\]
+分别取$a_0=1,a_1=0$和$a_0=0,a_1=1$得两个线性无关的幂级数解
+\[y_1=1-\frac{1}{2}x^2-\frac{1}{6}x^3-\frac{1}{24}x^4-\frac{1}{60}x^5-\cdots\]
+\[y_2=x-\frac{1}{6}x^3-\frac{1}{12}x^4-\frac{1}{24}x^5-\cdots\qedhere\]
+\end{solve}
+
+
+2.对于下列初值问题求出$y''(x_0),y^{(3)}(x_0)$和$y^{(4)}(x_0)$, 从而写出相应初值问题的解在$x_0$点的泰勒级数的前几项:
+\begin{enumerate}[(1)]
+\item $y''+xy'+y=0;\;y(0)=1,y'(0)=0;$
+\item $y''+(\sin x)y'+(\cos x)y=0;\;y(0)=0,y'(0)=1$.\
+\end{enumerate}
+
+\begin{solve}
+(1)$y''(0)=-1,y^{(3)}(0)=0,y^{(4)}(0)=3,y=1-\frac{1}{2!}x^2+\frac{3}{4!}x^4+\cdots$;
+
+(2)$y''(0)=0,y^{(3)}(0)=-2,y^{(4)}(0)=0,y=x-\frac{2}{3!}x^3+\cdots$.
+\end{solve}
+
+
+3.求解Hermite方程
+\[y''-2xy'+\lambda y=0(-\infty<x<\infty),\]
+其中$\lambda$是常数.
+
+\begin{solve} 设方程有幂级数解\[y=\sum_{n=0}^{\infty}a_nx^n\] 则
+\[y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n\]
+\[y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n\]
+将之代入原方程得
+\[\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}+(\lambda-2n)a_n\big]x^n=0\]
+故递推公式为
+\[a_{n+2}=\frac{2n-\lambda}{(n+2)(n+1)}a_n(n=0,1,\cdots)\]
+故\[a_{2n}=\frac{\prod_{k=0}^{n-1}(4k-\lambda)}{(2n)!}a_0(n\geq1),a_{2n+1}=\frac{\prod_{k=1}^n(4k-2-\lambda)}{(2n+1)!}a_1(n\geq1)\]
+故方程的解为
+\[y=a_0\left[1+\sum_{n=1}^{\infty}\frac{\prod_{k=0}^{n-1}(4k-\lambda)}{(2n)!}x^{2n}\right]+a_1\left[x+\sum_{n=1}^{\infty}\frac{\prod_{k=1}^n(4k-2-\lambda)}{(2n+1)!}x^{2n+1}\right]\qedhere\]
+\end{solve}
+
+
+4.求微分方程
+\[y''+(\sin x)y=0\]
+在$x=0$处展开的两个线性无关的幂级数解.
+
+\begin{solve}
+设方程有幂级数解$y=\sum_{n=0}^{\infty}a_nx^n$, 将之代入方程得
+\[\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n+\left(\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}\right)\left(\sum_{n=0}^{\infty}a_nx^n\right)=0\]
+即
+\[\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n+\left(x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots\right)\left(a_0+a_1x+a_2x^2+a_3x^3+\cdots\right)=0\]
+也即(下面的式子可以通过观察前几项$x^n(n\geq3)$的系数归纳得到: $\left(a_2-\frac{1}{3!}a_0\right)x^3,\\\left(a_3-\frac{1}{3!}a_1\right)x^4,\left(a_4-\frac{1}{3!}a_2+\frac{1}{5!}a_0\right)x^5,\left(a_5-\frac{1}{3!}a_3+\frac{1}{5!}a_1\right)x^6$)
+\[2a_2+(3\cdot2a_3+a_0)x+(4\cdot3a_4+a_1)x^2+\sum_{n=3}^{\infty}\left[\sum_{\substack{i=0\\j=n-1-2i}}^{[(n-1)/2]}\frac{(-1)^i}{(2i+1)!}a_j+(n+2)(n+1)a_{n+2}\right]x^n=0\]
+令$x$的同次幂系数为零得
+\[\begin{split}&a_2=0,a_3=-\frac{1}{3!}a_0,a_4=-\frac{1}{3\cdot4}a_1,a_5=\frac{1}{5!}a_0\\
+&a_6=\frac{1}{2\cdot3\cdot5\cdot6}a_1+\frac{1}{2\cdot3\cdot5\cdot6}a_0,\cdots\end{split}\]
+故方程的幂级数解为\marginpar{\CJKfamily{kaishu}注意教材答案有误}
+\[y=a_0\left(1-\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^6}{2\cdot3\cdot5\cdot6}+\cdots\right)+a_1\left(x-\frac{x^4}{3\cdot4}+\frac{x^6}{2\cdot3\cdot5\cdot6}-\cdots\right)\]
+分别取$a_0=1,a_1=0$和$a_0=0,a_1=1$可得两个线性无关的解.
+\end{solve}
+
+
+\section{勒让德多项式}
+
+
+\subsection{证明与总结}
+
+
+求证: $\mathrm{P}_n(1)=1,\mathrm{P}_n(-1)=(-1)^n$.
+
+\begin{proof}
+利用积函数求导的Leibniz公式得
+\[\begin{split}
+\mathrm{P}_n(x)&=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}(x^2-1)^n\\
+&=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}\left((x+1)^n(x-1)^n\right)\\
+&=\frac{1}{2^nn!}\sum_{k=0}^nC_n^k\left(\frac{\diff^k}{\diff x^k}(x+1)^n\right)\left(\frac{\diff^{n-k}}{\diff x^{n-k}}(x-1)^n\right)\\
+&=\frac{1}{2^nn!}\sum_{k=0}^nC_n^k\left(\frac{n!}{(n-k)!}(x+1)^{n-k}\right)\left(\frac{n!}{k!}(x-1)^k\right)\\
+&=\frac{1}{2^n}\sum_{k=0}^n\left(C_n^k\right)^2(x+1)^{n-k}(x-1)^k
+\end{split}\]
+故$\mathrm{P}_n(1)=1,\mathrm{P}_n(-1)=(-1)^n$.
+\end{proof}
+
+注: 结合本题结论, 我们已经得到Legendre多项式的三种表达形式:\raggedbottom
+\[{\color{bostonuniversityred}\mathrm{P}_n(x)=\frac{1}{2^n}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k(2n-2k)!}{k!(n-k)!(n-2k)!}x^{n-2k}=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}(x^2-1)^n=\frac{1}{2^n}\sum_{k=0}^n\left(C_n^k\right)^2(x+1)^{n-k}(x-1)^k}\]
+
+
+\subsection{习题}
+
+
+*1.令函数\[G(x,t)=(1-2xt+t^2)^{-1/2}\]
+则$G(x,t)$关于$t$展开的幂级数为
+\[G(x,t)=\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^n,\]
+其中$\mathrm{P}_n(x)$是勒让德多项式(函数$G(x,t)$称为勒让德多项式的母函数Generating Function).
+
+\begin{proof} 
+首先容易证明一个双重求和关系式
+\[\sum_{n=0}^{\infty}\sum_{k=0}^nA(n,k)t^{n+k}=\sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}A(n-k,k)t^n\cdots(*)\]
+令$u(x,t)=2xt-t^2$, 则由幂级数公式$(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\frac{(-1)^n(2n-1)!!}{(2n)!!}x^n$知
+\[\begin{split}
+G(x,t)&=(1-u)^{-\frac{1}{2}}\\
+&=\sum_{n=0}^{\infty}\frac{(2n-1)!!}{(2n)!!}u^n\\
+&=\sum_{n=0}^{\infty}\frac{(2n-1)!!}{(2n)!!}(2xt-t^2)^n\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^nC_n^k\frac{(-1)^k(2n-1)!!}{(2n)!!}(2xt)^{n-k}t^{2k}\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^n\frac{(-1)^kn!(2n-1)!!}{k!(n-k)!(2n)!!}(2x)^{n-k}t^{n+k}(\textrm{according\;to}\;(*))\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k(n-k)!(2n-2k-1)!!}{k!(n-2k)!(2n-2k)!!}2^{n-2k}x^{n-2k}t^n\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k(n-k)!(2n-2k-1)!!}{2^nk!(n-2k)!(2n-2k)!!}2^{2n-2k}x^{n-2k}t^n\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k\left[2^{n-k}(n-k)!(2n-2k-1)!!\right]}{2^nk!(n-2k)!\left[(2n-2k)!!/2^{n-k}\right]}x^{n-2k}t^n\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k(2n-2k)!}{2^nk!(n-k)!(n-2k)!}x^{n-2k}t^n\\
+&=\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^n
+\end{split}\]
+证毕.
+\end{proof}
+
+
+2.利用上题中的$G(x,t)$所满足的恒等式
+\[(1-2xt+t^2)\frac{\partial G}{\partial t}=(x-t)G,\]
+证明下述递推公式:
+\[(n+1)\mathrm{P}_{n+1}(x)-(2n+1)x\mathrm{P}_n(x)+n\mathrm{P}_{n-1}(x)=0(n\geq1).\]
+
+\begin{proof} 因为\[G(x,t)=\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^n\]
+所以\[\frac{\partial G}{\partial t}=\sum_{n=1}^{\infty}n\mathrm{P}_n(x)t^{n-1}=\sum_{n=0}^{\infty}(n+1)\mathrm{P}_{n+1}(x)t^n\]
+又$(1-2xt+t^2)\frac{\partial G}{\partial t}=(x-t)G$, 故
+\[\sum_{n=0}^{\infty}(n+1)\mathrm{P}_{n+1}(x)t^n-2x\sum_{n=0}^{\infty}(n+1)\mathrm{P}_{n+1}(x)t^{n+1}+\sum_{n=0}^{\infty}(n+1)\mathrm{P}_{n+1}(x)t^{n+2}=x\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^n-\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^{n+1}\]
+即
+\[\sum_{n=0}^{\infty}(n+1)\mathrm{P}_{n+1}(x)t^n-2x\sum_{n=0}^{\infty}n\mathrm{P}_n(x)t^n-x\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^n+\sum_{n=2}^{\infty}(n-1)\mathrm{P}_{n-1}(x)t^n+\sum_{n=1}^{\infty}\mathrm{P}_{n-1}(x)t^n=0\]
+也即
+\[\sum_{n=0}^{\infty}(n+1)\mathrm{P}_{n+1}(x)t^n-\sum_{n=0}^{\infty}(2n+1)x\mathrm{P}_n(x)t^n+\sum_{n=1}^{\infty}n\mathrm{P}_{n-1}(x)t^n=0\]
+故
+\[(n+1)\mathrm{P}_{n+1}(x)-(2n+1)x\mathrm{P}_n(x)+n\mathrm{P}_{n-1}(x)=0(n\geq1).\qedhere\]
+\end{proof}
+
+
+*3.利用刘维尔公式求出勒让德方程的另一个与$\mathrm{P}_n(x)$线性无关的解$Q_n(x)$, 并且证明: 当$x<1$而$x\to1$时, $|Q_n(x)|\to+\infty$.
+\begin{proof} 
+由所学结论知
+\[Q_n(x)=\mathrm{P}_n(x)\int_{x_0}^x\frac{1}{\mathrm{P}_n^2(s)}\e^{-\int_{x_0}^s\frac{-2t}{1-t^2}\diff t}\diff s=\mathrm{P}_n(x)\int_{x_0}^x\frac{1-x_0^2}{\mathrm{P}_n^2(s)(1-s^2)}\diff s\]
+因为$\mathrm{P}_n(1)=1$, 所以存在$x_0\in(0,1)$使得当$x\in[x_0,1]$时
+\[\frac{1}{2}\leq\mathrm{P}_n(x)\leq2\]
+所以\[Q_n(x)\geq\frac{1}{2}\int_{x_0}^x\frac{1-x_0^2}{4(1-s^2)}\diff s=\frac{1-x_0^2}{16}\left(\ln\frac{1+x}{1-x}-\ln\frac{1+x_0}{1-x_0}\right)\to+\infty(x\to1-)\]
+即\[\lim_{x\to1-}Q_n(x)=+\infty\qedhere\]
+\end{proof}
+
+
+\section{广义幂级数解法}
+
+
+\subsection{证明与总结}
+
+
+考虑微分方程\[A(x)y''+B(x)y'+C(x)y=0\]
+设$x_0$为其奇点, 将方程变形为
+\[y''+p(x)y'+q(x)y=0\]
+若$(x-x_0)p(x)$和$(x-x_0)^2q(x)$在$x_0$附近解析, 则$x_0$是正则奇点, 此时方程有收敛的广义幂级数解
+\[y=\sum_{n=0}^{\infty}C_n(x-x_0)^{n+\rho}(C_0\neq0)\]
+其中指标 $\rho$ 的求解方程为: $\rho(\rho-1)+a_0\rho+b_0=0$, 其中$a_0,b_0$分别为下述方程中$P(x)$和$Q(x)$在$x=x_0$处的取值:
+\[(x-x_0)^2y''+(x-x_0)P(x)y'+Q(x)y=0.\]
+
+\[\begin{split}
+&\sum_{k=0}^{\infty}(k+\rho)(k+\rho-1)C_k(x-x_0)^k+\sum_{k=0}^{\infty}a_k(x-x_0)^k\sum_{k=0}^{\infty}(k+\rho)C_k(x-x_0)^k\\
+&+\sum_{k=0}^{\infty}b_k(x-x_0)^k\sum_{k=0}^{\infty}C_k(x-x_0)^k\\
+=&\sum_{k=0}^{\infty}(k+\rho)(k+\rho-1)C_k(x-x_0)^k+\sum_{k=0}^{\infty}\sum_{j=0}^ka_j(k-j+\rho)C_{k-j}(x-x_0)^k\\
+&+\sum_{k=0}^{\infty}\sum_{j=0}^kb_jC_{k-j}(x-x_0)^k=0
+\end{split}\]
+故\[(k+\rho)(k+\rho-1)C_k+\sum_{j=0}^ka_j(k-j+\rho)C_{k-j}+\sum_{j=0}^kb_jC_{k-j}=0(k=0,1,\cdots)\]
+当$k=0$时, 即为$C_0(\rho(\rho-1)+a_0\rho+b_0)=0$, 当$k\geq1$时, 即为
+\[\left[(k+\rho)(k+\rho-1)+a_0(k+\rho)+b_0\right]C_k+\sum_{j=1}^k\left(a_j(k-j+\rho)+b_j\right)C_{k-j}=0\]
+记$f_0(\rho)=\rho(\rho-1)+a_0\rho+b_0, f_j(\rho)=a_j\rho+b_j$, 则上式即为
+\[C_kf_0(\rho+k)+\sum_{j=1}^kC_{k-j}f_j(\rho+k-j)=0(k\geq1).\]
+
+
+\subsection{习题}
+
+
+1.试判别$x=-1,0,1$是下列微分方程的什么点(常点, 正则奇点或非正则奇点)?
+\begin{enumerate}[(1)]
+\item $xy''+(1-x)y'+xy=0$;
+\item $(1-x^2)y''-2xy'+n(n+1)y=0$;
+\item $2x^4(1-x^2)y''+2xy'+3x^2y=0$;
+\item $x^2(1-x^2)y''+2x^{-1}y'+4y=$;
+\item $\displaystyle y''+\left(\frac{x}{1+x}\right)^2y'+3(1+x)^2y=0$.
+\end{enumerate}
+
+\begin{solve}
+      \begin{enumerate}[(1)]
+            \item $x=\pm1$为常点, $x=0$为正则奇点;
+            \item $x=\pm1$为正则奇点, $x=0$为常点;
+            \item $x=\pm1$为正则奇点, $x=0$为非正则奇点;
+            \item $x=\pm1$为正则奇点, $x=0$为非正则奇点;
+            \item $x=0,x=1$为常点, $x=-1$为非正则奇点.
+      \end{enumerate}
+\end{solve}
+
+
+2.用广义幂级数求解下列微分方程:
+\begin{enumerate}[(1)]
+\item $2xy''+y'+xy=0$;
+\item $x^2y''+xy'+\left(x^2-\frac{1}{9}\right)y=0$;
+\item $2x^2y''-xy'+(1+x)y=0$;
+\item $xy''+y=0$;
+\item $xy''+y'-y=0$.
+\end{enumerate}
+
+\begin{solve}
+(1)设广义幂级数解为
+\[y=\sum_{k=0}^{\infty}C_kx^{k+\rho}\]
+将之代入方程得
+\[\sum_{k=-1}^{\infty}\left((k+\rho+1)(2k+2\rho+1)C_{k+1}+C_{k-1}\right)x^{k+\rho}=0(C_{-2}=C_{-1}=0)\]
+指标方程为: $\rho(2\rho-1)=0\Rightarrow\rho=0,\frac{1}{2}$.\\
+当$\rho=0$时, $(k+1)(2k+1)C_{k+1}+C_{k-1}=0\Rightarrow C_{k+1}=\frac{-C_{k-1}}{(k+1)(2k+1)}(k\geq0)$, 故$C_{2k+1}=0(k\geq0)$且
+\[C_{2k}=\frac{-C_{2k-2}}{2k(4k-1)}=\frac{C_{2k-4}}{2k(4k-1)(2k-2)(2k-5)}=\cdots=\frac{(-1)^kC_0}{2^kk!3\cdot7\cdot\cdots\cdot(4k-1)}(k\geq1)\]
+此时解为
+\[y_1=C_0\left[1+\sum_{n=1}^{\infty}\frac{(-1)^nx^{2n}}{2^nn!3\cdot7\cdot\cdots\cdot(4n-1)}\right].\]
+当$\rho=\frac{1}{2}$时, $(k+\frac{3}{2})(2k+2)C_{k+1}+C_{k-1}=0\Rightarrow C_{k+1}=\frac{-C_{k-1}}{(2k+3)(k+1)}(k\geq0)$, 故$C_{2k+1}=0(k\geq0)$且
+\[C_{2k}=\frac{-C_{2k-2}}{2k(4k+1)}=\frac{C_{2k-4}}{2k(4k+1)(2k-2)(4k-3)}=\cdots=\frac{2^kC_0}{2^kk!5\cdot9\cdot\cdots\cdot(4k+1)}(k\geq1)\]
+此时解为
+\[y_2=C_0x^{\frac{1}{2}}\left[1+\sum_{n=1}^{\infty}\frac{(-1)^nx^{2n}}{2^nn!5\cdot9\cdot\cdots\cdot(4n+1)}\right].\]
+
+(2)此方程为贝塞尔方程且对应的$n=\frac{1}{3}$, 由教材讨论知此方程的解为
+\[y_1=\mathrm{J}_{\frac{1}{3}}(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{\Gamma\left(k+\frac{4}{3}\right)\Gamma(k+1)}\cdot\left(\frac{x}{2}\right)^{2k+\frac{1}{3}}\]
+\[y_2=\mathrm{J}_{-\frac{1}{3}}(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{\Gamma\left(k+\frac{2}{3}\right)\Gamma(k+1)}\cdot\left(\frac{x}{2}\right)^{2k-\frac{1}{3}}\]
+
+(3)设广义幂级数解为
+\[y=\sum_{k=0}^{\infty}C_kx^{k+\rho}\]
+将之代入方程得
+\[\sum_{k=0}^{\infty}\big[((k+\rho)(2k+2\rho-3)+1)C_k+C_{k-1}\big]x^{k+\rho}=0(C_{-1}=0)\]
+指标方程为: $\rho(2\rho-3)+1=0\Rightarrow\rho=1,\frac{1}{2}$.
+
+当$\rho=1$时, $((k+1)(2k-1)+1)C_k+C_{k-1}=0$, 故
+\[C_k=\frac{-C_{k-1}}{k(2k+1)}=\frac{C_{k-2}}{k(2k+1)(k-1)(2k-1)}=\cdots=\frac{(-1)^kC_0}{k!(2k+1)!!}(k\geq1)\]
+此时解为
+\[y_1=C_0x\left[1+\sum_{n=1}^{\infty}\frac{(-1)^nx^n}{n!(2n+1)!!}\right].\]
+当$\rho=\frac{1}{2}$时, $((k+\frac{1}{2})(2k-2)+1)C_k+C_{k-1}=0$, 故
+\[C_k=\frac{-C_{k-1}}{k(2k-1)}=\frac{C_{k-2}}{k(2k-1)(k-1)(2k-3)}=\cdots=\frac{(-1)^kC_0}{k!(2k-1)!!}(k\geq1)\]
+此时解为
+\[y_2=C_0x^{\frac{1}{2}}\left[1+\sum_{n=1}^{\infty}\frac{(-1)^nx^n}{n!(2n-1)!!}\right].\]
+
+(4)设广义幂级数解为
+\[y=\sum_{k=0}^{\infty}C_kx^{k+\rho}\]
+将之代入方程得
+\[\sum_{k=-1}^{\infty}((k+\rho+1)(k+\rho)C_{k+1}+C_k)x^{k+\rho}=0(C_{-1}=0)\]
+指标方程为: $\rho(\rho-1)=0\Rightarrow\rho=0,1$.\\
+当$\rho=1$时, $(k+1)(k+2)C_{k+1}+C_k=0\Rightarrow C_{k+1}=\frac{-C_k}{(k+1)(k+2)}$, 故
+\[C_k=\frac{-C_{k-1}}{k(k+1)}=\cdots=\frac{(-1)^kC_0}{k!(k+1)!}(k\geq1)\]
+此时解为
+\[y=C_0x\left[1+\sum_{n=1}^{\infty}\frac{(-1)^nx^n}{n!(n+1)!}\right].\]
+当$\rho=0$时, $(k+1)kC_{k+1}+C_k=0$, 令$k=0$得$C_0=0$, 不符合条件故舍去.
+
+(5)设广义幂级数解为
+\[y=\sum_{k=0}^{\infty}C_kx^{k+\rho}\]
+将之代入方程得
+\[\sum_{k=-1}^{\infty}\left[(k+\rho+1)^2C_{k+1}-C_k\right]x^{k+\rho}=0\]
+指标方程为: $\rho^2=0\Rightarrow\rho=0$, 故$(k+1)^2C_{k+1}-C_k=0$, 因此
+\[C_k=\frac{C_{k-1}}{k^2}=\cdots=\frac{C_0}{(k!)^2}(k\geq1)\]
+故方程的解为
+\[y=C_0\left[1+\sum_{n=1}^{\infty}\frac{x^n}{(n!)^2}\right].\qedhere\]
+\end{solve}
+
+
+3.设超几何方程
+\[x(1-x)y''+[\gamma-(1+\alpha+\beta)]y'-\alpha\beta y=0\]
+其中$\alpha,\beta,\gamma$是常数.
+\begin{enumerate}[(1)]
+      \item 证明$x=0$是一个正则奇点, 相应的指标根为
+            \[\rho_1=0\quad\mbox{和}\quad\rho_2=1-\gamma;\]
+      \item 证明$x=1$也是一个正则奇点, 相应的指标根为
+            \[\rho_1=0\quad\mbox{和}\quad\rho_2=\gamma-\alpha-\beta;\]
+      \item 设$1-\gamma$不是整数, 则超几何方程在$x=0$的邻域内有一个幂级数解为
+            \[y_1=1+\frac{\alpha\beta}{\gamma\cdot1!}x+\frac{\alpha(\alpha+1)\beta(\beta+1)}{\gamma(\gamma+1)2!}x^2+\cdots\]
+            (\textbf{超几何级数}). 试问它的收敛半径是什么?
+      \item 设$1-\gamma$不是整数, 则第二个解是
+            \[\begin{split}
+            y_2=&x^{1-\gamma}\bigg[1+\frac{(\alpha-\gamma+1)(\beta-\gamma+1)}{(2-\gamma)1!}x\\
+            &\frac{(\alpha-\gamma+1)(\alpha-\gamma+2)(\beta-\gamma+1)(\beta-\gamma+2)}{(2-\gamma)(3-\gamma)2!}x^2+\cdots\bigg].
+            \end{split}\]
+\end{enumerate}
+
+\begin{proof}
+(1)因为$\frac{\gamma-(1+\alpha+\beta)x}{1-x}$和$\frac{\alpha\beta x}{x-1}$在$x=0$的邻域内解析, 所以$x=0$是正则奇点, 原方程等价于
+\[x^2y''+\frac{x[\gamma-(1+\alpha+\beta)x]}{1-x}y'-\frac{\alpha\beta x}{1-x}y=0\]
+故$a_0=\gamma,b_0=0$, 故指标方程为: $\rho(\rho-1)+\gamma\rho=0\Rightarrow\rho_1=0,\rho_2=1-\gamma$.
+
+(2)因为$\frac{\gamma-(1+\alpha+\beta)x}{-x}$和$\frac{\alpha\beta(x-1)}{x}$在$x=1$的邻域内解析, 所以$x=1$是正则奇点, 原方程等价于
+\[(x-1)^2y''+(x-1)\frac{(1+\alpha+\beta)x-\gamma}{x}y'+\frac{x-1}{x}\alpha\beta y=0\]
+故$a_0=1+\alpha+\beta-\gamma,b_0=0$, 
+故指标方程为: $\rho(\rho-1)+(1+\alpha+\beta-\gamma)\rho=0\Rightarrow\rho_1=0,\rho_2=\gamma-\alpha-\beta$.
+
+(3)对于$\rho_1=0$, 设方程的幂级数解为
+\[y=\sum_{k=0}^{\infty}C_kx^k\]
+将之代入原方程得
+\[\sum_{k=0}^{\infty}\left[(k+1)(k+\gamma)C_{k+1}-(k+\alpha)(k+\beta)C_k\right]x^k=0\]
+故\[C_{k+1}=\frac{(k+\alpha)(k+\beta)}{(k+1)(k+\gamma)}C_k(k\geq0)\]
+由此得到(3)中所示的一个解.
+
+记$a_n=\frac{\alpha(\alpha+1)\cdots(\alpha+n-1)\beta(\beta+1)\cdots(\beta+n-1)}{\gamma(\gamma+1)\cdots(\gamma+n-1)n!}$, 则
+\[\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=\lim_{n\to\infty}\frac{(\alpha+n)(\beta+n)}{(\gamma+n)(n+1)}=1\]
+故级数收敛半径为1.
+
+(4)设$\rho=1-\gamma$对应的广义幂级数解为
+\[y=\sum_{n=0}^{\infty}a_nx^{n-\gamma+1}\]
+则将之代入原方程得
+\[\sum_{n=1}^{\infty}\big[(n+1-\gamma)na_n-(\alpha+n-\gamma)(\beta+n-\gamma)a_{n-1}\big]x^{n-\gamma}=0\]
+故
+\[a_n=\frac{(\alpha+n-\gamma)(\beta+n-\gamma)}{(n+1-\gamma)n}a_{n-1}(n\geq1)\]
+所以
+\[a_n=\frac{(\alpha-\gamma+1)\cdots(\alpha-\gamma+n)(\beta-\gamma+1)\cdots(\beta-\gamma+n)}{(2-\gamma)\cdots(n+1-\gamma)n!}a_0(n\geq1)\]
+取$a_0=1$, 则得广义幂级数解
+\[y=x^{1-\gamma}\left[1+\sum_{n=1}^{\infty}\frac{(\alpha-\gamma+1)\cdots(\alpha-\gamma+n)(\beta-\gamma+1)\cdots(\beta-\gamma+n)}{(2-\gamma)\cdots(n+1-\gamma)n!}x^n\right].\qedhere\]
+\end{proof}
+
+
+\section{贝塞尔函数}
+
+
+1.试证:\[\begin{split}&\frac{\diff}{\diff x}\left[x^{-n}\mathrm{J}_n(x)\right]=-x^{-n}\mathrm{J}_{n+1}(x);\\
+&\frac{\diff}{\diff x}\left[x^n\mathrm{J}_n(x)\right]=x^n\mathrm{J}_{n-1}(x).\end{split}\]
+
+\begin{proof}只证明第二式
+\[\begin{split}
+&\frac{\diff}{\diff x}\left[x^{-n}\mathrm{J}_n(x)\right]\\
+=&\frac{\diff}{\diff x}\left(x^n\sum_{n=0}^{\infty}\frac{(-1)^k}{\Gamma(n+k+1)\Gamma(k+1)}\left(\frac{x}{2}\right)^{2k+n}\right)\\
+=&\sum_{n=0}^{\infty}\frac{(-1)^k}{\Gamma(n+k+1)\Gamma(k+1)}\left(\frac{1}{2}\right)^{2k+n}(2k+2n)x^{2n+2k-1}\\
+=&x^n\sum_{n=0}^{\infty}\frac{(-1)^k}{\Gamma(n+k)\Gamma(k+1)}\left(\frac{x}{2}\right)^{2k+n-1}\\
+=&x^n\mathrm{J}_{n-1}(x).
+\end{split}\]
+证毕.
+\end{proof}
+
+
+2.证明半整数阶的贝塞尔函数为
+\[\begin{split}
+&\rmJ_{\frac{1}{2}}(x)=\sqrt{\frac{2}{\pi x}}\sin x,\rmJ_{-\frac{1}{2}}(x)=\sqrt{\frac{2}{\pi x}}\cos x,\\
+&\rmJ_{n+\frac{1}{2}}(x)=\frac{(-1)^n}{\sqrt{\pi}}(2x)^{n+\frac{1}{2}}\frac{\diff^n}{(\diff x^2)^n}\frac{\sin x}{x},\\
+&\rmJ_{-n-\frac{1}{2}}(x)=\frac{1}{\sqrt{\pi}}(2x)^{n+\frac{1}{2}}\frac{\diff^n}{(\diff x^2)^n}\frac{\cos x}{x}(n=0,1,2,\cdots).
+\end{split}\]
+
+\begin{proof}\[\begin{split}
+\rmJ_{\frac{1}{2}}(x)=&\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\Gamma\left(k+\frac{3}{2}\right)}\left(\frac{x}{2}\right)^{2k+\frac{1}{2}}\\
+=&\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\left(k+\frac{1}{2}\right)\cdot\cdots\cdot\frac{1}{2}\sqrt{\pi}}\left(\frac{x}{2}\right)^{2k+\frac{1}{2}}\\
+=&\sqrt{\frac{2}{\pi x}}\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}x^{2k+1}\\
+=&\sqrt{\frac{2}{\pi x}}\sin x.
+\end{split}\]
+\[\begin{split}\rmJ_{-\frac{1}{2}}(x)=&\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\Gamma\left(k+\frac{1}{2}\right)}\left(\frac{x}{2}\right)^{2k-\frac{1}{2}}\\
+=&\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\left(k-\frac{1}{2}\right)\cdot\cdots\cdot\frac{1}{2}\sqrt{\pi}}\left(\frac{x}{2}\right)^{2k-\frac{1}{2}}\\
+=&\sqrt{\frac{2}{\pi x}}\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}\\
+=&\sqrt{\frac{2}{\pi x}}\cos x.
+\end{split}\]
+\[\begin{split}
+\rmJ_{n+\frac{1}{2}}(x)=&\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\Gamma\left(n+k+\frac{3}{2}\right)}\left(\frac{x}{2}\right)^{n+\frac{1}{2}+2k}\\
+=&\sum_{k=0}^{\infty}\frac{(-1)^k}{k!\left(n+k+\frac{1}{2}\right)\left(n+k-\frac{1}{2}\right)\cdot\cdots\cdot\frac{1}{2}\sqrt{\pi}}\left(\frac{x}{2}\right)^{n+\frac{1}{2}+2k}\\
+=&\sum_{k=0}^{\infty}\frac{(-1)^k2^{n+\frac{1}{2}}(n+k)(n+k-1)\cdots(k+1)}{\sqrt{\pi}(2n+2k+1)!}x^{n+\frac{1}{2}+2k}\cdots(*)
+\end{split}\]
+将$\frac{\sin x}{x}$展成幂级数并且令$x^2=t$, 得
+\[\frac{\sin x}{x}=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}x^{2k}=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}t^k=\sum_{k=-n}^{\infty}\frac{(-1)^{k+n}}{(2n+2k+1)!}t^{n+k}\]
+故
+\[\frac{\diff^n}{(\diff x^2)^n}\frac{\sin x}{x}=\frac{\diff}{\diff t^n}\left(\sum_{k=-n}^{\infty}\frac{(-1)^{k+n}}{(2n+2k+1)!}t^{n+k}\right)=\sum_{k=0}^{\infty}\frac{(-1)^{n+k}(n+k)(n+k-1)\cdots(k+1)}{(2n+2k+1)!}t^k\]
+结合$(*)$得
+\[\rmJ_{n+\frac{1}{2}}(x)==\frac{(-1)^n}{\sqrt{\pi}}(2x)^{n+\frac{1}{2}}\frac{\diff^n}{(\diff x^2)^n}\frac{\sin x}{x}\]
+最后一式同理可证.
+\end{proof}
+
+
+3.用贝塞尔函数表达微分方程
+\[y''+xy=0\]
+的通解.
+
+\begin{solve} 令$x=\left(\frac{3}{2}u\right)^{\frac{2}{3}},y=x^{\frac{1}{2}}v$, 则
+\[u=\frac{2}{3}x^{\frac{3}{2}},v=yx^{-\frac{1}{2}}\cdots(*)\]
+对$x$求导得
+\[\frac{\diff u}{\diff x}=\sqrt{x}\]
+\[\frac{\diff y}{\diff x}x^{-\frac{1}{2}}-\frac{1}{2}x^{-\frac{3}{2}}y=\frac{\diff v}{\diff x}=\frac{\diff v}{\diff u}\frac{\diff u}{\diff x}=\sqrt{x}\frac{\diff v}{\diff x}\]
+上式两端乘以$x$并整理得
+\[\sqrt{x}\frac{\diff y}{\diff x}=\frac{1}{2}x^{-\frac{1}{2}}y+x^{\frac{3}{2}}\frac{\diff v}{\diff u}\cdots(**)\]
+由$(*)(**)$得
+\[\sqrt{x}\frac{\diff y}{\diff x}=\frac{1}{2}v+\frac{3}{2}u\frac{\diff v}{\diff u}\cdots(***)\]
+上式对$x$求导得
+\[\sqrt{x}\frac{\diff^2y}{\diff x^2}+\frac{1}{2}x^{-\frac{1}{2}}\frac{\diff y}{\diff x}=\frac{\diff}{\diff u}\left(\frac{1}{2}v+\frac{3}{2}u\frac{\diff v}{\diff u}\right)\frac{\diff u}{\diff x}=\left[\frac{1}{2}\frac{\diff v}{\diff u}+\frac{3}{2}\left(\frac{\diff v}{\diff u}+u\frac{\diff^2v}{\diff u^2}\right)\right]\sqrt{x}\]
+两端乘以$x$并结合$(*)(***)$得
+\[x^{\frac{3}{2}}\frac{\diff^2y}{\diff x^2}+\frac{1}{2}\left(\frac{3}{2}u\frac{\diff v}{\diff u}+\frac{1}{2}v\right)=\frac{3}{2}u\left(\frac{3}{2}u\frac{\diff^2v}{\diff u^2}+2\frac{\diff v}{\diff u}\right)\]
+故
+\[\frac{\diff^2y}{\diff x^2}=\frac{2}{3u}\left(\frac{9}{4}u^2\frac{\diff^2v}{\diff u^2}+\frac{9}{4}u\frac{\diff v}{\diff u}-\frac{1}{4}v\right)\]
+又\[xy=\left(\frac{3}{2}u\right)^{\frac{2}{3}}\left(\frac{3}{2}u\right)^{\frac{1}{3}}v=\frac{3}{2}uv\]
+故
+\[\frac{2}{3u}\left(\frac{9}{4}u^2\frac{\diff^2v}{\diff u^2}+\frac{9}{4}u\frac{\diff v}{\diff u}-\frac{1}{4}v\right)+\frac{3}{2}uv=0\]
+即
+\[u^2\frac{\diff^2v}{\diff u^2}+u\frac{\diff v}{\diff u}+\left(u^2-\frac{1}{9}\right)v=0\]
+因此
+\[v=C_1\rmJ_{\frac{1}{3}}(u)+C_2\rmJ_{-\frac{1}{3}}(u)\]
+从而原方程的解为
+\[y=\sqrt{x}\left[C_1\rmJ_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)+C_2\rmJ_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right].\qedhere\]
+\end{solve}
