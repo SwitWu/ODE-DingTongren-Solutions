@@ -1,35 +1,15 @@
-\documentclass[fontset=fandol]{ctexrep}
+\documentclass[withinsec]{mathexercise}
 
-\ctexset {
-chapter = {
-beforeskip = 0pt,
-fixskip = true,
-format = \Huge\bfseries,
-nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\chapternamebox,
-number = \arabic{chapter},
-aftername = \par\medskip,
-aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
-}
-}
-\newcommand\chapternamebox[1]{%
-\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
-\xeCJKsetup{CJKmath=true}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
-
-\usepackage[shortlabels]{enumitem}
-\setlist{nosep,left=\parindent}
+\textbook{常微分方程教程}
+\textbookauthor{丁同仁 李承治}
+\textbookversion{第二版}
+\title{常微分教程习题解答}
+\author{武思豫}
 
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
-\usepackage{bm}
-\usepackage{tasks}
-\settasks{after-item-skip=0.5ex plus 0.5ex minus 1ex}
-\NewTasksEnvironment[label={(\arabic*)}, item-indent=4em, label-offset=1em]{exer}[\item](2)
+
 \usepackage{siunitx}
 \usepackage{tocloft}
 \tocloftpagestyle{empty}
@@ -37,51 +17,15 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \patchcmd{\part}{plain}{empty}{}{}
 \patchcmd{\chapter}{plain}{empty}{}{}
 %\usepackage{showframe}%可以显示版面分布
-\usepackage{tikz}
-%\usepackage{draftwatermark}%设置水印
-%\SetWatermarkAngle{30}
-%\SetWatermarkScale{1.5}
-%\SetWatermarkText{\textcolor{red!60}{\textit{ODE Solutions}}}
-\usepackage{geometry}%设计版面格式
-\geometry{inner=2cm,outer=3cm,marginparsep=2mm,marginparwidth=2.7cm}
 
-\newcommand\diff{\,\mathrm{d}}
-\newcommand\sgn{\,\mathrm{sgn}}
-\newcommand\e{\mathrm{e}}
-\newcommand\ii{\mathrm{i}}
+
 \newcommand\bmitPhi{\bm{\varPhi}}
 \newcommand\bmitPsi{\bm{\varPsi}}
-\newcommand\T{\mathrm{T}}
 \newcommand\rmJ{\mathrm{J}}
 \renewcommand{\contentsname}{目录}
 
-\makeatletter
-\renewenvironment{proof}{\par
-	\pushQED{\qed}%
-	\normalfont \topsep1\p@\@plus6\p@\relax
-	\trivlist
-	\item\relax
-	{\hspace*{\parindent}{\heiti 证明}\@addpunct{:}}\hspace\labelsep\ignorespaces
-}{%
-	\popQED\endtrivlist\@endpefalse
-}
-\makeatother
-\makeatletter
-\newenvironment{solve}{\par
-	\pushQED{\qed}%
-	\normalfont \topsep1\p@\@plus6\p@\relax
-	\trivlist
-	\item\relax
-	{\hspace*{\parindent}{\heiti 解}\@addpunct{:}}\hspace\labelsep\ignorespaces
-}{%
-	\popQED\endtrivlist\@endpefalse
-}
-\makeatother
-\usepackage[colorlinks=true,linkcolor=blue,unicode=true]{hyperref}
 
 \begin{document}
-\title{常微分方程教程习题解}
-\author{SwitWu}
 \maketitle
 
 \tableofcontents
@@ -91,9 +35,9 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \setcounter{page}{1}
 \input{chapter01.tex}
 \input{chapter02.tex}
-\input{chapter03.tex}
-\input{chapter04.tex}
-\input{chapter05.tex}
-\input{chapter06.tex}
-\input{chapter07.tex}
+% \input{chapter03.tex}
+% \input{chapter04.tex}
+% \input{chapter05.tex}
+% \input{chapter06.tex}
+% \input{chapter07.tex}
 \end{document}

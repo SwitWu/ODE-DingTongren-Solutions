@@ -1,238 +1,299 @@
 \chapter{初等积分法}
+
+
+
 \section{恰当方程}
-判断下列方程是否为恰当方程; 并且对恰当方程求解.
-\begin{enumerate}[(1)]
-\item $(3x^2-1)\diff x+(2x+1)\diff y=0$.
-\item $(x+2y)\diff x+(2x-y)\diff y=0$.
-\item $(ax+by)\diff x+(bx+cy)\diff y=0$.
-\item $(ax-by)\diff x+(bx-cy)\diff y=0(b\neq0)$.
-\item $(t^2+1)\cos u\diff u+2t\sin u\diff t=0$.
-\item $(y\e^x+2\e^x+y^2)\diff x+(\e^x+2xy)\diff y=0$.
-\item $\displaystyle\left(\frac{y}{x}+x^2\right)\diff x+(\ln x-2y)\diff y=0$.
-\item $(ax^2+by^2)\diff x+cxy\diff y=0$.
-\item $\displaystyle\frac{2s-1}{t}\diff s+\frac{s-s^2}{t^2}\diff t=0$.
-\item $xf(x^2+y^2)\diff x+yf(x^2+y^2)\diff y=0$, 其中$f(\cdot)$是连续可微的.
-\end{enumerate}
+
+
+
+\begin{exercise}
+  判断下列方程是否为恰当方程; 并且对恰当方程求解.
+  \begin{enumerate}[(1)]
+  \item $(3x^2-1)\diff x+(2x+1)\diff y=0$.
+  \item $(x+2y)\diff x+(2x-y)\diff y=0$.
+  \item $(ax+by)\diff x+(bx+cy)\diff y=0$.
+  \item $(ax-by)\diff x+(bx-cy)\diff y=0(b\neq0)$.
+  \item $(t^2+1)\cos u\diff u+2t\sin u\diff t=0$.
+  \item $(y\e^x+2\e^x+y^2)\diff x+(\e^x+2xy)\diff y=0$.
+  \item $\displaystyle\left(\frac{y}{x}+x^2\right)\diff x+(\ln x-2y)\diff y=0$.
+  \item $(ax^2+by^2)\diff x+cxy\diff y=0$.
+  \item $\displaystyle\frac{2s-1}{t}\diff s+\frac{s-s^2}{t^2}\diff t=0$.
+  \item $xf(x^2+y^2)\diff x+yf(x^2+y^2)\diff y=0$, 其中$f(\cdot)$是连续可微的.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
 	\begin{enumerate}[(1)]
 		\item $\frac{\partial P}{\partial y}=0,\frac{\partial Q}{\partial x}=2$, 故不是恰当方程.
 		\item $\frac{\partial P}{\partial y}=2,\frac{\partial Q}{\partial x}=2$, 故是恰当方程, 因为
-			  \[(x+2y)\diff x+(2x-y)\diff y=\diff\left(\frac{1}{2}x^2+2xy-\frac{1}{2}y^2\right)\]
+			  \[(x+2y)\diff x+(2x-y)\diff y=\diff\left(\frac{1}{2}x^2+2xy-\frac{1}{2}y^2\right),\]
 			  所以通积分为
-			  \[\frac{1}{2}x^2+2xy-\frac{1}{2}y^2=C\]
+			  \[\frac{1}{2}x^2+2xy-\frac{1}{2}y^2=C.\]
 		\item $\frac{\partial P}{\partial y}=b=\frac{\partial Q}{\partial x}$, 故是恰当方程, 因为
-			  \[(ax+by)\diff x+(bx+cy)\diff y=\diff\left(\frac{1}{2}ax^2+bxy+\frac{1}{2}cy^2\right)\]
+			  \[(ax+by)\diff x+(bx+cy)\diff y=\diff\left(\frac{1}{2}ax^2+bxy+\frac{1}{2}cy^2\right),\]
 			  所以通积分为
-			  \[\frac{1}{2}ax^2+bxy+\frac{1}{2}cy^2=C\]
+			  \[\frac{1}{2}ax^2+bxy+\frac{1}{2}cy^2 = C.\]
 		\item $\frac{\partial P}{\partial y}=-b\neq\frac{\partial Q}{\partial x}=b$, 故不是恰当方程.
 		\item $\frac{\partial P}{\partial t}=2t\cos u=\frac{\partial Q}{\partial u}$, 故是恰当方程, 因为
-			  \[(t^2+1)\cos u\diff u+2t\sin u\diff t=\diff\left((t^2+1)\sin u\right)\]
+			  \[(t^2+1)\cos u\diff u+2t\sin u\diff t=\diff\left((t^2+1)\sin u\right),\]
 			  所以通积分为
-			  \[(t^2+1)\sin u=C\]
+			  \[(t^2+1)\sin u = C.\]
 		\item $\frac{\partial P}{\partial y}=\e^x+2y=\frac{\partial Q}{\partial x}$, 故是恰当方程, 因为
-			  \[(y\e^x+2\e^x+y^2)\diff x+(\e^x+2xy)\diff y=\diff(y\e^x+xy^2+2\e^x)\]
+			  \[(y\e^x+2\e^x+y^2)\diff x+(\e^x+2xy)\diff y=\diff(y\e^x+xy^2+2\e^x),\]
 			  所以通积分为
-			  \[y\e^x+xy^2+2\e^x=C\]
+			  \[y\e^x+xy^2+2\e^x = C.\]
 		\item $\frac{\partial P}{\partial y}=\frac{1}{x}=\frac{\partial Q}{\partial x}$, 故是恰当方程, 因为
-			  \[\left(\frac{y}{x}+x^2\right)\diff x+(\ln x-2y)\diff y=\diff\left(y\ln x+\frac{1}{3}x^3-y^2\right)\]
+			  \[\left(\frac{y}{x}+x^2\right)\diff x+(\ln x-2y)\diff y=\diff\left(y\ln x+\frac{1}{3}x^3-y^2\right),\]
 			  所以通积分为
-			  \[y\ln x+\frac{1}{3}x^3-y^2=C\]
-		\item $\frac{\partial P}{\partial y}=2by,\frac{\partial Q}{\partial x}=cy$, 因此当$2b=c$时方程为恰当方程, 此时
-			  \[(ax^2+by^2)\diff x+cxy\diff y=(ax^2+by^2)\diff x+2bxy\diff y=\diff\left(\frac{1}{3}ax^3+bxy^2\right)\]
-			  所以通积分为
-			  \[\frac{1}{3}ax^3+bxy^2=C\]
-			  当$2b\neq c$时方程不是恰当方程.
-		\item $\frac{\partial P}{\partial t}=\frac{1-2s}{t^2}=\frac{\partial Q}{\partial s}$, 故是恰当方程, 因为
-			  \[\frac{2s-1}{t}\diff s+\frac{s-s^2}{t^2}\diff t=\diff\left(\frac{s^2-s}{t}\right)\]
-			  所以通积分为
-			  \[\frac{s^2-s}{t}=C\]
-		\item $\frac{\partial P}{\partial y}=2xyf'(x^2+y^2)=\frac{\partial Q}{\partial x}$, 故是恰当方程, 且通积分为
-			  \[F(x^2+y^2)=C,\text{其中\ }F\text{\ 是\ }f\text{\ 的不定积分}.\]
+			  \[y\ln x+\frac{1}{3}x^3-y^2=C.\]
+		\item $\frac{\partial P}{\partial y}=2by,\frac{\partial Q}{\partial x}=cy$, 
+      因此当$2b=c$时方程为恰当方程, 此时
+      \[(ax^2+by^2)\diff x+cxy\diff y=(ax^2+by^2)\diff x+2bxy\diff y
+        = \diff\left(\frac{1}{3}ax^3+bxy^2\right),\]
+      所以通积分为
+      \[\frac{1}{3}ax^3+bxy^2 = C.\]
+      当 $2b\neq c$ 时, 方程不是恰当方程.
+		\item $\frac{\partial P}{\partial t}=\frac{1-2s}{t^2}=\frac{\partial Q}{\partial s}$, 
+      故是恰当方程, 因为
+      \[\frac{2s-1}{t}\diff s+\frac{s-s^2}{t^2}\diff t=\diff\left(\frac{s^2-s}{t}\right),\]
+      所以通积分为
+      \[\frac{s^2-s}{t}=C.\]
+		\item $\frac{\partial P}{\partial y}=2xyf'(x^2+y^2)=\frac{\partial Q}{\partial x}$, 
+      故是恰当方程, 且通积分为
+			\[F(x^2+y^2)=C,\text{其中\ }F\text{\ 是\ }f\text{\ 的不定积分}.\qedhere\]
 	\end{enumerate}
 \end{solve}
+
 
 
 \section{变量分离的方程}
 
 
-1.求解下列微分方程, 并指出这些方程在$Oxy$平面上有意义的区域:
-\begin{enumerate}[(1)]
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{x^2}{y}$;
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{x^2}{y(1+x^3)}$;
-\item $\displaystyle\frac{\diff y}{\diff x}+y^2\sin x=0$;
-\item $\displaystyle\frac{\diff y}{\diff x}=1+x+y^2+xy^2$;
-\item $\displaystyle\frac{\diff y}{\diff x}=(\cos x\cos 2y)^2$;
-\item $\displaystyle x\frac{\diff y}{\diff x}=\sqrt{1-y^2}$;
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{x-\e^x}{y+\e^y}$.
-\end{enumerate}
 
-\begin{solve}(1)$y^2=\frac{2}{3}x^3+C,y\neq0$;
-
-(2)$y^2=\frac{2}{3}\ln|1+x^3|+C,y\neq0,x\neq-1$;
-
-(3)$\frac{1}{y}+\cos x=C$, 特解: $y=0$;
-
-(4)$y=\tan(x+\frac{1}{2}x^2+C)$;
-
-(5)当$\cos 2y\neq0$时, 原方程等价于$\frac{\diff y}{\cos^22y}=\sec^22y\diff y=\cos^2x\diff x$, 
-积分得$2x+\sin2x-2\tan2y=C$,当$\cos2y=0$时, 有特解$y=\frac{\pi}{4}+\frac{k\pi}{2}(k\in\mathbb{Z})$;
-
-(6)$\arcsin y=\ln|x|+C$, 特解:$y=\pm1$;
-
-(7)$y^2-x^2+2(\e^y-\e^{-x})=C(y+\e^y\neq0)$.
-\end{solve}
-
-
-2.求解下列微分方程的初值问题:
-\begin{enumerate}[(1)]
-\item $\displaystyle\sin 2x\diff x+\cos 3y\diff y=0,y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$;
-\item $\displaystyle x\diff x+y\e^{-x}\diff y=0,y(0)=1$;
-\item $\displaystyle\frac{\diff r}{\diff\theta}=r,r(0)=2$;
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{\ln|x|}{1+y^2},y(1)=0$;
-\item $\displaystyle\sqrt{1+x^2}\frac{\diff y}{\diff x}=xy^3,y(0)=1$.
-\end{enumerate}
+\begin{exercise}
+  求解下列微分方程, 并指出这些方程在$Oxy$平面上有意义的区域:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{x^2}{y}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{x^2}{y(1+x^3)}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}+y^2\sin x=0$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=1+x+y^2+xy^2$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=(\cos x\cos 2y)^2$;
+  \item $\displaystyle x\frac{\diff y}{\diff x}=\sqrt{1-y^2}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{x-\e^x}{y+\e^y}$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)积分得$-\frac{1}{2}\cos2x+\frac{1}{3}\sin3y+C=0$, 由$y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$得$C=-\frac{1}{2}$,
-因此原方程的解为$2\sin3y-3\cos2x-3=0$.
+  (1) $y^2=\frac{2}{3}x^3+C,y\neq 0$;
 
-(2)原方程等价于$x\e^x\diff x+y\diff y=0$, 积分得$(x-1)\e^x+\frac{1}{2}y^2+C=0$, 
-代入初值条件$y(0)=1$得$C=\frac{1}{2}$, 因此原方程的解为$2(x-1)\e^x+y^2+1=0$.
+  (2) $y^2=\frac{2}{3}\ln|1+x^3|+C,y\neq0,x\neq-1$;
 
-(3)由初值条件知$r\neq0$, 故$\frac{\diff r}{r}=\diff\theta$,积分得$r=C\e^{\theta}(C\neq0)$,
-代入初值条件得$C=2$,因此原方程的解为$r=2\e^{\theta}$.
+  (3) $\frac{1}{y}+\cos x=C$, 特解: $y=0$;
 
-(4)$(1+y^2)\diff y=\ln|x|\diff x$, 积分得$y+\frac{1}{3}y^3=x(\ln|x|-1)+C$, 代入初值条件得$C=1$, 
-因此原方程的解为$y+\frac{1}{3}y^3=x(\ln|x|-1)+1$.
+  (4) $y=\tan(x+\frac{1}{2}x^2+C)$;
 
-(5)由初值条件知$y\neq0$,故原方程等价于$\frac{\diff y}{y^3}=\frac{x}{\sqrt{1+x^2}}\diff x$, 
-积分得$-\frac{1}{2}y^{-2}=\sqrt{1+x^2}+C$, 代入初值条件得$C=-\frac{3}{2}$, 因此原方程的解为$2\sqrt{1+x^2}+y^{-2}-3=0$.
+  (5) 当 $\cos 2y\neq 0$ 时, 原方程等价于 $\frac{\diff y}{\cos^2 2y}=\sec^2 2y\diff y=\cos^2x\diff x$, 
+  积分得 $2x+\sin2x-2\tan2y=C$, 当 $\cos2y=0$时, 有特解 $y=\frac{\pi}{4}+\frac{k\pi}{2}(k\in\mathbb{Z})$;
+
+  (6) $\arcsin y=\ln|x|+C$, 特解: $y=\pm 1$;
+
+  (7) $y^2-x^2+2(\e^y-\e^{-x})=C$ $(y+\e^y\neq 0)$.
 \end{solve}
 
 
-3.求解下列微分方程,并作出相应积分曲线族的简图:
-\begin{enumerate}[(1)]
-\item $\displaystyle\frac{\diff y}{\diff x}=\cos x$;
-\item $\displaystyle\frac{\diff y}{\diff x}=ay(a\neq0\mbox{为常数})$;
-\item $\displaystyle\frac{\diff y}{\diff x}=1-y^2$;
-\item $\displaystyle\frac{\diff y}{\diff x}=y^n(n=\frac{1}{3},1,2)$.
-\end{enumerate}
 
-\begin{solve}(1)$y=\sin x+C$,积分曲线族如图~\ref{fig2.1}.
-\begin{figure}[htb]
-\centering
-\begin{tikzpicture}[domain=-3.5:3.5]
-\draw[->,thick] (-4,0)--(4,0)node[anchor=west]{$x$};
-\draw[->,thick] (0,-2.1)--(0,2.1)node[anchor=south]{$y$};
-\draw (0,0)node[anchor=north west]{$O$};
-\draw[color=red,smooth] plot(\x,{sin(\x r)});
-\draw[color=blue,smooth]plot(\x,{sin(\x r)-1});
-\draw[color=magenta,smooth]plot(\x,{sin(\x r)+1});
-\end{tikzpicture}
-\caption{$y=\sin x+C$}
-\label{fig2.1}
-\end{figure}
+\begin{exercise}
+  求解下列微分方程的初值问题:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle\sin 2x\diff x+\cos 3y\diff y=0,y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$;
+  \item $\displaystyle x\diff x+y\e^{-x}\diff y=0,y(0)=1$;
+  \item $\displaystyle\frac{\diff r}{\diff\theta}=r,r(0)=2$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{\ln|x|}{1+y^2},y(1)=0$;
+  \item $\displaystyle\sqrt{1+x^2}\frac{\diff y}{\diff x}=xy^3,y(0)=1$.
+  \end{enumerate}
+\end{exercise}
 
-(2)$y=0$为特解, 当$y\neq0$时, 积分得$y=C\e^{ax}(C\neq0)$, 积分曲线族如图~\ref{fig2.2}(以$a>0$为例).
-\begin{figure}
-\centering
-\begin{tikzpicture}[domain=-2:1]
-\draw[->,thick] (-2.1,0)--(1.1,0)node[anchor=west]{$x$};
-\draw[->,thick] (0,-0.2)--(0,5.5)node[anchor=south]{$y$};
-\draw (0,0)node[anchor=north west]{$O$};
-\draw[color=red,smooth]plot(\x,{0.5*exp(\x)});
-\draw[color=blue,smooth]plot(\x,{exp(\x)});
-\draw[color=magenta,smooth]plot(\x,{2*exp(\x)});
-\end{tikzpicture}
-\caption{$y=C\e^{ax}$}
-\label{fig2.2}
-\end{figure}
-
-(3)$y=\pm1$为特解, 当$y\neq\pm1$时, $\frac{\diff y}{1-y^2}=\diff x$, 积分得$y=\frac{C\e^{2x}-1}{C\e^{2x}+1}(C\neq0)$, 当$C>0$时, 函数图像位于直线$y=1$和$y=-1$之间且单调递增; 当$C<0$时, 存在间断点$x_0=\frac{1}{2}\ln\left(-\frac{1}{C}\right)$, $y=y(x)$在$(-\infty,x_0)$上单调递减且当$x\to x_0-$时$y\to-\infty$, 在$(x_0,\infty)$上单调递减且当$x\to x_0+$时$y\to+\infty$, 积分曲线族如图~\ref{fig2.3}.
-\begin{figure}
-	\centering
-	\begin{tikzpicture}[domain=-3.5:3.5]
-		\draw[->,thick] (-4,0)--(4,0)node[anchor=west]{$x$};
-		\draw[->,thick] (0,-5)--(0,6)node[anchor=south]{$y$};
-		\draw(0,0)node[anchor=south east]{$O$};
-		\draw[color=yellow,smooth]plot(\x,1);
-		\draw[color=yellow,smooth]plot(\x,-1);
-		\draw(-2,1)node[anchor=south]{$y=1$};
-		\draw(2,-1)node[anchor=south]{$y=-1$};
-		\draw[dashed](0.3466,-5)--(0.3466,6);
-		\draw(0.3466,-2)node[anchor=west]{$x=\frac{1}{2}\ln\left(-\frac{1}{C}\right)(C<0)$};
-		\draw[color=red,smooth]plot(\x,{(exp(2*\x)-1)/(exp(2*\x)+1)});
-		\draw[color=red,smooth]plot(\x,{(2*exp(2*\x)-1)/(2*exp(2*\x)+1)});
-		\draw[color=red,smooth]plot(\x,{(0.5*exp(2*\x)-1)/(0.5*exp(2*\x)+1)});
-		\draw[color=red,smooth]plot(\x,{(exp(2*\x)-1)/(exp(2*\x)+1)});
-		\draw[color=blue,smooth,domain=-3.5:0.15]plot(\x,{(-0.5*exp(2*\x)-1)/(-0.5*exp(2*\x)+1)});
-		\draw[color=blue,smooth,domain=0.55:3.5]plot(\x,{(-0.5*exp(2*\x)-1)/(-0.5*exp(2*\x)+1)});
-	\end{tikzpicture}
-\caption{$y=\pm 1$和$y=\frac{C\e^{2x}-1}{C\e^{2x}+1}$}
-\label{fig2.3}
-\end{figure}
-
-(4)下述三种情形积分曲线族都易作出(略去).
-\begin{enumerate}[(i)]
-\item $n=\frac{1}{3}$时, 通解为$\frac{3}{2}y^{\frac{2}{3}}=x+C(x\geq-C)$, 特解为$y=0$
-\item $n=1$时, 通解为$y=C\e^x(C\in\mathbb{R})$
-\item $n=2$时, 通解为$y=\frac{1}{-x+C}(C\in\mathbb{R})$, 特解为$y=0$.
-\end{enumerate}
-\end{solve}
-
-
-4.跟踪: 设某$A$从$Oxy$平面上的原点出发, 沿$x$轴正方向前进; 同时某$B$从点$(0,b)$开始跟踪$A$, 
-即$B$的运动方向永远指向$A$并与$A$保持等距$b$. 试求$B$的光滑运动轨迹.
-
-\begin{solve}设$B$的运动轨迹方程为$y=y(x)$, 记某时刻$B$的位置为$(x,y(x))$, 
-则此时$A$相应的位置为$\left(x-\frac{y(x)}{y'(x)},0\right)$, 由于$A$与$B$保持等距, 故
-\[\left(\frac{y}{y'}\right)^2+y^2=b^2\Rightarrow\diff x=-\frac{\sqrt{b^2-y^2}}{y}\diff y\]
-积分得
-\[\begin{split}
-x&=-\int\frac{\sqrt{b^2-y^2}}{y}\diff y(y=b\cos\theta)\\
-&=-\int\frac{b\sin\theta}{b\cos\theta}(-b\sin\theta)\diff\theta\\
-&=b\int(\sec\theta-\cos\theta)\diff\theta\\
-&=b\ln|\sec\theta+\tan\theta|-b\sin\theta+C\\
-&=b\ln\frac{b+\sqrt{b^2-y^2}}{y}-\sqrt{b^2-y^2}+C
-\end{split}\]
-由初值条件$y(0)=b$得$C=0$,故$B$的光滑运动轨迹方程为$x=b\ln\frac{b+\sqrt{b^2-y^2}}{y}-\sqrt{b^2-y^2}$.
-\end{solve}
-
-
-5.设微分方程
-\[\frac{\diff y}{\diff x}=f(y)\]
-其中$f(y)$在$y=a$的某邻域(例如区间$|y-a|\leq\varepsilon$)内连续, 而且$f(y)=0$当且仅当$y=a$. 
-证明: 在直线$y=a$上的每一点, 上述方程的解是局部唯一的, 当且仅当瑕积分
-\[\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|=\infty(\mbox{发散}).\]
-\begin{solve}($\Leftarrow$)显然, $y=a$是方程的一个解, 用反证法, 设$y=y(x)$是方程的另一个解, 
-它与直线$y=a$相交. 不妨设$(x_0,a)$是它们的一个交点, 且存在区间$I=(x_0,x_0+\delta)$或$I=(x_0-\delta,x_0)$, 
-使得当$x\in I$时,$y(x)\neq a$, 从而
-\[\frac{\diff y(x)}{f(y(x))}=\diff x,x\in I\]
-积分得
-\[\int_a^y\frac{\diff y}{f(y)}=\int_{x_0}^x\frac{\diff y(x)}{f(y(x))}=\int_{x_0}^x\diff x=x-x_0<\infty\]
-矛盾.
-
-$(\Rightarrow)$用反证法,设$\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|<+\infty$,则由
-\[\int_a^y\frac{\diff y}{f(y)}=x-x_0\]
-定义的函数是方程的解,且通过点$(x_0,a)$,而$y=a$也是过点$(x_0,a)$的解,矛盾.
-\end{solve}
-
-
-6.利用上题结果,作出下列微分方程积分曲线族的草图:
-\[(1)\frac{\diff y}{\diff x}=\sqrt{|y|};(2)\frac{\diff y}{\diff x}=\begin{cases}y\ln|y|,&y\neq0\\0,&y=0\end{cases}\]
 \begin{solve}
-(1)因为$\int_0^{\pm\varepsilon}\frac{\diff y}{\sqrt{|y|}}$收敛,故解不是局部唯一的,微分方程的通解为
-\[y=\begin{cases}\frac{1}{4}(x+C)^2&x\geq-C\\-\frac{1}{4}(x+C)^2&x\leq-C\end{cases}\]
-另外特解为$y=0$,积分曲线族容易作出.
+  (1) 积分得 $-\frac{1}{2}\cos2x+\frac{1}{3}\sin3y+C=0$, 
+  由 $y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$ 得 $C=-\frac{1}{2}$,
+  因此原方程的解为 $2\sin3y-3\cos2x-3=0$.
 
-(2)因为$\int_0^{\pm\varepsilon}\frac{\diff y}{y\ln|y|}$发散,所以解是局部唯一的,微分方程的通解为
-\[y=\pm\e^{C\e^x}(C\in\mathbb{R})\]
-另外特解为$y=0$,积分曲线族容易作出.
+  (2) 原方程等价于 $x\e^x\diff x+y\diff y=0$, 积分得 $(x-1)\e^x+\frac{1}{2}y^2+C=0$, 
+  代入初值条件 $y(0)=1$ 得 $C=\frac{1}{2}$, 因此原方程的解为 $2(x-1)\e^x+y^2+1=0$.
+
+  (3) 由初值条件知 $r\neq0$, 故 $\frac{\diff r}{r}=\diff\theta$, 积分得 $r=C\e^{\theta}$ $(C\neq 0)$,
+  代入初值条件得 $C=2$, 因此原方程的解为 $r=2\e^{\theta}$.
+
+  (4) $(1+y^2)\diff y=\ln|x|\diff x$, 积分得 $y+\frac{1}{3}y^3=x(\ln|x|-1)+C$, 
+  代入初值条件得$C=1$, 因此原方程的解为 $y+\frac{1}{3}y^3=x(\ln|x|-1)+1$.
+
+  (5) 由初值条件知 $y\neq0$, 故原方程等价于 $\frac{\diff y}{y^3}=\frac{x}{\sqrt{1+x^2}}\diff x$, 
+  积分得 $-\frac{1}{2}y^{-2}=\sqrt{1+x^2}+C$, 代入初值条件得$C=-\frac{3}{2}$, 
+  因此原方程的解为 $2\sqrt{1+x^2}+y^{-2}-3=0$.
 \end{solve}
+
+
+
+\begin{exercise}
+  求解下列微分方程, 并作出相应积分曲线族的简图:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle\frac{\diff y}{\diff x}=\cos x$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=ay$ $(a\neq 0\text{\ 为常数})$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=1-y^2$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=y^n$ $(n=\frac{1}{3},1,2)$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{solve}
+  (1) $y=\sin x+C$, 积分曲线族如图~\ref{fig2.1}.
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[domain=-3.5:3.5]
+    \draw[->,thick] (-4,0)--(4,0)node[anchor=west]{$x$};
+    \draw[->,thick] (0,-2.1)--(0,2.1)node[anchor=south]{$y$};
+    \draw (0,0)node[anchor=north west]{$O$};
+    \draw[color=red,smooth] plot(\x,{sin(\x r)});
+    \draw[color=blue,smooth]plot(\x,{sin(\x r)-1});
+    \draw[color=magenta,smooth]plot(\x,{sin(\x r)+1});
+    \end{tikzpicture}
+    \caption{$y=\sin x+C$}
+    \label{fig2.1}
+  \end{figure}
+
+  (2) $y=0$为特解, 当 $y\neq 0$ 时, 积分得$y=C\e^{ax}$ $(C\neq 0)$, 
+  积分曲线族如图~\ref{fig2.2} (以 $a>0$ 为例).
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[domain=-2:1]
+    \draw[->,thick] (-2.1,0)--(1.1,0)node[anchor=west]{$x$};
+    \draw[->,thick] (0,-0.2)--(0,5.5)node[anchor=south]{$y$};
+    \draw (0,0)node[anchor=north west]{$O$};
+    \draw[color=red,smooth]plot(\x,{0.5*exp(\x)});
+    \draw[color=blue,smooth]plot(\x,{exp(\x)});
+    \draw[color=magenta,smooth]plot(\x,{2*exp(\x)});
+    \end{tikzpicture}
+    \caption{$y=C\e^{ax}$}
+    \label{fig2.2}
+  \end{figure}
+
+  (3) $y=\pm1$为特解, 当 $y\neq\pm 1$ 时, $\frac{\diff y}{1-y^2}=\diff x$, 
+  积分得 $y=\frac{C\e^{2x}-1}{C\e^{2x}+1}(C\neq0)$, 
+  当$C>0$时, 函数图像位于直线 $y=1$ 和 $y=-1$ 之间且单调递增; 
+  当$C<0$时, 存在间断点 $x_0=\frac{1}{2}\ln\left(-\frac{1}{C}\right)$, 
+  $y=y(x)$ 在 $(-\infty,x_0)$ 上单调递减且当 $x\to x_0-$ 时 $y\to-\infty$, 
+  在 $(x_0,\infty)$ 上单调递减且当 $x\to x_0+$ 时 $y\to+\infty$, 积分曲线族如图~\ref{fig2.3}.
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[domain=-3.5:3.5]
+      \draw[->,thick] (-4,0)--(4,0)node[anchor=west]{$x$};
+      \draw[->,thick] (0,-5)--(0,6)node[anchor=south]{$y$};
+      \draw(0,0)node[anchor=south east]{$O$};
+      \draw[color=yellow,smooth]plot(\x,1);
+      \draw[color=yellow,smooth]plot(\x,-1);
+      \draw(-2,1)node[anchor=south]{$y=1$};
+      \draw(2,-1)node[anchor=south]{$y=-1$};
+      \draw[dashed](0.3466,-5)--(0.3466,6);
+      \draw(0.3466,-2)node[anchor=west]{$x=\frac{1}{2}\ln\left(-\frac{1}{C}\right)(C<0)$};
+      \draw[color=red,smooth]plot(\x,{(exp(2*\x)-1)/(exp(2*\x)+1)});
+      \draw[color=red,smooth]plot(\x,{(2*exp(2*\x)-1)/(2*exp(2*\x)+1)});
+      \draw[color=red,smooth]plot(\x,{(0.5*exp(2*\x)-1)/(0.5*exp(2*\x)+1)});
+      \draw[color=red,smooth]plot(\x,{(exp(2*\x)-1)/(exp(2*\x)+1)});
+      \draw[color=blue,smooth,domain=-3.5:0.15]plot(\x,{(-0.5*exp(2*\x)-1)/(-0.5*exp(2*\x)+1)});
+      \draw[color=blue,smooth,domain=0.55:3.5]plot(\x,{(-0.5*exp(2*\x)-1)/(-0.5*exp(2*\x)+1)});
+    \end{tikzpicture}
+  \caption{$y=\pm 1$和$y=\frac{C\e^{2x}-1}{C\e^{2x}+1}$}
+  \label{fig2.3}
+  \end{figure}
+
+  (4) 下述三种情形积分曲线族都易作出(略去).
+  \begin{enumerate}[(i)]
+  \item $n=\frac{1}{3}$ 时, 通解为 $\frac{3}{2}y^{\frac{2}{3}}=x+C$ $(x\geq-C)$, 特解为 $y=0$;
+  \item $n=1$时, 通解为 $y=C\e^x$ $(C\in\mathbb{R})$;
+  \item $n=2$时, 通解为 $y=\frac{1}{-x+C}$ $(C\in\mathbb{R})$, 特解为$y=0$.
+  \end{enumerate}
+\end{solve}
+
+
+
+\begin{exercise}
+  跟踪: 设某 $A$ 从 $Oxy$ 平面上的原点出发, 沿 $x$ 轴正方向前进; 同时某 $B$ 从点 $(0,b)$ 开始跟踪 $A$, 
+  即 $B$ 的运动方向永远指向 $A$ 并与 $A$ 保持等距 $b$. 试求 $B$ 的光滑运动轨迹.
+\end{exercise}
+
+\begin{solve}
+  设 $B$ 的运动轨迹方程为 $y=y(x)$, 记某时刻 $B$ 的位置为 $(x,y(x))$, 
+  则此时 $A$ 相应的位置为 $\left(x-\frac{y(x)}{y'(x)},0\right)$, 由于 $A$ 与 $B$ 保持等距, 故
+  \[\left(\frac{y}{y'}\right)^2+y^2=b^2\Rightarrow\diff x=-\frac{\sqrt{b^2-y^2}}{y}\diff y.\]
+  积分得
+  \[\begin{split}
+  x
+  & = -\int\frac{\sqrt{b^2-y^2}}{y}\diff y(y=b\cos\theta) \\
+  & = -\int\frac{b\sin\theta}{b\cos\theta}(-b\sin\theta)\diff\theta \\
+  & = b\int(\sec\theta-\cos\theta)\diff\theta \\
+  & = b\ln|\sec\theta+\tan\theta|-b\sin\theta+C \\
+  & = b\ln\frac{b+\sqrt{b^2-y^2}}{y}-\sqrt{b^2-y^2}+C.
+  \end{split}\]
+  由初值条件 $y(0)=b$ 得 $C=0$, 故 $B$ 的光滑运动轨迹方程为
+  $x=b\ln\frac{b+\sqrt{b^2-y^2}}{y}-\sqrt{b^2-y^2}$.
+\end{solve}
+
+
+
+\begin{exercise}
+  设微分方程
+  \[\frac{\diff y}{\diff x}=f(y),\]
+  其中 $f(y)$ 在 $y=a$ 的某邻域 (例如区间 $|y-a|\leq\varepsilon$) 内连续, 而且$f(y)=0$当且仅当$y=a$. 
+  证明: 在直线$y=a$上的每一点, 上述方程的解是局部唯一的, 当且仅当瑕积分
+  \[\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|=\infty(\mbox{发散}).\]
+\end{exercise}
+
+\begin{solve}
+  ($\Leftarrow$) 显然, $y=a$ 是方程的一个解, 用反证法, 设 $y=y(x)$ 是方程的另一个解, 
+  它与直线 $y=a$ 相交. 不妨设 $(x_0,a)$ 是它们的一个交点, 
+  且存在区间 $I=(x_0,x_0+\delta)$ 或 $I=(x_0-\delta,x_0)$, 
+  使得当 $x\in I$ 时, $y(x)\neq a$, 从而
+  \[\frac{\diff y(x)}{f(y(x))}=\diff x,x\in I.\]
+  积分得
+  \[\int_a^y\frac{\diff y}{f(y)}=\int_{x_0}^x\frac{\diff y(x)}{f(y(x))}
+    = \int_{x_0}^x\diff x = x-x_0<\infty.\]
+  矛盾.
+
+  $(\Rightarrow)$ 用反证法, 设 $\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|<+\infty$,
+  则由
+  \[\int_a^y\frac{\diff y}{f(y)}=x-x_0\]
+  定义的函数是方程的解, 且通过点 $(x_0,a)$, 而 $y=a$ 也是过点 $(x_0,a)$ 的解, 矛盾.
+\end{solve}
+
+
+
+\begin{exercise}
+  利用上题结果,作出下列微分方程积分曲线族的草图:
+  \[(1)\frac{\diff y}{\diff x}=\sqrt{|y|};\quad
+  (2)\frac{\diff y}{\diff x}=
+  \begin{cases}
+    y\ln|y|, & y\neq 0, \\
+    0,       & y=0.
+  \end{cases}\]
+\end{exercise}
+
+\begin{solve}
+(1) 因为 $\int_0^{\pm\varepsilon}\frac{\diff y}{\sqrt{|y|}}$ 收敛, 故解不是局部唯一的, 微分方程的通解为
+\[y=
+  \begin{cases}
+    \frac{1}{4}(x+C)^2,  & x\geq -C, \\
+    -\frac{1}{4}(x+C)^2, & x\leq -C.
+  \end{cases}\]
+另外特解为 $y=0$, 积分曲线族容易作出.
+
+(2) 因为 $\int_0^{\pm\varepsilon}\frac{\diff y}{y\ln|y|}$ 发散, 所以解是局部唯一的, 微分方程的通解为
+\[y=\pm\e^{C\e^x}\quad(C\in\mathbb{R}).\]
+另外特解为 $y=0$, 积分曲线族容易作出.
+\end{solve}
+
 
 
 \section{一阶线性方程}
+
 
 
 \[通解公式:\frac{\diff y}{\diff x}+p(x)y=q(x)\Longrightarrow y=\e^{-\int p(x)\diff x}\left(C+\int q(x)\e^{\int p(x)\diff x}\diff x\right)\]

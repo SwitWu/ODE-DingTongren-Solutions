@@ -168,42 +168,54 @@
 \end{solve}
 
 
+
 \section{勒让德多项式}
+
 
 
 \subsection{证明与总结}
 
 
-求证: $\mathrm{P}_n(1)=1,\mathrm{P}_n(-1)=(-1)^n$.
+求证: $\mathrm{P}_n(1)=1$, $\mathrm{P}_n(-1)=(-1)^n$.
 
 \begin{proof}
 利用积函数求导的Leibniz公式得
-\[\begin{split}
-\mathrm{P}_n(x)&=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}(x^2-1)^n\\
-&=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}\left((x+1)^n(x-1)^n\right)\\
-&=\frac{1}{2^nn!}\sum_{k=0}^nC_n^k\left(\frac{\diff^k}{\diff x^k}(x+1)^n\right)\left(\frac{\diff^{n-k}}{\diff x^{n-k}}(x-1)^n\right)\\
-&=\frac{1}{2^nn!}\sum_{k=0}^nC_n^k\left(\frac{n!}{(n-k)!}(x+1)^{n-k}\right)\left(\frac{n!}{k!}(x-1)^k\right)\\
-&=\frac{1}{2^n}\sum_{k=0}^n\left(C_n^k\right)^2(x+1)^{n-k}(x-1)^k
-\end{split}\]
-故$\mathrm{P}_n(1)=1,\mathrm{P}_n(-1)=(-1)^n$.
+  \begin{align*}
+  \mathrm{P}_n(x)&=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}(x^2-1)^n\\
+  &=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}\left((x+1)^n(x-1)^n\right)\\
+  &=\frac{1}{2^nn!}\sum_{k=0}^nC_n^k\left(\frac{\diff^k}{\diff x^k}(x+1)^n\right)\left(\frac{\diff^{n-k}}{\diff x^{n-k}}(x-1)^n\right)\\
+  &=\frac{1}{2^nn!}\sum_{k=0}^nC_n^k\left(\frac{n!}{(n-k)!}(x+1)^{n-k}\right)\left(\frac{n!}{k!}(x-1)^k\right)\\
+  &=\frac{1}{2^n}\sum_{k=0}^n\left(C_n^k\right)^2(x+1)^{n-k}(x-1)^k.
+  \end{align*}
+  故 $\mathrm{P}_n(1)=1$, $\mathrm{P}_n(-1)=(-1)^n$.
 \end{proof}
 
-注: 结合本题结论, 我们已经得到Legendre多项式的三种表达形式:\raggedbottom
-\[{\color{bostonuniversityred}\mathrm{P}_n(x)=\frac{1}{2^n}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k(2n-2k)!}{k!(n-k)!(n-2k)!}x^{n-2k}=\frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}(x^2-1)^n=\frac{1}{2^n}\sum_{k=0}^n\left(C_n^k\right)^2(x+1)^{n-k}(x-1)^k}\]
+注: 结合本题结论, 我们已经得到 Legendre 多项式的三种表达形式:\raggedbottom
+\begin{align*}
+  \mathrm{P}_n(x) 
+  & = \frac{1}{2^n}\sum_{k=0}^{[\frac{n}{2}]}\frac{(-1)^k(2n-2k)!}{k!(n-k)!(n-2k)!}x^{n-2k} \\
+  & = \frac{1}{2^nn!}\frac{\diff^n}{\diff x^n}(x^2-1)^n \\
+  & = \frac{1}{2^n}\sum_{k=0}^n\left(C_n^k\right)^2(x+1)^{n-k}(x-1)^k.
+\end{align*}
 
 
 \subsection{习题}
 
 
-*1.令函数\[G(x,t)=(1-2xt+t^2)^{-1/2}\]
-则$G(x,t)$关于$t$展开的幂级数为
+*1.令函数
+\[G(x,t)=(1-2xt+t^2)^{-1/2}.\]
+则 $G(x,t)$ 关于 $t$ 展开的幂级数为
 \[G(x,t)=\sum_{n=0}^{\infty}\mathrm{P}_n(x)t^n,\]
-其中$\mathrm{P}_n(x)$是勒让德多项式(函数$G(x,t)$称为勒让德多项式的母函数Generating Function).
+其中 $\mathrm{P}_n(x)$ 是勒让德多项式 (函数 $G(x,t)$ 称为勒让德多项式的 Generating Function).
 
 \begin{proof} 
 首先容易证明一个双重求和关系式
-\[\sum_{n=0}^{\infty}\sum_{k=0}^nA(n,k)t^{n+k}=\sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}A(n-k,k)t^n\cdots(*)\]
-令$u(x,t)=2xt-t^2$, 则由幂级数公式$(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\frac{(-1)^n(2n-1)!!}{(2n)!!}x^n$知
+\begin{equation}
+  \sum_{n=0}^{\infty}\sum_{k=0}^nA(n,k)t^{n+k}
+  = \sum_{n=0}^{\infty}\sum_{k=0}^{[\frac{n}{2}]}A(n-k,k)t^n. \tag{$\star$}
+\end{equation}
+令 $u(x,t)=2xt-t^2$, 则由幂级数公式 
+$(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\frac{(-1)^n(2n-1)!!}{(2n)!!}x^n$知
 \[\begin{split}
 G(x,t)&=(1-u)^{-\frac{1}{2}}\\
 &=\sum_{n=0}^{\infty}\frac{(2n-1)!!}{(2n)!!}u^n\\
