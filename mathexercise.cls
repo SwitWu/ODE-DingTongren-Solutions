@@ -22,6 +22,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+\RequirePackage{fixdif}
 \RequirePackage{bm}
 \RequirePackage{extarrows}
 \RequirePackage{xcolor}
@@ -120,7 +121,7 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 	\normalfont\topsep1\p@\@plus6\p@\relax
 	\trivlist
 	\item\relax
-	{\hspace*{\parindent}{\heiti 解}\@addpunct{:}}\hspace\labelsep\ignorespaces
+	{\hspace*{\parindent}{\textbf{解}}\@addpunct{:}}\hspace\labelsep\ignorespaces
 }{%
 	\popQED\endtrivlist\@endpefalse
 }
@@ -142,7 +143,7 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \theoremstyle{mytheorem}\newtheorem*{corollary}{推论}
 
 % 定制列表
-\setlist{nosep,left=\parindent}
+\setlist{left=\parindent}
 
 
 \newcounter{exercounter}
