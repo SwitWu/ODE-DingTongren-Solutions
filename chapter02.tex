@@ -24,25 +24,25 @@
 
 \begin{solve}
 	\begin{enumerate}[(1)]
-		\item $\frac{\partial P}{\partial y}=0,\frac{\partial Q}{\partial x}=2$, 故不是恰当方程.
-		\item $\frac{\partial P}{\partial y}=2,\frac{\partial Q}{\partial x}=2$, 故是恰当方程, 因为
+		\item $\frac{\partial P}{\partial y}=0,\frac{\partial Q}{\partial x}=2$, 不是恰当方程.
+		\item $\frac{\partial P}{\partial y}=2,\frac{\partial Q}{\partial x}=2$, 是恰当方程, 因为
 			  \[(x+2y)\diff x+(2x-y)\diff y=\diff\left(\frac{1}{2}x^2+2xy-\frac{1}{2}y^2\right),\]
 			  所以通积分为
 			  \[\frac{1}{2}x^2+2xy-\frac{1}{2}y^2=C.\]
-		\item $\frac{\partial P}{\partial y}=b=\frac{\partial Q}{\partial x}$, 故是恰当方程, 因为
+		\item $\frac{\partial P}{\partial y}=b=\frac{\partial Q}{\partial x}$, 是恰当方程, 因为
 			  \[(ax+by)\diff x+(bx+cy)\diff y=\diff\left(\frac{1}{2}ax^2+bxy+\frac{1}{2}cy^2\right),\]
 			  所以通积分为
 			  \[\frac{1}{2}ax^2+bxy+\frac{1}{2}cy^2 = C.\]
-		\item $\frac{\partial P}{\partial y}=-b\neq\frac{\partial Q}{\partial x}=b$, 故不是恰当方程.
+		\item $\frac{\partial P}{\partial y}=-b\neq\frac{\partial Q}{\partial x}=b$, 不是恰当方程.
 		\item $\frac{\partial P}{\partial t}=2t\cos u=\frac{\partial Q}{\partial u}$, 故是恰当方程, 因为
 			  \[(t^2+1)\cos u\diff u+2t\sin u\diff t=\diff\left((t^2+1)\sin u\right),\]
 			  所以通积分为
 			  \[(t^2+1)\sin u = C.\]
-		\item $\frac{\partial P}{\partial y}=\e^x+2y=\frac{\partial Q}{\partial x}$, 故是恰当方程, 因为
+		\item $\frac{\partial P}{\partial y}=\e^x+2y=\frac{\partial Q}{\partial x}$, 是恰当方程, 因为
 			  \[(y\e^x+2\e^x+y^2)\diff x+(\e^x+2xy)\diff y=\diff(y\e^x+xy^2+2\e^x),\]
 			  所以通积分为
 			  \[y\e^x+xy^2+2\e^x = C.\]
-		\item $\frac{\partial P}{\partial y}=\frac{1}{x}=\frac{\partial Q}{\partial x}$, 故是恰当方程, 因为
+		\item $\frac{\partial P}{\partial y}=\frac{1}{x}=\frac{\partial Q}{\partial x}$, 是恰当方程, 因为
 			  \[\left(\frac{y}{x}+x^2\right)\diff x+(\ln x-2y)\diff y=\diff\left(y\ln x+\frac{1}{3}x^3-y^2\right),\]
 			  所以通积分为
 			  \[y\ln x+\frac{1}{3}x^3-y^2=C.\]
@@ -54,12 +54,12 @@
       \[\frac{1}{3}ax^3+bxy^2 = C.\]
       当 $2b\neq c$ 时, 方程不是恰当方程.
 		\item $\frac{\partial P}{\partial t}=\frac{1-2s}{t^2}=\frac{\partial Q}{\partial s}$, 
-      故是恰当方程, 因为
+      是恰当方程, 因为
       \[\frac{2s-1}{t}\diff s+\frac{s-s^2}{t^2}\diff t=\diff\left(\frac{s^2-s}{t}\right),\]
       所以通积分为
       \[\frac{s^2-s}{t}=C.\]
 		\item $\frac{\partial P}{\partial y}=2xyf'(x^2+y^2)=\frac{\partial Q}{\partial x}$, 
-      故是恰当方程, 且通积分为
+      是恰当方程, 且通积分为
 			\[F(x^2+y^2)=C,\text{其中\ }F\text{\ 是\ }f\text{\ 的不定积分}.\qedhere\]
 	\end{enumerate}
 \end{solve}
@@ -127,8 +127,8 @@
   (4) $(1+y^2)\diff y=\ln|x|\diff x$, 积分得 $y+\frac{1}{3}y^3=x(\ln|x|-1)+C$, 
   代入初值条件得$C=1$, 因此原方程的解为 $y+\frac{1}{3}y^3=x(\ln|x|-1)+1$.
 
-  (5) 由初值条件知 $y\neq0$, 故原方程等价于 $\frac{\diff y}{y^3}=\frac{x}{\sqrt{1+x^2}}\diff x$, 
-  积分得 $-\frac{1}{2}y^{-2}=\sqrt{1+x^2}+C$, 代入初值条件得$C=-\frac{3}{2}$, 
+  (5) 由初值条件知 $y\neq 0$, 故原方程等价于 $\frac{\diff y}{y^3}=\frac{x}{\sqrt{1+x^2}}\diff x$, 
+  积分得 $-\frac{1}{2}y^{-2}=\sqrt{1+x^2}+C$, 代入初值条件得 $C=-\frac{3}{2}$, 
   因此原方程的解为 $2\sqrt{1+x^2}+y^{-2}-3=0$.
 \end{solve}
 
@@ -296,139 +296,199 @@
 
 
 
-\[通解公式:\frac{\diff y}{\diff x}+p(x)y=q(x)\Longrightarrow y=\e^{-\int p(x)\diff x}\left(C+\int q(x)\e^{\int p(x)\diff x}\diff x\right)\]
-
-1.求解微分方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle\frac{\diff y}{\diff x}+2y=x\e^{-x}$;
-\item $\displaystyle\frac{\diff y}{\diff x}+y\tan x=\sin(2x)$;
-\item $\displaystyle x\frac{\diff y}{\diff x}+2y=\sin x,y(\pi)=\frac{1}{\pi}$;
-\item $\displaystyle\frac{\diff y}{\diff x}-\frac{1}{1-x^2}y=1+x,y(0)=1$.
-\end{enumerate}
+\begin{exercise}
+  求解微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle\frac{\diff y}{\diff x}+2y=x\e^{-x}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}+y\tan x=\sin(2x)$;
+  \item $\displaystyle x\frac{\diff y}{\diff x}+2y=\sin x$, $y(\pi)=\frac{1}{\pi}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}-\frac{1}{1-x^2}y=1+x,y(0)=1$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)\[y=\e^{-\int2\diff x}\left(C+\int x\e^{-x}\e^{\int2\diff x}\diff x\right)=C\e^{-2x}+(x-1)\e^{-x}\]
+  (1) $p(x)=2$, $q(x)=x\e^{-x}$, 故
+  \[y=\e^{-\int2\diff x}\left(C+\int x\e^{-x}\e^{\int2\diff x}\diff x\right)=C\e^{-2x}+(x-1)\e^{-x}.\]
 
-(2)\[\begin{split}
-y&=\e^{-\int\tan x\diff x}\left(C+\int\sin(2x)\e^{\int\tan x\diff x}\diff x\right)\\
-&=|\cos x|\left(C+\int\frac{\sin(2x)}{|\cos x|}\diff x\right)=C|\cos x|-2\cos^2x
-\end{split}\]
+  (2) $p(x)=\tan x$, $q(x)=\sin(2x)$, 故
+  \[\begin{split}
+  y
+  & = \e^{-\int\tan x\diff x}\left(C+\int\sin(2x)\e^{\int\tan x\diff x}\diff x\right)\\
+  & = |\cos x|\left(C+\int\frac{\sin(2x)}{|\cos x|}\diff x\right)=C|\cos x|-2\cos^2x。
+  \end{split}\]
 
-(3)\[y=\e^{-\int\frac{2}{x}\diff x}\left(C+\int\frac{\sin x}{x}\e^{\int\frac{2}{x}\diff x}\diff x\right)=\frac{1}{x^2}(C+\sin x-x\cos x)\]
-代入初值条件得$C=0$,故解为
-\[y=\frac{\sin x}{x^2}-\frac{\cos x}{x}\]
+  (3) $p(x)=\frac{2}{x}$, $q(x)=\frac{\sin x}{x}$, 故
+  \[y=\e^{-\int\frac{2}{x}\diff x}\left(C+\int\frac{\sin x}{x}\e^{\int\frac{2}{x}\diff x}\diff x\right)=\frac{1}{x^2}(C+\sin x-x\cos x).\]
+  代入初值条件得 $C=0$, 故原方程的解为
+  \[y=\frac{\sin x}{x^2}-\frac{\cos x}{x}.\]
 
-(4)\[
-\begin{split}
-y&=\e^{\int\frac{1}{1-x^2}\diff x}\left(C+\int(1+x)\e^{\int\frac{1}{x^2-1}\diff x}\diff x\right)=\left|\frac{x+1}{x-1}\right|^{\frac{1}{2}}\left(C+\int(1+x)\left|\frac{x-1}{x+1}\right|^{\frac{1}{2}}\diff x\right)\\
-&=\begin{cases}
-\sqrt{\frac{x+1}{x-1}}\left(C+\int\sqrt{x^2-1}\diff x\right)=\sqrt{\frac{x+1}{x-1}}\left(C+\frac{1}{2}x\sqrt{x^2-1}-\frac{1}{2}\ln|x+\sqrt{x^2-1}|\right),&|x|>1\\
-\sqrt{\frac{x+1}{1-x}}\left(C+\int\sqrt{1-x^2}\diff x\right)=\sqrt{\frac{x+1}{1-x}}\left(C+\frac{1}{2}\arcsin x+\frac{1}{2}x\sqrt{1-x^2}\right),&|x|<1
-\end{cases}
-\end{split}\]
+  (4) $p(x) = -\frac{1}{1-x^2}$, $q(x)=1+x$, 故
+  \begin{align*}
+    y
+    & = \e^{\int\frac{1}{1-x^2}\diff x}\left(C+\int(1+x)\e^{\int\frac{1}{x^2-1}\diff x}\diff x\right) \\
+    & = \left|\frac{x+1}{x-1}\right|^{\frac{1}{2}}\left(C+\int(1+x)\left|\frac{x-1}{x+1}\right|^{\frac{1}{2}}\diff x\right)\\
+    & = \begin{cases}
+      \sqrt{\frac{x+1}{x-1}}\left(C+\int\sqrt{x^2-1}\diff x\right), & |x|>1, \\
+      \sqrt{\frac{x+1}{1-x}}\left(C+\int\sqrt{1-x^2}\diff x\right), & |x|<1,
+    \end{cases} \\
+    & = \begin{cases}
+      \sqrt{\frac{x+1}{x-1}}\left(C+\frac{1}{2}x\sqrt{x^2-1}-\frac{1}{2}\ln|x+\sqrt{x^2-1}|\right),
+        & |x|>1, \\
+        \sqrt{\frac{x+1}{1-x}}\left(C+\frac{1}{2}\arcsin x+\frac{1}{2}x\sqrt{1-x^2}\right),
+        & |x|<1.
+    \end{cases}\qedhere
+  \end{align*}
 \end{solve}
 
 
-2.把下列微分方程化为线性微分方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{x^2+y^2}{2y}$;
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{y}{x+y^2}$;
-\item $\displaystyle 3xy^2\frac{\diff y}{\diff x}+y^3+x^3=0$;
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{1}{\cos y}+x\tan y$.
-\end{enumerate}
+
+\begin{exercise}
+  把下列微分方程化为线性微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{x^2+y^2}{2y}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{y}{x+y^2}$;
+  \item $\displaystyle 3xy^2\frac{\diff y}{\diff x}+y^3+x^3=0$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{1}{\cos y}+x\tan y$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)令$u=y^2$,则$\frac{\diff u}{\diff x}=2y\frac{\diff y}{\diff x}=x^2+u$.
+  (1) 令 $u=y^2$, 则 $\frac{\diff u}{\diff x}=2y\frac{\diff y}{\diff x}=x^2+u$.
 
-(2)将$x$看作$y$的函数,即$\frac{\diff x}{\diff y}=\frac{x}{y}+y$.
+  (2) 将 $x$ 看作 $y$ 的函数, 即 $\frac{\diff x}{\diff y}=\frac{x}{y}+y$.
 
-(3)令$u=y^3$,则$\frac{\diff u}{\diff x}=3y^2\frac{\diff y}{\diff x}=-\frac{u}{x}-x^2$.
+  (3) 令 $u=y^3$, 则 $\frac{\diff u}{\diff x}=3y^2\frac{\diff y}{\diff x}=-\frac{u}{x}-x^2$.
 
-(4)原方程变形为$\cos y\frac{\diff y}{\diff x}=1+x\sin y$,令$u=\sin y$,即得$\frac{\diff u}{\diff x}=1+xu$.
+  (4) 原方程变形为 $\cos y\frac{\diff y}{\diff x}=1+x\sin y$,
+  令 $u=\sin y$, 即得 $\frac{\diff u}{\diff x}=1+xu$.
 \end{solve}
 
 
-3.设$y=\varphi(x)$满足微分不等式
-\[y'+a(x)y\leq0(x\geq0).\]
-证明\[\varphi(x)\leq\varphi(0)\e^{-\int_0^xa(s)\diff s}(x\geq0)\]
+
+\begin{exercise}
+  设 $y=\varphi(x)$ 满足微分不等式
+  \[y'+a(x)y\leq 0\quad (x\geq 0).\]
+  证明
+  \[\varphi(x)\leq\varphi(0)\e^{-\int_0^x a(s)\diff s}\quad (x\geq 0).\]
+\end{exercise}
+
 \begin{proof} 
-在不等式两边同时乘以$\e^{\int_0^xa(s)\diff s}$, 得
-\[\e^{\int_0^xa(s)\diff s}\frac{\diff y}{\diff x}+a(x)y\e^{\int_0^xa(s)\diff s}\leq0\]
-即\[\frac{\diff\left(\varphi(x)\e^{\int_0^xa(s)\diff s}\right)}{\diff x}\leq0\]
-将上式从0到$x$积分得\[\varphi(x)\e^{\int_0^xa(s)\diff s}-\varphi(0)\leq0\Rightarrow\varphi(x)\leq\varphi(0)\e^{-\int_0^xa(s)\diff s}.\qedhere\]
+在不等式两边同时乘以 $\e^{\int_0^xa(s)\diff s}$, 得
+\[\e^{\int_0^xa(s)\diff s}\frac{\diff y}{\diff x}+a(x)y\e^{\int_0^xa(s)\diff s}\leq 0,\]
+即
+\[\frac{\diff\left(\varphi(x)\e^{\int_0^xa(s)\diff s}\right)}{\diff x}\leq 0.\]
+将上式从 $0$ 到 $x$ 积分得
+\[\varphi(x)\e^{\int_0^xa(s)\diff s}-\varphi(0)\leq 0
+\Rightarrow\varphi(x)\leq\varphi(0)\e^{-\int_0^xa(s)\diff s}.\qedhere\]
 \end{proof}
 
 
-4.用常数变易法求解非齐次线性方程$\frac{\diff y}{\diff x}+p(x)y=q(x)$, 即: 
-假设方程有形如$y=C\e^{-\int p(x)\diff x}$的解, 但其中的常数$C$变易为$x$的一个待定函数$C(x)$. 
-然后将这种形式的解代入原方程, 再去确定$C(x)$.
+
+\begin{exercise}
+  用常数变易法求解非齐次线性方程 $\frac{\diff y}{\diff x}+p(x)y=q(x)$, 即: 
+  假设方程有形如 $y=C\e^{-\int p(x)\diff x}$ 的解, 但其中的常数 $C$ 变易为 $x$ 的一个待定函数 $C(x)$. 
+  然后将这种形式的解代入原方程, 再去确定 $C(x)$.
+\end{exercise}
 
 \begin{solve}
-因为\[y=C(x)\e^{-\int p(x)\diff x}\]
-所以\[\frac{\diff y}{\diff x}=C'(x)\e^{-\int p(x)\diff x}+C(x)(-p(x))\e^{-\int p(x)\diff x}\]
-即\[\frac{\diff y}{\diff x}+p(x)y=C'(x)\e^{-\int p(x)\diff x}\]
+因为
+\[y=C(x)\e^{-\int p(x)\diff x},\]
+所以
+\[\frac{\diff y}{\diff x}=C'(x)\e^{-\int p(x)\diff x}+C(x)(-p(x))\e^{-\int p(x)\diff x}.\]
+即
+\[\frac{\diff y}{\diff x}+p(x)y=C'(x)\e^{-\int p(x)\diff x}.\]
 故有
-\[C'(x)\e^{-\int p(x)\diff x}=q(x)\]
-解之得\[C(x)=\int q(x)\e^{\int p(x)\diff x}\diff x+C\]
-代回即得原方程的解为\[y=\e^{-\int p(x)\diff x}\left(C+\int q(x)\e^{\int p(x)\diff x}\diff x\right).\qedhere\]
+\[C'(x)\e^{-\int p(x)\diff x} = q(x).\]
+解之得
+\[C(x)=\int q(x)\e^{\int p(x)\diff x}\diff x+C.\]
+代回即得原方程的解为
+\[y=\e^{-\int p(x)\diff x}\left(C+\int q(x)\e^{\int p(x)\diff x}\diff x\right).\qedhere\]
 \end{solve}
 
 
-5.考虑方程
-\[\frac{\diff y}{\diff x}+p(x)y=q(x),\]
-其中$p(x)$和$q(x)$都是以$\omega>0$为周期的连续函数. 试证:
 
-(1)若$q(x)\equiv0$, 则方程的任一非零解以$\omega$为周期, 当且仅当函数$p(x)$的平均值
-\[\bar{p}=\frac{1}{\omega}\int_0^{\omega}p(x)\diff x=0.\]
+\begin{exercise}
+  考虑方程
+  \[\frac{\diff y}{\diff x}+p(x)y=q(x),\]
+  其中 $p(x)$ 和 $q(x)$ 都是以 $\omega>0$ 为周期的连续函数. 试证:
 
-(2)若$q(x)$不恒为零, 则方程有唯一的$\omega$周期解, 当且仅当$\bar{p}\neq0$. 试求出此解.
+  (1) 若 $q(x)\equiv 0$, 则方程的任一非零解以 $\omega$ 为周期, 当且仅当函数 $p(x)$ 的平均值
+  \[\bar{p}=\frac{1}{\omega}\int_0^{\omega}p(x)\diff x=0.\]
 
-\begin{proof}(1)若$q(x)\equiv0$, 则方程的通解为
-\[y=C\e^{-\int_0^xp(s)\diff s}\]
-从而\[y(x)=y(x+\omega)\Leftrightarrow\int_0^xp(s)\diff s=\int_0^{x+\omega}p(s)\diff s\Leftrightarrow\int_0^{\omega}p(x)\diff x=0\Leftrightarrow\bar{p}=0\]
-(2)若$q(x)$不恒为零, 则方程的通解为
-\[y=\e^{-\int_0^xp(s)\diff s}\left(C+\int_0^xq(s)\e^{\int_0^sp(t)\diff t}\diff s\right)\]
-下面求常数$C$使得$y(x)$为$\omega$周期解, 即
-\[y(x)=y(x+\omega),\forall x\in\mathbb{R}\]
-可以断言若$y(x)$是原方程的解且满足$y(0)=y(\omega)$, 则$y(x)$是原方程的$\omega$周期解, 事实上, 因$y(x)$是原方程的解, 则$y(x+\omega)$也是原方程的解, 令$u(x)=y(x+\omega)-y(x)$, 则$u(x)$是相应齐次线性方程的解, 又因为$u(0)=0$,故$u(x)\equiv0$.\\
-现将$y(0)=y(\omega)$代入通解表达式得
-\[C=\e^{-\int_0^{\omega}p(s)\diff s}\left(C+\int_0^{\omega}q(s)\e^{\int_0^sp(t)\diff t}\diff s\right)\]
-解得\[C=\frac{1}{\e^{\int_0^{\omega}p(s)\diff s}-1}\int_0^{\omega}q(s)\e^{\int_0^sp(t)\diff t}\diff s\]
-故方程有唯一的$\omega$周期解当且仅当$\int_0^{\omega}p(s)\diff s\neq0\Leftrightarrow\bar{p}\neq0$,下面求$y(x)$的表达式:\\
-因为\[\frac{\diff y(x)}{\diff x}+p(x)y(x)=q(x)\]
-在等式两边同时乘以$\e^{\int_0^xp(t)\diff t}$,得
-\[\e^{\int_0^xp(t)\diff t}\frac{\diff y(x)}{\diff x}+\e^{\int_0^xp(t)\diff t}p(x)y(x)=\e^{\int_0^xp(t)\diff t}q(x)\]
-即\[\frac{\diff}{\diff x}\left(y(x)\e^{\int_0^xp(t)\diff t}\right)=\e^{\int_0^xp(t)\diff t}q(x)\]
-将上式从$x$到$x+\omega$积分,利用$y(x)$及$p(x)$的周期性得
-\[\begin{split}
-y(x+\omega)\e^{\int_0^{x+\omega}p(t)\diff t}-y(x)\e^{\int_0^xp(t)\diff t}
-&=y(x)\e^{\int_0^xp(t)\diff t}\left(\e^{\int_x^{x+\omega}p(t)\diff t}-1\right)\\
-&=y(x)\e^{\int_0^xp(t)\diff t}\left(\e^{\int_0^{\omega}p(t)\diff t}-1\right)\\
-&=\int_x^{x+\omega}\e^{\int_0^sp(t)\diff t}q(s)\diff s
-\end{split}\]
-从而\[y(x)=\frac{1}{\e^{\int_0^{\omega}p(t)\diff t}-1}\int_x^{x+\omega}\e^{\int_x^sp(t)\diff t}q(s)\diff s.\qedhere\]
+  (2) 若 $q(x)$ 不恒为零, 则方程有唯一的 $\omega$ 周期解, 当且仅当 $\bar{p}\neq0$. 试求出此解.
+\end{exercise}
+
+\begin{proof}
+  (1)若$q(x)\equiv0$, 则方程的通解为
+  \[y=C\e^{-\int_0^xp(s)\diff s}.\]
+  从而
+  \[y(x)=y(x+\omega)\Leftrightarrow\int_0^xp(s)\diff s
+    = \int_0^{x+\omega}p(s)\diff s
+  \Leftrightarrow\int_0^{\omega}p(x)\diff x=0\Leftrightarrow\bar{p} = 0.\]
+
+  (2) 若 $q(x)$ 不恒为零, 则方程的通解为
+  \[y=\e^{-\int_0^xp(s)\diff s}\left(C+\int_0^x q(s)\e^{\int_0^s p(t)\diff t}\diff s\right).\]
+  下面求常数 $C$ 使得 $y(x)$ 为 $\omega$ 周期解, 即
+  \[y(x)=y(x+\omega),\forall x\in\mathbb{R}.\]
+  可以断言若 $y(x)$ 是原方程的解且满足 $y(0)=y(\omega)$, 则 $y(x)$ 是原方程的 $\omega$ 周期解, 
+  事实上, 若 $y(x)$ 是原方程的解, 则 $y(x+\omega)$ 也是原方程的解, 
+  令 $u(x)=y(x+\omega)-y(x)$, 则 $u(x)$ 是相应齐次线性方程的解, 又因为 $u(0)=0$, 故 $u(x)\equiv0 $.
+
+  现将 $y(0)=y(\omega)$ 代入通解表达式得
+  \[C = \e^{-\int_0^{\omega}p(s)\diff s}\left(C+\int_0^{\omega}q(s)
+    \e^{\int_0^sp(t)\diff t}\diff s\right),\]
+  解得
+  \[C = \frac{1}{\e^{\int_0^{\omega}p(s)\diff s}-1}\int_0^{\omega}q(s)\e^{\int_0^sp(t)\diff t}\diff s.\]
+  故方程有唯一的 $\omega$ 周期解当且仅当 $\int_0^{\omega}p(s)\diff s\neq0\Leftrightarrow\bar{p}\neq 0$,
+  下面求 $y(x)$ 的表达式:
+
+  因为
+  \[\frac{\diff y(x)}{\diff x}+p(x)y(x)=q(x).\]
+  在等式两边同时乘以 $\e^{\int_0^x p(t)\diff t}$, 得
+  \[\e^{\int_0^xp(t)\diff t}\frac{\diff y(x)}{\diff x}+\e^{\int_0^xp(t)\diff t}p(x)y(x)
+    = \e^{\int_0^xp(t)\diff t}q(x).\]
+  即
+  \[\frac{\diff}{\diff x}\left(y(x)\e^{\int_0^xp(t)\diff t}\right)=\e^{\int_0^xp(t)\diff t}q(x).\]
+  将上式从 $x$ 到 $x+\omega$ 积分, 利用 $y(x)$ 及 $p(x)$ 的周期性得
+  \[\begin{split}
+  y(x+\omega)\e^{\int_0^{x+\omega}p(t)\diff t}-y(x)\e^{\int_0^xp(t)\diff t}
+  & = y(x)\e^{\int_0^xp(t)\diff t}\left(\e^{\int_x^{x+\omega}p(t)\diff t}-1\right) \\
+  & = y(x)\e^{\int_0^xp(t)\diff t}\left(\e^{\int_0^{\omega}p(t)\diff t}-1\right) \\
+  & = \int_x^{x+\omega}\e^{\int_0^sp(t)\diff t}q(s)\diff s
+  \end{split}\]
+  从而
+  \[y(x)=\frac{1}{\e^{\int_0^{\omega}p(t)\diff t}-1}
+    \int_x^{x+\omega}\e^{\int_x^sp(t)\diff t}q(s)\diff s.\qedhere\]
 \end{proof}
 
 
-6.设连续函数$f(x)$在区间$-\infty<x<+\infty$上有界.证明:方程
-\[y'+y=f(x)\]
-在区间$-\infty<x<+\infty$上有并且只有一个有界解,试求出这个有界解,并进而证明:
-当$f(x)$还是以$\omega$为周期的周期函数时,这个有界解也是一个以$\omega$为周期的周期函数.
 
-\begin{proof}方程的通解为
-\[y=\e^{-x}\left(C+\int_0^xf(s)\e^s\diff s\right)\]
-当$x\to-\infty$时,$\e^{-x}\to+\infty$,要使得解有界,必有
-\[C+\int_0^xf(s)\e^s\diff s\to0(x\to-\infty)\]
-故取\[C=\int_{-\infty}^0f(s)\e^s\diff s\]
-此时解为\[y(x)=\int_{-\infty}^xf(s)\e^{s-x}\diff s\]
-因为$f(x)$有界,所以存在$M>0$,使得$|f(x)|\leq M(\forall x\in\mathbb{R})$,故
-\[|y(x)|\leq M\int_{-\infty}^x\e^{s-x}\diff s=M\]
-说明$y(x)$的确是有界解.当$f(x)$以$\omega$为周期时,有
-\[\begin{split}y(x+\omega)
-&=\int_{-\infty}^{x+\omega}f(s)\e^{s-(x+\omega)}\diff s(令t=s-\omega)\\
-&=\int_{-\infty}^xf(t)\e^{t-x}\diff t\\
-&=y(x)\end{split}\]
-所以$y(x)$也是以$\omega$为周期的周期函数.
+\begin{exercise}
+  设连续函数 $f(x)$ 在区间 $-\infty<x<+\infty$ 上有界. 证明: 方程
+  \[y'+y=f(x)\]
+  在区间 $-\infty<x<+\infty$ 上有并且只有一个有界解, 试求出这个有界解, 并进而证明:
+  当 $f(x)$ 还是以 $\omega$ 为周期的周期函数时, 这个有界解也是一个以 $\omega$ 为周期的周期函数.
+\end{exercise}
+
+\begin{proof}
+  方程的通解为
+  \[y=\e^{-x}\left(C+\int_0^xf(s)\e^s\diff s\right).\]
+  当 $x\to-\infty$ 时, $\e^{-x}\to+\infty$, 要使得解有界, 必有
+  \[C+\int_0^xf(s)\e^s\diff s\to0(x\to-\infty).\]
+  故取
+  \[C = \int_{-\infty}^0f(s)\e^s\diff s.\]
+  此时解为
+  \[y(x)=\int_{-\infty}^xf(s)\e^{s-x}\diff s.\]
+  因为 $f(x)$ 有界, 所以存在 $M>0$, 使得 $|f(x)|\leq M(\forall x\in\mathbb{R})$,故
+  \[|y(x)|\leq M\int_{-\infty}^x\e^{s-x}\diff s = M.\]
+  说明 $y(x)$ 的确是有界解. 当 $f(x)$ 以 $\omega$ 为周期时, 有
+  \begin{align*}
+    y(x+\omega)
+    & = \int_{-\infty}^{x+\omega}f(s)\e^{s-(x+\omega)}\diff s\quad(\text{Let }t=s-\omega) \\
+    & = \int_{-\infty}^xf(t)\e^{t-x}\diff t \\
+    & = y(x),
+  \end{align*}
+  所以 $y(x)$ 也是以 $\omega$ 为周期的周期函数.
 \end{proof}
 
 
