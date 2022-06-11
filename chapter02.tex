@@ -727,131 +727,163 @@
   因此旋转曲面的方程为 $y^2+z^2=C(2x+C)$ $(C>0)$, 由此可知该曲面是一个旋转抛物面.
 \end{solve}
 
+
+
 \section{积分因子法(Integrating Factor)}
-1.求解下列微分方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle(3x^2y+2xy+y^3)\diff x+(x^2+y^2)\diff y=0$;
-\item $\displaystyle y\diff x+(2xy-\e^{-2y})\diff y=0$;
-\item $\displaystyle\left(3x+\frac{6}{y}\right)\diff x+\left(\frac{x^2}{y}+\frac{3y}{x}\right)\diff y=0$;
-\item $\displaystyle y\diff x-(x^2+y^2+x)\diff y=0$;
-\item $\displaystyle 2xy^3\diff x+(x^2y^2-1)\diff y=0$;
-\item $\displaystyle y(1+xy)\diff x-x\diff y=0$;
-\item $\displaystyle y^3\diff x+2(x^2-xy^2)\diff y=0$;
-\item $\displaystyle\e^x\diff x+(\e^x\cot y+2y\cos y)\diff y=0$.
-\end{enumerate}
+
+
+
+\begin{exercise}
+  求解下列微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle(3x^2y+2xy+y^3)\diff x+(x^2+y^2)\diff y=0$;
+  \item $\displaystyle y\diff x+(2xy-\e^{-2y})\diff y=0$;
+  \item $\displaystyle\left(3x+\frac{6}{y}\right)\diff x+\left(\frac{x^2}{y}+\frac{3y}{x}\right)\diff y=0$;
+  \item $\displaystyle y\diff x-(x^2+y^2+x)\diff y=0$;
+  \item $\displaystyle 2xy^3\diff x+(x^2y^2-1)\diff y=0$;
+  \item $\displaystyle y(1+xy)\diff x-x\diff y=0$;
+  \item $\displaystyle y^3\diff x+2(x^2-xy^2)\diff y=0$;
+  \item $\displaystyle\e^x\diff x+(\e^x\cot y+2y\cos y)\diff y=0$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)因为$\frac{1}{Q}\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)=3$,故取积分因子$\mu(x)=\e^{3x}$,得全微分方程:
-\[\e^{3x}(3x^2y+2xy+y^3)\diff x+\e^{3x}(x^2+y^2)\diff y=0\]
-即\[\diff\left(\e^{3x}x^2y+\frac{1}{3}\e^{3x}y^3\right)=0\]
-故通解为$\e^{3x}(3x^2y+y^3)=C$.
+  (1)因为 $\frac{1}{Q}\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)=3$,
+  故取积分因子 $\mu(x)=\e^{3x}$, 得全微分方程:
+  \[\e^{3x}(3x^2y+2xy+y^3)\diff x+\e^{3x}(x^2+y^2)\diff y=0,\]
+  即
+  \[\diff\left(\e^{3x}x^2y+\frac{1}{3}\e^{3x}y^3\right) = 0.\]
+  故通解为 $\e^{3x}(3x^2y+y^3)=C$.
 
-(2)因为$\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=2-\frac{1}{y}$,故取积分因子$\mu(y)=\frac{\e^{2y}}{y}$,得全微分方程:
-\[\e^{2y}\diff x+\left(2x\e^{2y}-\frac{1}{y}\right)\diff y=0\]
-即\[\diff\left(x\e^{2y}-\ln|y|\right)=0\]
-故通解为$x\e^{2y}-\ln|y|=C$,另外特解为$y=0$.
+  (2)因为 $\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=2-\frac{1}{y}$, 故取积分因子 $\mu(y)=\frac{\e^{2y}}{y}$, 得全微分方程:
+  \[\e^{2y}\diff x+\left(2x\e^{2y}-\frac{1}{y}\right)\diff y=0,\]
+  即
+  \[\diff\left(x\e^{2y}-\ln|y|\right)=0.\]
+  故通解为 $x\e^{2y}-\ln|y|=C$, 另外特解为 $y=0$.
 
-(3)在方程两边同时乘以$xy$,得
-\[3x^2y\diff x+6x\diff x+x^3\diff y+3y^2\diff y=0\]
-即\[\diff(x^3y+y^3+3x^2)=0\]
-故通解为$x^3y+y^3+3x^2=C$.
+  (3)在方程两边同时乘以 $xy$, 得
+  \[3x^2y\diff x+6x\diff x+x^3\diff y+3y^2\diff y=0,\]
+  即
+  \[\diff(x^3y+y^3+3x^2)=0.\]
+  故通解为 $x^3y+y^3+3x^2=C$.
 
-(4)在方程两边同时乘以$\frac{1}{x^2+y^2}$,得
-\[\frac{y\diff x-x\diff y}{x^2+y^2}-\diff y=\diff\left(-\arctan\frac{y}{x}-y\right)=0\]
-故通积分为$\arctan\frac{y}{x}+y=C(\mbox{或者写成}\arctan\frac{x}{y}-y=C)$,另有特解$y=0$.
+  (4)在方程两边同时乘以 $\frac{1}{x^2+y^2}$, 得
+  \[\frac{y\diff x-x\diff y}{x^2+y^2}-\diff y=\diff\left(-\arctan\frac{y}{x}-y\right)=0.\]
+  故通积分为 $\arctan\frac{y}{x}+y=C$ (或者写成 $\arctan\frac{x}{y}-y=C)$, 另有特解 $y=0$.
 
-(5)因为$\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=\frac{-2}{y}$,
-故取积分因子$\mu(y)=\e^{-\int\frac{2}{y}\diff y}=\frac{1}{y^2}$,得全微分方程:
-\[2xy\diff x+x^2\diff y-\frac{1}{y^2}\diff y=\diff\left(x^2y+\frac{1}{y}\right)=0\]
-故通解为$x^2y+\frac{1}{y}=C$,另外有特解$y=0$.
+  (5)因为 $\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=\frac{-2}{y}$,
+  故取积分因子 $\mu(y)=\e^{-\int\frac{2}{y}\diff y}=\frac{1}{y^2}$, 得全微分方程:
+  \[2xy\diff x+x^2\diff y-\frac{1}{y^2}\diff y=\diff\left(x^2y+\frac{1}{y}\right)=0.\]
+  故通解为 $x^2y+\frac{1}{y}=C$, 另外有特解 $y=0$.
 
-(6)因为$\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=\frac{-2}{y}$,故取积分因子$\mu(y)=\e^{-\int\frac{2}{y}\diff y}=\frac{1}{y^2}$,得全微分方程:
-\[\left(\frac{1}{y}+x\right)\diff x-\frac{x}{y^2}\diff y=\diff\left(\frac{1}{2}x^2+\frac{x}{y}\right)=0\]
-故通解为$\frac{1}{2}x^2+\frac{x}{y}=C$,另外有特解$y=0$.
+  (6)因为 $\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=\frac{-2}{y}$,
+  故取积分因子 $\mu(y)=\e^{-\int\frac{2}{y}\diff y}=\frac{1}{y^2}$, 得全微分方程:
+  \[\left(\frac{1}{y}+x\right)\diff x-\frac{x}{y^2}\diff y
+    = \diff\left(\frac{1}{2}x^2+\frac{x}{y}\right)=0.\]
+  故通解为 $\frac{1}{2}x^2+\frac{x}{y}=C$, 另外有特解 $y=0$.
 
-(7)设方程有积分因子$\mu=x^my^n$,则得全微分方程:
-\[x^my^{n+3}\diff x+2(x^{m+2}y^n-x^{m+1}y^{n+2})\diff y=0\]
-于是
-\[\frac{\partial\left(x^my^{n+3}\right)}{\partial y}=\frac{\partial\left(2\left(x^{m+2}y^n-x^{m+1}y^{n+2}\right)\right)}{\partial x}\]
-即
-\[(n+3)x^my^{n+2}=2(m+2)x^{m+1}y^n-2(m+1)x^my^{n+2}\]
-比较系数得$2(m+2)=0,n+3=-2(m+1)$,解得$m=-2,n=-1$,故方程有积分因子$\mu=\frac{1}{x^2y}$,因而得全微分方程:
-\[\frac{y^2}{x^2}\diff x+2\left(\frac{1}{y}-\frac{y}{x}\right)\diff y=\diff\left(\ln y^2-\frac{y^2}{x}\right)=0\]
-故通解为$\ln y^2-\frac{y^2}{x}=C$,另外有特解$x=0,y=0$.
+  (7)设方程有积分因子 $\mu=x^my^n$, 则得全微分方程:
+  \[x^my^{n+3}\diff x+2(x^{m+2}y^n-x^{m+1}y^{n+2})\diff y=0.\]
+  于是
+  \[\frac{\partial\left(x^my^{n+3}\right)}{\partial y}
+    = \frac{\partial\left(2\left(x^{m+2}y^n-x^{m+1}y^{n+2}\right)\right)}{\partial x}.\]
+  即
+  \[(n+3)x^my^{n+2}=2(m+2)x^{m+1}y^n-2(m+1)x^my^{n+2}.\]
+  比较系数得 $2(m+2)=0,n+3=-2(m+1)$, 解得 $m=-2,n=-1$,
+  故方程有积分因子 $\mu=\frac{1}{x^2y}$, 因而得全微分方程:
+  \[\frac{y^2}{x^2}\diff x+2\left(\frac{1}{y}-\frac{y}{x}\right)\diff y
+    =\diff\left(\ln y^2-\frac{y^2}{x}\right)=0.\]
+  故通解为 $\ln y^2-\frac{y^2}{x}=C$,另外有特解$x=0,y=0$.
 
-注:对于$P(x,y)$和$Q(x,y)$都是关于$x,y$的多项式的情形,使用这种方法比较好.
+  注: 对于 $P(x,y)$ 和 $Q(x,y)$ 都是关于 $x,y$ 的多项式的情形, 使用这种方法比较好.
 
-(8)因为$\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=\cot y$,故取积分因子$\mu(y)=\sin y$,得全微分方程:
-\[\e^x\sin y\diff x+\left(\e^x\cos y+2y\sin y\cos y\right)\diff y=\diff\left(\e^x\sin y+\frac{1}{4}\sin2y-\frac{1}{2}y\cos2y\right)=0\]
-故通解为$\e^x\sin y+\frac{1}{4}\sin2y-\frac{1}{2}y\cos2y=C$.
+  (8)因为$\frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)=\cot y$,
+  故取积分因子 $\mu(y)=\sin y$, 得全微分方程:
+  \[\e^x\sin y\diff x+\left(\e^x\cos y+2y\sin y\cos y\right)\diff y
+    = \diff\left(\e^x\sin y+\frac{1}{4}\sin2y-\frac{1}{2}y\cos2y\right)=0.\]
+  故通解为 $\e^x\sin y+\frac{1}{4}\sin2y-\frac{1}{2}y\cos2y=C$.
 \end{solve}
 
-2.证明方程$P(x,y)\diff x+Q(x,y)\diff y=0$有形如$\mu=\mu(\varphi(x,y))$的积分因子的充要条件是
-\[\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}}=f(\varphi(x,y))\]
-并写出这个积分因子.然后将结果应用到下述各种情形,得出存在每一种类型积分因子的充要条件:
-\begin{enumerate}[(1)]
-\item $\mu=\mu(x\pm y)$;
-\item $\mu=\mu(x^2+y^2)$;
-\item $\mu=\mu(xy)$;
-\item $\mu=\mu(\frac{y}{x})$;
-\item $\mu=\mu(x^{\alpha}y^{\beta})$.
-\end{enumerate}
-
-\begin{proof}\[\begin{split}
-&\mbox{有积分因子}\mu=\mu(\varphi(x,y))\\
-&\Longleftrightarrow\frac{\partial(\mu P)}{\partial y}=\frac{\partial(\mu Q)}{\partial x}\\
-&\Longleftrightarrow\left(Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}\right)\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)\mu\\
-&\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}}=\frac{1}{\mu}\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=:f(\varphi(x,y))
-\end{split}\]
-此时有积分因子$\mu=\e^{\int f(s)\diff s}|_{s=\varphi(x,y)}$,于是
-
-(1)有积分因子$\mu=\mu(x\pm y)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\mp P}=f(x\pm y)$;
-
-(2)有积分因子$\mu=\mu(x^2+y^2)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{2xQ-2yP}=f(x^2+y^2)$;
-
-(3)有积分因子$\mu=\mu(xy)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{yQ-xP}=f(xy)$;
-
-(4)有积分因子$\mu=\mu(\frac{y}{x})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{-\frac{y}{x^2}Q-\frac{1}{x}P}=f(\frac{y}{x})$;
-
-(5)有积分因子$\mu=\mu(x^{\alpha}y^{\beta})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{\frac{\alpha}{x}Q-\frac{\beta}{y}P}=f(x^{\alpha}y^{\beta})$.
-\end{proof}
 
 
-3.证明齐次方程$P(x,y)\diff x+Q(x,y)\diff y=0$有积分因子$\mu=\frac{1}{xP+yQ}$.
+\begin{exercise}
+  证明方程$P(x,y)\diff x+Q(x,y)\diff y=0$有形如$\mu=\mu(\varphi(x,y))$的积分因子的充要条件是
+  \[\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}}=f(\varphi(x,y))\]
+  并写出这个积分因子.然后将结果应用到下述各种情形,得出存在每一种类型积分因子的充要条件:
+  \begin{enumerate}[(1)]
+  \item $\mu=\mu(x\pm y)$;
+  \item $\mu=\mu(x^2+y^2)$;
+  \item $\mu=\mu(xy)$;
+  \item $\mu=\mu(\frac{y}{x})$;
+  \item $\mu=\mu(x^{\alpha}y^{\beta})$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{proof}
-(证法1):设$P(x,y)$和$Q(x,y)$是$m$次齐次函数,即
-\[P(tx,ty)=t^mP(x,y),Q(tx,ty)=t^mQ(x,y)\]
-两边对$t$求导并取$t=1$,得
-\[x\frac{\partial P}{\partial x}+y\frac{\partial P}{\partial y}=mP,x\frac{\partial Q}{\partial x}+y\frac{\partial Q}{\partial y}=mQ\]
-为了证明$\frac{1}{xP+yQ}$是齐次方程的积分因子,只需要证明
-\[\frac{\partial}{\partial y}\left(\frac{P}{xP+yQ}\right)=\frac{\partial}{\partial x}\left(\frac{Q}{xP+yQ}\right).\]
-通过计算可得
-\[\begin{split}
-&\frac{\partial}{\partial y}\left(\frac{P}{xP+yQ}\right)-\frac{\partial}{\partial x}\left(\frac{Q}{xP+yQ}\right)\\
-=&\frac{\frac{\partial P}{\partial y}(xP+yQ)-P\left(x\frac{\partial P}{\partial y}+Q+y\frac{\partial Q}{\partial y}\right)}{(xP+yQ)^2}\\
-&-\frac{\frac{\partial Q}{\partial x}(xP+yQ)-Q\left(P+x\frac{\partial P}{\partial x}+y\frac{\partial Q}{\partial x}\right)}{(xP+yQ)^2}\\
-=&\frac{1}{(xP+yQ)^2}\left[Q\left(x\frac{\partial P}{\partial x}+y\frac{\partial P}{\partial y}\right)-P\left(y\frac{\partial Q}{\partial y}+x\frac{\partial Q}{\partial x}\right)\right]\\
-=&\frac{1}{(xP+yQ)^2}(mQP-mPQ)=0.
-\end{split}\]
-故$\mu=\frac{1}{xP+yQ}$是积分因子.
+  \[\begin{split}
+  &\mbox{有积分因子}\mu=\mu(\varphi(x,y))\\
+  &\Longleftrightarrow\frac{\partial(\mu P)}{\partial y}=\frac{\partial(\mu Q)}{\partial x}\\
+  &\Longleftrightarrow\left(Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}\right)\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)\mu\\
+  &\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}}=\frac{1}{\mu}\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=:f(\varphi(x,y))
+  \end{split}\]
+  此时有积分因子$\mu=\e^{\int f(s)\diff s}|_{s=\varphi(x,y)}$,于是
 
-(证法2)设$P(x,y)$和$Q(x,y)$是$m$次齐次函数,即
-\[P(tx,ty)=t^mP(x,y),Q(tx,ty)=t^mQ(x,y)\]
-令$y=ux$,则$\diff y=u\diff x+x\diff u$,于是方程变为
-\[\begin{split}
-&P(x,y)\diff x+Q(x,y)\diff y\\
-=&P(x,ux)\diff x+Q(x,ux)(u\diff x+x\diff u)\\
-=&x^m\left[P(1,u)+uQ(1,u)\right]\diff x+x^{m+1}Q(1,u)\diff u=0
-\end{split}\]
-上式为变量分离的方程,有积分因子
-\[\mu=\frac{1}{x^{m+1}[P(1,u)+uQ(1,u)]}\]
-将$u=\frac{y}{x}$代回,即得原方程有积分因子$\mu=\frac{1}{xP+yQ}$.
+  (1)有积分因子$\mu=\mu(x\pm y)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\mp P}=f(x\pm y)$;
+
+  (2)有积分因子$\mu=\mu(x^2+y^2)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{2xQ-2yP}=f(x^2+y^2)$;
+
+  (3)有积分因子$\mu=\mu(xy)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{yQ-xP}=f(xy)$;
+
+  (4)有积分因子$\mu=\mu(\frac{y}{x})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{-\frac{y}{x^2}Q-\frac{1}{x}P}=f(\frac{y}{x})$;
+
+  (5)有积分因子$\mu=\mu(x^{\alpha}y^{\beta})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{\frac{\alpha}{x}Q-\frac{\beta}{y}P}=f(x^{\alpha}y^{\beta})$.
 \end{proof}
 
 
-4.证明定理2.6及其逆定理:在定理2.6的假定下,若$\mu_1$是微分方程$P(x,y)\diff x+Q(x,y)\diff y=0$的另一个积分因子,
-则$\mu_1$必可表为$\mu_1=\mu g(\varPhi)$的形式,其中函数$g$和$\varPhi$的意义与在定理2.6中的相同.
+
+\begin{exercise}
+  证明齐次方程 $P(x,y)\diff x+Q(x,y)\diff y=0$ 有积分因子 $\mu=\frac{1}{xP+yQ}$.  
+\end{exercise}
+
+\begin{proof}
+  (证法 1) 设 $P(x,y)$ 和 $Q(x,y)$ 是 $m$ 次齐次函数, 即
+  \[P (tx,ty)=t^mP(x,y),Q(tx,ty)=t^mQ(x,y).\]
+  两边对 $t$ 求导并取 $t=1$, 得
+  \[x\frac{\partial P}{\partial x}+y\frac{\partial P}{\partial y}
+    = mP,x\frac{\partial Q}{\partial x}+y\frac{\partial Q}{\partial y}=mQ.\]
+  为了证明 $\frac{1}{xP+yQ}$ 是齐次方程的积分因子, 只需要证明
+  \[\frac{\partial}{\partial y}\left(\frac{P}{xP+yQ}\right)
+    = \frac{\partial}{\partial x}\left(\frac{Q}{xP+yQ}\right).\]
+  通过计算可得
+  \[\begin{split}
+  &\frac{\partial}{\partial y}\left(\frac{P}{xP+yQ}\right)-\frac{\partial}{\partial x}\left(\frac{Q}{xP+yQ}\right)\\
+  =&\frac{\frac{\partial P}{\partial y}(xP+yQ)-P\left(x\frac{\partial P}{\partial y}+Q+y\frac{\partial Q}{\partial y}\right)}{(xP+yQ)^2}\\
+  &-\frac{\frac{\partial Q}{\partial x}(xP+yQ)-Q\left(P+x\frac{\partial P}{\partial x}+y\frac{\partial Q}{\partial x}\right)}{(xP+yQ)^2}\\
+  =&\frac{1}{(xP+yQ)^2}\left[Q\left(x\frac{\partial P}{\partial x}+y\frac{\partial P}{\partial y}\right)-P\left(y\frac{\partial Q}{\partial y}+x\frac{\partial Q}{\partial x}\right)\right]\\
+  =&\frac{1}{(xP+yQ)^2}(mQP-mPQ)=0.
+  \end{split}\]
+  故 $\mu=\frac{1}{xP+yQ}$ 是积分因子.
+
+  (证法 2) 设 $P(x,y)$ 和 $Q(x,y)$ 是 $m$ 次齐次函数, 即
+  \[P(tx,ty)=t^mP(x,y),Q(tx,ty)=t^mQ(x,y).\]
+  令 $y=ux$, 则 $\diff y=u\diff x+x\diff u$, 于是方程变为
+  \[\begin{split}
+  &P(x,y)\diff x+Q(x,y)\diff y\\
+  =&P(x,ux)\diff x+Q(x,ux)(u\diff x+x\diff u)\\
+  =&x^m\left[P(1,u)+uQ(1,u)\right]\diff x+x^{m+1}Q(1,u)\diff u=0
+  \end{split}\]
+  上式为变量分离的方程, 有积分因子
+  \[\mu=\frac{1}{x^{m+1}[P(1,u)+uQ(1,u)]}.\]
+  将 $u=\frac{y}{x}$ 代回, 即得原方程有积分因子 $\mu=\frac{1}{xP+yQ}$.
+\end{proof}
+
+
+
+\begin{exercise}
+  证明定理 2.6 及其逆定理: 在定理 2.6 的假定下,
+  若 $\mu_1$ 是微分方程 $P(x,y)\diff x+Q(x,y)\diff y=0$ 的另一个积分因子,
+  则 $\mu_1$ 必可表为 $\mu_1=\mu g(\varPhi)$ 的形式, 其中函数 $g$ 和 $\varPhi$ 的意义与在定理 2.6 中的相同.
+\end{exercise}
 
 \begin{proof}
 由
@@ -872,157 +904,219 @@
 \end{proof}
 
 
-5.设函数$P(x,y),Q(x,y),\mu_1(x,y)$和$\mu_2(x,y)$都是连续可微的,$\mu_1$和$\mu_2$是微分方程
-\[P(x,y)\diff x+Q(x,y)\diff y=0\]
-的两个积分因子,而且$\frac{\mu_1}{\mu_2}$不恒为常数.试证:$\frac{\mu_1(x,y)}{\mu_2(x,y)}=C$是方程$P(x,y)\diff x+Q(x,y)\diff y=0$的一个通积分.
-\begin{proof}先证明一个引理:设$P(x,y)\diff x+Q(x,y)\diff y=0$是恰当方程,且$\mu(x,y)\neq C$为其积分因子,则$\mu(x,y)=C$是其一个通解.理由如下:\\
-因为$\mu(x,y)$为其积分因子,所以
-\[\frac{\partial}{\partial y}(\mu P)=\frac{\partial}{\partial x}(\mu Q)\]
-即\[P\frac{\partial\mu}{\partial y}+\mu\frac{\partial P}{\partial y}=Q\frac{\partial\mu}{\partial x}+\mu\frac{\partial Q}{\partial x}\]
-又因为$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$,故
-\[P\frac{\partial\mu}{\partial y}=Q\frac{\partial\mu}{\partial x}\]
-在原方程两边同时乘以$\frac{\partial\mu}{\partial y}$,得
-\[
-P\frac{\partial\mu}{\partial y}\diff x+Q\frac{\partial\mu}{\partial y}\diff y
-=Q\left(\frac{\partial\mu}{\partial x}\diff x+\frac{\partial\mu}{\partial y}\diff y\right)
-=Q\diff\mu=0\Rightarrow\mu(x,y)=C\]
-故$\mu(x,y)=C$是其一个通解,引理证毕.下证本题定理:
 
-因为$\mu_1,\mu_2$是$P(x,y)\diff x+Q(x,y)\diff y=0$两个积分因子,故$\mu_1P(x,y)\diff x+\mu_1Q(x,y)\diff y=0$为恰当方程,且$\frac{\mu_2}{\mu_1}\neq C$为其积分因子,故由引理结论知$\frac{\mu_1(x,y)}{\mu_2(x,y)}=C$是方程$P(x,y)\diff x+Q(x,y)\diff y=0$的一个通积分.
+\begin{exercise}
+  设函数 $P(x,y),Q(x,y),\mu_1(x,y)$ 和 $\mu_2(x,y)$ 都是连续可微的, $\mu_1$ 和 $\mu_2$ 是微分方程
+  \[P(x,y)\diff x+Q(x,y)\diff y=0\]
+  的两个积分因子, 而且 $\frac{\mu_1}{\mu_2}$ 不恒为常数.
+  试证: $\frac{\mu_1(x,y)}{\mu_2(x,y)}=C$ 是方程 $P(x,y)\diff x+Q(x,y)\diff y=0$ 的一个通积分.
+\end{exercise}
+
+\begin{proof}
+  先证明一个引理: 设 $P(x,y)\diff x+Q(x,y)\diff y=0$ 是恰当方程,
+  且 $\mu(x,y)\neq C$ 为其积分因子, 则 $\mu(x,y)=C$ 是其一个通解. 事实上,
+  因为 $\mu(x,y)$ 为其积分因子, 所以
+  \[\frac{\partial}{\partial y}(\mu P)=\frac{\partial}{\partial x}(\mu Q).\]
+  即
+  \[P\frac{\partial\mu}{\partial y}+\mu\frac{\partial P}{\partial y}
+    = Q\frac{\partial\mu}{\partial x}+\mu\frac{\partial Q}{\partial x}.\]
+  又因为 $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$, 故
+  \[P\frac{\partial\mu}{\partial y}=Q\frac{\partial\mu}{\partial x}.\]
+  在原方程两边同时乘以 $\frac{\partial\mu}{\partial y}$, 得
+  \[P\frac{\partial\mu}{\partial y}\diff x+Q\frac{\partial\mu}{\partial y}\diff y
+    = Q\left(\frac{\partial\mu}{\partial x}\diff x+\frac{\partial\mu}{\partial y}\diff y\right)
+    = Q\diff\mu=0\Rightarrow\mu(x,y)=C.\]
+  故 $\mu(x,y)=C$ 是其一个通解, 引理证毕. 下证本题定理:
+
+  因为 $\mu_1,\mu_2$ 是 $P(x,y)\diff x+Q(x,y)\diff y=0$ 两个积分因子,
+  故 $\mu_1P(x,y)\diff x+\mu_1Q(x,y)\diff y=0$ 为恰当方程,
+  且 $\frac{\mu_2}{\mu_1}\neq C$ 为其积分因子,
+  故由引理结论知 $\frac{\mu_1(x,y)}{\mu_2(x,y)}=C$ 是方程 $P(x,y)\diff x+Q(x,y)\diff y=0$ 的一个通积分.
 \end{proof}
+
 
 
 \section{应用举例}
 
 
-1.求下列各曲线族的正交轨线族:
-\begin{enumerate}[(1)]
-\item $x^2+y^2=Cx$;
-\item $xy=C$;
-\item $y^2=ax^3$;
-\item $x^2+C^2y^2=1$.
-\end{enumerate}
+
+\begin{exercise}
+  求下列各曲线族的正交轨线族:
+  \begin{enumerate}[(1)]
+  \item $x^2+y^2=Cx$;
+  \item $xy=C$;
+  \item $y^2=ax^3$;
+  \item $x^2+C^2y^2=1$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)联立$x^2+y^2=Cx$与$(2x-C)\diff x+2y\diff y=0$,消去$C$得曲线族满足微分方程$\frac{\diff y}{\diff x}=\frac{y^2-x^2}{2xy}$,故正交曲线族的微分方程为:
-\[\frac{\diff y}{\diff x}=\frac{2xy}{x^2-y^2}\]
-解得$x^2+y^2=Ky(K\neq0)$.
+  (1) 联立 $x^2+y^2=Cx$ 与 $(2x-C)\diff x+2y\diff y=0$,
+  消去 $C$ 得曲线族满足微分方程 $\frac{\diff y}{\diff x}=\frac{y^2-x^2}{2xy}$,
+  故正交曲线族的微分方程为
+  \[\frac{\diff y}{\diff x}=\frac{2xy}{x^2-y^2}.\]
+  解得 $x^2+y^2=Ky$ $(K\neq 0)$.
 
-(2)曲线族$xy=C$满足的微分方程为$y\diff x+x\diff y=0$,故正交曲线族的微分方程为:
-\[-x\diff x+y\diff y=0\]
-解得$x^2-y^2=K$.
+  (2) 曲线族 $xy=C$ 满足的微分方程为 $y\diff x+x\diff y=0$, 故正交曲线族的微分方程为
+  \[-x\diff x+y\diff y=0.\]
+  解得 $x^2-y^2=K$.
 
-(3)联立$y^2=ax^3$与$2y\diff y=3ax^2\diff x$,消去$a$得曲线族满足微分方程$3y\diff x-2x\diff y=0$,故正交曲线族的微分方程为:
-\[2x\diff x+3y\diff y=0\]
-解得$x^2+\frac{3}{2}y^2=K$.
+  (3) 联立 $y^2=ax^3$ 与 $2y\diff y=3ax^2\diff x$,
+  消去 $a$ 得曲线族满足微分方程 $3y\diff x-2x\diff y=0$, 故正交曲线族的微分方程为
+  \[2x\diff x+3y\diff y=0.\]
+  解得 $x^2+\frac{3}{2}y^2=K$.
 
-(4)联立$x^2+C^2y^2=1$与$2x\diff x+2C^2y\diff y=0$,消去$C^2$得曲线族满足微分方程$xy\diff x-(x^2-1)\diff y=0$,故正交曲线族的微分方程为:
-\[(x^2-1)\diff x+xy\diff y=0\]
-解得$x^2+y^2-\ln x^2=K$,特解$x=0$.
+  (4) 联立 $x^2+C^2y^2=1$ 与 $2x\diff x+2C^2y\diff y=0$,
+  消去 $C^2$ 得曲线族满足微分方程 $xy\diff x-(x^2-1)\diff y=0$, 故正交曲线族的微分方程为
+  \[(x^2-1)\diff x+xy\diff y=0.\]
+  解得 $x^2+y^2-\ln x^2=K$, 特解 $x=0$.
 \end{solve}
 
 
-2.求与下列各曲线族相交成$\frac{\pi}{4}$角的曲线族:
-\begin{enumerate}[(1)]
-\item $x-2y=C$;
-\item $xy=C$;
-\item $y=x\ln ax$;
-\item $y^2=4ax$.
-\end{enumerate}
+
+\begin{exercise}
+  求与下列各曲线族相交成$\frac{\pi}{4}$角的曲线族:
+  \begin{enumerate}[(1)]
+  \item $x-2y=C$;
+  \item $xy=C$;
+  \item $y=x\ln ax$;
+  \item $y^2=4ax$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)\[\tan\frac{\pi}{4}=\frac{y'-y_1'}{1+y'y_1'}=1\Rightarrow y_1'=\frac{y'-1}{y'+1}=\frac{1}{2}\Rightarrow y'=3\]
-积分得等角轨线族为$y=3x+K$.
+  (1)
+  \[\tan\frac{\pi}{4}=\frac{y'-y_1'}{1+y'y_1'}=1\Rightarrow y_1'
+    = \frac{y'-1}{y'+1}=\frac{1}{2}\Rightarrow y'=3.\]
+  积分得等角轨线族为 $y=3x+K$.
 
-(2)$xy=C$满足的微分方程为$y\diff x+x\diff y=0$,故
-\[y_1'=\frac{y'-1}{y'+1}=-\frac{y}{x}\Rightarrow(x-y)\diff x-(x+y)\diff y=0\]
-积分得等角轨线族为$x^2-y^2-2xy=K$.
+  (2) $xy=C$ 满足的微分方程为 $y\diff x+x\diff y=0$, 故
+  \[y_1'=\frac{y'-1}{y'+1}=-\frac{y}{x}\Rightarrow(x-y)\diff x-(x+y)\diff y=0.\]
+  积分得等角轨线族为 $x^2-y^2-2xy=K$.
 
-(3)联立$y=x\ln ax$与$\diff y=(\ln ax+1)\diff x$消去$a$得曲线族$y=x\ln ax$满足微分方程$\frac{\diff y}{\diff x}=\frac{y}{x}+1$,故
-\[y_1'=\frac{y'-1}{y'+1}=\frac{x+y}{x}\Rightarrow\frac{\diff y}{\diff x}=\frac{-2x}{y}-1\]
-积分得等角轨线族为$\ln(y^2+xy+2x^2)-\frac{2}{\sqrt{7}}\arctan\frac{2y+x}{\sqrt{7}x}=K$.
+  (3) 联立 $y=x\ln ax$ 与 $\diff y=(\ln ax+1)\diff x$
+  消去 $a$ 得曲线族 $y=x\ln ax$ 满足微分方程 $\frac{\diff y}{\diff x}=\frac{y}{x}+1$, 故
+  \[y_1'=\frac{y'-1}{y'+1}=\frac{x+y}{x}\Rightarrow\frac{\diff y}{\diff x}=\frac{-2x}{y}-1.\]
+  积分得等角轨线族为 $\ln(y^2+xy+2x^2)-\frac{2}{\sqrt{7}}\arctan\frac{2y+x}{\sqrt{7}x}=K$.
 
-(4)$y^2=4ax$满足的微分方程为$y\diff x-2x\diff y=0$,故
-\[y_1'=\frac{y'-1}{y'+1}=\frac{y}{2x}\Rightarrow\frac{\diff y}{\diff x}=\frac{2x+y}{2x-y}\]
-积分得等角轨线族为$\ln(y^2-xy+2x^2)-\frac{6}{\sqrt{7}}\arctan\frac{2y-x}{\sqrt{7}x}=K$.
+  (4) $y^2=4ax$ 满足的微分方程为 $y\diff x-2x\diff y=0$, 故
+  \[y_1'=\frac{y'-1}{y'+1}=\frac{y}{2x}\Rightarrow\frac{\diff y}{\diff x}=\frac{2x+y}{2x-y}.\]
+  积分得等角轨线族为 $\ln(y^2-xy+2x^2)-\frac{6}{\sqrt{7}}\arctan\frac{2y-x}{\sqrt{7}x}=K$.
 \end{solve}
 
 
-3.给定双曲线族$x^2-y^2=C$(其中$C$是任意常数).设有一个动点$P$在平面$(x,y)$上移动,
-它的轨迹与和它相交的每条双曲线均成$\frac{\pi}{6}$角,又设此动点从$P_0(0,1)$出发,求出动点的轨迹.
+
+\begin{exercise}
+  给定双曲线族 $x^2-y^2=C$ (其中 $C$ 是任意常数). 设有一个动点 $P$ 在平面 $(x,y)$ 上移动,
+  它的轨迹与和它相交的每条双曲线均成 $\frac{\pi}{6}$ 角, 又设此动点从 $P_0(0,1)$ 出发, 求出动点的轨迹.
+\end{exercise}
 
 \begin{solve}
-双曲线族$x^2-y^2=C$满足的微分方程为$x\diff x-y\diff y=0$,设动点的轨迹方程为$y=y(x)$,则
-\[\tan\frac{\pi}{6}=\frac{\sqrt{3}}{3}=\frac{y'-y_1'}{1+y'y_1'}\]
-从上式解得
-\[y_1'=\frac{\sqrt{3}y'-1}{y'+\sqrt{3}}=\frac{x}{y}\Rightarrow\frac{\diff y}{\diff x}=\frac{\sqrt{3}x+y}{\sqrt{3}y-x}\]
-令$u=\frac{y}{x}$,则
-\[u+x\frac{\diff u}{\diff x}=\frac{\sqrt{3}+u}{\sqrt{3}u-1}\Rightarrow\left(\frac{\frac{1}{2}}{u-\sqrt{3}}+\frac{\frac{\sqrt{3}}{2}}{\sqrt{3}u+1}\right)\diff u=-\frac{1}{x}\diff x\]
-积分得$\sqrt{3}y^2-2xy-\sqrt{3}x^2=C\neq0$,带入初值$P_0(0,1)$得$C=\sqrt{3}$,故动点轨迹方程为$\sqrt{3}(x^2-y^2+1)+2xy=0$.
+  双曲线族 $x^2-y^2=C$ 满足的微分方程为 $x\diff x-y\diff y=0$, 设动点的轨迹方程为 $y=y(x)$, 则
+  \[\tan\frac{\pi}{6}=\frac{\sqrt{3}}{3}=\frac{y'-y_1'}{1+y'y_1'}.\]
+  从上式解得
+  \[y_1'=\frac{\sqrt{3}y'-1}{y'+\sqrt{3}}=\frac{x}{y}
+    \Rightarrow\frac{\diff y}{\diff x}=\frac{\sqrt{3}x+y}{\sqrt{3}y-x}.\]
+  令 $u=\frac{y}{x}$, 则
+  \[u+x\frac{\diff u}{\diff x}=\frac{\sqrt{3}+u}{\sqrt{3}u-1}
+    \Rightarrow\left(\frac{\frac{1}{2}}{u-\sqrt{3}}
+      + \frac{\frac{\sqrt{3}}{2}}{\sqrt{3}u+1}\right)\diff u=-\frac{1}{x}\diff x.\]
+  积分得 $\sqrt{3}y^2-2xy-\sqrt{3}x^2=C\neq 0$, 代入初值 $P_0(0,1)$ 得 $C=\sqrt{3}$,
+  故动点轨迹方程为 $\sqrt{3}(x^2-y^2+1)+2xy=0$.
 \end{solve}
 
 
-*4.\textbf{追线}: 设在$Oxy$平面上, 有某物$P$从原点$O$出发, 以常速$a>0$沿$x$轴的正方向运动. 
-同时又有某物$Q$以常速$b$从点$(0,1)$出发追赶$P$. 设$b>a$,且$Q$的运动方向永远指向$P$. 试求$Q$的运动轨迹与追上$P$的时间.
+
+\begin{exercise}(追线) 
+  设在 $Oxy$ 平面上, 有某物 $P$ 从原点 $O$ 出发, 以常速 $a>0$ 沿 $x$ 轴的正方向运动. 
+  同时又有某物 $Q$ 以常速 $b$ 从点 $(0,1)$ 出发追赶 $P$. 设 $b>a$, 且 $Q$ 的运动方向永远指向 $P$. 
+  试求 $Q$ 的运动轨迹与追上 $P$ 的时间.
+\end{exercise}
 
 \begin{solve}
-设点$Q$的运动轨迹方程为$y=y(x)$, 记某时刻$Q$的坐标为$(x,y(x))$, 则相应地点$P$的坐标为$\left(x-\frac{y(x)}{y'(x)},0\right)$, 由时间关系得
-\[\frac{\int_0^x\sqrt{1+(y'(t))^2}\diff t}{b}=\frac{x-\frac{y(x)}{y'(x)}}{a}\]
-将上式对$x$求导得
-\[\frac{1}{b}\sqrt{1+(y'(x))^2}=\frac{1}{a}\left(1-\frac{(y'(x))^2-y(x)y''(x)}{(y'(x))^2}\right)=\frac{y(x)y''(x)}{a(y'(x))^2}\]
-即\[\frac{a}{b}\sqrt{1+(y')^2}=\frac{yy''}{(y')^2}\]
-令$p=y'$,则$y''=\frac{\diff p}{\diff x}=\frac{\diff p}{\diff y}\frac{\diff y}{\diff x}=p\frac{\diff p}{\diff y}$,从而上式化为
-\[\frac{a}{b}\sqrt{1+p^2}=\frac{yp\frac{\diff p}{\diff y}}{p^2}\Rightarrow\frac{\diff p}{p\sqrt{1+p^2}}=\frac{a}{b}\frac{\diff y}{y}\]
-注意到$p<0$,故
-\[\frac{a}{b}\frac{\diff y}{y}=\frac{-\frac{1}{p^2}\diff p}{\sqrt{1+\left(\frac{1}{p}\right)^2}}=\frac{\diff\left(\frac{1}{p}\right)}{\sqrt{1+\left(\frac{1}{p}\right)^2}}\]
-积分得
-\[\ln\left(\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}\right)=\frac{a}{b}(\ln y+\ln C)\]
-因此\[\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}=(Cy)^{\frac{a}{b}}\]
-当$y=1$时,$\frac{1}{p}=0$,故代入初值条件得$C=1$,故
-\[\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}=y^{\frac{a}{b}}\]
-取倒数得
-\[-\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}=y^{-\frac{a}{b}}\]
-两式相减可得变量分离的方程
-\[\diff x=\frac{1}{2}\left(y^{\frac{a}{b}}-y^{-\frac{a}{b}}\right)\diff y\]
-积分得
-\[x=\frac{b}{2(a+b)}y^{\frac{a+b}{b}}-\frac{b}{2(b-a)}y^{\frac{b-a}{b}}+C_1\]
-代入初值条件$(x,y)=(0,1)$得$C_1=\frac{ab}{b^2-a^2}$,故点$Q$的运动轨迹为
-\[x=\frac{b}{2(a+b)}y^{\frac{a+b}{b}}-\frac{b}{2(b-a)}y^{\frac{b-a}{b}}+\frac{ab}{b^2-a^2}\]
-当$Q$追上$P$时,重合点的横坐标为$x_1=\frac{ab}{b^2-a^2}$,故时间为$t=\frac{x_1}{a}=\frac{b}{b^2-a^2}$.
+  设点 $Q$ 的运动轨迹方程为 $y=y(x)$, 记某时刻 $Q$ 的坐标为 $(x,y(x))$,
+  则相应地点 $P$ 的坐标为 $\left(x-\frac{y(x)}{y'(x)},0\right)$, 由时间关系得
+  \[\frac{\int_0^x\sqrt{1+(y'(t))^2}\diff t}{b}=\frac{x-\frac{y(x)}{y'(x)}}{a}.\]
+  将上式对 $x$ 求导得
+  \[\frac{1}{b}\sqrt{1+(y'(x))^2}=\frac{1}{a}\left(1-\frac{(y'(x))^2-y(x)y''(x)}{(y'(x))^2}\right)
+    = \frac{y(x)y''(x)}{a(y'(x))^2}.\]
+  即
+  \[\frac{a}{b}\sqrt{1+(y')^2}=\frac{yy''}{(y')^2}.\]
+  令 $p=y'$, 则 $y''=\frac{\diff p}{\diff x}=\frac{\diff p}{\diff y}\frac{\diff y}{\diff x}=p\frac{\diff p}{\diff y}$,
+  从而上式化为
+  \[\frac{a}{b}\sqrt{1+p^2}=\frac{yp\frac{\diff p}{\diff y}}{p^2}
+    \Rightarrow\frac{\diff p}{p\sqrt{1+p^2}}=\frac{a}{b}\frac{\diff y}{y}.\]
+  注意到 $p<0$, 故
+  \[\frac{a}{b}\frac{\diff y}{y}=\frac{-\frac{1}{p^2}\diff p}{\sqrt{1+\left(\frac{1}{p}\right)^2}}
+    = \frac{\diff\left(\frac{1}{p}\right)}{\sqrt{1+\left(\frac{1}{p}\right)^2}}.\]
+  积分得
+  \[\ln\left(\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}\right)=\frac{a}{b}(\ln y+\ln C).\]
+  因此
+  \[\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}=(Cy)^{\frac{a}{b}}.\]
+  当 $y=1$ 时, $\frac{1}{p}=0$, 故代入初值条件得 $C=1$, 故
+  \[\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}=y^{\frac{a}{b}}.\]
+  取倒数得
+  \[-\frac{1}{p}+\sqrt{1+\left(\frac{1}{p}\right)^2}=y^{-\frac{a}{b}}.\]
+  两式相减可得变量分离的方程
+  \[\diff x=\frac{1}{2}\left(y^{\frac{a}{b}}-y^{-\frac{a}{b}}\right)\diff y.\]
+  积分得
+  \[x=\frac{b}{2(a+b)}y^{\frac{a+b}{b}}-\frac{b}{2(b-a)}y^{\frac{b-a}{b}}+C_1.\]
+  代入初值条件 $(x,y)=(0,1)$ 得 $C_1=\frac{ab}{b^2-a^2}$, 故点 $Q$ 的运动轨迹为
+  \[x=\frac{b}{2(a+b)}y^{\frac{a+b}{b}}-\frac{b}{2(b-a)}y^{\frac{b-a}{b}}+\frac{ab}{b^2-a^2}.\]
+  当 $Q$ 追上 $P$ 时, 重合点的横坐标为 $x_1=\frac{ab}{b^2-a^2}$,
+  故时间为 $t=\frac{x_1}{a}=\frac{b}{b^2-a^2}$.
 \end{solve}
-我们可以在本题的基础上讨论更一般的问题:在正$n$边形的每个顶点上分别有一个物体,
-按逆时针方向每一个物体都以不变的速度$v$跟踪与它相邻的物体,那么如何求每个物体的运动轨迹.
+我们可以在本题的基础上讨论更一般的问题: 在正 $n$ 边形的每个顶点上分别有一个物体,
+按逆时针方向每一个物体都以不变的速度 $v$ 跟踪与它相邻的物体, 那么如何求每个物体的运动轨迹.
 
-以$n=4$为例,设$t=0$时四个物体$A,B,C$和$D$分别在二维平面上的$(1,1),(-1,1),(-1,-1)$和$(1,-1)$处,
-从此刻开始$A,B,C,D$分别以不变的速度$v$追赶$B,C,D,A$.求物体$A$的运动轨迹.
+以 $n=4$ 为例, 设 $t=0$ 时四个物体 $A,B,C$ 和 $D$ 分别在二维平面上的
+$(1,1)$, $(-1,1)$, $(-1,-1)$ 和 $(1,-1)$ 处,
+从此刻开始 $A,B,C,D$ 分别以不变的速度 $v$ 追赶 $B,C,D,A$. 求物体 $A$ 的运动轨迹.
 \begin{solve}
-设$A$的轨迹方程为$y=y(x)$,记某时刻$A$的坐标为$(x,y(x))$,则此时$B$的坐标为$(-y(x),x)$,由于$A$的运动方向指向$B$,故
-\[y'(x)=\frac{y(x)-x}{x+y(x)}\]
-此为齐次方程容易解得
-\[2\arctan\frac{y}{x}+\ln\left(x^2+y^2\right)=\frac{\pi}{2}+\ln2\qedhere\]
+  设 $A$ 的轨迹方程为 $y=y(x)$, 记某时刻 $A$ 的坐标为 $(x,y(x))$,
+  则此时 $B$ 的坐标为 $(-y(x),x)$, 由于 $A$ 的运动方向指向 $B$, 故
+  \[y'(x)=\frac{y(x)-x}{x+y(x)}.\]
+  此为齐次方程容易解得
+  \[2\arctan\frac{y}{x}+\ln\left(x^2+y^2\right)=\frac{\pi}{2}+\ln 2.\qedhere\]
 \end{solve}
 
 
-5.{\heiti 逃逸速度}:假设地球的半径为$R=\qty{6437}{\kilo\metre}$,
-地面上的重力加速度为$g=\qty{9.8}{\meter\per\square\second}$,
-又设质量为$M$的火箭在地面以初速$v_0$垂直上升.假设不计空气阻力和其他任何星球的引力.试求火箭的逃逸速度,即:使火箭一去不复返的最小初速度$v_0$.
+
+\begin{exercise}(逃逸速度)
+  假设地球的半径为 $R=\qty{6437}{\kilo\metre}$,
+  地面上的重力加速度为 $g=\qty[per-mode=symbol]{9.8}{\meter\per\square\second}$,
+  又设质量为 $M$ 的火箭在地面以初速 $v_0$ 垂直上升.
+  假设不计空气阻力和其他任何星球的引力. 试求火箭的逃逸速度, 即: 使火箭一去不复返的最小初速度$v_0$.
+\end{exercise}
 
 \begin{solve}
-逃逸速度又称为第二宇宙速度,取沿地球径向向外为正方向,记地球质量为$M_1$,记火箭的速度函数为$v=v(t)$,位移函数为$s=s(t)$,则由牛顿第二定律知
-\[M\frac{\diff^2s}{\diff t^2}=-\frac{GM_1M}{s^2}\]
-故\[\frac{\diff^2s}{\diff t^2}=-\frac{GM_1}{s^2}\]
-由黄金代换$GM_1=gR^2$得\[-\frac{gR^2}{s^2}=\frac{\diff v}{\diff t}=\frac{\diff v}{\diff s}\frac{\diff s}{\diff t}=v\frac{\diff v}{\diff s}\]
+逃逸速度又称为第二宇宙速度, 取沿地球径向向外为正方向, 记地球质量为 $M_1$,
+记火箭的速度函数为 $v=v(t)$, 位移函数为 $s=s(t)$, 则由牛顿第二定律知
+\[M\frac{\diff^2s}{\diff t^2}=-\frac{GM_1M}{s^2}.\]
+故
+\[\frac{\diff^2s}{\diff t^2}=-\frac{GM_1}{s^2}.\]
+由黄金代换 $GM_1=gR^2$ 得
+\[-\frac{gR^2}{s^2}=\frac{\diff v}{\diff t}=\frac{\diff v}{\diff s}\frac{\diff s}{\diff t}
+  =v\frac{\diff v}{\diff s}.\]
 分离变量得
-\[v\diff v=-gR^2\frac{\diff s}{s^2}\]
-积分并代入初值条件得\[\frac{1}{2}v^2=\frac{gR^2}{s}+\left(\frac{1}{2}v_0^2-gR\right)\]
-要使得火箭从地球逃逸,就必须始终有$v>0$,因此
-\[\frac{1}{2}v_0^2-gR\geq0\Rightarrow v_0\geq\sqrt{2gR}=11.2\mathrm{km}/\mathrm{s}\qedhere\]
+\[v\diff v=-gR^2\frac{\diff s}{s^2}.\]
+积分并代入初值条件得
+\[\frac{1}{2}v^2=\frac{gR^2}{s}+\left(\frac{1}{2}v_0^2-gR\right).\]
+要使得火箭从地球逃逸, 就必须始终有 $v>0$, 因此
+\[\frac{1}{2}v_0^2-gR\geq 0
+\Longrightarrow v_0\geq\sqrt{2gR}=\qty[per-mode=symbol]{11.2}{\kilo\meter\per\second}.\qedhere\]
 \end{solve}
 
 
-6.设某社会的总人数为$N$,当时流行一种传染病,得病人数为$x$.设传染病人数的扩大率是与得病人数和未得病人数的乘积成正比.
-试讨论传染病人数的发展趋势,并以此解释对传染病人进行隔离的必要性.
+
+\begin{exercise}
+  设某社会的总人数为$N$,当时流行一种传染病,得病人数为$x$.设传染病人数的扩大率是与得病人数和未得病人数的乘积成正比.
+  试讨论传染病人数的发展趋势,并以此解释对传染病人进行隔离的必要性.
+\end{exercise}
+
 \begin{solve}
-设比例常数为$k$,则依题意得\[\frac{\diff x}{\diff t}=kx(N-x)\]
-上式为变量分离的方程,容易解得$x(t)=\frac{CN\e^{kNt}}{1+C\e^{kNt}}$,当$t\to+\infty$时,$x(t)\to N$,因此对传染病人进行隔离是有必要的.
+  设比例常数为 $k$, 则依题意得
+  \[\frac{\diff x}{\diff t}=kx(N-x).\]
+  上式为变量分离的方程, 容易解得 $x(t)=\frac{CN\e^{kNt}}{1+C\e^{kNt}}$,
+  当 $t\to+\infty$ 时, $x(t)\to N$, 因此对传染病人进行隔离是有必要的.
 \end{solve}
