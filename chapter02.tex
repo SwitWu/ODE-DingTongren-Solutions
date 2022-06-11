@@ -474,7 +474,7 @@
   方程的通解为
   \[y=\e^{-x}\left(C+\int_0^xf(s)\e^s\diff s\right).\]
   当 $x\to-\infty$ 时, $\e^{-x}\to+\infty$, 要使得解有界, 必有
-  \[C+\int_0^xf(s)\e^s\diff s\to0(x\to-\infty).\]
+  \[C+\int_0^xf(s)\e^s\diff s\to 0\quad (x\to-\infty).\]
   故取
   \[C = \int_{-\infty}^0f(s)\e^s\diff s.\]
   此时解为
@@ -492,185 +492,239 @@
 \end{proof}
 
 
-8.令集合$H^0=\{f(x)|f\mbox{是以}2\pi\mbox{为周期的连续函数}\}$,易知$H^0$关于实数域构成一个线性空间.对于任意$f\in H^0$,定义它的模
-\[\|f\|=\max_{0\leq x\leq 2\pi}|f(x)|.\]
-证明$H^0$是Banach空间,利用下式
-\[y(x)=\frac{1}{\e^{2a\pi}-1}\int_x^{x+2\pi}\e^{-a(x-s)}f(s)\diff s\]
-可以在空间$H^0$中定义一个变换$\varphi$,它把$f$变到$y$.试证:$\varphi$是有界线性算子.
 
-\begin{proof}任取$H^0$中的Cauchy序列$(f_n)_{n\geq1}$,即
-\[\forall\epsilon>0,\exists N>0,s.t.\forall m,n>N,\|f_m-f_n\|<\epsilon,i.e.\max_{0\leq x\leq2\pi}|f_m(x)-f_n(x)|<\epsilon\]
-故对于$\forall x\in\mathbb{R}$,$\left(f_n(x)\right)_{n\geq1}$是$\mathbb{R}$中的Cauchy序列,故收敛,记为$f_n(x)\to f(x)$,这样就得到了一个函数$f:\mathbb{R}\to\mathbb{R}$,容易验证$f(x)$是$2\pi$周期函数,且
-\[\|f_n-f\|=\max_{0\leq x\leq2\pi}|f_n(x)-f(x)|\to0(n\to\infty)\]
-故$f_n\to f(n\to\infty)$,所以$H^0$是Banach空间,下面证明$\varphi$是有界线性算子:线性性显然,有界性如下
-\[\begin{split}
-\|\varphi(f)\|
-&=\max_{0\leq x\leq2\pi}\left|\frac{1}{\e^{2a\pi}-1}\int_x^{x+2\pi}\e^{-a(x-s)}f(s)\diff s\right|\\
-&\leq\|f\|\cdot\left|\frac{1}{\e^{2a\pi}-1}\int_x^{x+2\pi}\e^{-a(x-s)}\diff s\right|=\frac{1}{a}\|f\|
-\end{split}\]
-证毕.
+\begin{exercise}
+  令集合 $H^0=\{f(x)\mid f\text{\ 是以\ }2\pi\text{\ 为周期的连续函数}\}$,
+  易知 $H^0$ 关于实数域构成一个线性空间. 对于任意 $f\in H^0$, 定义它的模
+  \[\|f\| = \max_{0\leq x\leq 2\pi}|f(x)|.\]
+  证明 $H^0$ 是 Banach 空间, 利用下式
+  \[y(x)=\frac{1}{\e^{2a\pi}-1}\int_x^{x+2\pi}\e^{-a(x-s)}f(s)\diff s.\]
+  可以在空间 $H^0$ 中定义一个变换 $\varphi$, 它把 $f$ 变到 $y$. 试证: $\varphi$ 是有界线性算子.
+\end{exercise}
+
+\begin{proof}
+  任取 $H^0$ 中的 Cauchy 序列 $(f_n)_{n\geq 1}$, 则
+  对任意 $\epsilon>0$, 存在 $N>0$, 使得当 $m,n>N$ 时有
+  \[\|f_m-f_n\|<\epsilon,\]
+  即
+  \[\max_{0\leq x\leq 2\pi}|f_m(x)-f_n(x)|<\epsilon.\]
+  故对于 $\forall x\in\mathbb{R}$, $\left(f_n(x)\right)_{n\geq 1}$ 是 $\mathbb{R}$ 中的 Cauchy 序列,
+  故收敛, 记为$f_n(x)\to f(x)$, 这样就得到了一个函数 $f:\mathbb{R}\to\mathbb{R}$,
+  容易验证 $f(x)$ 是 $2\pi$ 周期函数, 且
+  \[\|f_n-f\|=\max_{0\leq x\leq2\pi}|f_n(x)-f(x)|\to 0\quad (n\to\infty).\]
+  故 $f_n\to f$ $(n\to\infty)$, 所以 $H^0$ 是 Banach 空间, 下面证明 $\varphi$ 是有界线性算子:
+  线性性显然, 有界性如下
+  \begin{align*}
+    \|\varphi(f)\|
+    & = \max_{0\leq x\leq2\pi}\left|\frac{1}{\e^{2a\pi}-1}
+      \int_x^{x+2\pi}\e^{-a(x-s)}f(s)\diff s\right| \\
+    & \leq \|f\|\cdot\left|\frac{1}{\e^{2a\pi}-1}
+      \int_x^{x+2\pi}\e^{-a(x-s)}\diff s\right| = \frac{1}{a}\|f\|.
+    \qedhere
+  \end{align*}
 \end{proof}
+
 
 
 \section{初等变换法}
 
 
-1.求解下列微分方程:
-\begin{enumerate}
-\item $\displaystyle y'=\frac{2y-x}{2x-y}$;
-\item $\displaystyle y'=\frac{2y-x+5}{2x-y-4}$;
-\item $\displaystyle y'=\frac{x+2y+1}{2x+4y-1}$;
-\item $\displaystyle y'=x^3y^3-xy$.
-\end{enumerate}
+
+\begin{exercise}
+  求解下列微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle y'=\frac{2y-x}{2x-y}$;
+  \item $\displaystyle y'=\frac{2y-x+5}{2x-y-4}$;
+  \item $\displaystyle y'=\frac{x+2y+1}{2x+4y-1}$;
+  \item $\displaystyle y'=x^3y^3-xy$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)令$u=\frac{y}{x}$,则\[\frac{\diff y}{\diff x}=u+x\frac{\diff u}{\diff x}=\frac{2u-1}{2-u}\]
-当$u\neq\pm1$时,上式化为
-\[\frac{2-u}{u^2-1}\diff u=\frac{1}{x}\diff x\]
-积分得$y-x=C(x+y)^3(C\neq0)$,当$u=1$时,特解$y=x$可以令$C=0$合并到通解之中,当$u=-1$时特解为$x+y=0$.
-综上,原方程的通解为$y-x=C(x+y)^3(C\in\mathbb{R})$,特解为$x+y=0$.
+  (1) 令 $u=\frac{y}{x}$, 则
+  \[\frac{\diff y}{\diff x}=u+x\frac{\diff u}{\diff x}=\frac{2u-1}{2-u}.\]
+  当 $u\neq\pm 1$时, 上式化为
+  \[\frac{2-u}{u^2-1}\diff u = \frac{1}{x}\diff x.\]
+  积分得 $y-x=C(x+y)^3$ $(C\neq 0)$, 
+  当 $u=1$ 时, 特解 $y=x$ 可以令 $C=0$ 合并到通解之中, 当 $u=-1$ 时特解为 $x+y=0$.
+  综上, 原方程的通解为 $y-x=C(x+y)^3$ $(C\in\mathbb{R})$, 特解为 $x+y=0$.
 
-(2)令$\begin{cases}2\beta-\alpha+5=0\\2\alpha-\beta-4=0\end{cases}$,解得$\alpha=1,\beta=-2$,
-故作变量代换$\begin{cases}x=\xi+1\\y=\eta-2\end{cases}$,则原方程化为
-\[\frac{\diff\eta}{\diff\xi}=\frac{2\eta-\xi}{2\xi-\eta}\]
-由(1)知上述方程的通解为$\eta-\xi=C(\xi+\eta)^3(C\in\mathbb{R})$,特解为$\xi+\eta=0$,
-因此原方程的通解为$y-x+3=C(x+y+1)^3(C\in\mathbb{R})$,特解为$x+y+1=0$.
+  (2) 令 $\begin{cases}2\beta-\alpha+5=0\\2\alpha-\beta-4=0\end{cases}$,
+  解得 $\alpha=1$, $\beta=-2$,
+  故作变量代换 $\begin{cases}x=\xi+1\\y=\eta-2\end{cases}$, 则原方程化为
+  \[\frac{\diff\eta}{\diff\xi}=\frac{2\eta-\xi}{2\xi-\eta}.\]
+  由 (1) 知上述方程的通解为 $\eta-\xi=C(\xi+\eta)^3$ $(C\in\mathbb{R})$, 特解为 $\xi+\eta=0$,
+  因此原方程的通解为 $y-x+3=C(x+y+1)^3$ $(C\in\mathbb{R})$, 特解为 $x+y+1=0$.
 
-(3)令$v=x+2y$,则原方程化为
-\[\frac{\diff v}{\diff x}=1+2\frac{v+1}{2v-1}=\frac{4v+1}{2v-1}\]
-当$4v+1\neq0$时,上述方程等价于\[\frac{2v-1}{4v+1}\diff v=\diff x\]
-积分并代回原变量得通解$8y-4x-3\ln|4x+8y+1|=C$,当$4v+1=0$时,得特解$4x+8y+1=0$.
+  (3) 令 $v=x+2y$, 则原方程化为
+  \[\frac{\diff v}{\diff x}=1+2\frac{v+1}{2v-1}=\frac{4v+1}{2v-1}.\]
+  当 $4v+1\neq 0$ 时, 上述方程等价于
+  \[\frac{2v-1}{4v+1}\diff v=\diff x.\]
+  积分并代回原变量得通解 $8y-4x-3\ln|4x+8y+1|=C$, 当 $4v+1=0$ 时, 得特解 $4x+8y+1=0$.
 
-(4)此方程为伯努利方程,当$y\neq0$时,在方程两边同时乘以$-2y^{-3}$,得
-\[-2y^{-3}y'=-2x^3+2xy^{-2}\]
-令$u=y^{-2}$,则上式化为
-\[\frac{\diff u}{\diff x}=-2y^{-3}\frac{\diff y}{\diff x}=2xu-2x^3\]
-解得
-\[u(x)=\e^{\int2x\diff x}\left(C+\int-2x^3\e^{\int-2x\diff x}\diff x\right)=C\e^{x^2}+x^2+1\]
-代回变量即得原方程的通解为$y^2=\left(C\e^{x^2}+x^2+1\right)^{-1}$,另外$y=0$为特解.
+  (4) 此方程为伯努利方程, 当 $y\neq 0$ 时, 在方程两边同时乘以 $-2y^{-3}$, 得
+  \[-2y^{-3}y'=-2x^3+2xy^{-2}.\]
+  令 $u=y^{-2}$, 则上式化为
+  \[\frac{\diff u}{\diff x}=-2y^{-3}\frac{\diff y}{\diff x}=2xu-2x^3.\]
+  解得
+  \[u(x)=\e^{\int2x\diff x}\left(C+\int-2x^3\e^{\int-2x\diff x}\diff x\right)=C\e^{x^2}+x^2+1.\]
+  代回变量即得原方程的通解为 $y^2=\left(C\e^{x^2}+x^2+1\right)^{-1}$, 另外 $y=0$ 为特解.
 \end{solve}
 
 
-2.利用适当的变换,求解下列方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle y'=\cos(x-y)$;
-\item $\displaystyle(3uv+v^2)\diff u+(u^2+uv)\diff v=0$;
-\item $\displaystyle(x^2+y^2+3)\frac{\diff y}{\diff x}=2x\left(2y-\frac{x^2}{y}\right)$;
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{2x^3+3xy^2-7x}{3x^2y+2y^3-8y}$.
-\end{enumerate}
+
+\begin{exercise}
+  利用适当的变换,求解下列方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle y'=\cos(x-y)$;
+  \item $\displaystyle(3uv+v^2)\diff u+(u^2+uv)\diff v=0$;
+  \item $\displaystyle(x^2+y^2+3)\frac{\diff y}{\diff x}=2x\left(2y-\frac{x^2}{y}\right)$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{2x^3+3xy^2-7x}{3x^2y+2y^3-8y}$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)令$u=x-y$,则
-\[\frac{\diff u}{\diff x}=1-\cos u\]
-当$1-\cos u\neq0$即$x-y\neq2k\pi(k\in\mathbb{Z})$时,上述方程化为
-\[\frac{\diff u}{1-\cos u}=\diff x\]
-积分并代回原变量得通解为$\cot\frac{x-y}{2}+x+C=0$,当$1-\cos u=0$时,有特解$y=x+2k\pi(k\in\mathbb{Z})$.
+  (1) 令 $u=x-y$, 则
+  \[\frac{\diff u}{\diff x}=1-\cos u.\]
+  当 $1-\cos u\neq 0$, 即 $x-y\neq 2k\pi$ $(k\in\mathbb{Z})$ 时, 上述方程化为
+  \[\frac{\diff u}{1-\cos u}=\diff x.\]
+  积分并代回原变量得通解为 $\cot\frac{x-y}{2}+x+C=0$, 当 $1-\cos u=0$ 时,
+  有特解 $y=x+2k\pi$ $(k\in\mathbb{Z})$.
 
-(2)可以用齐次方程的标准解法求解,但是也可以用积分因子法,在方程两边同时乘以$u$,得
-\[(3u^2v+uv^2)\diff u+(u^3+u^2v)\diff v=0\]
-分组得
-\[(3u^2v\diff u+u^3\diff v)+(uv^2\diff u+u^2v\diff v)=\diff\left(u^3v+\frac{1}{2}u^2v^2\right)=0\]
-故通解为$u^3v+\frac{1}{2}u^2v^2=C$.
+  (2) 可以用齐次方程的标准解法求解, 但是也可以用积分因子法, 在方程两边同时乘以 $u$, 得
+  \[(3u^2v+uv^2)\diff u+(u^3+u^2v)\diff v=0.\]
+  分组得
+  \[(3u^2v\diff u+u^3\diff v)+(uv^2\diff u+u^2v\diff v)=\diff\left(u^3v+\frac{1}{2}u^2v^2\right)=0.\]
+  故通解为 $u^3v+\frac{1}{2}u^2v^2=C$.
 
-(3)原方程等价于
-\[\frac{2y\diff y}{2x\diff x}=\frac{4y^2-2x^2}{x^2+y^2+3}\mbox{即}\frac{\diff y^2}{\diff x^2}=\frac{4y^2-2x^2}{x^2+y^2+3}\]
-令$v=x^2,u=y^2$,则上述方程化为
-\[\frac{\diff u}{\diff v}=\frac{4u-2v}{u+v+3}\]
-令$\begin{cases}4u-2v=0\\u+v+3=0\end{cases}$,解得$u=-1,v=-2$,故作变换$\begin{cases}v=\xi-2\\u=\eta-1\end{cases}$,则方程化为
-\[\frac{\diff\eta}{\diff\xi}=\frac{4\eta-2\xi}{\eta+\xi}\]
-令$\beta=\frac{\eta}{\xi}$,则当$\beta\neq1$且$\beta\neq2$时,
-\[\frac{\diff\eta}{\diff\xi}=\beta+\xi\frac{\diff\beta}{\diff\xi}=\frac{4\beta-2}{\beta+1}\Rightarrow\frac{\beta+1}{(\beta-1)(\beta-2)}\diff\beta=-\frac{1}{\xi}\diff\xi\]
-积分并代回原变量得$\left(y^2-2x^2-3\right)^3=C\left(y^2-x^2-1\right)^2(C\neq0)$.
-当$\beta=1$时,得特解$y^2=x^2+1$,当$\beta=2$时,得特解$y^2-2x^2-3=0$,显然这个特解可以合并到通解之中.
-综上所述,原方程的通解为$\left(y^2-2x^2-3\right)^3=C\left(y^2-x^2-1\right)^2(C\in\mathbb{R})$,特解为$y^2=x^2+1$.
+  (3)原方程等价于
+  \[\frac{2y\diff y}{2x\diff x} = \frac{4y^2-2x^2}{x^2+y^2+3},\]
+  即
+  \[\frac{\diff y^2}{\diff x^2} = \frac{4y^2-2x^2}{x^2+y^2+3}.\]
+  令 $v=x^2,u=y^2$, 则上述方程化为
+  \[\frac{\diff u}{\diff v}=\frac{4u-2v}{u+v+3}.\]
+  令 $\begin{cases}4u-2v=0\\u+v+3=0\end{cases}$, 解得 $u=-1,v=-2$, 故作变换
+  $\begin{cases}v=\xi-2\\u=\eta-1\end{cases}$, 则方程化为
+  \[\frac{\diff\eta}{\diff\xi}=\frac{4\eta-2\xi}{\eta+\xi}.\]
+  令 $\beta=\frac{\eta}{\xi}$, 则当 $\beta\neq 1$ 且 $\beta\neq 2$ 时,
+  \[\frac{\diff\eta}{\diff\xi}=\beta+\xi\frac{\diff\beta}{\diff\xi}
+    = \frac{4\beta-2}{\beta+1}
+    \Rightarrow\frac{\beta+1}{(\beta-1)(\beta-2)}\diff\beta=-\frac{1}{\xi}\diff\xi.\]
+  积分并代回原变量得 $\left(y^2-2x^2-3\right)^3 = C\left(y^2-x^2-1\right)^2$ $(C\neq 0)$.
+  当 $\beta=1$ 时, 得特解 $y^2=x^2+1$, 当 $\beta=2$ 时, 
+  得特解 $y^2-2x^2-3=0$, 显然这个特解可以合并到通解之中.
+  综上所述, 原方程的通解为 $\left(y^2-2x^2-3\right)^3=C\left(y^2-x^2-1\right)^2$ $(C\in\mathbb{R})$,
+  特解为 $y^2=x^2+1$.
 
-(4)原方程等价于
-\[\frac{\diff y^2}{\diff x^2}=\frac{2x^2+3y^2-7}{3x^2+2y^2-8}\]
-令$v=x^2,u=y^2$,则上述方程化为
-\[\frac{\diff u}{\diff v}=\frac{3u+2v-7}{2u+3v-8}\]
-令$\begin{cases}v=\xi+2\\u=\eta+1\end{cases}$,则
-\[\frac{\diff\eta}{\diff\xi}=\frac{3\eta+2\xi}{2\eta+3\xi}\]
-令$\beta=\frac{\eta}{\xi}$,则当$\beta\neq\pm1$时,
-\[\beta+\xi\frac{\diff\beta}{\diff\xi}=\frac{3\beta+2}{2\beta+3}\Rightarrow\frac{2\beta+3}{\beta^2-1}\diff\beta=\frac{-2}{\xi}\diff\xi\]
-积分并代回原变量得$(y^2-x^2+1)^5=C(x^2+y^2-3)(C\neq0)$.
-当$\beta=1$时,得特解$y^2-x^2+1=0$,显然此特解可合并到通解之中,当$\beta=-1$时得特解$x^2+y^2-3=0$.
+  (4)原方程等价于
+  \[\frac{\diff y^2}{\diff x^2}=\frac{2x^2+3y^2-7}{3x^2+2y^2-8}.\]
+  令 $v=x^2,u=y^2$, 则上述方程化为
+  \[\frac{\diff u}{\diff v}=\frac{3u+2v-7}{2u+3v-8}.\]
+  令 $\begin{cases}v=\xi+2\\u=\eta+1\end{cases}$, 则
+  \[\frac{\diff\eta}{\diff\xi}=\frac{3\eta+2\xi}{2\eta+3\xi}.\]
+  令 $\beta=\frac{\eta}{\xi}$, 则当 $\beta\neq\pm 1$ 时,
+  \[\beta+\xi\frac{\diff\beta}{\diff\xi} = \frac{3\beta+2}{2\beta+3}
+    \Rightarrow\frac{2\beta+3}{\beta^2-1}\diff\beta=\frac{-2}{\xi}\diff\xi.\]
+  积分并代回原变量得 $(y^2-x^2+1)^5=C(x^2+y^2-3)$ $(C\neq 0)$.
+  当 $\beta=1$ 时, 得特解 $y^2-x^2+1=0$, 显然此特解可合并到通解之中, 当 $\beta=-1$ 时得特解 $x^2+y^2-3=0$.
 \end{solve}
 
 
-3.求解下列微分方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle y'=-y^2-\frac{1}{4x^2}$;
-\item $\displaystyle x^2y'=x^2y^2+xy+1$.
-\end{enumerate}
+
+\begin{exercise}
+  求解下列微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle y'=-y^2-\frac{1}{4x^2}$;
+  \item $\displaystyle x^2y'=x^2y^2+xy+1$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)这是Riccati方程,由定理2.3中的做法,令$z=xy$,则原方程化为
-\[\frac{\diff z}{\diff x}=\frac{-\frac{1}{4}+z-z^2}{x}=\frac{-\left(z-\frac{1}{2}\right)^2}{x}\]
-当$z=\frac{1}{2}$时得特解$y=\frac{1}{2x}$,当$z\neq\frac{1}{2}$时,上述方程化为
-\[\frac{\diff z}{-\left(z-\frac{1}{2}\right)^2}=\frac{\diff x}{x}\]
-积分得通解为$y=\frac{1}{2x}+\frac{1}{Cx+x\ln|x|}$.
+  (1)这是 Riccati 方程, 由定理 2.3 中的做法, 令 $z=xy$, 则原方程化为
+  \[\frac{\diff z}{\diff x}=\frac{-\frac{1}{4}+z-z^2}{x}=\frac{-\left(z-\frac{1}{2}\right)^2}{x}.\]
+  当 $z=\frac{1}{2}$ 时得特解 $y=\frac{1}{2x}$, 当 $z\neq\frac{1}{2}$ 时, 上述方程化为
+  \[\frac{\diff z}{-\left(z-\frac{1}{2}\right)^2}=\frac{\diff x}{x}.\]
+  积分得通解为 $y=\frac{1}{2x}+\frac{1}{Cx+x\ln|x|}$.
 
-(2)这是Riccati方程,容易观察出一个特解为$y=-\frac{1}{x}$,令$y=u-\frac{1}{x}$,其中$u$是新的未知函数,则
-\[\frac{\diff y}{\diff x}=\frac{\diff u}{\diff x}+\frac{1}{x^2}=\left(u-\frac{1}{x}\right)^2+\frac{1}{x}\left(u-\frac{1}{x}\right)+\frac{1}{x^2}=u^2-\frac{u}{x}+\frac{1}{x^2}\]
-故
-\[\frac{\diff u}{\diff x}+\frac{u}{x}=u^2\]
-这是伯努利方程,当$u=0$时,得特解$xy+1=0$,当$u\neq0$时,在方程两边同时乘以$-u^{-2}$,得
-\[-u^{-2}\frac{\diff u}{\diff x}-\frac{u^{-1}}{x}=-1\]
-令$z=u^{-1}$,则上述方程化为一阶线性方程
-\[\frac{\diff z}{\diff x}-\frac{z}{x}=-1\]
-解得
-\[\begin{split}
-z&=\e^{\int\frac{1}{x}\diff x}\left(C+\int-\e^{-\int\frac{1}{x}\diff x}\diff x\right)\\
-&=|x|\left(C+\int\frac{-1}{|x|}\diff x\right)=|x|\left(C-\sgn x\cdot\ln|x|\right)=Cx-x\ln|x|
-\end{split}\]
-故原方程的通解为$y=-\frac{1}{x}+\frac{1}{Cx-x\ln|x|}$.
+  (2)这是 Riccati 方程, 容易观察出一个特解为 $y=-\frac{1}{x}$,
+  令 $y=u-\frac{1}{x}$, 其中 $u$ 是新的未知函数, 则
+  \[\frac{\diff y}{\diff x}=\frac{\diff u}{\diff x}+\frac{1}{x^2}
+    = \left(u-\frac{1}{x}\right)^2+\frac{1}{x}\left(u-\frac{1}{x}\right)+\frac{1}{x^2}
+    = u^2-\frac{u}{x}+\frac{1}{x^2}.\]
+  故
+  \[\frac{\diff u}{\diff x}+\frac{u}{x} = u^2.\]
+  这是伯努利方程, 当 $u=0$ 时, 得特解 $xy+1=0$; 当 $u\neq 0$ 时, 在方程两边同时乘以 $-u^{-2}$, 得
+  \[-u^{-2}\frac{\diff u}{\diff x}-\frac{u^{-1}}{x}=-1.\]
+  令 $z=u^{-1}$, 则上述方程化为一阶线性方程
+  \[\frac{\diff z}{\diff x}-\frac{z}{x} = -1.\]
+  解得
+  \begin{align*}
+    z & = \e^{\int\frac{1}{x}\diff x}\left(C+\int-\e^{-\int\frac{1}{x}\diff x}\diff x\right)\\
+      & = |x|\left(C+\int\frac{-1}{|x|}\diff x\right)=|x|\left(C-\sgn x\cdot\ln|x|\right)=Cx-x\ln|x|.
+  \end{align*}
+  故原方程的通解为 $y=-\frac{1}{x}+\frac{1}{Cx-x\ln|x|}$.
 \end{solve}
 
 
-4.试把二阶微分方程
-\[y''+p(x)y'+q(x)y=0\]
-化成一个里卡蒂方程.
+
+\begin{exercise}
+  试把二阶微分方程
+  \[y''+p(x)y'+q(x)y=0\]
+  化成一个里卡蒂方程.
+\end{exercise}
 
 \begin{solve}
-令$y=\e^{\int u\diff x}$,即得Riccati方程
-\[u'+u^2+p(x)u+q(x)=0.\qedhere\]
+  令 $y=\e^{\int u\diff x}$, 即得 Riccati 方程
+  \[u'+u^2+p(x)u+q(x)=0.\qedhere\]
 \end{solve}
 
 
-5.求一曲线,使得过这曲线上任意点的切线与该点向径的夹角等于$\frac{\pi}{4}$.
+
+\begin{exercise}
+  求一曲线, 使得过这曲线上任意点的切线与该点向径的夹角等于 $\frac{\pi}{4}$.
+\end{exercise}
 
 \begin{solve}
-设曲线方程为$y=y(x)$,则
-\[\tan\frac{\pi}{4}=\frac{\frac{\diff y}{\diff x}-\frac{y}{x}}{1+\frac{\diff y}{\diff x}\frac{y}{x}}=1\Rightarrow\frac{\diff y}{\diff x}=\frac{x+y}{x-y}\]
-解得$2\arctan\frac{y}{x}-\ln(x^2+y^2)=C$.
+  设曲线方程为 $y=y(x)$,则
+  \[\tan\frac{\pi}{4}=\frac{\frac{\diff y}{\diff x}-\frac{y}{x}}{1+\frac{\diff y}{\diff x}\frac{y}{x}}
+  = 1\Rightarrow\frac{\diff y}{\diff x}=\frac{x+y}{x-y}.\]
+  解得 $2\arctan\frac{y}{x}-\ln(x^2+y^2)=C$.
 \end{solve}
 
 
-6.探照灯的反光镜(旋转曲面)应具有何种形状,才能使点光源发射的光束反射成平行线束.
+
+\begin{exercise}
+  探照灯的反光镜 (旋转曲面) 应具有何种形状, 才能使点光源发射的光束反射成平行线束.
+\end{exercise}
 
 \begin{solve}
-设所求曲面由曲线$y=y(x)(y\geq0)$绕$x$轴旋转而成,并且不妨将点光源置于原点,
-且平行光线沿$x$轴正方向射出(所以下面要保证$\frac{\diff y}{\diff x}>0$),则由几何关系得
-\[\frac{\diff y}{\diff x}=\frac{\frac{y}{x}-\frac{\diff y}{\diff x}}{1+\frac{y}{x}\frac{\diff y}{\diff x}}\]
-化简为
-\[\frac{y}{x}\left(\frac{\diff y}{\diff x}\right)^2+2\frac{\diff y}{\diff x}-\frac{y}{x}=0\]
-故
-\[\frac{\diff y}{\diff x}=\frac{-1\pm\sqrt{1+\left(\frac{y}{x}\right)^2}}{\frac{y}{x}}=\frac{-x\pm\sgn x\cdot\sqrt{x^2+y^2}}{y}\]
-为了使得$\frac{\diff y}{\diff x}>0$,取
-\[\frac{\diff y}{\diff x}=\frac{-x+\sqrt{x^2+y^2}}{y}\]
-当$x>0$时,上述方程等价于
-\[\frac{\diff y}{\diff x}=\frac{-1+\sqrt{1+\left(\frac{y}{x}\right)^2}}{\frac{y}{x}}\]
-令$u=\frac{y}{x}$,则
-\[u+x\frac{\diff u}{\diff x}=\frac{-1+\sqrt{1+u^2}}{u}\Rightarrow\frac{u}{1+u^2-\sqrt{1+u^2}}\diff u=-\frac{1}{x}\diff x\]
-积分并代回原变量得通解$y^2=C(2x+C)(C>0,x>0)$.
+  设所求曲面由曲线 $y=y(x)$ $(y\geq 0)$ 绕 $x$ 轴旋转而成, 并且不妨将点光源置于原点,
+  且平行光线沿 $x$ 轴正方向射出 (所以下面要保证 $\frac{\diff y}{\diff x}>0$), 则由几何关系得
+  \[\frac{\diff y}{\diff x}
+    = \frac{\frac{y}{x}-\frac{\diff y}{\diff x}}{1+\frac{y}{x}\frac{\diff y}{\diff x}}.\]
+  化简为
+  \[\frac{y}{x}\left(\frac{\diff y}{\diff x}\right)^2+2\frac{\diff y}{\diff x}-\frac{y}{x}=0.\]
+  故
+  \[\frac{\diff y}{\diff x}=\frac{-1\pm\sqrt{1+\left(\frac{y}{x}\right)^2}}{\frac{y}{x}}
+    = \frac{-x\pm\sgn x\cdot\sqrt{x^2+y^2}}{y}.\]
+  为了使得 $\frac{\diff y}{\diff x}>0$, 取
+  \[\frac{\diff y}{\diff x}=\frac{-x+\sqrt{x^2+y^2}}{y}.\]
+  当 $x>0$ 时, 上述方程等价于
+  \[\frac{\diff y}{\diff x}=\frac{-1+\sqrt{1+\left(\frac{y}{x}\right)^2}}{\frac{y}{x}}.\]
+  令 $u=\frac{y}{x}$, 则
+  \[u+x\frac{\diff u}{\diff x}=\frac{-1+\sqrt{1+u^2}}{u}
+    \Rightarrow \frac{u}{1+u^2-\sqrt{1+u^2}}\diff u=-\frac{1}{x}\diff x.\]
+  积分并代回原变量得通解 $y^2=C(2x+C)$ $(C>0,x>0)$.
 
-当$x<0$时,上述方程等价于
-\[\frac{\diff y}{\diff x}=\frac{-1-\sqrt{1+\left(\frac{y}{x}\right)^2}}{\frac{y}{x}}\]
-令$u=\frac{y}{x}$,则
-\[u+x\frac{\diff u}{\diff x}=\frac{-1-\sqrt{1+u^2}}{u}\Rightarrow\frac{u}{1+u^2+\sqrt{1+u^2}}\diff u=-\frac{1}{x}\diff x\]
-积分并代回原变量得通解$y^2=C(2x+C)(C>0,-C/2\leq x<0)$.
+  当 $x<0$ 时, 上述方程等价于
+  \[\frac{\diff y}{\diff x}=\frac{-1-\sqrt{1+\left(\frac{y}{x}\right)^2}}{\frac{y}{x}}.\]
+  令 $u=\frac{y}{x}$, 则
+  \[u+x\frac{\diff u}{\diff x}=\frac{-1-\sqrt{1+u^2}}{u}
+    \Rightarrow \frac{u}{1+u^2+\sqrt{1+u^2}}\diff u=-\frac{1}{x}\diff x.\]
+  积分并代回原变量得通解 $y^2=C(2x+C)$ $(C>0,-C/2\leq x<0)$.
 
-综上,原方程的通解为$y^2=C(2x+C)(C>0,x\geq-C/2)$,因此旋转曲面的方程为$y^2+z^2=C(2x+C)(C>0)$,由此可知该曲面是一个旋转抛物面.
+  综上,原方程的通解为 $y^2=C(2x+C)$ $(C>0,x\geq-C/2)$,
+  因此旋转曲面的方程为 $y^2+z^2=C(2x+C)$ $(C>0)$, 由此可知该曲面是一个旋转抛物面.
 \end{solve}
 
 \section{积分因子法(Integrating Factor)}
