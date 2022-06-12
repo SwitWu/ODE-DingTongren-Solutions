@@ -1,150 +1,205 @@
+\setcounter{chapter}{4}
 \chapter{高阶微分方程}
+
 
 
 \section{几个例子}
 
 
-1.利用线性单摆方程测量你所在地的重力常数$g$.
+
+\begin{exercise}
+  利用线性单摆方程测量你所在地的重力常数 $g$.
+\end{exercise}
 
 \begin{solve} 
-利用单摆周期$T=2\pi\sqrt{\frac{l}{g}}$即得$g=\frac{4\pi^2}{T^2}l$, 测量摆长以及单摆完成一个周期运动的时间即可得出所在地的重力常数$g$.
+  利用单摆周期 $T=2\pi\sqrt{\frac{l}{g}}$ 即得 $g=\frac{4\pi^2}{T^2}l$, 
+  测量摆长以及单摆完成一个周期运动的时间即可得出所在地的重力常数 $g$.
 \end{solve}
 
 
-2.如果在非线性单摆方程中取 $\sin x$ 的三次近似, 即
-\[\sin x\sim x-\frac{x^3}{6},\]
-则有单摆的三次近似方程\[\frac{\diff^2x}{\diff t^2}+a^2\left(x-\frac{x^3}{6}\right)=0.\]
-由此证明单摆振动是不等时的, 而且它的相图说明可以发生进动.
+
+\begin{exercise}
+  如果在非线性单摆方程中取 $\sin x$ 的三次近似, 即
+  \[\sin x\sim x-\frac{x^3}{6},\]
+  则有单摆的三次近似方程
+  \[\frac{\diff^2x}{\diff t^2}+a^2\left(x-\frac{x^3}{6}\right)=0.\]
+  由此证明单摆振动是不等时的, 而且它的相图说明可以发生进动.
+\end{exercise}
 
 \begin{proof}
-将方程变形然后两边同时乘以$\frac{\diff x}{\diff t}$即得
-\[\frac{\diff x}{\diff t}\frac{\diff^2x}{\diff t^2}=a^2\left(\frac{x^3}{6}-x\right)\frac{\diff x}{\diff t}\]
-积分得\[\frac{1}{2}\left(\frac{\diff x}{\diff t}\right)^2=a\left(\frac{x^4}{24}-\frac{x^2}{2}\right)+\frac{C}{2}\]
-设单摆的振幅为$A$, 则
-\[\frac{\diff x}{\diff t}=\pm\sqrt{a^2\left(\frac{x^4}{12}-x^2\right)+C}=\pm\sqrt{a^2\left(\frac{x^4}{12}-x^2\right)-a^2\left(\frac{A^4}{12}-A^2\right)}\]
-故周期$T$满足
-\[\frac{T}{4}=\int_0^A\frac{\diff x}{\sqrt{a^2\left(\frac{x^4}{12}-x^2-\frac{A^4}{12}+A^2\right)}}\]
-因此\[T=\frac{4}{a}\int_0^1\frac{A\diff u}{\sqrt{\frac{A^4}{12}(u^4-1)-A^2(u^2-1)}}=\frac{4}{a}\int_0^1\frac{\diff u}{\sqrt{(u^2-1)\left(\frac{A^2}{12}(u^2+1)-1\right)}}\]
-由于$T$与$A$有关, 故单摆的振动是不等时的.
+  将方程变形然后两边同时乘以 $\frac{\diff x}{\diff t}$ 即得
+  \[\frac{\diff x}{\diff t}\frac{\diff^2x}{\diff t^2}
+    = a^2\left(\frac{x^3}{6}-x\right)\frac{\diff x}{\diff t}.\]
+  积分得
+  \[\frac{1}{2}\left(\frac{\diff x}{\diff t}\right)^2
+    = a\left(\frac{x^4}{24}-\frac{x^2}{2}\right)+\frac{C}{2}.\]
+  设单摆的振幅为 $A$, 则
+  \[\frac{\diff x}{\diff t}=\pm\sqrt{a^2\left(\frac{x^4}{12}-x^2\right)+C}
+    = \pm\sqrt{a^2\left(\frac{x^4}{12}-x^2\right)-a^2\left(\frac{A^4}{12}-A^2\right)}.\]
+  故周期 $T$ 满足
+  \[\frac{T}{4}=\int_0^A\frac{\diff x}{\sqrt{a^2\left(\frac{x^4}{12}-x^2-\frac{A^4}{12}+A^2\right)}}.\]
+  因此
+  \[T=\frac{4}{a}\int_0^1\frac{A\diff u}{\sqrt{\frac{A^4}{12}(u^4-1)-A^2(u^2-1)}}
+    = \frac{4}{a}\int_0^1\frac{\diff u}{\sqrt{(u^2-1)\left(\frac{A^2}{12}(u^2+1)-1\right)}}.\]
+  由于 $T$ 与 $A$ 有关, 故单摆的振动是不等时的.
 \end{proof}
 
 
-3.在悬链线问题中当$L=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$时如何处理?
+
+\begin{exercise}
+  在悬链线问题中当 $L=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ 时如何处理?
+\end{exercise}
 
 \begin{solve} 
-此时悬链线即为直线段, 其方程为$y=\frac{y_2-y_1}{x_2-x_1}(x-x_1)+y_1(x_1\leq x\leq x_2)$.
+  此时悬链线即为直线段, 其方程为  $y=\frac{y_2-y_1}{x_2-x_1}(x-x_1)+y_1$ $(x_1\leq x\leq x_2)$.
 \end{solve}
 
 
-4.微分方程(5.20)表示二体问题的运动方程. 在上面求解过程中, 试适当选择积分常数, 
-使运动$(x(t),y(t),z(t))$的轨道在一条直线上并且趋向$O$点(即二体发生碰撞); 或者使轨道是一圆周.
+
+\begin{exercise}
+  微分方程 (5.20) 表示二体问题的运动方程. 在上面求解过程中, 试适当选择积分常数, 
+  使运动 $(x(t),y(t),z(t))$ 的轨道在一条直线上并且趋向 $O$ 点 (即二体发生碰撞); 或者使轨道是一圆周.
+\end{exercise}
 
 \begin{solve} 
-(i)运动$(x(t),y(t),z(t))$的轨道在一条直线上并且趋向$O$点(即二体发生碰撞)时, $\frac{\diff\theta}{\diff t}=0$, 由(5.28)知$C_3=0$, 再由(5.27)知$\frac{\diff r}{\diff t}=-\sqrt{\frac{2\mu}{r}+C_4}$.\\
-(ii)运动$(x(t),y(t),z(t))$的轨道是一圆周时, $\frac{\diff r}{\diff t}=0$, 故$r=r_0$, 由(5.27)知$C_4=\left(r_0\frac{\diff\theta}{\diff t}\right)^2-\frac{2\mu}{r_0}$, 又由(5.28)知$r_0^2\frac{\diff\theta}{\diff t}=-C_3$, 故$C_4=\frac{C_3^2}{r_0^2}-\frac{2\mu}{r_0}$.
+  (i) 运动 $(x(t),y(t),z(t))$ 的轨道在一条直线上并且趋向 $O$ 点 (即二体发生碰撞)时, 
+  $\frac{\diff\theta}{\diff t}=0$, 由 (5.28) 知 $C_3=0$, 再由 (5.27) 知
+  $\frac{\diff r}{\diff t}=-\sqrt{\frac{2\mu}{r}+C_4}$.
+
+  (ii) 运动 $(x(t),y(t),z(t))$ 的轨道是一圆周时, $\frac{\diff r}{\diff t}=0$, 
+  故 $r=r_0$, 由 (5.27) 知 $C_4=\left(r_0\frac{\diff\theta}{\diff t}\right)^2-\frac{2\mu}{r_0}$, 
+  又由 (5.28) 知 $r_0^2\frac{\diff\theta}{\diff t}=-C_3$, 
+  故 $C_4=\frac{C_3^2}{r_0^2}-\frac{2\mu}{r_0}$.
 \end{solve}
+
 
 
 \section{$n$ 维线性空间中的微分方程}
 
 
-1.把单摆方程(5.7), 悬链线方程(5.15)和二体运动方程(5.20)分别写成标准微分方程组.
+
+\begin{exercise}
+  把单摆方程 (5.7), 悬链线方程 (5.15) 和二体运动方程 (5.20) 分别写成标准微分方程组.
+\end{exercise}
 
 \begin{solve} 
-\begin{enumerate}[(i)]
-\item 单摆方程\[\frac{\diff^2x}{\diff t^2}+a^2\sin x=0\]
-令$x_1=x,x_2=\frac{\diff x}{\diff t}$, 则标准微分方程组为
-\[\begin{cases}
-\frac{\diff x_1}{\diff t}=x_2\\\frac{\diff x_2}{\diff t}=-a^2\sin x_1
-\end{cases}\]
-\item 悬链线方程\[y''=a\sqrt{1+(y')^2}\]
-令$y_1=y,y_2=\frac{\diff y}{\diff x}$, 则标准微分方程组为
-\[\begin{cases}
-\frac{\diff y_1}{\diff t}=y_2\\\frac{\diff y_2}{\diff t}=a\sqrt{1+y_2^2}
-\end{cases}\]
-\item 二体运动方程
-\[\begin{cases}
-\ddot{x}=-\frac{Gm_sx}{(\sqrt{x^2+y^2+z^2})^3}\\
-\ddot{y}=-\frac{Gm_sy}{(\sqrt{x^2+y^2+z^2})^3}\\
-\ddot{x}=-\frac{Gm_sz}{(\sqrt{x^2+y^2+z^2})^3}
-\end{cases}\]
-令$s_1=x,s_2=\frac{\diff x}{\diff t},s_3=y,s_4=\frac{\diff y}{\diff t},s_5=z,s_6=\frac{\diff z}{\diff t}$, 则标准微分方程组为
-\[\begin{cases}
-\frac{\diff s_1}{\diff t}=s_2\\
-\frac{\diff s_2}{\diff t}=-\frac{Gm_ss_1}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}\\
-\frac{\diff s_3}{\diff t}=s_4\\
-\frac{\diff s_4}{\diff t}=-\frac{Gm_ss_3}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}\\
-\frac{\diff s_5}{\diff t}=s_6\\
-\frac{\diff s_6}{\diff t}=-\frac{Gm_ss_5}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}
-\end{cases}\]
-\end{enumerate}
+  (i) 单摆方程为
+  \[\frac{\diff^2x}{\diff t^2}+a^2\sin x=0.\]
+  令 $x_1=x,x_2=\frac{\diff x}{\diff t}$, 则标准微分方程组为
+  \[\begin{cases}
+  \frac{\diff x_1}{\diff t}=x_2, \\
+  \frac{\diff x_2}{\diff t}=-a^2\sin x_1.
+  \end{cases}\]
+  (ii) 悬链线方程为
+  \[y''=a\sqrt{1+(y')^2}.\]
+  令 $y_1=y,y_2=\frac{\diff y}{\diff x}$, 则标准微分方程组为
+  \[\begin{cases}
+  \frac{\diff y_1}{\diff t}=y_2, \\
+  \frac{\diff y_2}{\diff t}=a\sqrt{1+y_2^2}.
+  \end{cases}\]
+  (iii) 二体运动方程为
+  \[\begin{cases}
+  \ddot{x} = -\frac{Gm_sx}{\bigl(\sqrt{x^2+y^2+z^2}\bigr)^3}, \\
+  \ddot{y} = -\frac{Gm_sy}{\bigl(\sqrt{x^2+y^2+z^2}\bigr)^3}, \\
+  \ddot{z} = -\frac{Gm_sz}{\bigl(\sqrt{x^2+y^2+z^2}\bigr)^3}.
+  \end{cases}\]
+  令$s_1=x,s_2=\frac{\diff x}{\diff t},s_3=y,s_4=\frac{\diff y}{\diff t},s_5=z,s_6=\frac{\diff z}{\diff t}$, 则标准微分方程组为
+  \[\begin{cases}
+  \frac{\diff s_1}{\diff t} = s_2, \\
+  \frac{\diff s_2}{\diff t} = -\frac{Gm_ss_1}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}, \\
+  \frac{\diff s_3}{\diff t} = s_4,\\
+  \frac{\diff s_4}{\diff t} = -\frac{Gm_ss_3}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}, \\
+  \frac{\diff s_5}{\diff t} = s_6,\\
+  \frac{\diff s_6}{\diff t} = -\frac{Gm_ss_5}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}.
+  \end{cases}\]
 \end{solve}
 
 
-2.对 $n$ 维向量形式的微分方程, 叙述相应的皮卡存在和唯一性定理以及佩亚诺存在定理, 并写出证明的主要步骤.
+
+\begin{exercise}
+  对 $n$ 维向量形式的微分方程, 叙述相应的皮卡存在和唯一性定理以及佩亚诺存在定理, 并写出证明的主要步骤.
+\end{exercise}
 
 \begin{solve}
-(Picard存在和唯一性定理)设初值问题
-\[(E):\frac{\diff\bm{y}}{\diff x}=\bm{f}(x,\bm{y}),\bm{y}(x_0)=\bm{y}_0\]
-其中函数$\bm{f}(x,\bm{y})$在矩阵区域\[R:|x-x_0|\leq a,\|\bm{y}-\bm{y}_0\|\leq b\]
-内连续, 而且对$\bm{y}$满足Lipschitz条件, 则初值问题$(E)$在区间$I=[x_0-h,x_0+h]$上有且只有一个解$\bm{y}=\bm{\phi}(x)$, 
-其中$\displaystyle h=\min\left\{a,\frac{b}{M}\right\},M=\max\limits_{(x,\bm{y})\in R}\|\bm{f}(x,\bm{y})\|$
-Proof:
-(一)初值问题($E$)等价于积分方程
-\[\bm{y}=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y})\diff x\]
+  (Picard存在和唯一性定理)设初值问题
+  \[(E):\frac{\diff\bm{y}}{\diff x}=\bm{f}(x,\bm{y}),\bm{y}(x_0)=\bm{y}_0.\]
+  其中函数 $\bm{f}(x,\bm{y})$ 在矩阵区域
+  \[R:|x-x_0|\leq a,\|\bm{y}-\bm{y}_0\|\leq b\]
+  内连续, 而且对 $\bm{y}$ 满足 Lipschitz 条件, 则初值问题 $(E)$ 在区间 $I=[x_0-h,x_0+h]$
+  上有且只有一个解 $\bm{y}=\bm{\phi}(x)$, 
+  其中$\displaystyle h=\min\left\{a,\frac{b}{M}\right\}$, 
+  $M=\max\limits_{(x,\bm{y})\in R}\|\bm{f}(x,\bm{y})\|$.
 
-(二)用逐次迭代法构造皮卡序列
-\[\bm{y}_{n+1}(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_n(x))\diff x(x\in I)(n=0,1,2,\cdots)\]
-其中$\bm{y}_0(x)=\bm{y}_0$, 因为$\bm{f}(x,\bm{y}_0(x))$在$I$上连续, 故
-\[\bm{y}_1(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_0(x))\diff x\]
-在$I$上连续可微, 而且满足不等式
-\[\|\bm{y}_1(x)-\bm{y}_0\|\leq\left|\int_{x_0}^x\|\bm{f}(x,\bm{y}_0(x))\|\right|\leq M|x-x_0|\]
-这就是说在$I$上$\|\bm{y}_1(x)-\bm{y}_0\|\leq Mh\leq b$.\\
-因此, $\bm{f}(x,\bm{y}_1(x))$在$I$上是连续的, 故
-\[\bm{y}_2(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_1(x))\diff x\]
-在$I$上连续可微, 而且满足不等式
-\[\|\bm{y}_2(x)-\bm{y}_0\|\leq\left|\int_{x_0}^x\|\bm{f}(x,\bm{y}_1(x))\|\right|\leq M|x-x_0|\]
-这就是说在$I$上$\|\bm{y}_2(x)-\bm{y}_0\|\leq Mh\leq b$.
-由归纳法可证: Picard序列$\{\bm{y}_n(x)\}$在区间$I$上连续可微并且满足不等式
-\[\|\bm{y}_n(x)-\bm{y}_0\|\leq M|x-x_0|(n=0,1,2,\cdots)\]
+  Proof:
+  (一)初值问题($E$)等价于积分方程
+  \[\bm{y}=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y})\diff x.\]
 
-(三)Picard序列$\{\bm{y}_n(x)\}$在区间$I$上一致收敛到积分方程的解
-$\{\bm{y}_n(x)\}$的收敛性等价于级数
-\[\sum_{n=1}^{\infty}[\bm{y}_{n}(x)-\bm{y}_{n-1}(x)]\]
-的收敛性, 利用归纳法证明不等式
-\[\|\bm{y}_n(x)-\bm{y}_{n-1}(x)\|\leq\frac{M}{L}\frac{(L|x-x_0|^n)}{n!}(n=1,2,\cdots)\]
-上述不等式意味着级数$\sum\limits_{n=1}^{\infty}[\bm{y}_{n}(x)-\bm{y}_{n-1}(x)]$一致收敛, 故Picard序列$\{\bm{y}_n(x)\}$一致收敛, 因此极限函数
-\[\bm{\phi}(x)=\lim_{n\to\infty}\bm{y}_n(x)\]
-在$I$上连续, 在关系式
-\[\bm{y}_{n+1}(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_n(x))\diff x\]
-两侧取极限$n\to\infty$, 得
-\[\bm{\phi}(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{\phi}(x))\diff x\]
-故$\bm{y}=\bm{\phi}(x)$是积分方程的连续解.
+  (二)用逐次迭代法构造皮卡序列
+  \[\bm{y}_{n+1}(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_n(x))\diff x(x\in I)\quad (n=0,1,2,\cdots),\]
+  其中 $\bm{y}_0(x)=\bm{y}_0$, 因为 $\bm{f}(x,\bm{y}_0(x))$ 在 $I$ 上连续, 故
+  \[\bm{y}_1(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_0(x))\diff x\]
+  在 $I$ 上连续可微, 而且满足不等式
+  \[\|\bm{y}_1(x)-\bm{y}_0\|\leq\left|\int_{x_0}^x\|\bm{f}(x,\bm{y}_0(x))\|\right|\leq M|x-x_0|.\]
+  这就是说在 $I$ 上 $\|\bm{y}_1(x)-\bm{y}_0\|\leq Mh\leq b$.
+  因此, $\bm{f}(x,\bm{y}_1(x))$ 在 $I$ 上是连续的, 故
+  \[\bm{y}_2(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_1(x))\diff x\]
+  在 $I$ 上连续可微, 而且满足不等式
+  \[\|\bm{y}_2(x)-\bm{y}_0\|\leq\left|\int_{x_0}^x\|\bm{f}(x,\bm{y}_1(x))\|\right|\leq M|x-x_0|.\]
+  这就是说在 $I$ 上 $\|\bm{y}_2(x)-\bm{y}_0\|\leq Mh\leq b$.
+  由归纳法可证: Picard序列 $\{\bm{y}_n(x)\}$ 在区间 $I$ 上连续可微并且满足不等式
+  \[\|\bm{y}_n(x)-\bm{y}_0\|\leq M|x-x_0|\quad(n=0,1,2,\cdots).\]
 
-(四)解的唯一性
+  (三) Picard序列 $\{\bm{y}_n(x)\}$ 在区间 $I$上一致收敛到积分方程的解.
+  $\{\bm{y}_n(x)\}$ 的收敛性等价于级数
+  \[\sum_{n=1}^{\infty}[\bm{y}_{n}(x)-\bm{y}_{n-1}(x)]\]
+  的收敛性, 利用归纳法证明不等式
+  \[\|\bm{y}_n(x)-\bm{y}_{n-1}(x)\|\leq\frac{M}{L}\frac{(L|x-x_0|^n)}{n!}\quad (n=1,2,\cdots).\]
+  上述不等式意味着级数 $\sum\limits_{n=1}^{\infty}[\bm{y}_{n}(x)-\bm{y}_{n-1}(x)]$ 一致收敛, 
+  故 Picard 序列 $\{\bm{y}_n(x)\}$ 一致收敛, 因此极限函数
+  \[\bm{\phi}(x)=\lim_{n\to\infty}\bm{y}_n(x)\]
+  在 $I$ 上连续, 在关系式
+  \[\bm{y}_{n+1}(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{y}_n(x))\diff x\]
+  两侧取极限 $n\to\infty$, 得
+  \[\bm{\phi}(x)=\bm{y}_0+\int_{x_0}^x\bm{f}(x,\bm{\phi}(x))\diff x.\]
+  故 $\bm{y}=\bm{\phi}(x)$ 是积分方程的连续解.
 
-设积分方程有两个解$\bm{y}=\bm{\phi}(x)$和$\bm{y}=\bm{\psi}(x)$. 设两个解的共同存在区间为$J=[x_0-d,x_0+d]$, 则
-\[\bm{\phi}(x)-\bm{\psi}(x)=\int_{x_0}^x\left(\bm{f}(x,\bm{\phi}(x))-\bm{f}(x,\bm{\psi}(x))\right)\diff x(x\in J)\]
-故利用李氏条件有\[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq L\left|\int_{x_0}^x\|\bm{\phi}(x)-\bm{\psi}(x)\|\diff x\right|(*)\]
-注意在区间$J$上, $\|\bm{\phi}(x)-\bm{\psi}(x)\|$是连续有界的, 故可取其一个上界$K$, 则
-\[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq LK|x-x_0|\]
-将其代入$(*)$右端, 有
-\[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq K\frac{(L|x-x_0|)^2}{2}\]
-利用归纳法可得
-\[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq K\frac{(L|x-x_0|)^n}{n!}(x\in J)\]
-令$n\to\infty$, 即得\[\bm{\phi}(x)=\bm{\psi}(x)(x\in J)\]
-故积分方程的解是唯一的.
+  (四)解的唯一性
+
+  设积分方程有两个解 $\bm{y}=\bm{\phi}(x)$ 和 $\bm{y}=\bm{\psi}(x)$. 
+  设两个解的共同存在区间为 $J=[x_0-d,x_0+d]$, 则
+  \[\bm{\phi}(x)-\bm{\psi}(x)=\int_{x_0}^x\left(\bm{f}(x,\bm{\phi}(x))
+    -\bm{f}(x,\bm{\psi}(x))\right)\diff x\quad(x\in J).\]
+  故利用李氏条件有
+  \begin{equation}
+    \|\bm{\phi}(x)-\bm{\psi}(x)\|
+    \leq L\left|\int_{x_0}^x\|\bm{\phi}(x)-\bm{\psi}(x)\|\diff x\right|.\tag{$\star$}
+  \end{equation}
+  注意在区间 $J$ 上, $\|\bm{\phi}(x)-\bm{\psi}(x)\|$ 是连续有界的, 故可取其一个上界 $K$, 则
+  \[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq LK|x-x_0|.\]
+  将其代入 $(\star)$ 右端, 有
+  \[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq K\frac{(L|x-x_0|)^2}{2}.\]
+  利用归纳法可得
+  \[\|\bm{\phi}(x)-\bm{\psi}(x)\|\leq K\frac{(L|x-x_0|)^n}{n!}\quad (x\in J).\]
+  令 $n\to\infty$, 即得
+  \[\bm{\phi}(x)=\bm{\psi}(x)\quad (x\in J).\]
+  故积分方程的解是唯一的.
+
+  (佩亚诺存在定理)定理的叙述和证明可参考教材.
 \end{solve}
 
 
-(佩亚诺存在定理)定理的叙述和证明可参考教材.
 
-3.对 $n$ 阶线性微分方程组的初值问题, 试叙述并证明解的存在和唯一性定理.
+\begin{exercise}
+  对 $n$ 阶线性微分方程组的初值问题, 试叙述并证明解的存在和唯一性定理.
+\end{exercise}
 
-\begin{solve} 设$\bm{A}(x)$和$\bm{f}(x)$在区间$a<x<b$上连续, 则初值问题
+\begin{solve} 
+  设 $\bm{A}(x)$ 和 $\bm{f}(x)$ 在区间 $a<x<b$ 上连续, 则初值问题
 \[(E):\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}+\bm{f}(x),\bm{y}(x_0)=\bm{y}_0\]
-的解$\bm{y}=\bm{y}(x)$在区间$a<x<b$上存在且唯一, 其中$a<x_0<b,\bm{y}_0\in\mathbb{R}^n$.
+的解 $\bm{y}=\bm{y}(x)$ 在区间 $a<x<b$ 上存在且唯一, 其中 $a<x_0<b$, $\bm{y}_0\in\mathbb{R}^n$.
 
-Proof: 只需要证明$\bm{f}(x,\bm{y})=\bm{A}(x)\bm{y}+\bm{f}(x)$满足Lipschitz条件即可, $\forall\bm{y}_1,\bm{y}_2\in\mathbb{R}^n$, 有
-\[\|\bm{f}(x,\bm{y}_1)-\bm{f}(x,\bm{y}_2)\|=\|\bm{A}(x)(\bm{y}_1-\bm{y}_2)\|\leq\|\bm{A}(x)\|\cdot\|\bm{y}_1-\bm{y}_2\|\qedhere\]
+Proof: 只需要证明 $\bm{f}(x,\bm{y})=\bm{A}(x)\bm{y}+\bm{f}(x)$ 满足 Lipschitz 条件即可, 
+$\forall\bm{y}_1,\bm{y}_2\in\mathbb{R}^n$, 有
+\[\|\bm{f}(x,\bm{y}_1)-\bm{f}(x,\bm{y}_2)\|
+  = \|\bm{A}(x)(\bm{y}_1-\bm{y}_2)\|\leq\|\bm{A}(x)\|\cdot\|\bm{y}_1-\bm{y}_2\|.\qedhere\]
 \end{solve}
