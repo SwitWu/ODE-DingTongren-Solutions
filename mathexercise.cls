@@ -53,7 +53,7 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \newcommand\chapternamebox[1]{%
 \parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
 % 中文设置
-\setCJKmainfont[BoldFont=FandolHei,ItalicFont=FandolKai]{FandolSong}
+\setCJKmainfont[ItalicFont=FandolKai]{FandolSong}
 
 %%% 定义常用命令
 % Roman Font
