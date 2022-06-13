@@ -827,8 +827,10 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$的标准基解矩阵,
 
 (II)非齐次方程: 通解为
 \[y=C_1\varphi_1(x)+\cdots+C_n\varphi_n(x)+\varphi^*(x),\] 
-其中
+其中特解
 \[\varphi^*(x)=\sum_{k=1}^n\varphi_k(x)\int_{x_0}^x\frac{W_k(s)}{W(s)}f(s)\diff s.\] 
+这里 $W(x)$ 是 $\varphi_1(x),\cdots,\varphi_n(x)$
+的 Wronsky 行列式, 而 $W_k(x)$ 是 $W(x)$ 中第 $n$ 行第 $k$ 列元素的代数余子式.
 此公式既可以用前面的公式 
 \[\bm{y}=\bmitPhi(x)\left(\bm{c}+\int_{x_0}^x\bmitPhi^{-1}(s)\bm{f}(s)\diff s\right)\]
 取第一个分量导出, 也可以用常数变易法导出 (见习题 6).
