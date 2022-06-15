@@ -176,8 +176,8 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \RequirePackage{hyperref}
 \hypersetup{
     colorlinks,%
-    linkcolor=red,%
-    pdfauthor=Swit
+    linkcolor = red,%
+    pdfauthor = 武思豫
 }
 
 % titlepage
