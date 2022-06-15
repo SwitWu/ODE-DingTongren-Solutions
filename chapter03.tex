@@ -9,301 +9,414 @@
 \begin{exercise}
   利用右端函数的性质讨论下列微分方程满足初值条件 $y(0)=0$ 的解的唯一性问题:
   \begin{enumerate}[(1)]
-  \item $\frac{\diff y}{\diff x}=|y|^{\alpha}(\alpha>0)$;
-  \item $\frac{\diff y}{\diff x}=\begin{cases}0,&\mbox{当}y=0,\\y\ln|y|,&\mbox{当}y\neq0.\end{cases}$
+  \item $\displaystyle\frac{\diff y}{\diff x}=|y|^{\alpha}$ (常数 $\alpha>0$);
+  \item $\displaystyle\frac{\diff y}{\diff x}=
+    \begin{cases}
+      0, & \text{当\ } y=0, \\
+      y\ln|y|, & \text{当\ } y\neq 0.
+    \end{cases}$
   \end{enumerate}
 \end{exercise}
 
 \begin{solve}
-(1)显然$y=0$是满足初值条件的解,当$0<\alpha<1$时,由下式
-\[\int_0^y\frac{\diff y}{|y|^{\alpha}}=x\]
-确定的函数$\varPhi(x,y)$是满足初值条件的解,且当$x\neq0$时,$y\neq0$,故此时解不唯一.
+  (1) 显然 $y=0$ 是满足初值条件的解, 当 $0<\alpha<1$ 时, 由下式
+  \[\int_0^y\frac{\diff y}{|y|^{\alpha}}=x\]
+  确定的函数 $\varPhi(x,y)$ 是满足初值条件的解, 且当 $x\neq 0$ 时, $y\neq 0$, 故此时解不唯一.
 
-当$\alpha\geq1$时,满足初值条件的解是唯一的,用反证法,假设还存在另一解$y=y(x),y(0)=0$,
-则必存在$x_0$和$\epsilon$使得$y(x_0)=0$,且当$x_0<x<x_0+\epsilon$时,$y(x)\neq0$,故
-\[\frac{1}{|y(x)|^{\alpha}}\frac{\diff y(x)}{\diff x}=1,x_0<x<x_0+\epsilon\]
-因此\[\int_0^{y(x)}\frac{\diff y}{|y|^{\alpha}}=\int_{x_0}^x\frac{1}{|y(x)|^{\alpha}}\frac{\diff y(x)}{\diff x}\diff x=x-x_0<\infty\]
-矛盾,故满足初值条件的解是唯一的.综上,当$0<\alpha<1$时,解不唯一;当$\alpha\geq1$时,解唯一.
+  当 $\alpha\geq 1$ 时, 满足初值条件的解是唯一的, 用反证法, 假设还存在另一解 $y=1y(x),y(0)=0$,
+  则必存在 $x_0$ 和 $\epsilon$ 使得$y(x_0)=0$, 且当 $x_0<x<x_0+\epsilon$ 时, $y(x)\neq 0$, 故
+  \[\frac{1}{|y(x)|^{\alpha}}\frac{\diff y(x)}{\diff x}=1,\quad x_0<x<x_0+\epsilon.\]
+  因此
+  \[\int_0^{y(x)}\frac{\diff y}{|y|^{\alpha}}
+    = \int_{x_0}^x\frac{1}{|y(x)|^{\alpha}}\frac{\diff y(x)}{\diff x}\diff x=x-x_0<\infty.\]
+  矛盾, 故满足初值条件的解是唯一的. 综上, 当 $0<\alpha<1$ 时, 解不唯一; 当 $\alpha\geq 1$ 时, 解唯一.
 
-(2)显然$y=0$是满足初值条件的解,下面用反证法证明满足初值条件的解是唯一的,
-假设还存在另一解$y=y(x),y(0)=0$,则必存在$x_0$和$\epsilon$使得$y(x_0)=0$,且当$x_0<x<x_0+\epsilon$时,$y(x)\neq0$,故
-\[\frac{1}{y(x)\ln|y(x)|}\frac{\diff y(x)}{\diff x}=1,x_0<x<x_0+\epsilon\]
-因此\[\int_0^{y(x)}\frac{\diff y}{y\ln|y|}=\int_{x_0}^x\frac{1}{y(x)\ln|y(x)|}\frac{\diff y(x)}{\diff x}\diff x=x-x_0<\infty\]
-矛盾,故满足初值条件的解是唯一的.
+  (2) 显然 $y=0$ 是满足初值条件的解. 下面用反证法证明满足初值条件的解是唯一的,
+  假设还存在另一解 $y=y(x),y(0)=0$, 则必存在 $x_0$ 和 $\epsilon$ 使得 $y(x_0)=0$,
+  且当 $x_0<x<x_0+\epsilon$ 时, $y(x)\neq 0$, 故
+  \[\frac{1}{y(x)\ln|y(x)|}\frac{\diff y(x)}{\diff x}=1,x_0<x<x_0+\epsilon.\]
+  因此
+  \[\int_0^{y(x)}\frac{\diff y}{y\ln|y|}
+    = \int_{x_0}^x\frac{1}{y(x)\ln|y(x)|}\frac{\diff y(x)}{\diff x}\diff x=x-x_0<\infty.\]
+  矛盾, 故满足初值条件的解是唯一的.
 \end{solve}
 
 
-2.试求初值问题:\[\frac{\diff y}{\diff x}=x+y+1,y(0)=0\]
-的皮卡序列,并由此取极限求解.
 
-\begin{solve}利用皮卡序列迭代公式
-\[y_{n+1}(x)=y_0+\int_{x_0}^xf(x,y_n(x))\diff x\]
-知\[y_1(x)=\int_0^x(x+1)\diff x=\frac{1}{2}x^2+x\]
-\[y_2(x)=\int_0^x\left(\frac{1}{2}x^2+2x+1\right)\diff x=\frac{x^3}{3!}+x^2+x\]
-\[y_3(x)=\int_0^x\left(\frac{x^3}{3!}+x^2+2x+1\right)\diff x=\frac{x^4}{4!}+\frac{x^3}{3}+x^2+x\]
-\[y_4(x)=\int_0^x\left(\frac{x^4}{4!}+\frac{x^3}{3}+x^2+2x+1\right)\diff x=\frac{x^5}{5!}+\frac{x^4}{12}+\frac{x^3}{3}+x^2+x\]
-观察规律并用归纳法可证得
-\[y_n(x)=\frac{x^{n+1}}{(n+1)!}+\frac{2x^n}{n!}+\frac{2x^{n-1}}{(n-1)!}+\cdots+\frac{2x^2}{2}+x\]
-故\[\lim_{n\to\infty}y_n(x)=2\e^x-x-2\qedhere\]
+\begin{exercise}
+  试求初值问题:
+  \[\frac{\diff y}{\diff x}=x+y+1,\quad y(0)=0\]
+  的皮卡序列, 并由此取极限求解.
+\end{exercise}
+
+\begin{solve}
+  利用皮卡序列迭代公式
+  \[y_{n+1}(x)=y_0+\int_{x_0}^xf(x,y_n(x))\diff x,\]
+  知
+  \[y_1(x)=\int_0^x(x+1)\diff x=\frac{1}{2}x^2+x,\]
+  \[y_2(x)=\int_0^x\left(\frac{1}{2}x^2+2x+1\right)\diff x=\frac{x^3}{3!}+x^2+x,\]
+  \[y_3(x)=\int_0^x\left(\frac{x^3}{3!}+x^2+2x+1\right)\diff x=\frac{x^4}{4!}+\frac{x^3}{3}+x^2+x,\]
+  \[y_4(x)=\int_0^x\left(\frac{x^4}{4!}+\frac{x^3}{3}+x^2+2x+1\right)\diff x
+    =\frac{x^5}{5!}+\frac{x^4}{12}+\frac{x^3}{3}+x^2+x.\]
+  观察规律并用归纳法可证得
+  \[y_n(x)=\frac{x^{n+1}}{(n+1)!}+\frac{2x^n}{n!}+\frac{2x^{n-1}}{(n-1)!}+\cdots+\frac{2x^2}{2}+x.\]
+  故
+  \[\lim_{n\to\infty}y_n(x)=2\e^x-x-2.\qedhere\]
 \end{solve}
 
 
-*3.设连续函数$f(x,y)$对$y$是递减的,则初值问题$(E)$在右侧(即$x\geq x_0$)的解是唯一的.(试问:在左侧(即$x\leq x_0$)的解是否唯一?能举一个反例吗?)
+
+\begin{exercise}
+  设连续函数 $f(x,y)$ 对 $y$ 是递减的, 则初值问题 $(E)$ 在右侧
+  (即 $x\geq x_0$) 的解是唯一的. (试问: 在左侧 (即 $x\leq x_0$) 的解是否唯一? 能举一个反例吗?)
+\end{exercise}
+
 \begin{proof}
-(反证法)假设初值问题有两个解$y_1(x)$和$y_2(x)$,且存在$x_1>x_0$使得$y_1(x_1)\neq y_2(x_1)$,不妨设$y_1(x_1)>y_2(x_1)$,记
-\[\bar{x}=\sup\{x_0\leq x<x_1:y_1(x)=y_2(x)\}\]
-显然有$x_0\leq\bar{x}<x_1$,令$r(x)=y_1(x)-y_2(x)$,则$r(\bar{x})=0$且当$\bar{x}<x<x_1$时$r(x)>0$,又
-\[r'(x)=y_1'(x)-y_2'(x)=f(x,y_1(x))-f(x,y_2(x))<0,\bar{x}<x<x_1\]
-所以$r(x)\leq0(\bar{x}<x<x_1)$,矛盾,故假设不成立,即证初值问题在右侧的解是唯一的,左侧的解不唯一,例如方程$\frac{\diff y}{\diff x}=-\frac{3}{2}y^{\frac{1}{3}}$,其解为$y^2=(-x+C)^3$以及特解$y=0$,显然过$x$轴上每一点的左侧解不是唯一的.\\
-注:若$f(x,y)$对$y$是递增的,同理可以证明初值问题$(E)$在左侧的解是唯一的.
+  (反证法) 假设初值问题有两个解 $y_1(x)$ 和 $y_2(x)$,
+  且存在 $x_1>x_0$ 使得 $y_1(x_1)\neq y_2(x_1)$, 不妨设 $y_1(x_1)>y_2(x_1)$, 记
+  \[\bar{x}=\sup\{x_0\leq x<x_1:y_1(x)=y_2(x)\}.\]
+  显然有 $x_0\leq\bar{x}<x_1$, 令 $r(x)=y_1(x)-y_2(x)$,
+  则 $r(\bar{x})=0$ 且当 $\bar{x}<x<x_1$ 时 $r(x)>0$, 又
+  \[r'(x)=y_1'(x)-y_2'(x)=f(x,y_1(x))-f(x,y_2(x))<0,\bar{x}<x<x_1,\]
+  所以 $r(x)\leq 0$ $(\bar{x}<x<x_1)$, 矛盾, 故假设不成立,
+  即证初值问题在右侧的解是唯一的, 左侧的解不唯一, 
+  例如方程 $\frac{\diff y}{\diff x}=-\frac{3}{2}y^{\frac{1}{3}}$,
+  其解为 $y^2=(-x+C)^3$ 以及特解 $y=0$, 显然过 $x$ 轴上每一点的左侧解不是唯一的.
+
+  注: 若 $f(x,y)$ 对 $y$ 是递增的, 同理可以证明初值问题 $(E)$ 在左侧的解是唯一的.
 \end{proof}
+
 
 
 \section{佩亚诺存在定理}
 
 
-1.利用Ascoli引理证明: 若一函数序列在有限区间$I$上是一致有界和等度连续的, 则在$I$上它至少有一个一致收敛的子序列.
+
+\begin{exercise}
+  利用 Ascoli 引理证明: 若一函数序列在有限区间 $I$ 上是一致有界和等度连续的, 则在 $I$ 上它至少有一个一致收敛的子序列.
+\end{exercise}
 
 \begin{proof}
-若$I=[a,b]$是有界闭区间, 则即为Ascoli定理, 下面假设函数序列$\{f_n(x)\}$在有界开区间$(a,b)$上是一致有界和等度连续的, 即假设:
-\begin{enumerate}[(i)]
-\item (一致有界)存在正常数$M>0$,使得
-\[|f_n(x)|\leq M,\forall x\in(a,b),\forall n=1,2,\cdots\]
-\item (等度连续)$\forall\epsilon>0,\exists\delta=\delta(\epsilon)>0,$使得$\forall x_1,x_2\in(a,b),|x_1-x_2|<\delta$,有
-\[|f_n(x_1)-f_n(x_2)|<\epsilon,\forall n=1,2,\cdots\]
-\end{enumerate}
-由Cauchy收敛原理:
-\[\lim_{x\to a+}f_n(x)存在\Leftrightarrow\forall\epsilon>0,\exists\delta>0,\forall x_1,x_2\in\{x|0<x-a<\delta\},|f_n(x_1)-f_n(x_2)|<\epsilon\]
-结合$\{f_n(x)\}$等度连续知对于每一个$n$,单侧极限$\displaystyle\lim_{x\to a+}f_n(x)$存在, 
-同理单侧极限$\displaystyle\lim_{x\to b-}f_n(x)$存在.定义函数序列
-\[F_n(x)=\begin{cases}
-\lim\limits_{x\to a+}f_n(x),&x=a,\\
-f_n(x),&x\in (a,b),\\
-\lim\limits_{x\to b-}f_n(x),&x=b.
-\end{cases}n=1,2,\cdots\]
-则$\{F_n(x)\}$在闭区间$[a,b]$上一致有界且等度连续,因此其在区间$[a,b]$上至少有一个一致收敛的子序列,
-由此可知$\{f_n(x)\}$在$(a,b)$上至少有一个一致收敛的子序列.
+  若 $I=[a,b]$ 是有界闭区间, 则即为 Ascoli 定理, 
+  下面假设函数序列 $\{f_n(x)\}$ 在有界开区间 $(a,b)$ 上是一致有界和等度连续的, 即假设:
+  \begin{enumerate}[(i)]
+  \item (一致有界) 存在正常数 $M>0$, 使得
+    \[|f_n(x)|\leq M,\quad\forall x\in(a,b),\forall n=1,2,\cdots\]
+  \item (等度连续) 对任意 $\epsilon>0$, 存在 $\delta=\delta(\epsilon)>0$,
+    使得 $\forall x_1,x_2\in(a,b)$, 当 $|x_1-x_2|<\delta$ 时,有
+    \[|f_n(x_1)-f_n(x_2)|<\epsilon,\quad\forall n=1,2,\cdots\]
+  \end{enumerate}
+  由 Cauchy 收敛原理知 $\lim_{x\to a+}f_n(x)$ 存在等价于
+  \[\forall\epsilon>0,\exists\delta>0,
+    \forall x_1,x_2\in\{x\mid 0<x-a<\delta\},|f_n(x_1)-f_n(x_2)|<\epsilon.\]
+  结合 $\{f_n(x)\}$ 等度连续知对于每一个 $n$, 单侧极限 $\displaystyle\lim_{x\to a+}f_n(x)$存在, 
+  同理单侧极限 $\displaystyle\lim_{x\to b-}f_n(x)$ 存在. 定义函数序列
+  \[F_n(x)=
+  \begin{cases}
+    \lim\limits_{x\to a+}f_n(x), & x=a,\\
+    f_n(x),                      & x\in (a,b),\\
+    \lim\limits_{x\to b-}f_n(x), & x=b.
+  \end{cases}\quad n=1,2,\cdots\]
+  则 $\{F_n(x)\}$ 在闭区间 $[a,b]$ 上一致有界且等度连续, 因此其在区间 $[a,b]$ 上至少有一个一致收敛的子序列,
+  由此可知 $\{f_n(x)\}$ 在 $(a,b)$ 上至少有一个一致收敛的子序列.
 \end{proof}
 
 
-2.试举例说明,当$I$是无限区间时上面的结论不成立.
+
+\begin{exercise}
+  试举例说明, 当 $I$ 是无限区间时上面的结论不成立.
+\end{exercise}
 
 \begin{solve}
-取定义在$[0,+\infty)$上的函数序列
-\[f_n(x)=\begin{cases}
-\frac{x}{n},&0\leq x\leq n,\\
-1,&x>n.
-\end{cases}\]
-容易验证$\{f_n(x)\}$是一致有界且等度连续的,下面证明$\{f_n(x)\}$没有一致收敛的子序列$\{f_{n_k}(x)\}$,首先若$\{f_{n_k}(x)\}$一致收敛,则必收敛到0,但是
-\[\lim_{k\to\infty}d(f_{n_k},0)=\lim_{k\to\infty}\sup_{x\in[0,+\infty)}|f_{n_k}(x)-0|=1\neq0\]
-矛盾,故$\{f_n(x)\}$没有一致收敛的子序列.
+  取定义在 $[0,+\infty)$ 上的函数序列
+  \[f_n(x)=
+    \begin{cases}
+      \frac{x}{n}, & 0\leq x\leq n,\\
+      1,           & x>n.
+    \end{cases}\]
+  容易验证 $\{f_n(x)\}$ 是一致有界且等度连续的,
+  下面证明 $\{f_n(x)\}$ 没有一致收敛的子序列 $\{f_{n_k}(x)\}$,
+  首先若 $\{f_{n_k}(x)\}$ 一致收敛, 则必收敛到 $0$,但是
+  \[\lim_{k\to\infty}d(f_{n_k},0)=\lim_{k\to\infty}\sup_{x\in[0,+\infty)}|f_{n_k}(x)-0|=1\neq 0.\]
+  矛盾, 故 $\{f_n(x)\}$ 没有一致收敛的子序列.
 \end{solve}
 
 
-3.我们知道: 皮卡序列满足 Ascoli 引理的条件.试问: 能用皮卡序列来证明佩亚诺的存在定理吗?说明理由.
+
+\begin{exercise}
+  我们知道: 皮卡序列满足 Ascoli 引理的条件.试问: 能用皮卡序列来证明佩亚诺的存在定理吗?说明理由.
+\end{exercise}
 
 \begin{solve}
-不能.因为在定义皮卡序列的积分式中:
-\[y_{n+1}(x)=y_0+\int_{x_0}^xf(x,y_n(x))\diff x\]
-$y_{n+1}(x)$通过$y_n(x)$表示出来,一旦限制在子序列上,这种表示法就失效了.
+  不能. 因为在定义皮卡序列的积分式中:
+  \[y_{n+1}(x)=y_0+\int_{x_0}^xf(x,y_n(x))\diff x.\]
+  $y_{n+1}(x)$ 通过 $y_n(x)$ 表示出来, 一旦限制在子序列上, 这种表示法就失效了.
 \end{solve}
 
 
-4.对于与初值问题$(E)$等价的积分方程
-\[y(x)=y_0+\int_{x_0}^xf(x,y(x))\diff x\]
-在区间$I=[x_0,x_0+h]$上(其中正数$h$的意义同定理3.3)构造序列$y_n(x)$如下:任给正整数$n$,令$x_k=x_0+kd_n$,其中$d_n=h/n,k=0,1,\cdots,n$.则分点
-\[x_0,x_1,x_2,\cdots,x_n(=x_0+h)\]
-把区间$I$分成$n$等份.从$[x_0,x_1]$到$[x_1,x_2]$,再从$[x_1,x_2]$到$[x_2,x_3],\cdots$,最后从$[x_{n-2},x_{n-1}]$到$[x_{n-1},x_0+h]$用递推法定义下面的函数:
-\[y_n(x)=\begin{cases}
-y_0,&x\in[x_0,x_1];\\
-y_0+\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s,&x\in[x_1,x_0+h].
-\end{cases}\]
-称序列$y_1(x),y_2(x),\cdots,y_n(x),\cdots(x\in I)$为Tonelli序列,试用Tonelli序列和Ascoli引理证明佩亚诺存在定理.
+
+\begin{exercise}
+  对于与初值问题 $(E)$ 等价的积分方程
+  \[y(x)=y_0+\int_{x_0}^xf(x,y(x))\diff x.\]
+  在区间 $I=[x_0,x_0+h]$ 上 (其中正数 $h$ 的意义同定理 3.3)
+  构造序列 $y_n(x)$ 如下:
+  任给正整数 $n$, 令 $x_k=x_0+kd_n$, 其中 $d_n=h/n$, $k=0,1,\cdots,n$. 则分点
+  \[x_0,x_1,x_2,\cdots,x_n(=x_0+h)\]
+  把区间 $I$ 分成 $n$ 等份. 我们从 $[x_0,x_1]$ 到 $[x_1,x_2]$,
+  再从 $[x_1,x_2]$ 到 $[x_2,x_3],\cdots$,
+  最后从 $[x_{n-2},x_{n-1}]$ 到 $[x_{n-1},x_0+h]$ 用递推法定义下面的函数:
+  \[y_n(x)=\begin{cases}
+    y_0, & \text{当\ } x\in[x_0,x_1]; \\
+    y_0 + \int_{x_0}^{x-d_n}f(s,y_n(s))\diff s, & \text{当\ } x\in[x_1,x_0+h].
+  \end{cases}\]
+  称序列 
+  \[y_1(x),y_2(x),\cdots,y_n(x),\cdots\quad (x\in I)\]
+  为 Tonelli 序列, 试用 Tonelli 序列和 Ascoli 引理证明佩亚诺存在定理.
+\end{exercise}
 
 \begin{proof}
-由定义式可知$y_n(x)$是如下递推得到的:
+  由定义式可知 $y_n(x)$ 是通过如下递推得到的:
 
-当$x\in[x_0,x_1]$时
-\[y_n(x)=y_0\]
+  当 $x\in[x_0,x_1]$ 时,
+  \[y_n(x)=y_0.\]
 
-当$x\in[x_1,x_2]$时
-\[y_n(x)=y_0+\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s=y_0+\int_{x_0}^{x-d_n}f(s,y_0)\diff s\]
+  当 $x\in[x_1,x_2]$ 时,
+  \[y_n(x)=y_0+\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s=y_0+\int_{x_0}^{x-d_n}f(s,y_0)\diff s.\]
 
-当$x\in[x_2,x_3]$时
-\[y_n(x)=y_0+\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s=y_0+\int_{x_0}^{x_1}f(s,y_0)\diff s+\int_{x_1}^{x-d_n}f(s,y_n(s))\diff s\]
-(其中上式中最右侧积分式里的$y_n(s)$为当$x\in[x_1,x_2]$时已经得到的$y_n(x)$)
+  当 $x\in[x_2,x_3]$ 时,
+  \[y_n(x)=y_0+\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s=y_0+\int_{x_0}^{x_1}f(s,y_0)\diff s+\int_{x_1}^{x-d_n}f(s,y_n(s))\diff s,\]
+  其中上式中最右侧积分式里的 $y_n(s)$ 为当 $x\in[x_1,x_2]$ 时已经得到的 $y_n(x)$.
 
-这样不断地递推下去,即可得到$y_n(x)$在区间$[x_0,x_0+h]$上面的表达式,
-容易验证$\{y_n(x)\}$在区间$[x_0,x_0+h]$上面连续,且由$y_n(x)-y_0=0,x\in[x_0,x_1]$和
-\[|y_n(x)-y_0|=\left|\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s\right|\leq M(x-d_n-x_0)(x_1\leq x\leq x_0+h)\]
-知$\{(x,y_n(x))|x\in[x_0,x_0+h]\}\subset R$.
+  这样不断地递推下去, 即可得到 $y_n(x)$ 在区间 $[x_0,x_0+h]$ 上面的表达式,
+  容易验证 $\{y_n(x)\}$ 在 $[x_0,x_0+h]$ 上连续, 且由 $y_n(x)-y_0=0$, $x\in[x_0,x_1]$ 和
+  \[|y_n(x)-y_0|=\biggl|\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s\biggr|\leq M(x-d_n-x_0)
+    \quad (x_1\leq x\leq x_0+h)\]
+  知 $\{(x,y_n(x))\mid x\in[x_0,x_0+h]\}\subset R$.
 
-对于$\forall x,\tilde{x}\in[x_0,x_0+h]$,不妨设$x<\tilde{x}$,则$\max\{\tilde{x}-d_n,x_0\}\geq\max\{x-d_n,x_0\}$,由定义知
-\[y_n(x)=y_0+\int_{x_0}^{\max\{x-d_n,x_0\}}f(s,y_n(s))\diff s\]
-\[y_n(\tilde{x})=y_0+\int_{x_0}^{\max\{\tilde{x}-d_n,x_0\}}f(s,y_n(s))\diff s\]
-故
-\[\begin{split}|y_n(\tilde{x})-y_n(x)|&=\left|\int_{\max\{x-d_n,x_0\}}^{\max\{\tilde{x}-d_n,x_0\}}f(s,y_n(s))\diff s\right|\\
-&\leq M(\max\{\tilde{x}-d_n,x_0\}-\max\{x-d_n,x_0\})\leq M(\tilde{x}-x)
-\end{split}\]
-因此$\{y_n(x)\}$在区间$[x_0,x_0+h]$上等度连续,由Ascoli定理知$\{y_n(x)\}$有一致收敛的子序列
-$\{y_{n_k}(x)\}$且$y_{n_k}(x)\Rightarrow\phi(x)$,在下面定义式中
-\[y_{n_k}(x)=y_0+\int_{x_0}^{\max\left\{x-d_{n_k},x_0\right\}}f(s,y_{n_k}(s))\diff s\]
-取极限$k\to\infty$,注意到$\max\left\{x-d_{n_k},x_0\right\}\to x$,即得
-\[\phi(x)=y_0+\int_{x_0}^xf(s,\phi(s))\diff s\]
-故$\phi(x)$是初值问题$(E)$的一个解.
+  对于 $\forall x,\tilde{x}\in[x_0,x_0+h]$, 不妨设 $x<\tilde{x}$,
+  则 $\max\{\tilde{x}-d_n,x_0\}\geq\max\{x-d_n,x_0\}$, 由定义知
+  \[y_n(x)=y_0+\int_{x_0}^{\max\{x-d_n,x_0\}}f(s,y_n(s))\diff s.\]
+  \[y_n(\tilde{x})=y_0+\int_{x_0}^{\max\{\tilde{x}-d_n,x_0\}}f(s,y_n(s))\diff s.\]
+  故
+  \[\begin{split}
+    |y_n(\tilde{x})-y_n(x)|
+    & = \left|\int_{\max\{x-d_n,x_0\}}^{\max\{\tilde{x}-d_n,x_0\}}f(s,y_n(s))\diff s\right|\\
+    & \leq M(\max\{\tilde{x}-d_n,x_0\}-\max\{x-d_n,x_0\})\leq M(\tilde{x}-x).
+  \end{split}\]
+  因此 $\{y_n(x)\}$ 在区间 $[x_0,x_0+h]$ 上等度连续,
+  由 Ascoli 定理知 $\{y_n(x)\}$ 有一致收敛的子序列
+  $\{y_{n_k}(x)\}$ 且 $y_{n_k}(x)\Rightarrow\phi(x)$, 在下面定义式中
+  \[y_{n_k}(x)=y_0+\int_{x_0}^{\max\left\{x-d_{n_k},x_0\right\}}f(s,y_{n_k}(s))\diff s,\]
+  取极限 $k\to\infty$, 注意到 $\max\left\{x-d_{n_k},x_0\right\}\to x$, 即得
+  \[\phi(x)=y_0+\int_{x_0}^xf(s,\phi(s))\diff s.\]
+  故 $\phi(x)$ 是初值问题 $(E)$ 的一个解.
 \end{proof}
 
 
 5.题目有问题,跳过此题.
 
 
+
 \section{解的延伸}
 
 
-1.利用定理3.5证明:线性微分方程
-\[\frac{\diff y}{\diff x}=a(x)y+b(x)(x\in I)\]
-的每一个解$y=y(x)$的(最大)存在区间为$I$,这里假设$a(x)$和$b(x)$在区间$I$上是连续的.
 
-\begin{proof}显然
-\[|a(x)y+b(x)|\leq|a(x)||y|+|b(x)|\]
-令$A(x)=|a(x)|\geq0,B(x)=|b(x)|\geq0$,则$A(x)$和$B(x)$都是$I$上的连续函数,由定理3.5知每一个解的最大存在区间为$I$.
+\begin{exercise}
+  利用定理 3.5 证明: 线性微分方程
+  \[\frac{\diff y}{\diff x}=a(x)y+b(x)\quad (x\in I)\]
+  的每一个解 $y=y(x)$ 的(最大)存在区间为 $I$, 这里假设 $a(x)$ 和 $b(x)$ 在区间 $I$ 上是连续的.
+\end{exercise}
+
+\begin{proof}
+  显然
+  \[|a(x)y+b(x)|\leq|a(x)||y|+|b(x)|.\]
+  令 $A(x)=|a(x)|\geq 0$, $B(x)=|b(x)|\geq 0$,
+  则 $A(x)$ 和 $B(x)$ 都是 $I$ 上的连续函数, 由定理 3.5 知每一个解的最大存在区间为 $I$.
 \end{proof}
 
 
-2.讨论下列微分方程解的存在区间:
-\begin{enumerate}[(1)]
-\item $\displaystyle\frac{\diff y}{\diff x}=\frac{1}{x^2+y^2}$;
-\item $\displaystyle\frac{\diff y}{\diff x}=y(y-1)$;
-\item $\displaystyle\frac{\diff y}{\diff x}=y\sin(xy)$;
-\item $\displaystyle\frac{\diff y}{\diff x}=1+y^2$.
-\end{enumerate}
+
+\begin{exercise}
+  讨论下列微分方程解的存在区间:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{1}{x^2+y^2}$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=y(y-1)$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=y\sin(xy)$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=1+y^2$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve}
-(1)因为$\frac{1}{x^2+y^2}$在区域$\mathbb{R}^2\backslash\{0\}$上连续,
-故由解的延伸定理知任意积分曲线必延伸到$\mathbb{R}^2\backslash\{0\}$的边界.设$y=y(x),x\in J$为一个饱和解,则
-\[\frac{\diff y(x)}{\diff x}=\frac{1}{x^2+y^2(x)}>0\]
-故存在反函数$x=x(y)$,且$x(y)$满足
-\[\frac{\diff x(y)}{\diff y}=x^2(y)+y^2\]
-由教材例1知$x=x(y)$的存在区间有限,不妨记为$(c,d)$,则当$y\to c+$或$y\to d-$时,$x(y)\to\infty$,也就说明$y(x)$有界,故其存在区间为$(-\infty,+\infty)$或$(-\infty,0)$或$(0,+\infty)$.\\
-注:对照教材例1可以证明一般结论:微分方程
-\[\frac{\diff y}{\diff x}=af(x)+by^2(f(x)\uparrow>0,ab>0)\]
-任一解的存在区间都是有界的.
+  (1) 因为 $\frac{1}{x^2+y^2}$ 在区域 $\mathbb{R}^2\backslash\{0\}$ 上连续,
+  故由解的延伸定理知任意积分曲线必延伸到 $\mathbb{R}^2\backslash\{0\}$ 的边界.
+  设 $y=y(x),x\in J$ 为一个饱和解, 则
+  \[\frac{\diff y(x)}{\diff x}=\frac{1}{x^2+y^2(x)}>0.\]
+  故存在反函数 $x=x(y)$, 且 $x(y)$ 满足
+  \[\frac{\diff x(y)}{\diff y}=x^2(y)+y^2.\]
+  由教材例 1 知 $x=x(y)$ 的存在区间有限, 不妨记为 $(c,d)$,
+  则当 $y\to c+$ 或 $y\to d-$时, $x(y)\to\infty$, 也就说明 $y(x)$ 有界,
+  故其存在区间为 $(-\infty,+\infty)$ 或 $(-\infty,0)$ 或 $(0,+\infty)$.
 
-(2)这是变量分离的方程,容易解得方程的通解为$\displaystyle y(x)=\frac{1}{1-C\e^x}(C\in\mathbb{R})$,另外有特解$y=0$.
+  注: 对照教材例 1 可以证明一般结论: 微分方程
+  \[\frac{\diff y}{\diff x}=af(x)+by^2\quad (f(x)\uparrow>0,ab>0)\]
+  任一解的存在区间都是有界的.
 
-当$C<0$时,$0<y(x)<1$且$y(x)$单调减,当$x\to-\infty$时,$y(x)\to1$,当$x\to+\infty$时,$y(x)\to0$;
+  (2)这是变量分离的方程, 容易解得方程的通解为
+  $\displaystyle y(x)=\frac{1}{1-C\e^x}$ $(C\in\mathbb{R})$, 另外有特解 $y=0$.
 
-当$C=0$时,$y(x)=1$;
+  当 $C<0$ 时, $0<y(x)<1$ 且 $y(x)$ 单调减,
+  当 $x\to-\infty$ 时, $y(x)\to 1$, 当 $x\to+\infty$ 时, $y(x)\to 0$;
 
-当$C>0$时,分母有零点$x_c=-\ln C$,当$x\in(-\infty,x_c)$时,$y(x)>0$单调增,$x\to-\infty$时,
-$y(x)\to1$,$x\to x_c$时,$y(x)\to+\infty$;当$x\in(x_c,+\infty)$时,$y(x)<0$单调增,$x\to x_c$时,
-$y(x)\to-\infty$,$x\to+\infty$时,$y(x)\to0$.
+  当 $C=0$ 时, $y(x)=1$;
 
-综上,解的存在区间为$(-\infty,+\infty)$或$(-\infty,-\ln C)$或$(-\ln C,+\infty)$.
+  当 $C>0$ 时, 分母有零点 $x_c=-\ln C$, 当 $x\in(-\infty,x_c)$ 时, $y(x)>0$ 单调增,
+  $x\to-\infty$ 时, $y(x)\to1$, $x\to x_c$ 时, $y(x)\to+\infty$;
+  当 $x\in(x_c,+\infty)$ 时, $y(x)<0$ 单调增, $x\to x_c$时,
+  $y(x)\to-\infty$,$x\to+\infty$ 时, $y(x)\to0$.
 
-(3)因为$y\sin(xy)$在$\mathbb{R}^2$上连续,且$|y\sin(xy)|\leq|y|$,故由定理3.5知解的存在区间为$(-\infty,+\infty)$.
+  综上, 解的存在区间为 $(-\infty,+\infty)$ 或 $(-\infty,-\ln C)$ 或 $(-\ln C,+\infty)$.
 
-(4)原方程的解为$x=\arctan y+C$,故解的存在区间为$(C-\frac{\pi}{2},C+\frac{\pi}{2})$.
+  (3) 因为 $y\sin(xy)$ 在 $\mathbb{R}^2$ 上连续,
+  且 $|y\sin(xy)|\leq|y|$, 故由定理 3.5 知解的存在区间为 $(-\infty,+\infty)$.
+
+  (4) 原方程的解为 $x=\arctan y+C$, 故解的存在区间为 $(C-\frac{\pi}{2},C+\frac{\pi}{2})$.
 \end{solve}
 
 
-3.考虑对称形式的微分方程$x\diff x+y\diff y=0$,
-它的定义域为$G=\{(x,y):x^2+y^2>0\}$.则单位圆$(x^2+y^2=1)$是一条积分曲线,
-它在区域$G$的内部;它并没有延伸到$G$的边界,这一点是否与解的延伸定理相矛盾?为什么?
+
+\begin{exercise}
+  考虑对称形式的微分方程 $x\diff x+y\diff y=0$,
+  它的定义域为 $G=\{(x,y):x^2+y^2>0\}$. 则单位圆 $(x^2+y^2=1)$ 是一条积分曲线,
+  它在区域 $G$ 的内部; 它并没有延伸到 $G$的边界, 这一点是否与解的延伸定理相矛盾?为什么?
+\end{exercise}
 
 \begin{solve}
-$\frac{\diff y}{\diff x}=-\frac{x}{y}$,因为$-\frac{x}{y}$在区域$G$上不连续,故不能运用延伸定理.
+  $\frac{\diff y}{\diff x}=-\frac{x}{y}$, 因为 $-\frac{x}{y}$ 在区域 $G$ 上不连续,故不能运用延伸定理.
 \end{solve}
 
 
-4.设初值问题
-\[(E):\frac{\diff y}{\diff x}=(y^2-2y-3)\e^{(x+y)^2},y(x_0)=y_0\]
-的解的最大存在区间为:$a<x<b$,其中$(x_0,y_0)$是平面上任一点.则$a=-\infty$和$b=\infty$中至少有一个成立.
+
+\begin{exercise}
+  设初值问题
+  \[(E):\quad \frac{\diff y}{\diff x}=(y^2-2y-3)\e^{(x+y)^2},\quad y(x_0)=y_0\]
+  的解的最大存在区间为: $a<x<b$, 其中 $(x_0,y_0)$ 是平面上任一点,
+  则 $a=-\infty$ 和 $b=\infty$ 中至少有一个成立.
+\end{exercise}
 
 \begin{proof}
-因为$f(x,y)=(y^2-2y-3)\e^{(x+y)^2}$在$\mathbb{R}^2$上连续,
-且对$y$有连续的偏导数,故经过任一点的积分曲线唯一,显然$y=3$和$y=-1$是两个特解,其他积分曲线不与其二者相交,故:
+  因为 $f(x,y)=(y^2-2y-3)\e^{(x+y)^2}$ 在 $\mathbb{R}^2$ 上连续,
+  且对 $y$ 有连续的偏导数, 故经过任一点的积分曲线唯一, 显然 $y=3$ 和 $y=-1$ 是两个特解,
+  其他积分曲线不与其二者相交, 故:
 
-(1)$y_0<-1$时,$\frac{\diff y}{\diff x}>0$,故解$y=y(x)$严格单调增,但不能与$y=-1$相交,故必有$b=+\infty$.
+  (1) $y_0<-1$ 时, $\frac{\diff y}{\diff x}>0$, 故解 $y=y(x)$ 严格单调增, 
+  但不能与 $y=-1$ 相交, 故必有 $b=+\infty$.
 
-(2)$-1<y_0<3$时,$\frac{\diff y}{\diff x}<0$,故解$y=y(x)$严格单调减,但不能与$y=-1$和$y=3$相交,故必有$a=-\infty,b=+\infty$.
+  (2) $-1<y_0<3$ 时, $\frac{\diff y}{\diff x}<0$, 故解$y=y(x)$严格单调减,
+  但不能与 $y=-1$ 和 $y=3$ 相交, 故必有 $a=-\infty,b=+\infty$.
 
-(3)$y_0>3$时,$\frac{\diff y}{\diff x}>0$,故解$y=y(x)$严格单调增,但不能与$y=3$相交,故必有$a=-\infty$.
+  (3) $y_0>3$ 时, $\frac{\diff y}{\diff x}>0$, 故解 $y=y(x)$ 严格单调增,
+  但不能与 $y=3$ 相交, 故必有 $a=-\infty$.
 
-(4)$y_0=-1$或$y_0=3$时,显然$a=-\infty,b=+\infty$.
+  (4) $y_0=-1$ 或 $y_0=3$ 时, 显然 $a=-\infty,b=+\infty$.
 \end{proof}
 
 
-5.设初值问题
-\[(E):\frac{\diff y}{\diff x}=(x^2-y^2)f(x,y),y(x_0)=y_0\]
-其中函数$f(x,y)$在全平面连续且满足$yf(x,y)>0,\mbox{当}y\neq0$.则对于任意的$(x_0,y_0)$,
-当$x_0<0$和$|y_0|$适当小时$(E)$的解可延拓到$-\infty<x<+\infty$.
+
+\begin{exercise}
+  设初值问题
+  \[(E):\quad \frac{\diff y}{\diff x}=(x^2-y^2)f(x,y),\quad y(x_0)=y_0,\]
+  其中函数 $f(x,y)$ 在全平面连续且满足 $yf(x,y)>0$, 当 $y\neq 0$.
+  则对于任意的 $(x_0,y_0)$,
+  当 $x_0<0$ 和 $|y_0|$ 适当小时 $(E)$ 的解可延拓到 $-\infty<x<+\infty$.
+\end{exercise}
 
 \begin{proof}
-显然$y=\pm x$是线素场的水平等斜线,由$f(x,y)$连续以及$yf(x,y)>0,\mbox{当}y\neq0$可知$f(x,0)=0$,
-故$y=0$为方程的特解.当$x_0<0$且$|y_0|<|x_0|$时(以$y_0>0$为例),
-解$y=y(x)$在区域$\{(x,y)|0\leq y<-x,x<0\}$单调增加,故可向左延伸至$-\infty$,
-向右穿过$y=-x$后单调减,必与$y=x$相交,穿过直线$y=x$后单调增加且不能再次穿过$y=x$,故可向右延拓至$+\infty$.
+  显然 $y=\pm x$ 是线素场的水平等斜线, 由 $f(x,y)$ 连续
+  以及 $yf(x,y)>0$, 当 $y\neq 0$ 可知 $f(x,0)=0$,
+  故 $y=0$ 为方程的特解. 当 $x_0<0$ 且 $|y_0|<|x_0|$ 时 (以 $y_0>0$ 为例),
+  解 $y=y(x)$ 在区域 $\{(x,y)\mid 0\leq y<-x,x<0\}$ 单调增加, 故可向左延伸至 $-\infty$,
+  向右穿过 $y=-x$ 后单调减, 必与 $y=x$ 相交, 
+  穿过直线 $y=x$ 后单调增加且不能再次穿过 $y=x$, 故可向右延拓至 $+\infty$.
 \end{proof}
+
 
 
 \section{比较定理及其应用}
 
 
-1.设初值问题$(E)$,矩形区域$R$,和正数$h$的意义同定理3.1.
-试证在$(E)$的最小解$y=W(x)$和最大解$y=Z(x)$之间充满了$(E)$的其它解,即任取一点$(x_1,y_1)$,其中
-\[|x_1-x_0|\leq h,W(x_1)\leq y_1\leq Z(x_1),\]
-则$(E)$在$|x-x_0|\leq h$上至少有一个解$y=u(x)$满足:$u(x_1)=y_1$.
+
+\begin{exercise}
+  设初值问题 $(E)$, 矩形区域 $R$, 和正数 $h$ 的意义同定理 3.1.
+  试证在 $(E)$ 的最小解 $y=W(x)$ 和最大解 $y=Z(x)$ 之间充满了 $(E)$ 的其它解,
+  即任取一点 $(x_1,y_1)$, 其中
+  \[|x_1-x_0|\leq h,\quad W(x_1)\leq y_1\leq Z(x_1),\]
+  则 $(E)$ 在 $|x-x_0|\leq h$ 上至少有一个解 $y=u(x)$ 满足: $u(x_1)=y_1$.
+\end{exercise}
 
 \begin{proof}
-为证明简单以$x_1\in(x_0,x_0+h]$为例,由解的延伸定理知初值问题:
-\[(E_1):\frac{\diff y}{\diff x}=f(x,y),y(x_1)=y_1\]
-的解$y=\phi(x)$必与$y=W(x)$或$y=Z(x)$相交,不妨设与$y=W(x)$相交于点$(\xi,W(\xi))$且两曲线在交点处相切,令
-\[u(x)=\begin{cases}
-W(x),&x_0-h\leq x\leq\xi\\
-\phi(x),&\xi<x\leq x_0+h
-\end{cases}\]
-则$y=u(x)$为$(E)$的解且满足$u(x_1)=y_1$.
+  为证明简单以 $x_1\in(x_0,x_0+h]$ 为例, 由解的延伸定理知初值问题:
+  \[(E_1):\quad \frac{\diff y}{\diff x}=f(x,y),\quad y(x_1)=y_1\]
+  的解 $y=\phi(x)$ 必与 $y=W(x)$ 或 $y=Z(x)$ 相交,
+  不妨设与 $y=W(x)$ 相交于点 $(\xi,W(\xi))$ 且两曲线在交点处相切, 令
+  \[u(x)=\begin{cases}
+    W(x),    & x_0-h\leq x\leq\xi,\\
+    \phi(x), & \xi<x\leq x_0+h.
+  \end{cases}\]
+  则 $y=u(x)$ 为 $(E)$ 的解且满足 $u(x_1)=y_1$.
 \end{proof}
 
 
-2.证明(第二比较定理)设函数$f(x,y)$与$F(x,y)$都在平面区域$G$内连续且满足
-\[f(x,y)\leq F(x,y),(x,y)\in G;\]
-又设函数$y=\phi(x)$与$y=\varPhi(x)$在区间$a<x<b$上分别是初值问题\[(E_1):\frac{\diff y}{\diff x}=f(x,y),y(x_0)=y_0\]
-与\[(E_2):\frac{\diff y}{\diff x}=F(x,y),y(x_0)=y_0\]
-的解$[(x_0,y_0)\in G]$, 并且$y=\phi(x)$是$(E_1)$的右行最小解和左行最大解(或者: $y=\varPhi(x)$是$(E_2)$的右行最大解和左行最小解), 则有如下比较关系:
-\[\phi(x)\leq\varPhi(x),x_0\leq x<b;\]
-\[\phi(x)\geq\varPhi(x),a<x\leq x_0.\]
 
-\begin{proof}不妨设$\varPhi(x)$是最大右行解和最小左行解, 为证当$x_0\leq x<b$时, 
-$\phi(x)\leq\varPhi(x)$, 只需证明$\forall c\in(x_0,b)$, 有
-\[\phi(x)\leq\varPhi(x),x\in[x_0,c]\]
-考虑初值问题
-\[(E_n^*):\frac{\diff y}{\diff x}=F(x,y)+\frac{1}{n},y(x_0)=y_0,n=1,2,\cdots\]
-由Peano存在定理和解的延伸定理知$(E_n^*)$在$[x_0,c]$上有解, 取其中一解记为$\varPhi_n(x)$, 
-由第一比较定理得$\phi(x)<\varPhi_n(x)<\varPhi_{n-1}(x),x_0\leq x\leq c$, 即
-\[\varPhi_1(x)>\varPhi_2(x)>\cdots>\varPhi_n(x)>\cdots>\phi(x),x_0\leq x\leq c\]
-显然$\{\varPhi_n(x)\}$在$[x_0,c]$上一致有界, 且由
-\[|\varPhi_n(x_1)-\varPhi_n(x_2)|\leq\left|\int_{x_1}^{x_2}\left(F(x,\varPhi_n(x))+\frac{1}{n}\right)\diff x\right|\leq(M+1)|x_1-x_2|\]
-知$\{\varPhi_n(x)\}$等度连续, 故其有一致收敛的子列, 不妨设其一致收敛:
-\[\lim_{n\to\infty}\varPhi_n(x)=\varPhi_*(x)\]
-在下式
-\[\varPhi_n(x)=y_0+\int_{x_0}^x\left(F(x,\varPhi_n(x))+\frac{1}{n}\right)\diff x\]
-中令$n\to\infty$, 得
-\[\varPhi_*(x)=y_0+\int_{x_0}^xF(x,\varPhi_*(x))\diff x\]
-故$\varPhi_*(x)$是$(E_2)$的解, 因此
-\[\phi(x)\leq\lim_{n\to\infty}\varPhi_n(x)=\varPhi_*(x)\leq\varPhi(x),x_0\leq x\leq c\]
-同理可证$\phi(x)\geq\varPhi(x),a<x\leq x_0$.
+\begin{exercise}(第二比较定理) 
+  设函数 $f(x,y)$ 与 $F(x,y)$ 都在平面区域 $G$ 内连续且满足
+  \[f(x,y)\leq F(x,y),\quad (x,y)\in G;\]
+  又设函数 $y=\phi(x)$ 与 $y=\varPhi(x)$ 在区间 $a<x<b$ 上分别是初值问题
+  \[(E_1):\quad \frac{\diff y}{\diff x}=f(x,y),\quad y(x_0)=y_0\]
+  与
+  \[(E_2):\quad \frac{\diff y}{\diff x}=F(x,y),\quad y(x_0)=y_0\]
+  的解 $[(x_0,y_0)\in G]$, 并且 $y=\phi(x)$ 是 $(E_1)$ 的右行最小解和左行最大解
+  (或者: $y=\varPhi(x)$ 是 $(E_2)$ 的右行最大解和左行最小解), 则有如下比较关系:
+  \[\phi(x)\leq\varPhi(x),\ \text{当\ } x_0\leq x<b;\]
+  \[\phi(x)\geq\varPhi(x),\ \text{当\ } a<x\leq x_0.\]
+\end{exercise}
+
+\begin{proof}
+  不妨设 $\varPhi(x)$ 是最大右行解和最小左行解, 为证当 $x_0\leq x<b$ 时, 
+  $\phi(x)\leq\varPhi(x)$, 只需证明 $\forall c\in(x_0,b)$, 有
+  \[\phi(x)\leq\varPhi(x),\quad x\in[x_0,c].\]
+  考虑初值问题
+  \[(E_n^*):\quad \frac{\diff y}{\diff x}=F(x,y)+\frac{1}{n},
+    \quad y(x_0)=y_0,\quad n=1,2,\cdots.\]
+  由 Peano 存在定理和解的延伸定理知 $(E_n^*)$ 在 $[x_0,c]$ 上有解, 取其中一解记为 $\varPhi_n(x)$, 
+  由第一比较定理得 $\phi(x)<\varPhi_n(x)<\varPhi_{n-1}(x)$, $x_0\leq x\leq c$, 即
+  \[\varPhi_1(x)>\varPhi_2(x)>\cdots>\varPhi_n(x)>\cdots>\phi(x),\quad x_0\leq x\leq c.\]
+  显然 $\{\varPhi_n(x)\}$ 在 $[x_0,c]$ 上一致有界, 且由
+  \[|\varPhi_n(x_1)-\varPhi_n(x_2)|\leq
+    \left|\int_{x_1}^{x_2}\left(F(x,\varPhi_n(x))+\frac{1}{n}\right)\diff x\right|\leq(M+1)|x_1-x_2|\]
+  知 $\{\varPhi_n(x)\}$ 等度连续, 故其有一致收敛的子列, 不妨设其一致收敛:
+  \[\lim_{n\to\infty}\varPhi_n(x)=\varPhi_*(x).\]
+  在下式
+  \[\varPhi_n(x)=y_0+\int_{x_0}^x\left(F(x,\varPhi_n(x))+\frac{1}{n}\right)\diff x\]
+  中令 $n\to\infty$, 得
+  \[\varPhi_*(x)=y_0+\int_{x_0}^xF(x,\varPhi_*(x))\diff x.\]
+  故 $\varPhi_*(x)$ 是 $(E_2)$ 的解, 因此
+  \[\phi(x)\leq\lim_{n\to\infty}\varPhi_n(x)=\varPhi_*(x)\leq\varPhi(x),\quad x_0\leq x\leq c.\]
+  同理可证 $\phi(x)\geq\varPhi(x),a<x\leq x_0$.
 \end{proof}
 
 
-3.设初值问题
-\[\frac{\diff y}{\diff x}=x^2+(y+1)^2,y(0)=0\]
-的解在右侧的最大存在区间为$[0,\beta)$,试证:$\frac{\pi}{4}<\beta<1$.
-\begin{proof}
-首先初值问题的解存在且唯一(记为$\phi(x)$)并可延伸到包含坐标原点的任意区域的边界,下面分三步证明$\frac{\pi}{4}<\beta<1$.\\
-(1)证明:$\frac{\pi}{4}\leq\beta\leq1$.
 
-当$|x|\leq1$时,显然有
-\[(y+1)^2\leq x^2+(y+1)^2\leq1+(y+1)^2\]
+\begin{exercise}
+  设初值问题
+  \[\frac{\diff y}{\diff x}=x^2+(y+1)^2,y(0)=0\]
+  的解在右侧的最大存在区间为 $[0,\beta)$, 试证: $\frac{\pi}{4}<\beta<1$.
+\end{exercise}
+
+\begin{proof}
+  首先初值问题的解存在且唯一(记为$\phi(x)$)并可延伸到包含坐标原点的任意区域的边界,下面分三步证明$\frac{\pi}{4}<\beta<1$.
+
+  (1)证明:$\frac{\pi}{4}\leq\beta\leq1$.
+
+  当$|x|\leq1$时,显然有
+  \[(y+1)^2\leq x^2+(y+1)^2\leq1+(y+1)^2\]
 \end{proof}
