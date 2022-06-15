@@ -724,8 +724,9 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$的标准基解矩阵,
   \[\bmitPhi^{-1}(x)=\begin{pmatrix}-2\e^{-x}&3\e^{-x}\\\e^{-2x}&-\e^{-2x}\end{pmatrix}.\]
   故
   \[\bmitPhi^{-1}(x)\bm{f}(x) =
-    \begin{pmatrix}-2\e^{-x}\sin x-6\e^{-x}\cos x\\\e^{-2x}\sin x+2\e^{-2x}\cos x\end{pmatrix}
-    \Rightarrow\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x =
+    \begin{pmatrix}-2\e^{-x}\sin x-6\e^{-x}\cos x\\\e^{-2x}\sin x+2\e^{-2x}\cos x\end{pmatrix}\]
+  积分得
+  \[\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x =
     \begin{pmatrix}-2\e^{-x}\sin x+4\e^{-x}\cos x\\-2\e^{-2x}\cos x\end{pmatrix}.\]
   故
   \[\bmitPhi(x)\int\bmitPhi^{-1}(x)\bm{f}(x)\diff x =
@@ -823,7 +824,7 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$的标准基解矩阵,
 
 (I)齐次方程: 有 $n$ 个线性无关的解 $\varphi_1(x),\cdots,\varphi_n(x)$, 解组的朗斯基行列式
 \[W(x)=W(x_0)\e^{-\int_{x_0}^xa_1(s)\diff s}.\]
-(一个运用: 二阶齐次线性微分方程组 $y''+p(x)y'+q(x)=0$ 若知道一个特解可以求出通解).
+(一个运用: 二阶齐次线性微分方程组 $y''+p(x)y'+q(x)y=0$ 若知道一个特解可以求出通解).
 
 (II)非齐次方程: 通解为
 \[y=C_1\varphi_1(x)+\cdots+C_n\varphi_n(x)+\varphi^*(x),\] 
@@ -886,7 +887,8 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
 \end{exercise}
 
 \begin{proof} 
-  设 $k_1\varphi_1(x)+k_2\varphi_2(x)=0$ $(\forall x)$, 当 $x\geq 0$时, $k_1x^2=0\Rightarrow k_1=0$, 
+  设 $k_1\varphi_1(x)+k_2\varphi_2(x)=0, \forall x\in (-\infty,+\infty)$,
+  当 $x\geq 0$时, $k_1x^2=0\Rightarrow k_1=0$, 
   当 $x<0$ 时, $k_2x^2=0\Rightarrow k_2=0$, 
   故 $\varphi_1(x)$ 与 $\varphi_2(x)$ 在 $(-\infty,+\infty)$ 上线性无关. 
   这与定理 $6.2^*$ 不矛盾, 并说明不存在二阶齐次线性微分方程使得它以 $\varphi_1(x)$ 与 $\varphi_2(x)$ 为解组.
