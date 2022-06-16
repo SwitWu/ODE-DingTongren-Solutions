@@ -105,11 +105,11 @@
 \begin{exercise}
   求解下列微分方程的初值问题:
   \begin{enumerate}[(1)]
-  \item $\displaystyle\sin 2x\diff x+\cos 3y\diff y=0,y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$;
-  \item $\displaystyle x\diff x+y\e^{-x}\diff y=0,y(0)=1$;
-  \item $\displaystyle\frac{\diff r}{\diff\theta}=r,r(0)=2$;
-  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{\ln|x|}{1+y^2},y(1)=0$;
-  \item $\displaystyle\sqrt{1+x^2}\frac{\diff y}{\diff x}=xy^3,y(0)=1$.
+  \item $\displaystyle\sin 2x\diff x+\cos 3y\diff y=0,\quad y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$;
+  \item $\displaystyle x\diff x+y\e^{-x}\diff y=0,\quad y(0)=1$;
+  \item $\displaystyle\frac{\diff r}{\diff\theta}=r,\quad r(0)=2$;
+  \item $\displaystyle\frac{\diff y}{\diff x}=\frac{\ln|x|}{1+y^2},\quad y(1)=0$;
+  \item $\displaystyle\sqrt{1+x^2}\frac{\diff y}{\diff x}=xy^3,\quad y(0)=1$.
   \end{enumerate}
 \end{exercise}
 
@@ -244,7 +244,7 @@
   \[\frac{\diff y}{\diff x}=f(y),\]
   其中 $f(y)$ 在 $y=a$ 的某邻域 (例如区间 $|y-a|\leq\varepsilon$) 内连续, 而且$f(y)=0$当且仅当$y=a$. 
   证明: 在直线$y=a$上的每一点, 上述方程的解是局部唯一的, 当且仅当瑕积分
-  \[\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|=\infty(\mbox{发散}).\]
+  \[\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|=\infty.\]
 \end{exercise}
 
 \begin{solve}
@@ -252,7 +252,7 @@
   它与直线 $y=a$ 相交. 不妨设 $(x_0,a)$ 是它们的一个交点, 
   且存在区间 $I=(x_0,x_0+\delta)$ 或 $I=(x_0-\delta,x_0)$, 
   使得当 $x\in I$ 时, $y(x)\neq a$, 从而
-  \[\frac{\diff y(x)}{f(y(x))}=\diff x,x\in I.\]
+  \[\frac{\diff y(x)}{f(y(x))}=\diff x,\quad x\in I.\]
   积分得
   \[\int_a^y\frac{\diff y}{f(y)}=\int_{x_0}^x\frac{\diff y(x)}{f(y(x))}
     = \int_{x_0}^x\diff x = x-x_0<\infty.\]
@@ -302,7 +302,7 @@
   \item $\displaystyle\frac{\diff y}{\diff x}+2y=x\e^{-x}$;
   \item $\displaystyle\frac{\diff y}{\diff x}+y\tan x=\sin(2x)$;
   \item $\displaystyle x\frac{\diff y}{\diff x}+2y=\sin x$, $y(\pi)=\frac{1}{\pi}$;
-  \item $\displaystyle\frac{\diff y}{\diff x}-\frac{1}{1-x^2}y=1+x,y(0)=1$.
+  \item $\displaystyle\frac{\diff y}{\diff x}-\frac{1}{1-x^2}y=1+x$, $y(0)=1$.
   \end{enumerate}
 \end{exercise}
 
@@ -368,7 +368,7 @@
 \begin{exercise}
   设 $y=\varphi(x)$ 满足微分不等式
   \[y'+a(x)y\leq 0\quad (x\geq 0).\]
-  证明
+  求证:
   \[\varphi(x)\leq\varphi(0)\e^{-\int_0^x a(s)\diff s}\quad (x\geq 0).\]
 \end{exercise}
 
@@ -820,23 +820,23 @@
 \end{exercise}
 
 \begin{proof}
-  \[\begin{split}
-  &\mbox{有积分因子}\mu=\mu(\varphi(x,y))\\
-  &\Longleftrightarrow\frac{\partial(\mu P)}{\partial y}=\frac{\partial(\mu Q)}{\partial x}\\
-  &\Longleftrightarrow\left(Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}\right)\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)\mu\\
-  &\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}}=\frac{1}{\mu}\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=:f(\varphi(x,y))
-  \end{split}\]
-  此时有积分因子$\mu=\e^{\int f(s)\diff s}|_{s=\varphi(x,y)}$,于是
+  \begin{align*}
+    & \text{有积分因子\ }\mu=\mu(\varphi(x,y))\\
+    & \Longleftrightarrow\frac{\partial(\mu P)}{\partial y}=\frac{\partial(\mu Q)}{\partial x}\\
+    & \Longleftrightarrow\left(Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}\right)\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)\mu\\
+    & \Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\frac{\partial\varphi}{\partial x}-P\frac{\partial\varphi}{\partial y}}=\frac{1}{\mu}\frac{\diff\mu}{\diff s}\bigg|_{s=\varphi(x,y)}=:f(\varphi(x,y)).
+  \end{align*}
+  此时有积分因子 $\mu=\e^{\int f(s)\diff s}|_{s=\varphi(x,y)}$, 于是
 
-  (1)有积分因子$\mu=\mu(x\pm y)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\mp P}=f(x\pm y)$;
+  (1) 有积分因子 $\mu=\mu(x\pm y)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{Q\mp P}=f(x\pm y)$;
 
-  (2)有积分因子$\mu=\mu(x^2+y^2)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{2xQ-2yP}=f(x^2+y^2)$;
+  (2) 有积分因子 $\mu=\mu(x^2+y^2)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{2xQ-2yP}=f(x^2+y^2)$;
 
-  (3)有积分因子$\mu=\mu(xy)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{yQ-xP}=f(xy)$;
+  (3) 有积分因子 $\mu=\mu(xy)\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{yQ-xP}=f(xy)$;
 
-  (4)有积分因子$\mu=\mu(\frac{y}{x})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{-\frac{y}{x^2}Q-\frac{1}{x}P}=f(\frac{y}{x})$;
+  (4) 有积分因子 $\mu=\mu(\frac{y}{x})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{-\frac{y}{x^2}Q-\frac{1}{x}P}=f(\frac{y}{x})$;
 
-  (5)有积分因子$\mu=\mu(x^{\alpha}y^{\beta})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{\frac{\alpha}{x}Q-\frac{\beta}{y}P}=f(x^{\alpha}y^{\beta})$.
+  (5) 有积分因子 $\mu=\mu(x^{\alpha}y^{\beta})\Longleftrightarrow\frac{\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}}{\frac{\alpha}{x}Q-\frac{\beta}{y}P}=f(x^{\alpha}y^{\beta})$.
 \end{proof}
 
 
@@ -868,9 +868,9 @@
   \[P(tx,ty)=t^mP(x,y),Q(tx,ty)=t^mQ(x,y).\]
   令 $y=ux$, 则 $\diff y=u\diff x+x\diff u$, 于是方程变为
   \[\begin{split}
-  &P(x,y)\diff x+Q(x,y)\diff y\\
-  =&P(x,ux)\diff x+Q(x,ux)(u\diff x+x\diff u)\\
-  =&x^m\left[P(1,u)+uQ(1,u)\right]\diff x+x^{m+1}Q(1,u)\diff u=0
+        & P(x,y)\diff x+Q(x,y)\diff y \\
+    ={} & P(x,ux)\diff x+Q(x,ux)(u\diff x+x\diff u) \\
+    ={} & x^m\left[P(1,u)+uQ(1,u)\right]\diff x+x^{m+1}Q(1,u)\diff u=0.
   \end{split}\]
   上式为变量分离的方程, 有积分因子
   \[\mu=\frac{1}{x^{m+1}[P(1,u)+uQ(1,u)]}.\]
@@ -894,13 +894,13 @@
 即证,其中$G(s)=\int g(s)\diff s$.下面证明其逆定理:
 
 设
-\[\mu_1P(x,y)\diff x+\mu_1Q(x,y)\diff y=\diff\varPsi\]
+\[\mu_1P(x,y)\diff x+\mu_1Q(x,y)\diff y=\diff\varPsi.\]
 因为
 \[\frac{D[\varPhi,\varPsi]}{D[x,y]}=
-\begin{vmatrix}\mu P&\mu Q\\\mu_1P&\mu_1Q\end{vmatrix}=0\]
-所以$\varPhi$和$\varPsi$函数相关,故 
+  \begin{vmatrix}\mu P&\mu Q\\\mu_1P&\mu_1Q\end{vmatrix}=0,\]
+所以 $\varPhi$ 和 $\varPsi$ 函数相关, 故 
 \[\frac{\mu_1}{\mu}=\frac{\diff\varPsi}{\diff\varPhi}\]
-可以表示为$\varPhi$的函数.
+可以表示为 $\varPhi$ 的函数.
 \end{proof}
 
 

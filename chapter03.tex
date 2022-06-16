@@ -189,9 +189,9 @@
 
   这样不断地递推下去, 即可得到 $y_n(x)$ 在区间 $[x_0,x_0+h]$ 上面的表达式,
   容易验证 $\{y_n(x)\}$ 在 $[x_0,x_0+h]$ 上连续, 且由 $y_n(x)-y_0=0$, $x\in[x_0,x_1]$ 和
-  \[|y_n(x)-y_0|=\biggl|\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s\biggr|\leq M(x-d_n-x_0)
-    \quad (x_1\leq x\leq x_0+h)\]
-  知 $\{(x,y_n(x))\mid x\in[x_0,x_0+h]\}\subset R$.
+  \[|y_n(x)-y_0|=\biggl|\int_{x_0}^{x-d_n}f(s,y_n(s))\diff s\biggr|\leq M(x-d_n-x_0),
+    \quad x_1\leq x\leq x_0+h\]
+  知 $\{(x,y_n(x))\mid x\in[x_0,x_0+h]\}\subset R$, 从而 $(y_n(x))_{n\geq 1}$ 一致有界.
 
   对于 $\forall x,\tilde{x}\in[x_0,x_0+h]$, 不妨设 $x<\tilde{x}$,
   则 $\max\{\tilde{x}-d_n,x_0\}\geq\max\{x-d_n,x_0\}$, 由定义知
@@ -204,16 +204,13 @@
     & \leq M(\max\{\tilde{x}-d_n,x_0\}-\max\{x-d_n,x_0\})\leq M(\tilde{x}-x).
   \end{split}\]
   因此 $\{y_n(x)\}$ 在区间 $[x_0,x_0+h]$ 上等度连续,
-  由 Ascoli 定理知 $\{y_n(x)\}$ 有一致收敛的子序列
-  $\{y_{n_k}(x)\}$ 且 $y_{n_k}(x)\Rightarrow\phi(x)$, 在下面定义式中
+  由 Ascoli 定理知 $(y_n(x))_{n\geq 1}$ 有一致收敛的子序列
+  $\bigl(y_{n_k}(x)\bigr)_{k\geq 1}$, 记 $y_{n_k}(x)\rightrightarrows\phi(x)$, 在下面定义式中
   \[y_{n_k}(x)=y_0+\int_{x_0}^{\max\left\{x-d_{n_k},x_0\right\}}f(s,y_{n_k}(s))\diff s,\]
-  取极限 $k\to\infty$, 注意到 $\max\left\{x-d_{n_k},x_0\right\}\to x$, 即得
+  取极限 $k\to\infty$, 并注意到 $\max\left\{x-d_{n_k},x_0\right\}\to x$, 即得
   \[\phi(x)=y_0+\int_{x_0}^xf(s,\phi(s))\diff s.\]
   故 $\phi(x)$ 是初值问题 $(E)$ 的一个解.
 \end{proof}
-
-
-5.题目有问题,跳过此题.
 
 
 

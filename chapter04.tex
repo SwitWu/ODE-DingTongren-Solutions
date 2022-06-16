@@ -1,186 +1,264 @@
 \chapter{奇解}
 
 
+
 \section{一阶隐式微分方程}
+
 
 
 \subsection{证明与总结}
 
 
-考虑方程: $F\left(x,y,\frac{\diff y}{\diff x}\right)=0\cdots\cdots(*)$
 
-(I)$(*)\Rightarrow y=f(x,p)$,则
-\[p=f'_x(x,p)+f'_p(x,p)\frac{\diff y}{\diff x}\]
+考虑一阶隐式微分方程:
+\begin{equation}
+  F\left(x,y,\frac{\diff y}{\diff x}\right)=0.  \tag{$\star$}
+\end{equation}
 
-若解出$p=u(x,C)$, 则$y=f(x,u(x,C))$;
+\textbullet 若可由 $(\star)$ 式导出 $y=f(x,p)$, 则
+\[p=f'_x(x,p)+f'_p(x,p)\frac{\diff y}{\diff x}.\]
 
-若解出$x=v(p,C)$, 则$\begin{cases}
-x=v(p,C)\\y=f(v(p,C),p)
-\end{cases}(p视作参变量)$.
+若解出 $p=u(x,C)$, 则通解为 $y=f(x,u(x,C))$;
+若解出 $x=v(p,C)$, 则通解为
+\[\begin{cases}
+  x=v(p,C), \\ y=f(v(p,C),p),
+\end{cases}\]
+其中 $p$ 视作参变量.
 
-(II)$(*)$为$F(y,p)=0$, 即不显含自变量($F(x,p)=0$同理), 设$y=g(t),p=h(t)$, 则
-\[\diff x=\frac{1}{p}\diff y=\frac{g'(t)}{h(t)}\diff t\Rightarrow x=\int\frac{g'(t)}{h(t)}\diff t\]
-故通解为$x=\int\frac{g'(t)}{h(t)}\diff t,y=g(t).$
+\textbullet 若可由 $(\star)$ 式导出 $F(y,p)=0$, 即不显含自变量 $x$, 
+设 $y=g(t),p=h(t)$, 则
+\[\diff x=\frac{1}{p}\diff y=\frac{g'(t)}{h(t)}\diff t\Rightarrow x=\int\frac{g'(t)}{h(t)}\diff t.\]
+故通解为 $x=\int\frac{g'(t)}{h(t)}\diff t$, $y=g(t)$.
 
-(III)设$x=f(u,v),y=g(u,v),p=h(u,v)$, 由$\diff y=p\diff x$若能解出$v=Q(u,C)$, 则通解为$x=f(u,Q(u,C)),y=g(u,Q(u,C))$.
+\textbullet 若可由 $(\star)$ 式导出 $F(x,p)=0$, 即不显含未知函数 $y$, 此时处理方式同上.
+
+\textbullet 设 $x=f(u,v),y=g(u,v),p=h(u,v)$, 由 $\diff y=p\diff x$ 若能解出 $v=Q(u,C)$, 
+则通解为 $x=f(u,Q(u,C)),y=g(u,Q(u,C))$.
+
 
 
 \subsection{习题}
 
 
-1.求解下列微分方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle 2y=p^2+4px+2x^2\left(p=\frac{\diff y}{\diff x}\right)$;
-\item $\displaystyle y=px\ln x+(xp)^2$;
-\item $\displaystyle 2xp=2\tan y+p^3\cos^2y$.
-\end{enumerate}
+
+\begin{exercise}
+  求解下列微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle 2y=p^2+4px+2x^2\left(p=\frac{\diff y}{\diff x}\right)$;
+  \item $\displaystyle y=px\ln x+(xp)^2$;
+  \item $\displaystyle 2xp=2\tan y+p^3\cos^2y$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{proof}
-(1)$\displaystyle 2y=p^2+4px+2x^2(*)
-\Rightarrow2p=2p\frac{\diff p}{\diff x}+4p+4x\frac{\diff p}{\diff x}+4x\Rightarrow(p+2x)\left(\frac{\diff p}{\diff x}+1\right)=0$,故
+  (1) 将原方程求导得
+  \[2p=2p\frac{\diff p}{\diff x}+4p+4x\frac{\diff p}{\diff x}+4x.\]
+  即
+  \[(p+2x)\biggl(\frac{\diff p}{\diff x}+1\biggr)=0.\]
 
-当$p+2x=0$时,代入$(*)$得特解$y=-x^2$;
+  当 $p+2x=0$ 时, 代入原方程得特解 $y=-x^2$;
 
-当$\frac{\diff p}{\diff x}=-1$时,$p=-x+C$,代入$(*)$得通解$y=-\frac{1}{2}x^2+Cx+\frac{1}{2}C^2$.
+  当 $\frac{\diff p}{\diff x}=-1$ 时, $p=-x+C$,
+  代入原方程得通解 $y=-\frac{1}{2}x^2+Cx+\frac{1}{2}C^2$.
 
-(2)$\displaystyle y=px\ln x+(xp)^2(*)\Rightarrow p=x\ln x\frac{\diff p}{\diff x}+p(\ln x+1)+2xp\left(p+x\frac{\diff p}{\diff x}\right)\Rightarrow\left(x\frac{\diff p}{\diff x}+p\right)(\ln x+2xp)=0$,故
+  (2) 将原方程求导得
+  \[p=x\ln x\frac{\diff p}{\diff x}+p(\ln x+1)+2xp\left(p+x\frac{\diff p}{\diff x}\right).\]
+  即
+  \[\left(x\frac{\diff p}{\diff x}+p\right)(\ln x+2xp)=0.\]
 
-当$x\frac{\diff p}{\diff x}+p=0$时, $p=\frac{C}{x}$, 代入$(*)$得通解$y=C\ln x+C^2$;
+  当 $x\frac{\diff p}{\diff x}+p=0$ 时, $p=\frac{C}{x}$, 代入原方程得通解 $y=C\ln x+C^2$;
 
-当$\ln x+2xp=0$时, $p=-\frac{\ln x}{2x}$, 代入$(*)$得特解$y=-\frac{1}{4}(\ln x)^2$.
+  当 $\ln x+2xp=0$ 时, $p=-\frac{\ln x}{2x}$, 代入原方程得特解 $y=-\frac{1}{4}(\ln x)^2$.
 
-(3)当$p=0$时得特解$y=k\pi(k\in\mathbb{Z})$;
+  (3) 当 $p=0$ 时得特解 $y=k\pi$ ($k\in\mathbb{Z}$);
 
-当$p\neq0$时,$\displaystyle2xp=2\tan y+p^3\cos^2y(*)\Rightarrow x=\frac{\tan y}{p}+\frac{1}{2}p^2\cos^2y\Rightarrow\frac{1}{p}=\frac{1}{p^2}\left(\sec^2y\cdot p-\tan y\cdot\frac{\diff p}{\diff y}\right)+p\frac{\diff p}{\diff y}\cos^2y-p^2\sin y\cos y\Rightarrow\left(\frac{\diff p}{\diff y}-p\tan y\right)\left(p^3\cos^2y-\tan y\right)=0$,故
+  当 $p\neq 0$ 时, 将原方程变形为
+  \[x=\frac{\tan y}{p}+\frac{1}{2}p^2\cos^2y.\]
+  在上式中关于 $y$ 求导得
+  \[\frac{1}{p}=\frac{1}{p^2}\left(\sec^2y\cdot p-\tan y\cdot\frac{\diff p}{\diff y}\right)+p\frac{\diff p}{\diff y}\cos^2y-p^2\sin y\cos y.\]
+  即
+  \[\left(\frac{\diff p}{\diff y}-p\tan y\right)\left(p^3\cos^2y-\tan y\right)=0.\]
 
-当$\frac{\diff p}{\diff y}-p\tan y=0$时, 解得$p=\frac{1}{C\cos y}(C\neq0)$, 代入$(*)$得通解$x=C\sin y+\frac{1}{2C^2}$;
+  当 $\frac{\diff p}{\diff y}-p\tan y=0$ 时, 
+  解得 $p=\frac{1}{C\cos y}$ $(C\neq 0)$, 代入原方程得通解 $x=C\sin y+\frac{1}{2C^2}$;
 
-当$p^3\cos^2y-\tan y=0$时, $p=\frac{\tan^{\frac{1}{3}}y}{\cos^{\frac{2}{3}}y}$, 代入$(*)$得特解$x=\frac{3}{2}\sin^{\frac{2}{3}}y$.
+  当 $p^3\cos^2y-\tan y=0$ 时, $p=\frac{\tan^{\frac{1}{3}}y}{\cos^{\frac{2}{3}}y}$,
+  代入原方程得特解 $x=\frac{3}{2}\sin^{\frac{2}{3}}y$.
 \end{proof}
 
 
-2.用参数法求解下列微分方程:
-\begin{enumerate}[(1)]
-\item $\displaystyle 2y^2+5\left(\frac{\diff y}{\diff x}\right)^2=4$;
-\item $\displaystyle x^2-3\left(\frac{\diff y}{\diff x}\right)^2=1$;
-\item $\displaystyle\left(\frac{\diff y}{\diff x}\right)^2+y-x^2=0$;
-\item $\displaystyle x^3+\left(\frac{\diff y}{\diff x}\right)^3=4x\frac{\diff y}{\diff x}$.
-\end{enumerate}
+
+\begin{exercise}
+  用参数法求解下列微分方程:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle 2y^2+5\left(\frac{\diff y}{\diff x}\right)^2=4$;
+  \item $\displaystyle x^2-3\left(\frac{\diff y}{\diff x}\right)^2=1$;
+  \item $\displaystyle\left(\frac{\diff y}{\diff x}\right)^2+y-x^2=0$;
+  \item $\displaystyle x^3+\left(\frac{\diff y}{\diff x}\right)^3=4x\frac{\diff y}{\diff x}$.
+  \end{enumerate}
+\end{exercise}
 
 \begin{proof} 
-(1)令$y=\sqrt{2}\sin t,\frac{\diff y}{\diff x}=\frac{2}{\sqrt{5}}\cos t$, 则
+  (1) 令 $y=\sqrt{2}\sin t,\frac{\diff y}{\diff x}=\frac{2}{\sqrt{5}}\cos t$, 则
 
-当$\diff y=0$时, 得特解$y=\pm\sqrt{2}$;
+  当 $\diff y=0$ 时, 得特解 $y=\pm\sqrt{2}$;
 
-当$\diff y\neq0$时, $\diff x=\frac{\diff x}{\diff y}\diff y=\frac{\sqrt{5}}{2\cos t}\sqrt{2}\cos t\diff t=\sqrt{\frac{5}{2}}\diff t\Rightarrow x=\sqrt{\frac{5}{2}}t+C$, 
-故通解为$y=\sqrt{2}\sin\left(\sqrt{\frac{2}{5}}(x-C)\right)$.
+  当 $\diff y\neq 0$时, $\diff x=\frac{\diff x}{\diff y}\diff y=\frac{\sqrt{5}}{2\cos t}\sqrt{2}\cos t\diff t=\sqrt{\frac{5}{2}}\diff t\Rightarrow x=\sqrt{\frac{5}{2}}t+C$, 
+  故通解为 $y=\sqrt{2}\sin\left(\sqrt{\frac{2}{5}}(x-C)\right)$.
 
-(2)令$x=\sec t,\frac{\diff y}{\diff x}=\frac{1}{\sqrt{3}}\tan t$, 
-则$\diff y=\frac{\diff y}{\diff x}\diff x=\frac{1}{\sqrt{3}}\tan^2t\sec t\diff t\Rightarrow y=\frac{1}{2\sqrt{3}}(\sec t\tan t-\ln|\sec t+\tan t|)+C$, 故通解为
-\[\begin{cases}
-x=\sec t\\
-y=\frac{1}{2\sqrt{3}}(\sec t\tan t-\ln|\sec t+\tan t|)+C
-\end{cases}\]
-本题也可以利用恒等式:$\cosh^2t-\sinh^2t=1$, 得到另外一种通解表达式: $x=\cosh t,y=\frac{1}{4\sqrt{3}}(\sinh2t-2t)+C$.
+  (2) 令 $x=\sec t,\frac{\diff y}{\diff x}=\frac{1}{\sqrt{3}}\tan t$, 则
+  \[\diff y=\frac{\diff y}{\diff x}\diff x=\frac{1}{\sqrt{3}}\tan^2t\sec t\diff t.\]
+  积分得
+  \[y=\frac{1}{2\sqrt{3}}(\sec t\tan t-\ln|\sec t+\tan t|)+C.\]
+  故通解为
+  \[\begin{cases}
+    x = \sec t, \\
+    y = \frac{1}{2\sqrt{3}}(\sec t\tan t-\ln|\sec t+\tan t|)+C.
+  \end{cases}\]
+  
+  本题也可以利用恒等式: $\cosh^2t-\sinh^2t=1$, 
+  得到另外一种通解表达式: $x=\cosh t,y=\frac{1}{4\sqrt{3}}(\sinh2t-2t)+C$.
 
-(3)$\displaystyle\left(\frac{\diff y}{\diff x}\right)^2+y-x^2=0(*)\Rightarrow2p\frac{\diff p}{\diff x}+p-2x=0\Rightarrow \frac{\diff p}{\diff x}=\frac{x}{p}-\frac{1}{2}$, 
-令$u=\frac{p}{x}\neq0$, 则
-\[\frac{\diff p}{\diff x}=u+x\frac{\diff u}{\diff x}=\frac{1}{u}-\frac{1}{2}\Rightarrow x\frac{\diff u}{\diff x}+\frac{2u^2+u-2}{2u}=0\]
+  (3) 将原方程求导得
+  \[2p\frac{\diff p}{\diff x}+p-2x=0\Rightarrow \frac{\diff p}{\diff x}=\frac{x}{p}-\frac{1}{2}.\] 
+  令 $u=\frac{p}{x}\neq 0$, 则
+  \[\frac{\diff p}{\diff x}=u+x\frac{\diff u}{\diff x}=\frac{1}{u}-\frac{1}{2}\Rightarrow x\frac{\diff u}{\diff x}+\frac{2u^2+u-2}{2u}=0.\]
 
-(I)当$2u^2+u-2=0$即$u=\frac{-1\pm\sqrt{17}}{4}$时, 
-若$u=\frac{-1+\sqrt{17}}{4}$, 
-则$p=\frac{\diff y}{\diff x}=\frac{-1+\sqrt{17}}{4}x\Rightarrow y=\frac{-1+\sqrt{17}}{8}x^2+C$, 
-将$p=\frac{-1+\sqrt{17}}{4}x$直接代入$(*)$得$y=\frac{-1+\sqrt{17}}{8}x^2$, 
-故原方程有特解$y=\frac{-1+\sqrt{17}}{8}x^2$, 同理可得到另外一个特解$y=\frac{-1-\sqrt{17}}{8}x^2$;
+  \textbullet 当 $2u^2+u-2=0$ 即 $u=\frac{-1\pm\sqrt{17}}{4}$ 时,
+  若 $u=\frac{-1+\sqrt{17}}{4}$, 
+  则 $p=\frac{\diff y}{\diff x}=\frac{-1+\sqrt{17}}{4}x\Rightarrow y=\frac{-1+\sqrt{17}}{8}x^2+C$, 
+  将 $p=\frac{-1+\sqrt{17}}{4}x$ 直接代入原方程得 $y=\frac{-1+\sqrt{17}}{8}x^2$, 
+  故原方程有特解 $y=\frac{-1+\sqrt{17}}{8}x^2$, 同理可得到另外一个特解 $y=\frac{-1-\sqrt{17}}{8}x^2$;
 
-(II)当$2u^2+u-2\neq0$时, $\frac{2u}{2u^2+u-2}\diff u+\frac{1}{x}\diff x=0$, 下面对该变量分离的方程进行不定积分:
-\[\begin{split}
-&\int\frac{2u}{2u^2+u-2}\diff u+\int\frac{1}{x}\diff x=0\\
-\Rightarrow&\frac{1}{2}\ln|2u^2+u-2|-\frac{1}{2}\int\frac{1}{2\left(x+\frac{1}{4}\right)^2-\frac{17}{8}}\diff u+\ln|x|=C\\
-\Rightarrow&\frac{1}{2}\ln|2u^2+u-2|-\frac{1}{4}\int\frac{1}{\left(x+\frac{1}{4}\right)^2-\frac{17}{16}}\diff u+\ln|x|=C\\
-\Rightarrow&\frac{1}{2}\ln|2u^2+u-2|+\frac{1}{2\sqrt{17}}\ln\left|\frac{u+\frac{1+\sqrt{17}}{4}}{u+\frac{1-\sqrt{17}}{4}}\right|+\ln|x|=C\\
-\Rightarrow&\frac{\sqrt{17}}{4}\ln|2p^2-2x^2+px|+\frac{1}{4}\ln\left|\frac{p+\frac{1+\sqrt{17}}{4}x}{p+\frac{1-\sqrt{17}}{4}x}\right|=C_1\left(记\alpha=\frac{\sqrt{17}-1}{4},\beta=\frac{-\sqrt{17}-1}{4}\right)\\
-\Rightarrow&(2(p-\alpha x)(p-\beta x))^{\frac{\sqrt{17}}{4}}\left(\frac{p-\beta x}{p-\alpha x}\right)^{\frac{1}{4}}=C_2\neq0\\
-\Rightarrow&(p-\alpha x)^{\alpha}=C_3(p-\beta x)^{\beta},C_3\neq0
-\end{split}\]
+  \textbullet 当 $2u^2+u-2\neq 0$ 时, $\frac{2u}{2u^2+u-2}\diff u+\frac{1}{x}\diff x=0$,
+  下面对该变量分离的方程进行不定积分:
+  \begin{align*}
+    & \int\frac{2u}{2u^2+u-2}\diff u+\int\frac{1}{x}\diff x=0 \\
+    \Longrightarrow{} & \frac{1}{2}\ln|2u^2+u-2|-\frac{1}{2}\int\frac{1}{2\left(x+\frac{1}{4}\right)^2-\frac{17}{8}}\diff u+\ln|x|=C \\
+    \Longrightarrow{} & \frac{1}{2}\ln|2u^2+u-2|-\frac{1}{4}\int\frac{1}{\left(x+\frac{1}{4}\right)^2-\frac{17}{16}}\diff u+\ln|x|=C \\
+    \Longrightarrow{} & \frac{1}{2}\ln|2u^2+u-2|+\frac{1}{2\sqrt{17}}\ln\left|\frac{u+\frac{1+\sqrt{17}}{4}}{u+\frac{1-\sqrt{17}}{4}}\right|+\ln|x|=C \\
+    \Longrightarrow{} & \frac{\sqrt{17}}{4}\ln|2p^2-2x^2+px|+\frac{1}{4}\ln\left|\frac{p+\frac{1+\sqrt{17}}{4}x}{p+\frac{1-\sqrt{17}}{4}x}\right|=C_1 \\
+    \Longrightarrow{} & (2(p-\alpha x)(p-\beta x))^{\frac{\sqrt{17}}{4}}\left(\frac{p-\beta x}{p-\alpha x}\right)^{\frac{1}{4}}=C_2\neq 0 \\
+    \Longrightarrow{} & (p-\alpha x)^{\alpha}=C_3(p-\beta x)^{\beta},C_3\neq 0,
+  \end{align*}
+  其中 $\alpha=\frac{\sqrt{17}-1}{4}$, $\beta=\frac{-\sqrt{17}-1}{4}$.
 
-综上所述, 原方程有通解$(p-\alpha x)^{\alpha}=C(p-\beta x)^{\beta}(C\neq0)$
-以及两个特解$y_1=\frac{1}{2}\alpha x^2,y_2=\frac{1}{2}\beta x^2$.
+  综上所述, 原方程有通解 $(p-\alpha x)^{\alpha}=C(p-\beta x)^{\beta}$ $(C\neq 0)$
+  以及两个特解 $y_1=\frac{1}{2}\alpha x^2,y_2=\frac{1}{2}\beta x^2$.
 
-(4)令$p=tx$, 则$x^3(1+t^3)=4tx^2\Rightarrow x=\frac{4t}{1+t^3},p=\frac{4t^2}{1+t^3}$, 故
-\[\diff y=p\diff x=\frac{4t^2}{1+t^3}\frac{4(1+t^3)-4t\cdot3t^2}{(1+t^3)^2}\diff t=\frac{4t^2(4-8t^2)}{(1+t^3)^3}\diff t\]
-积分得
-\[y=\int\frac{4t^2(4-8t^2)}{(1+t^3)^3}\diff t=\frac{32}{3}\frac{1}{1+t^3}-\frac{8}{(1+t^3)^2}+C\]
-故通解为\[\begin{cases}
-x=\frac{4t}{1+t^3}\\y=\frac{32}{3}\frac{1}{1+t^3}-\frac{8}{(1+t^3)^2}+C
-\end{cases}\qedhere\]
+  (4) 令 $p=tx$, 则 $x^3(1+t^3)=4tx^2\Rightarrow x=\frac{4t}{1+t^3},p=\frac{4t^2}{1+t^3}$, 故
+  \[\diff y=p\diff x=\frac{4t^2}{1+t^3}\frac{4(1+t^3)-4t\cdot3t^2}{(1+t^3)^2}\diff t
+    = \frac{4t^2(4-8t^2)}{(1+t^3)^3}\diff t.\]
+  积分得
+  \[y=\int\frac{4t^2(4-8t^2)}{(1+t^3)^3}\diff t=\frac{32}{3}\frac{1}{1+t^3}-\frac{8}{(1+t^3)^2}+C.\]
+  故通解为
+  \[\begin{cases}
+    x=\frac{4t}{1+t^3}, \\
+    y=\frac{32}{3}\frac{1}{1+t^3}-\frac{8}{(1+t^3)^2}+C.
+  \end{cases}\qedhere\]
 \end{proof}
+
 
 
 \section{奇解}
 
 
-1.利用$p$-判别式求下列微分方程的奇解:
-\begin{enumerate}[(1)]
-\item $\displaystyle y=x\frac{\diff y}{\diff x}+\left(\frac{\diff y}{\diff x}\right)^2$;
-\item $\displaystyle y=2x\frac{\diff y}{\diff x}+\left(\frac{\diff y}{\diff x}\right)^2$;
-\item $\displaystyle (y-1)^2\left(\frac{\diff y}{\diff x}\right)^2=\frac{4}{9}y$;
-\end{enumerate}
+
+\begin{exercise}
+  利用 $p$-判别式求下列微分方程的奇解:
+  \begin{enumerate}[(1)]
+  \item $\displaystyle y=x\frac{\diff y}{\diff x}+\left(\frac{\diff y}{\diff x}\right)^2$;
+  \item $\displaystyle y=2x\frac{\diff y}{\diff x}+\left(\frac{\diff y}{\diff x}\right)^2$;
+  \item $\displaystyle (y-1)^2\left(\frac{\diff y}{\diff x}\right)^2=\frac{4}{9}y$;
+  \end{enumerate}
+\end{exercise}
 
 \begin{solve} 
-(1)令$F(x,y,p)=y-xp-p^2$, 则$p$-判别式为$y-xp-p^2=0,-x-2p=0\Rightarrow y=-\frac{1}{4}x^2$, 经验证$y=-\frac{1}{4}x^2$是原方程的解, 又
-\[F_y'\left(x,-\frac{1}{4}x^2,-\frac{1}{2}x\right)=1,F_{pp}''\left(x,-\frac{1}{4}x^2,-\frac{1}{2}x\right)=-2,F_p'\left(x,-\frac{1}{4}x^2,-\frac{1}{2}x\right)=0\]
-故$y=-\frac{1}{4}x^2$是奇解.
+  (1) 令 $F(x,y,p)=y-xp-p^2$, 则 $p$-判别式为
+  $y-xp-p^2=0,-x-2p=0\Rightarrow y=-\frac{1}{4}x^2$, 经验证 $y=-\frac{1}{4}x^2$ 是原方程的解, 又
+  \[F_y'\left(x,-\frac{1}{4}x^2,-\frac{1}{2}x\right)=1,\:
+    F_{pp}''\left(x,-\frac{1}{4}x^2,-\frac{1}{2}x\right)=-2,\:
+    F_p'\left(x,-\frac{1}{4}x^2,-\frac{1}{2}x\right)=0.\]
+  故 $y=-\frac{1}{4}x^2$ 是奇解.
 
-(2)令$F(x,y,p)=y-2xp-p^2$, 则$p$-判别式为$y-2xp-p^2=0,-2x-2p=0\Rightarrow y=-x^2$, 但是$y=-x^2$不是原方程的解更不是奇解.
+  (2) 令 $F(x,y,p)=y-2xp-p^2$, 则$p$-判别式为$y-2xp-p^2=0,-2x-2p=0\Rightarrow y=-x^2$,
+  但是 $y=-x^2$ 不是原方程的解更不是奇解.
 
-(3)令$F(x,y,p)=(y-1)^2p^2-\frac{4}{9}y$, 则$p$-判别式为$(y-1)^2p^2-\frac{4}{9}y=0,2(y-1)^2p=0\Rightarrow y=0$, 经验证$y=0$是原方程的解, 又
-\[F_y'(x,0,0)=-\frac{4}{9},F_{pp}''(x,0,0)=2,F_p'(x,0,0)=0\]
-故$y=0$是原方程的奇解.
+  (3) 令 $F(x,y,p)=(y-1)^2p^2-\frac{4}{9}y$, 
+  则 $p$-判别式为 $(y-1)^2p^2-\frac{4}{9}y=0,2(y-1)^2p=0\Rightarrow y=0$, 
+  经验证 $y=0$ 是原方程的解, 又
+  \[F_y'(x,0,0)=-\frac{4}{9},\: F_{pp}''(x,0,0)=2,\: F_p'(x,0,0)=0,\]
+  故 $y=0$ 是原方程的奇解.
 \end{solve}
 
 
-2.举例说明, 在定理4.2的条件(4.28)中的两个不等式是缺一不可的.
+
+\begin{exercise}
+  举例说明, 在定理 4.2 的条件 (4.28) 中的两个不等式是缺一不可的.
+\end{exercise}
+
 \begin{solve}  
-分别考虑方程$\displaystyle\left(\frac{\diff y}{\diff x}\right)^2-y^2=0$与$\displaystyle\sin\left(y\frac{\diff y}{\diff x}\right)=y$.
+  分别考虑方程 $\displaystyle\left(\frac{\diff y}{\diff x}\right)^2-y^2=0$
+  与 $\displaystyle\sin\left(y\frac{\diff y}{\diff x}\right)=y$.
 \end{solve}
 
 
-3.研究下面的例子, 说明定理4.2的条件(4.29)是不可缺少的:
-\[y=2x+y'-\frac{1}{3}(y')^3\]
+
+\begin{exercise}
+  研究下面的例子, 说明定理 4.2 的条件 (4.29) 是不可缺少的:
+  \[y=2x+y'-\frac{1}{3}(y')^3.\]
+\end{exercise}
+
 \begin{solve} 
-$p$-判别式为: $y=2x+p-\frac{1}{3}p^2,0=1-p^2\Rightarrow y=2\pm\frac{2}{3}$, 经检验$y=2x+\frac{2}{3}$不是原方程的解, $y=2x-\frac{2}{3}$是原方程的解, 但不是特解.\\
-令$F(x,y,p)=y-2x+\frac{1}{3}p^3-p$, 则
-\[F_y'\left(x,2x-\frac{2}{3},2\right)=1,F_{pp}''\left(x,2x-\frac{2}{3},2\right)=4,F_p'\left(x,2x-\frac{2}{3},2\right)=3\neq0\]
-故条件$F_p'(x,\varphi(x),\varphi'(x))=0$不可缺少.
+  $p$-判别式为: $y=2x+p-\frac{1}{3}p^2,0=1-p^2\Rightarrow y=2\pm\frac{2}{3}$, 
+  经检验 $y=2x+\frac{2}{3}$ 不是原方程的解, $y=2x-\frac{2}{3}$ 是原方程的解, 但不是特解.
+
+  令 $F(x,y,p)=y-2x+\frac{1}{3}p^3-p$, 则
+  \[F_y'\left(x,2x-\frac{2}{3},2\right)=1,\:
+    F_{pp}''\left(x,2x-\frac{2}{3},2\right)=4,\:
+    F_p'\left(x,2x-\frac{2}{3},2\right)=3\neq 0.\]
+  故条件 $F_p'(x,\varphi(x),\varphi'(x))=0$ 不可缺少.
 \end{solve}
+
 
 
 \section{包络}
 
 
-1.试求克莱罗方程的通解及其包络.
+
+\begin{exercise}
+  试求克莱罗方程的通解及其包络.
+\end{exercise}
+
 \begin{solve} 
-克莱罗方程为: $y=xp+f(p)\left(p=\frac{\diff y}{\diff x}\right)$, 其中$f''(p)\neq0$.\\
-\[y=xp+f(p)\Rightarrow(x+f'(p))\frac{\diff p}{\diff x}=0\]
-由$\frac{\diff p}{\diff x}=0$即$p=C$得通解$y=Cx+f(C)$, $C$判别式为
-\[\begin{cases}
-y=Cx+f(C)\\x+f'(C)=0
-\end{cases}\Rightarrow
-\begin{cases}
-x=-f'(C)=\varphi(C)\\
-y=-Cf'(C)+f(C)=\psi(C)
-\end{cases}(*)\]
-令$V(x,y,C)=Cx+f(C)-y$, 则$V_x'(\varphi(C),\psi(C),C)=C,V_y'(\varphi(C),\psi(C),C)=-1$, 故$(V_x',V_y')\neq(0,0)$, 又$(\varphi'(C),\psi'(C))=(-f''(C),-Cf''(C))\neq(0,0)$, 故$(*)$是曲线族$y=Cx+f(C)$的一支包络.
+  克莱罗方程为: $y=xp+f(p)\left(p=\frac{\diff y}{\diff x}\right)$, 其中 $f''(p)\neq0$.
+  \[y=xp+f(p)\Rightarrow(x+f'(p))\frac{\diff p}{\diff x}=0.\]
+  由 $\frac{\diff p}{\diff x}=0 $ 即 $p=C$ 得通解 $y=Cx+f(C)$, $C$ 判别式为
+  \[\begin{cases}
+      y=Cx+f(C), \\
+      x+f'(C)=0
+    \end{cases}\Rightarrow
+    \begin{cases}
+      x=-f'(C)=\varphi(C), \\
+      y=-Cf'(C)+f(C)=\psi(C).
+    \end{cases}(*)\]
+  令 $V(x,y,C)=Cx+f(C)-y$, 则 $V_x'(\varphi(C),\psi(C),C)=C,V_y'(\varphi(C),\psi(C),C)=-1$, 
+  故 $(V_x',V_y')\neq(0,0)$, 又$(\varphi'(C),\psi'(C))=(-f''(C),-Cf''(C))\neq(0,0)$, 
+  故 $(*)$ 是曲线族 $y=Cx+f(C)$ 的一支包络.
 \end{solve}
 
 
-2.试求一微分方程, 使它有奇解为$y=\sin x$.
+
+\begin{exercise}
+  试求一微分方程, 使它有奇解为$y=\sin x$.
+\end{exercise}
+
 \begin{solve} 
-考虑克莱罗方程$y=xp+f(p)$, 将$y=\sin x$代入得
-\[\sin x=x\cos x+f(\cos x)\]
-令$\cos x=p$, 得
-\[\sqrt{1-p^2}=p\arccos p+f(p)\]
-故\[f(p)=-p\arccos p+\sqrt{1-p^2}\]
-容易验证$y=\sin x$是方程$y=xp-p\arccos p+\sqrt{1-p^2}$的奇解.
+  考虑克莱罗方程 $y=xp+f(p)$, 将 $y=\sin x$ 代入得
+  \[\sin x=x\cos x+f(\cos x).\]
+  令 $\cos x=p$, 得
+  \[\sqrt{1-p^2}=p\arccos p+f(p).\]
+  故
+  \[f(p)=-p\arccos p+\sqrt{1-p^2}.\]
+  容易验证 $y=\sin x$ 是方程 $y=xp-p\arccos p+\sqrt{1-p^2}$ 的奇解.
 \end{solve}
