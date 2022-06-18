@@ -1,0 +1,85 @@
+\chapter{定性理论与分支理论初步}
+
+
+
+\setcounter{section}{1}
+\section{解的李雅普诺夫稳定性}
+
+
+
+\begin{exercise}
+  证明: 线性方程零解的渐进稳定性等价于它的全局稳定性.
+\end{exercise}
+
+
+
+\begin{exercise}
+  设 $x$ 和 $t$ 都是标量, 试求出方程
+  \[\frac{\diff x}{\diff t} = a(t)x\]
+  的零解为稳定或渐进稳定的条件.
+\end{exercise}
+
+
+
+\begin{exercise}
+  对于极坐标下的方程
+  \[\dot{\theta} = 1,\quad \dot{\theta} = \begin{cases}
+    r^2\sin\frac{1}{r}, & \text{当\ } r>0, \\
+    0, & \text{当\ } r=0,
+  \end{cases}\]
+  试作出原点附近的相图, 并研究平衡点 $r=0$ 的稳定性质.
+\end{exercise}
+
+
+
+\begin{exercise}
+  设二阶常系数线性方程
+  \[\frac{\diff\bm{x}}{\diff t} = \bm{A}\bm{x},\]
+  其中 $\bm{A}$ 是一个 $2\times 2$ 的常矩阵. 记
+  \[\begin{cases}
+    p = -\tr[\bm{A}], \\
+    q = \det[\bm{A}].
+  \end{cases}\]
+  再设 $p^2+q^2\neq 0$, 试证:
+  \begin{enumerate}[(1)]
+    \item 当 $p>0$ 且 $q>0$ 时, 零解是渐进稳定的;
+    \item 当 $p>0$ 且 $q=0$ 或 $p=0$ 且 $q>0$ 时, 零解是稳定的, 但不是渐进稳定的;
+    \item 在其他情形下, 零解都是不稳定的.
+  \end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}
+  讨论二维的微分方程
+  \[\dot{x} = y-xf(x,y),\quad \dot{y} = -x-yf(x,y)\]
+  零解的稳定性, 其中函数 $f(x,y)$ 在 $(0,0)$ 附近是连续可微的.
+\end{exercise}
+
+
+
+\begin{exercise}
+  设 $x\in\FR^1$, 函数 $g(x)$ 连续, 且 $xg(x)>0$ 当 $x\neq 0$. 试证方程
+  \[\ddot{x}+g(x) = 0\]
+  的零解是稳定的, 但不是渐进稳定的.
+\end{exercise}
+
+
+
+\begin{exercise}
+  研究二维微分方程
+  \[\dot{x} = y,\quad \dot{y} = -1+x^2\]
+  的两个平衡点的稳定性.
+\end{exercise}
+
+
+
+\begin{exercise}
+  讨论下列微分方程零解的稳定性:
+  \begin{enumerate}[(1)]
+    \item $\dot{x} = -y-xy^2$, $\dot{y} = x-x^4y$;
+    \item $\dot{x} = -y^3-x^5$, $\dot{y} = x^3-y^5$;
+    \item $\dot{x} = -x+2x(x+y)^2$, $\dot{y} = -y^3+2y^3(x+y)^2$;
+    \item $\dot{x} = 2x^2y+y^3$, $\dot{y} = -xy^2=2x^5$.
+  \end{enumerate}
+\end{exercise}
