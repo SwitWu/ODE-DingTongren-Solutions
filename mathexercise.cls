@@ -73,6 +73,7 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \DeclareMathOperator{\supp}{supp} % another support set
 \DeclareMathOperator{\lcm}{lcm} % least common multiple
 \DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
 % Real and Imaginary part of complex numbers
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
@@ -141,6 +142,8 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \theoremstyle{mytheorem}\newtheorem{example}{例}
 \theoremstyle{mytheorem}\newtheorem*{remark}{注}
 \theoremstyle{mytheorem}\newtheorem*{corollary}{推论}
+\theoremstyle{mytheorem}\newtheorem*{conclusion}{结论}
+\theoremstyle{mytheorem}\newtheorem{proposition}{命题}
 
 % 定制列表
 \setlist{left=\parindent}
