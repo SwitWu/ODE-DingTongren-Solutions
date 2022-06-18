@@ -195,11 +195,82 @@
 
 \begin{solve} 
   设 $\bm{A}(x)$ 和 $\bm{f}(x)$ 在区间 $a<x<b$ 上连续, 则初值问题
-\[(E):\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}+\bm{f}(x),\bm{y}(x_0)=\bm{y}_0\]
-的解 $\bm{y}=\bm{y}(x)$ 在区间 $a<x<b$ 上存在且唯一, 其中 $a<x_0<b$, $\bm{y}_0\in\mathbb{R}^n$.
+  \[(E):\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}+\bm{f}(x),\bm{y}(x_0)=\bm{y}_0\]
+  的解 $\bm{y}=\bm{y}(x)$ 在区间 $a<x<b$ 上存在且唯一, 其中 $a<x_0<b$, $\bm{y}_0\in\mathbb{R}^n$.
 
-Proof: 只需要证明 $\bm{f}(x,\bm{y})=\bm{A}(x)\bm{y}+\bm{f}(x)$ 满足 Lipschitz 条件即可, 
-$\forall\bm{y}_1,\bm{y}_2\in\mathbb{R}^n$, 有
-\[\|\bm{f}(x,\bm{y}_1)-\bm{f}(x,\bm{y}_2)\|
-  = \|\bm{A}(x)(\bm{y}_1-\bm{y}_2)\|\leq\|\bm{A}(x)\|\cdot\|\bm{y}_1-\bm{y}_2\|.\qedhere\]
+  Proof: 只需要证明 $\bm{f}(x,\bm{y})=\bm{A}(x)\bm{y}+\bm{f}(x)$ 满足 Lipschitz 条件即可, 
+  $\forall\bm{y}_1,\bm{y}_2\in\mathbb{R}^n$, 有
+  \[\|\bm{f}(x,\bm{y}_1)-\bm{f}(x,\bm{y}_2)\|
+    = \|\bm{A}(x)(\bm{y}_1-\bm{y}_2)\|\leq\|\bm{A}(x)\|\cdot\|\bm{y}_1-\bm{y}_2\|.\qedhere\]
 \end{solve}
+
+
+
+\section{解对初值和参数的连续依赖性}
+
+
+
+\begin{exercise}
+  证明定理 5.1 的推论.
+\end{exercise}
+
+
+
+\begin{exercise}
+  设 $f(x,\bm{y})$ 在区域 $R$ 上连续, 而且微分方程
+  \[\frac{\diff\bm{y}}{\diff x} = f(x,\bm{y})\]
+  经过 $R$ 内任意一点的积分曲线都是 (存在) 唯一的, 则
+  上述微分方程解对初值是连续依赖的.
+\end{exercise}
+
+
+
+\begin{exercise}
+  试举例说明, 如果微分方程不满足解的唯一性条件,
+  则它的积分曲线族在局部范围内也不能视作平行直线族.
+\end{exercise}
+
+
+
+\section{解对初值和参数的连续可微性}
+
+
+
+\begin{exercise}
+  利用定理 5.3 (在 $\bm{y}$ 为列向量的情况) 证明
+  \[\bm{z} = \frac{\partial\bm{\varphi}}{\partial\bm{\lambda}}
+    = \biggl(\frac{\partial\varphi_i}{\partial\lambda_k}(x,\bm{\lambda})\biggr)_{n\times m}\]
+  满足线性 (变分) 方程
+  \[\frac{\diff\bm{z}}{\diff x} = \bm{A}(x,\bm{\lambda})\bm{z}
+    + \bm{B}(x,\bm{\lambda})\]
+  和初值条件 $\bm{z}(x_0,\bm{\lambda})=\bm{0}$, 其中
+  \[\bm{A}(x,\bm{\lambda}) = \bm{f}'_{\bm{y}}(x,\bm{\varphi}(x,\bm{\lambda}),\bm{\lambda})
+    = \biggl(\frac{\partial f_i}{\partial y_j}(x,\bm{\varphi}(x,\bm{\lambda}),\bm{\lambda})\biggr)
+    _{n\times n},\]
+  和
+\end{exercise}
+
+
+
+\begin{exercise}
+  在本节最后的推论中, 试求 $\bm{z} = \frac{\partial\bm{\varphi}}{\partial\bm{\eta}}(x,\bm{\eta})$
+  所满足的微分方程和初值条件 (只要求作形式的计算).
+\end{exercise}
+
+
+
+\begin{exercise}
+  设纯量函数 $y=y(x,\eta)$ ($\eta$ 为实参数) 是微分方程初值问题
+  \[\frac{\diff y}{\diff x} = \sin(xy),\quad y(0)=\eta\]
+  的解. 证明: 不等式
+  \[\frac{\partial y}{\partial\eta}(x,\eta)>0\]
+  对一切的 $x$ 和 $\eta$ 都成立.
+\end{exercise}
+
+\begin{proof}
+  $z=\frac{\partial y}{\partial\eta}$ 满足的初值问题为
+  \[\frac{\partial z}{\partial x} = x\cos(x\varphi)z,\quad z(0)=1.\]
+  直接解得
+  \[\frac{\partial y}{\partial\eta} = z = \e^{\int_{0}^x x\cos(x\varphi)\diff x}.\]
+  因此 $\frac{\partial y}{\partial\eta}(x,\eta)>0$ 恒成立.
+\end{proof}
