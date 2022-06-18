@@ -227,60 +227,97 @@ c_{n1}&c_{n2}&\cdots&c_{nn}
 
 
 
-证明: $(\mathcal{M},\|\cdot\|)$是Banach空间.
+\begin{conclusion}[教材 Page 170]
+  令 $\mathcal{M}$ 为全体 $n$ 阶实矩阵组成的集合,
+  在 $\mathcal{M}$ 中定义范数为: 对于 $\bm{A}\in\mathcal{M}$, 令
+  \[\|\bm{A}\| = \sum_{i,j=1}^n |a_{ij}|.\]
+  则 $(\mathcal{M},\|\cdot\|)$ 是 Banach 空间.
+\end{conclusion}
 
 \begin{proof}
-设$\{A_n\}_{n\geq1}$是$\mathcal{M}$中的Cauchy序列,即$\forall\epsilon>0,\exists N>0,\forall m,n>N$, 有
-\[\|A_m-A_n\|=\sum_{i,j=1}^n|a_{ij}^m-a_{ij}^n|<\epsilon\]
-故对任意给定的$i,j$, 序列$\left\{a_{ij}^n\right\}_{n\geq1}$是$\mathbb{R}$中的Cauchy序列, 故收敛, 记为$a_{ij}^n\to a_{ij}(n\to\infty)$, 则$A_n\to A=(a_{ij})_{n\times n}$, 因此$(\mathcal{M},\|\cdot\|)$是Banach空间.
-\end{proof}
-
-命题1证明:
-
-\begin{proof}
-\[\begin{split}
-&\|\bm{E}\|+\|\bm{A}\|+\|\frac{1}{2!}\bm{A}^2\|+\cdots+\|\frac{1}{k!}\bm{A}^k\|+\cdots\\
-\leq&\|\bm{E}\|+\|\bm{A}\|+\frac{1}{2!}\|\bm{A}\|^2+\cdots+\frac{1}{k!}\|\bm{A}\|^k+\cdots\\
-=&n+\e^{\|\bm{A}\|}-1<\infty
-\end{split}\]
-故矩阵$\bm{A}$的幂级数$\displaystyle\bm{E}+\bm{A}+\frac{1}{2!}\bm{A}^2+\cdots+\frac{1}{k!}\bm{A}^k+\cdots$绝对收敛.\\
-结合泛函分析中定理: 赋范空间完备当且仅当绝对收敛级数必收敛. 
-故幂级数$\displaystyle\bm{E}+\bm{A}+\frac{1}{2!}\bm{A}^2+\cdots+\frac{1}{k!}\bm{A}^k+\cdots$收敛, 将其和记为$\e^{\bm{A}}$.
-\end{proof}
-
-命题2证明:
-
-\begin{proof}
-(1)\[\begin{split}
-\e^{\bm{A}}\e^{\bm{B}}&=\left(\sum_{k=0}^{\infty}\frac{\bm{A}^k}{k!}\right)\left(\sum_{k=0}^{\infty}\frac{\bm{B}^k}{k!}\right)=\sum_{k=0}^{\infty}\sum_{i+j=k}\frac{\bm{A}^i}{i!}\frac{\bm{B}^j}{j!}=\sum_{k=0}^{\infty}\sum_{i=0}^k\frac{\bm{A}^i\bm{B}^{k-i}}{i!(k-i)!}\\
-&=\sum_{k=0}^{\infty}\sum_{i=0}^k\frac{1}{k!}C_k^i\bm{A}^i\bm{B}^{k-i}=\sum_{k=0}^{\infty}\frac{1}{k!}(\bm{A}+\bm{B})^k=\e^{\bm{A}+\bm{B}}
-\end{split}\]
-
-(2)由于$\bm{A}$与$-\bm{A}$可交换, 故
-\[\e^{\bm{A}}\e^{-\bm{A}}=\e^{\bm{0}}=\bm{E}\]
-所以$\left(\e^{\bm{A}}\right)^{-1}=\e^{-\bm{A}}$.
-
-(3)\[\e^{\bm{P}\bm{A}\bm{P}^{-1}}=\sum_{k=0}^{\infty}\frac{\left(\bm{P}\bm{A}\bm{P}^{-1}\right)^k}{k!}=\sum_{k=0}^{\infty}\frac{\bm{P}\bm{A}^k\bm{P}^{-1}}{k!}=\bm{P}\e^{\bm{A}}\bm{P}^{-1}\qedhere\]
+  任取 $\mathcal{M}$ 中的 Cauchy 序列 $(\bm{A}_n)_{n\geq 1}$,
+  即 $\forall\epsilon>0,\exists N>0,\forall m,n>N$, 有
+  \[\|\bm{A}_m-\bm{A}_n\| = \sum_{i,j=1}^n \bigl|a_{ij}^{(m)} - a_{ij}^{(n)}\bigr|<\epsilon.\]
+  故对任意给定的 $i,j$, 序列 $\bigl(a_{ij}^{(n)}\bigr)_{n\geq 1}$
+  是 $\mathbb{R}$ 中的 Cauchy 序列, 必收敛, 记之为 $a_{ij}^{(n)}\to a_{ij}$ $(n\to\infty)$,
+  则 $\bm{A}_n\to \bm{A}=(a_{ij})_{n\times n}$, 因此 $(\mathcal{M},\|\cdot\|)$ 是 Banach 空间.
 \end{proof}
 
 
-本节引进新的概念: 矩阵指数函数$\e^{\bm{A}}$, 
-容易证明$\e^{x\bm{A}}$是常系数齐次线性微分方程组
-$\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$的标准基解矩阵, 
-然后利用若尔当标准型找到实际计算基解矩阵$\e^{x\bm{A}}$的一个方法:
-\[\e^{x\bm{A}}=\e^{x\bm{P}\bm{J}\bm{P}^{-1}}=\bm{P}\e^{x\bm{J}}\bm{P}^{-1}\]
-从而\[\e^{x\bm{A}}\bm{P}=\bm{P}\e^{x\bm{J}}=\bm{P}\begin{pmatrix}
-\e^{x\bm{J}_1}&&&\\&\e^{x\bm{J}_2}&&\\&&\ddots&\\&&&\e^{x\bm{J}_m}
+
+\begin{proposition}[教材 Page 171]
+  矩阵 $\bm{A}$ 的幂级数
+  \[\bm{E} + \bm{A} + \frac{1}{2!}\bm{A}^2 + \cdots +
+    \frac{1}{k!}\bm{A}^k + \cdots\]
+  是绝对收敛的.
+\end{proposition}
+
+\begin{proof}
+  因为
+  \begin{align*}
+  & \|\bm{E}\|+\|\bm{A}\|+\|\frac{1}{2!}\bm{A}^2\|+\cdots+\|\frac{1}{k!}\bm{A}^k\|+\cdots\\
+  \leq{} & \|\bm{E}\|+\|\bm{A}\|+\frac{1}{2!}\|\bm{A}\|^2+\cdots+\frac{1}{k!}\|\bm{A}\|^k+\cdots\\
+  ={} & n+\e^{\|\bm{A}\|}-1<\infty,
+  \end{align*}
+  故矩阵 $\bm{A}$ 的幂级数 
+  $\bm{E}+\bm{A}+\frac{1}{2!}\bm{A}^2+\cdots+\frac{1}{k!}\bm{A}^k+\cdots$ 绝对收敛.
+
+  结合泛函分析中定理: 赋范空间完备当且仅当绝对收敛级数必收敛. 
+  故幂级数 $\bm{E}+\bm{A}+\frac{1}{2!}\bm{A}^2+\cdots+\frac{1}{k!}\bm{A}^k+\cdots$收敛,
+  将其和记为 $\e^{\bm{A}}$.
+\end{proof}
+
+
+
+\begin{proposition}
+  矩阵指数函数有下面的性质:
+  \begin{enumerate}[1)]
+    \item 若矩阵 $\bm{A}$ 和 $\bm{B}$ 是可交换的 (即 $\bm{AB}=\bm{BA}$), 则
+      \[\e^{\bm{A}+\bm{B}} = \e^{\bm{A}}\e^{\bm{B}};\]
+    \item 对任何矩阵 $\bm{A}$, 指数函数 $\e^{\bm{A}}$ 是可逆的, 且
+      \[\bigl(\e^{\bm{A}}\bigr)^{-1} = \e^{-\bm{A}};\]
+    \item 若 $\bm{P}$ 是一个非奇异的 $n$ 阶矩阵, 则
+      \[\e^{\bm{P}\bm{A}\bm{P}^{-1}} = \bm{P}\e^{\bm{A}}\bm{P}^{-1}.\]
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  (1)
+  \[\begin{split}
+    \e^{\bm{A}}\e^{\bm{B}}
+    & = \left(\sum_{k=0}^{\infty}\frac{\bm{A}^k}{k!}\right)\left(\sum_{k=0}^{\infty}\frac{\bm{B}^k}{k!}\right)
+      = \sum_{k=0}^{\infty}\sum_{i+j=k}\frac{\bm{A}^i}{i!}\frac{\bm{B}^j}{j!}
+      = \sum_{k=0}^{\infty}\sum_{i=0}^k\frac{\bm{A}^i\bm{B}^{k-i}}{i!(k-i)!} \\
+    & = \sum_{k=0}^{\infty}\sum_{i=0}^k\frac{1}{k!}C_k^i\bm{A}^i\bm{B}^{k-i}=\sum_{k=0}^{\infty}\frac{1}{k!}(\bm{A}+\bm{B})^k=\e^{\bm{A}+\bm{B}}.
+  \end{split}\]
+
+  (2) 由于 $\bm{A}$ 与 $-\bm{A}$ 可交换, 故
+  \[\e^{\bm{A}}\e^{-\bm{A}}=\e^{\bm{0}} = \bm{E}.\]
+  所以 $\left(\e^{\bm{A}}\right)^{-1}=\e^{-\bm{A}}$.
+
+  (3)
+  \[\e^{\bm{P}\bm{A}\bm{P}^{-1}}=\sum_{k=0}^{\infty}\frac{\left(\bm{P}\bm{A}\bm{P}^{-1}\right)^k}{k!}=\sum_{k=0}^{\infty}\frac{\bm{P}\bm{A}^k\bm{P}^{-1}}{k!}=\bm{P}\e^{\bm{A}}\bm{P}^{-1}.\qedhere\]
+\end{proof}
+
+
+本节引进新的概念: 矩阵指数函数 $\e^{\bm{A}}$, 
+容易证明 $\e^{x\bm{A}}$ 是常系数齐次线性微分方程组
+$\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵, 
+然后利用若尔当标准型找到实际计算基解矩阵 $\e^{x\bm{A}}$ 的一个方法:
+\[\e^{x\bm{A}}=\e^{x\bm{P}\bm{J}\bm{P}^{-1}}=\bm{P}\e^{x\bm{J}}\bm{P}^{-1}.\]
+从而
+\[\e^{x\bm{A}}\bm{P}=\bm{P}\e^{x\bm{J}}
+  =\bm{P}\begin{pmatrix}\e^{x\bm{J}_1}&&&\\&\e^{x\bm{J}_2}&&\\&&\ddots&\\&&&\e^{x\bm{J}_m}
 \end{pmatrix}\]
 也是常系数齐次线性微分方程组的一个基解矩阵, 但是上述结果计算量较大, 将之再细致分析, 得到下面求基解矩阵的具体计算方法:
 
-由$|\bm{A}-\lambda\bm{E}|=0$求出特征值$\lambda$, 分两种情况:
+由 $|\bm{A}-\lambda\bm{E}|=0$ 求出特征值 $\lambda$, 分两种情况:
 
-(I)若全为单根 $\lambda_1,\cdots,\lambda_n$, 
+(i)若全为单根 $\lambda_1,\cdots,\lambda_n$, 
 则基解矩阵为 $\bmitPhi(x)=\left(\e^{\lambda_1x}\bm{r}_1,\e^{\lambda_2x}\bm{r}_2,\cdots,\e^{\lambda_nx}\bm{r}_n\right)$, 
 其中 $\bm{r}_i$ 是与 $\lambda_i$ 对应的特征向量.
 
-(II)若有重根, 设 $\lambda_1,\cdots,\lambda_s$ 相应的重数分别为 $n_1,\cdots,n_s$, 
+(ii)若有重根, 设 $\lambda_1,\cdots,\lambda_s$ 相应的重数分别为 $n_1,\cdots,n_s$, 
 则由 $(\bm{A}-\lambda_i\bm{E})^{n_i}\bm{r}=0$ 
 算出 $n_i$ 个线性无关的特征向量 $\bm{r}_{10}^{(i)},\cdots,\bm{r}_{n_i0}^{(i)}$, 再由
 \[\bm{r}_{jk}^{(i)}=(\bm{A}-\lambda_i\bm{E})\bm{r}_{j,k-1}^{(i)}
