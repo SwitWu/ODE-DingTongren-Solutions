@@ -28,22 +28,24 @@ P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
 \[W_1(x)=|\bmitPhi(x)\bm{c}_1\cdots\bmitPhi(x)\bm{c}_n|=|\bmitPhi(x)|\cdot|\bm{C}|=W(x)|\bm{C}|\neq0\]
 故$\bmitPhi(x)\bm{C}$也是基解矩阵.
 
-(2) $\bmitPhi(x)$和$\bmitPsi(x)$都是基解矩阵, 
-设$\bmitPhi(x)=(\bm{y}_1(x),\cdots,\bm{y}_n(x)),\bmitPsi(x)=(\bm{y}_1^*(x),\cdots,\bm{y}_n^*(x))$. 
-因为$\bmitPhi(x)$是基解矩阵, 所以$\bm{y}_1(x),\cdots,\bm{y}_n(x)$是(6.2)的基本解组, 
+(2) $\bmitPhi(x)$ 和 $\bmitPsi(x)$ 都是基解矩阵, 设
+\[\bmitPhi(x)=(\bm{y}_1(x),\cdots,\bm{y}_n(x)),\]
+\[\bmitPsi(x)=(\bm{y}_1^*(x),\cdots,\bm{y}_n^*(x)).\]
+因为 $\bmitPhi(x)$ 是基解矩阵, 所以 $\bm{y}_1(x),\cdots,\bm{y}_n(x)$ 是 (6.2) 的基本解组, 
 故存在 $\{c_{ij}\mid 1\leq i,j\leq n\}$ 使得
-\[\bm{y}_i^*(x)=\sum_{j=1}^nc_{ji}\bm{y}_j(x),1\leq i\leq n\]
+\[\bm{y}_i^*(x)=\sum_{j=1}^nc_{ji}\bm{y}_j(x),1\leq i\leq n.\]
 即
-\[(\bm{y}_1^*(x),\cdots,\bm{y}_n^*(x))=(\bm{y}_1(x),\cdots,\bm{y}_n(x))
+\[(\bm{y}_1^*(x),\cdots,\bm{y}_n^*(x)) = (\bm{y}_1(x),\cdots,\bm{y}_n(x))
 \begin{pmatrix}
-c_{11}&c_{12}&\cdots&c_{1n}\\
-c_{21}&c_{22}&\cdots&c_{2n}\\
-\vdots&\vdots&&\vdots\\
-c_{n1}&c_{n2}&\cdots&c_{nn}
+  c_{11}&c_{12}&\cdots&c_{1n}\\
+  c_{21}&c_{22}&\cdots&c_{2n}\\
+  \vdots&\vdots&&\vdots\\
+  c_{n1}&c_{n2}&\cdots&c_{nn}
 \end{pmatrix}\]
-也即\[\bmitPsi(x)=\bmitPhi(x)\bm{C}\]
-其中$\bm{C}=(c_{ij})_{n\times n}$, 在上述等式两边同时取行列式得$|\bmitPsi|=|\bmitPhi|\cdot|\bm{C}|$, 
-由$|\bmitPsi|\neq0,|\bmitPhi|\neq0$知$|\bm{C}|\neq0$.
+也即
+\[\bmitPsi(x)=\bmitPhi(x)\bm{C},\]
+其中 $\bm{C}=(c_{ij})_{n\times n}$, 在上述等式两边同时取行列式得$|\bmitPsi|=|\bmitPhi|\cdot|\bm{C}|$, 
+由 $|\bmitPsi|\neq 0$, $|\bmitPhi|\neq 0$ 知 $|\bm{C}|\neq 0$.
 \end{proof}
 
 
@@ -190,7 +192,7 @@ c_{n1}&c_{n2}&\cdots&c_{nn}
 \end{exercise}
 
 \begin{proof}
-  (i) 设 $\bm{\phi}_1(x),\cdots,\bm{\phi}_n(x)$ 为相应的齐次线性微分方程组的一个基本解组, 
+  (i) 设 $\bm{\phi}_1(x),\ldots,\bm{\phi}_n(x)$ 为相应的齐次线性微分方程组的一个基本解组, 
   $\bm{\phi}_*(x)$ 为 (6.1) 的一个特解, 
   则 $\bm{y}_0(x)=\bm{\phi}_*(x),\bm{y}_1(x)=\bm{\phi}_1(x)+\bm{\phi}_*(x),\cdots,\bm{y}_n(x)=\bm{\phi}_n(x)+\bm{\phi}_*(x)$
   是 (6.1) 的 $n+1$ 个解, 下证这 $n+1$ 个解线性无关, 设

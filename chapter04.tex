@@ -210,10 +210,12 @@
 \end{exercise}
 
 \begin{solve} 
-  $p$-判别式为: $y=2x+p-\frac{1}{3}p^2,0=1-p^2\Rightarrow y=2\pm\frac{2}{3}$, 
-  经检验 $y=2x+\frac{2}{3}$ 不是原方程的解, $y=2x-\frac{2}{3}$ 是原方程的解, 但不是特解.
+  $p$-判别式为: $y=2x+p-\frac{1}{3}p^3$, $0 = 1-p^2$, 解得 $y = 2x\pm\frac{2}{3}$, 
+  经检验 $y=2x+\frac{2}{3}$ 不是原方程的解. 而 $y=2x-\frac{2}{3}$ 是原方程的解, 但不是奇解.
 
-  令 $F(x,y,p)=y-2x+\frac{1}{3}p^3-p$, 则
+  下面证明 $y = 2x - \frac23$ 不是奇解.
+
+  令 $F(x,y,p) = y-2x+\frac{1}{3}p^3-p$, 则
   \[F_y'\left(x,2x-\frac{2}{3},2\right)=1,\:
     F_{pp}''\left(x,2x-\frac{2}{3},2\right)=4,\:
     F_p'\left(x,2x-\frac{2}{3},2\right)=3\neq 0.\]
