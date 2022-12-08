@@ -244,9 +244,9 @@
 \end{exercise}
 
 \begin{solution}
-  (1) 因为 $\frac{1}{x^2+y^2}$ 在区域 $\mathbb{R}^2\backslash\{0\}$ 上连续,
-  故由解的延伸定理知任意积分曲线必延伸到 $\mathbb{R}^2\backslash\{0\}$ 的边界.
-  设 $y=y(x),x\in J$ 为一个饱和解, 则
+  (1) 因为 $\frac{1}{x^2+y^2}$ 在区域 $\mathbb{R}^2\backslash\setminus\{0\}$ 上连续,
+  故由解的延伸定理知任意积分曲线必延伸到 $\mathbb{R}^2\setminus\{0\}$ 的边界.
+  设 $y=y(x)$, $x\in J$ 为一个饱和解, 则
   \[\frac{\diff y(x)}{\diff x}=\frac{1}{x^2+y^2(x)}>0.\]
   故存在反函数 $x=x(y)$, 且 $x(y)$ 满足
   \[\frac{\diff x(y)}{\diff y}=x^2(y)+y^2.\]
@@ -405,15 +405,48 @@
 
 \begin{exercise}
   设初值问题
-  \[\frac{\diff y}{\diff x}=x^2+(y+1)^2,y(0)=0\]
+  \begin{equation}
+    \frac{\diff y}{\diff x}=x^2+(y+1)^2,\quad y(0)=0 \tag{$*$}
+  \end{equation}
   的解在右侧的最大存在区间为 $[0,\beta)$, 试证: $\frac{\pi}{4}<\beta<1$.
 \end{exercise}
 
 \begin{proof}
   首先初值问题的解存在且唯一(记为$\phi(x)$)并可延伸到包含坐标原点的任意区域的边界,下面分三步证明$\frac{\pi}{4}<\beta<1$.
 
-  (1)证明:$\frac{\pi}{4}\leq\beta\leq1$.
+  (1)证明: $\frac{\pi}{4}\leq\beta\leq1$.
 
-  当$|x|\leq1$时,显然有
-  \[(y+1)^2\leq x^2+(y+1)^2\leq1+(y+1)^2\]
+  当 $|x|\leq 1$ 时, 显然有
+  \[(y+1)^2\leq x^2+(y+1)^2\leq1+(y+1)^2.\]
+  考虑初值问题
+  \[(E_1)\colon\qquad \frac{\diff y}{\diff x} = (y+1)^2,\quad y(0)=0\]
+  和
+  \[(E_2)\colon\qquad \frac{\diff y}{\diff x} = 1+(y+1)^2,\quad y(0)=0.\]
+  直接解得 $(E_1)$ 的解为
+  \[y = \frac{x}{1-x},\quad x<1.\]
+  且 $(E_2)$ 的解为
+  \[y = \tan\biggl(x+\frac{\pi}{4}\biggr) - 1,\quad -\frac{3\pi}{4} < x < \frac{\pi}{x}.\]
+  从而 $\frac{\pi}{4} \leq \beta \leq 1$.
+
+  (2) 再证: $\beta<1$.
+
+  在 $(*)$ 的积分曲线上取一点 $(\xi,\eta)$, 其中 $0<\xi\ll 1$, 则初值问题
+  \[(E_3)\colon\qquad \frac{\diff y}{\diff x} = (y+1)^2,\quad y(\xi) = \eta\]
+  是可解的, 容易算出解的右侧最大存在区间为 $0\leq x < C(\xi)$,
+  其中 $C(\xi) = \xi + \frac{1}{\eta+1}$. 由于
+  \[\frac{\diff C}{\diff\xi} = 1 - \frac{1}{(\eta+1)^2}\frac{\diff\eta}{\diff\xi}
+    = 1 - \frac{\xi^2+(\eta+1)^2}{(\eta+1)^2} < 0\]
+  且 $C(0) = 1$, 因此, 当 $0 <\xi\ll 1$ 时, $C(\xi)<1$.
+  再对 $(*)$ 和 $(E_3)$ 运用比较定理可得 $\beta<1$.
+
+  (3) 最后证: $\beta>\frac{\pi}{4}$.
+
+  取正数 $\lambda$ 使得 $0\ll\lambda < 1$, 初值问题
+  \[(E_4)\colon\qquad \frac{\diff y}{\diff x} = \lambda^2 + (y+1)^2,\quad y(0) = 0\]
+  的解得右侧最大存在区间记为 $0\leq x<\tilde{C}(\lambda)$,
+  其中 $\tilde{C} = \frac{\pi}{2\lambda} - \frac{1}{\lambda} \arctan\frac{1}{\lambda}$.
+  计算得 $\tilde{C}(1)=1$ 且
+  \[\frac{\diff\tilde{C}}{\diff\lambda}\bigg|_{\lambda=1} < 0,\]
+  因此当 $0\ll\lambda < 1$ 时 $\tilde{C}>\frac{\pi}{4}$.
+  对 $(*)$ 和 $(E_4)$ 运用比较定理即得 $\beta>\frac{\pi}{4}$.
 \end{proof}
