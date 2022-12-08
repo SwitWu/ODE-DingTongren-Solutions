@@ -22,7 +22,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
 	\begin{enumerate}[(1)]
 		\item $\frac{\partial P}{\partial y}=0,\frac{\partial Q}{\partial x}=2$, 不是恰当方程.
 		\item $\frac{\partial P}{\partial y}=2,\frac{\partial Q}{\partial x}=2$, 是恰当方程, 因为
@@ -62,7 +62,7 @@
       是恰当方程, 且通积分为
 			\[F(x^2+y^2)=C,\text{其中\ }F\text{\ 是\ }f\text{\ 的不定积分}.\qedhere\]
 	\end{enumerate}
-\end{solve}
+\end{solution}
 
 
 
@@ -83,7 +83,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $y^2=\frac{2}{3}x^3+C,y\neq 0$;
 
   (2) $y^2=\frac{2}{3}\ln|1+x^3|+C,y\neq0,x\neq-1$;
@@ -98,7 +98,7 @@
   (6) $\arcsin y=\ln|x|+C$, 特解: $y=\pm 1$;
 
   (7) $y^2-x^2+2(\e^y-\e^{-x})=C$ $(y+\e^y\neq 0)$.
-\end{solve}
+\end{solution}
 
 
 
@@ -113,7 +113,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 积分得 $-\frac{1}{2}\cos2x+\frac{1}{3}\sin3y+C=0$, 
   由 $y\left(\frac{\pi}{2}\right)=\frac{\pi}{3}$ 得 $C=-\frac{1}{2}$,
   因此原方程的解为 $2\sin3y-3\cos2x-3=0$.
@@ -130,7 +130,7 @@
   (5) 由初值条件知 $y\neq 0$, 故原方程等价于 $\frac{\diff y}{y^3}=\frac{x}{\sqrt{1+x^2}}\diff x$, 
   积分得 $-\frac{1}{2}y^{-2}=\sqrt{1+x^2}+C$, 代入初值条件得 $C=-\frac{3}{2}$, 
   因此原方程的解为 $2\sqrt{1+x^2}+y^{-2}-3=0$.
-\end{solve}
+\end{solution}
 
 
 
@@ -144,7 +144,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $y=\sin x+C$, 积分曲线族如图~\ref{fig2.1}.
   \begin{figure}[htb]
     \centering
@@ -211,7 +211,7 @@
   \item $n=1$时, 通解为 $y=C\e^x$ $(C\in\mathbb{R})$;
   \item $n=2$时, 通解为 $y=\frac{1}{-x+C}$ $(C\in\mathbb{R})$, 特解为$y=0$.
   \end{enumerate}
-\end{solve}
+\end{solution}
 
 
 
@@ -220,7 +220,7 @@
   即 $B$ 的运动方向永远指向 $A$ 并与 $A$ 保持等距 $b$. 试求 $B$ 的光滑运动轨迹.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   设 $B$ 的运动轨迹方程为 $y=y(x)$, 记某时刻 $B$ 的位置为 $(x,y(x))$, 
   则此时 $A$ 相应的位置为 $\left(x-\frac{y(x)}{y'(x)},0\right)$, 由于 $A$ 与 $B$ 保持等距, 故
   \[\left(\frac{y}{y'}\right)^2+y^2=b^2\Rightarrow\diff x=-\frac{\sqrt{b^2-y^2}}{y}\diff y.\]
@@ -235,7 +235,7 @@
   \end{split}\]
   由初值条件 $y(0)=b$ 得 $C=0$, 故 $B$ 的光滑运动轨迹方程为
   $x=b\ln\frac{b+\sqrt{b^2-y^2}}{y}-\sqrt{b^2-y^2}$.
-\end{solve}
+\end{solution}
 
 
 
@@ -247,7 +247,7 @@
   \[\left|\int_a^{a\pm\varepsilon}\frac{\diff y}{f(y)}\right|=\infty.\]
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   ($\Leftarrow$) 显然, $y=a$ 是方程的一个解, 用反证法, 设 $y=y(x)$ 是方程的另一个解, 
   它与直线 $y=a$ 相交. 不妨设 $(x_0,a)$ 是它们的一个交点, 
   且存在区间 $I=(x_0,x_0+\delta)$ 或 $I=(x_0-\delta,x_0)$, 
@@ -262,7 +262,7 @@
   则由
   \[\int_a^y\frac{\diff y}{f(y)}=x-x_0\]
   定义的函数是方程的解, 且通过点 $(x_0,a)$, 而 $y=a$ 也是过点 $(x_0,a)$ 的解, 矛盾.
-\end{solve}
+\end{solution}
 
 
 
@@ -276,7 +276,7 @@
   \end{cases}\]
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
 (1) 因为 $\int_0^{\pm\varepsilon}\frac{\diff y}{\sqrt{|y|}}$ 收敛, 故解不是局部唯一的, 微分方程的通解为
 \[y=
   \begin{cases}
@@ -288,7 +288,7 @@
 (2) 因为 $\int_0^{\pm\varepsilon}\frac{\diff y}{y\ln|y|}$ 发散, 所以解是局部唯一的, 微分方程的通解为
 \[y=\pm\e^{C\e^x}\quad(C\in\mathbb{R}).\]
 另外特解为 $y=0$, 积分曲线族容易作出.
-\end{solve}
+\end{solution}
 
 
 
@@ -306,7 +306,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $p(x)=2$, $q(x)=x\e^{-x}$, 故
   \[y=\e^{-\int2\diff x}\left(C+\int x\e^{-x}\e^{\int2\diff x}\diff x\right)=C\e^{-2x}+(x-1)\e^{-x}.\]
 
@@ -338,7 +338,7 @@
         & |x|<1.
     \end{cases}\qedhere
   \end{align*}
-\end{solve}
+\end{solution}
 
 
 
@@ -352,7 +352,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 令 $u=y^2$, 则 $\frac{\diff u}{\diff x}=2y\frac{\diff y}{\diff x}=x^2+u$.
 
   (2) 将 $x$ 看作 $y$ 的函数, 即 $\frac{\diff x}{\diff y}=\frac{x}{y}+y$.
@@ -361,7 +361,7 @@
 
   (4) 原方程变形为 $\cos y\frac{\diff y}{\diff x}=1+x\sin y$,
   令 $u=\sin y$, 即得 $\frac{\diff u}{\diff x}=1+xu$.
-\end{solve}
+\end{solution}
 
 
 
@@ -390,7 +390,7 @@
   然后将这种形式的解代入原方程, 再去确定 $C(x)$.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
 因为
 \[y=C(x)\e^{-\int p(x)\diff x},\]
 所以
@@ -403,7 +403,7 @@
 \[C(x)=\int q(x)\e^{\int p(x)\diff x}\diff x+C.\]
 代回即得原方程的解为
 \[y=\e^{-\int p(x)\diff x}\left(C+\int q(x)\e^{\int p(x)\diff x}\diff x\right).\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -540,7 +540,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 令 $u=\frac{y}{x}$, 则
   \[\frac{\diff y}{\diff x}=u+x\frac{\diff u}{\diff x}=\frac{2u-1}{2-u}.\]
   当 $u\neq\pm 1$时, 上式化为
@@ -569,7 +569,7 @@
   解得
   \[u(x)=\e^{\int2x\diff x}\left(C+\int-2x^3\e^{\int-2x\diff x}\diff x\right)=C\e^{x^2}+x^2+1.\]
   代回变量即得原方程的通解为 $y^2=\left(C\e^{x^2}+x^2+1\right)^{-1}$, 另外 $y=0$ 为特解.
-\end{solve}
+\end{solution}
 
 
 
@@ -583,7 +583,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 令 $u=x-y$, 则
   \[\frac{\diff u}{\diff x}=1-\cos u.\]
   当 $1-\cos u\neq 0$, 即 $x-y\neq 2k\pi$ $(k\in\mathbb{Z})$ 时, 上述方程化为
@@ -627,7 +627,7 @@
     \Rightarrow\frac{2\beta+3}{\beta^2-1}\diff\beta=\frac{-2}{\xi}\diff\xi.\]
   积分并代回原变量得 $(y^2-x^2+1)^5=C(x^2+y^2-3)$ $(C\neq 0)$.
   当 $\beta=1$ 时, 得特解 $y^2-x^2+1=0$, 显然此特解可合并到通解之中, 当 $\beta=-1$ 时得特解 $x^2+y^2-3=0$.
-\end{solve}
+\end{solution}
 
 
 
@@ -639,7 +639,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1)这是 Riccati 方程, 由定理 2.3 中的做法, 令 $z=xy$, 则原方程化为
   \[\frac{\diff z}{\diff x}=\frac{-\frac{1}{4}+z-z^2}{x}=\frac{-\left(z-\frac{1}{2}\right)^2}{x}.\]
   当 $z=\frac{1}{2}$ 时得特解 $y=\frac{1}{2x}$, 当 $z\neq\frac{1}{2}$ 时, 上述方程化为
@@ -663,7 +663,7 @@
       & = |x|\left(C+\int\frac{-1}{|x|}\diff x\right)=|x|\left(C-\sgn x\cdot\ln|x|\right)=Cx-x\ln|x|.
   \end{align*}
   故原方程的通解为 $y=-\frac{1}{x}+\frac{1}{Cx-x\ln|x|}$.
-\end{solve}
+\end{solution}
 
 
 
@@ -673,10 +673,10 @@
   化成一个里卡蒂方程.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   令 $y=\e^{\int u\diff x}$, 即得 Riccati 方程
   \[u'+u^2+p(x)u+q(x)=0.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -684,12 +684,12 @@
   求一曲线, 使得过这曲线上任意点的切线与该点向径的夹角等于 $\frac{\pi}{4}$.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   设曲线方程为 $y=y(x)$,则
   \[\tan\frac{\pi}{4}=\frac{\frac{\diff y}{\diff x}-\frac{y}{x}}{1+\frac{\diff y}{\diff x}\frac{y}{x}}
   = 1\Rightarrow\frac{\diff y}{\diff x}=\frac{x+y}{x-y}.\]
   解得 $2\arctan\frac{y}{x}-\ln(x^2+y^2)=C$.
-\end{solve}
+\end{solution}
 
 
 
@@ -697,7 +697,7 @@
   探照灯的反光镜 (旋转曲面) 应具有何种形状, 才能使点光源发射的光束反射成平行线束.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   设所求曲面由曲线 $y=y(x)$ $(y\geq 0)$ 绕 $x$ 轴旋转而成, 并且不妨将点光源置于原点,
   且平行光线沿 $x$ 轴正方向射出 (所以下面要保证 $\frac{\diff y}{\diff x}>0$), 则由几何关系得
   \[\frac{\diff y}{\diff x}
@@ -725,7 +725,7 @@
 
   综上,原方程的通解为 $y^2=C(2x+C)$ $(C>0,x\geq-C/2)$,
   因此旋转曲面的方程为 $y^2+z^2=C(2x+C)$ $(C>0)$, 由此可知该曲面是一个旋转抛物面.
-\end{solve}
+\end{solution}
 
 
 
@@ -747,7 +747,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1)因为 $\frac{1}{Q}\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)=3$,
   故取积分因子 $\mu(x)=\e^{3x}$, 得全微分方程:
   \[\e^{3x}(3x^2y+2xy+y^3)\diff x+\e^{3x}(x^2+y^2)\diff y=0,\]
@@ -802,7 +802,7 @@
   \[\e^x\sin y\diff x+\left(\e^x\cos y+2y\sin y\cos y\right)\diff y
     = \diff\left(\e^x\sin y+\frac{1}{4}\sin2y-\frac{1}{2}y\cos2y\right)=0.\]
   故通解为 $\e^x\sin y+\frac{1}{4}\sin2y-\frac{1}{2}y\cos2y=C$.
-\end{solve}
+\end{solution}
 
 
 
@@ -950,7 +950,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 联立 $x^2+y^2=Cx$ 与 $(2x-C)\diff x+2y\diff y=0$,
   消去 $C$ 得曲线族满足微分方程 $\frac{\diff y}{\diff x}=\frac{y^2-x^2}{2xy}$,
   故正交曲线族的微分方程为
@@ -970,7 +970,7 @@
   消去 $C^2$ 得曲线族满足微分方程 $xy\diff x-(x^2-1)\diff y=0$, 故正交曲线族的微分方程为
   \[(x^2-1)\diff x+xy\diff y=0.\]
   解得 $x^2+y^2-\ln x^2=K$, 特解 $x=0$.
-\end{solve}
+\end{solution}
 
 
 
@@ -984,7 +984,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1)
   \[\tan\frac{\pi}{4}=\frac{y'-y_1'}{1+y'y_1'}=1\Rightarrow y_1'
     = \frac{y'-1}{y'+1}=\frac{1}{2}\Rightarrow y'=3.\]
@@ -1002,7 +1002,7 @@
   (4) $y^2=4ax$ 满足的微分方程为 $y\diff x-2x\diff y=0$, 故
   \[y_1'=\frac{y'-1}{y'+1}=\frac{y}{2x}\Rightarrow\frac{\diff y}{\diff x}=\frac{2x+y}{2x-y}.\]
   积分得等角轨线族为 $\ln(y^2-xy+2x^2)-\frac{6}{\sqrt{7}}\arctan\frac{2y-x}{\sqrt{7}x}=K$.
-\end{solve}
+\end{solution}
 
 
 
@@ -1011,7 +1011,7 @@
   它的轨迹与和它相交的每条双曲线均成 $\frac{\pi}{6}$ 角, 又设此动点从 $P_0(0,1)$ 出发, 求出动点的轨迹.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   双曲线族 $x^2-y^2=C$ 满足的微分方程为 $x\diff x-y\diff y=0$, 设动点的轨迹方程为 $y=y(x)$, 则
   \[\tan\frac{\pi}{6}=\frac{\sqrt{3}}{3}=\frac{y'-y_1'}{1+y'y_1'}.\]
   从上式解得
@@ -1023,7 +1023,7 @@
       + \frac{\frac{\sqrt{3}}{2}}{\sqrt{3}u+1}\right)\diff u=-\frac{1}{x}\diff x.\]
   积分得 $\sqrt{3}y^2-2xy-\sqrt{3}x^2=C\neq 0$, 代入初值 $P_0(0,1)$ 得 $C=\sqrt{3}$,
   故动点轨迹方程为 $\sqrt{3}(x^2-y^2+1)+2xy=0$.
-\end{solve}
+\end{solution}
 
 
 
@@ -1033,7 +1033,7 @@
   试求 $Q$ 的运动轨迹与追上 $P$ 的时间.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   设点 $Q$ 的运动轨迹方程为 $y=y(x)$, 记某时刻 $Q$ 的坐标为 $(x,y(x))$,
   则相应地点 $P$ 的坐标为 $\left(x-\frac{y(x)}{y'(x)},0\right)$, 由时间关系得
   \[\frac{\int_0^x\sqrt{1+(y'(t))^2}\diff t}{b}=\frac{x-\frac{y(x)}{y'(x)}}{a}.\]
@@ -1065,20 +1065,20 @@
   \[x=\frac{b}{2(a+b)}y^{\frac{a+b}{b}}-\frac{b}{2(b-a)}y^{\frac{b-a}{b}}+\frac{ab}{b^2-a^2}.\]
   当 $Q$ 追上 $P$ 时, 重合点的横坐标为 $x_1=\frac{ab}{b^2-a^2}$,
   故时间为 $t=\frac{x_1}{a}=\frac{b}{b^2-a^2}$.
-\end{solve}
+\end{solution}
 我们可以在本题的基础上讨论更一般的问题: 在正 $n$ 边形的每个顶点上分别有一个物体,
 按逆时针方向每一个物体都以不变的速度 $v$ 跟踪与它相邻的物体, 那么如何求每个物体的运动轨迹.
 
 以 $n=4$ 为例, 设 $t=0$ 时四个物体 $A,B,C$ 和 $D$ 分别在二维平面上的
 $(1,1)$, $(-1,1)$, $(-1,-1)$ 和 $(1,-1)$ 处,
 从此刻开始 $A,B,C,D$ 分别以不变的速度 $v$ 追赶 $B,C,D,A$. 求物体 $A$ 的运动轨迹.
-\begin{solve}
+\begin{solution}
   设 $A$ 的轨迹方程为 $y=y(x)$, 记某时刻 $A$ 的坐标为 $(x,y(x))$,
   则此时 $B$ 的坐标为 $(-y(x),x)$, 由于 $A$ 的运动方向指向 $B$, 故
   \[y'(x)=\frac{y(x)-x}{x+y(x)}.\]
   此为齐次方程容易解得
   \[2\arctan\frac{y}{x}+\ln\left(x^2+y^2\right)=\frac{\pi}{2}+\ln 2.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -1089,7 +1089,7 @@ $(1,1)$, $(-1,1)$, $(-1,-1)$ 和 $(1,-1)$ 处,
   假设不计空气阻力和其他任何星球的引力. 试求火箭的逃逸速度, 即: 使火箭一去不复返的最小初速度$v_0$.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
 逃逸速度又称为第二宇宙速度, 取沿地球径向向外为正方向, 记地球质量为 $M_1$,
 记火箭的速度函数为 $v=v(t)$, 位移函数为 $s=s(t)$, 则由牛顿第二定律知
 \[M\frac{\diff^2s}{\diff t^2}=-\frac{GM_1M}{s^2}.\]
@@ -1105,7 +1105,7 @@ $(1,1)$, $(-1,1)$, $(-1,-1)$ 和 $(1,-1)$ 处,
 要使得火箭从地球逃逸, 就必须始终有 $v>0$, 因此
 \[\frac{1}{2}v_0^2-gR\geq 0
 \Longrightarrow v_0\geq\sqrt{2gR}=\qty[per-mode=symbol]{11.2}{\kilo\meter\per\second}.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -1114,9 +1114,9 @@ $(1,1)$, $(-1,1)$, $(-1,-1)$ 和 $(1,-1)$ 处,
   试讨论传染病人数的发展趋势,并以此解释对传染病人进行隔离的必要性.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   设比例常数为 $k$, 则依题意得
   \[\frac{\diff x}{\diff t}=kx(N-x).\]
   上式为变量分离的方程, 容易解得 $x(t)=\frac{CN\e^{kNt}}{1+C\e^{kNt}}$,
   当 $t\to+\infty$ 时, $x(t)\to N$, 因此对传染病人进行隔离是有必要的.
-\end{solve}
+\end{solution}

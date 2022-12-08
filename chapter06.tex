@@ -24,9 +24,15 @@ P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
 推论6.2的证明:
 
 \begin{proof}
-(1) 记 $\bm{C}=(\bm{c}_1,\cdots,\bm{c}_n)$, 则$\bm{\varPhi}(x)\bm{C}=(\bm{\varPhi}(x)\bm{c}_1,\cdots,\bm{\varPhi}(x)\bm{c}_n)$, 由(6.15)式知$\forall1\leq i\leq n,\bm{\varPhi}(x)\bm{c}_i$是方程(6.2)的解, 也即$\{\bm{\varPhi}(x)\bm{c}_i|1\leq i\leq n\}$为(6.2)的解组. 记$\bmitPhi(x)$对应的基本解组的Wronsky行列式为$W(x)$, 则$\bmitPhi(x)\bm{C}$对应的解组的Wronsky行列式为:
-\[W_1(x)=|\bmitPhi(x)\bm{c}_1\cdots\bmitPhi(x)\bm{c}_n|=|\bmitPhi(x)|\cdot|\bm{C}|=W(x)|\bm{C}|\neq0\]
-故$\bmitPhi(x)\bm{C}$也是基解矩阵.
+(1) 记 $\bm{C}=(\bm{c}_1,\cdots,\bm{c}_n)$,
+则 $\bm{\varPhi}(x)\bm{C}=(\bm{\varPhi}(x)\bm{c}_1,\cdots,\bm{\varPhi}(x)\bm{c}_n)$,
+由 (6.15) 式知 $\forall 1\leq i\leq n$, $\bm{\varPhi}(x)\bm{c}_i$ 是方程(6.2)的解,
+也即 $\{\bm{\varPhi}(x)\bm{c}_i|1\leq i\leq n\}$ 为(6.2)的解组.
+记 $\bmitPhi(x)$ 对应的基本解组的 Wronsky 行列式为 $W(x)$,
+则 $\bmitPhi(x)\bm{C}$ 对应的解组的 Wronsky 行列式为:
+\[W_1(x) = |\bmitPhi(x)\bm{c}_1\cdots\bmitPhi(x)\bm{c}_n|
+  = |\bmitPhi(x)|\cdot|\bm{C}|=W(x)|\bm{C}|\neq 0.\]
+故 $\bmitPhi(x)\bm{C}$也是基解矩阵.
 
 (2) $\bmitPhi(x)$ 和 $\bmitPsi(x)$ 都是基解矩阵, 设
 \[\bmitPhi(x)=(\bm{y}_1(x),\cdots,\bm{y}_n(x)),\]
@@ -66,7 +72,7 @@ P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $\displaystyle\frac{\diff}{\diff t}\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}\frac{1}{t}&0\\0&\frac{1}{t}\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}$, 
   分量形式为 $\displaystyle\frac{\diff y_1}{\diff t}=\frac{y_1}{t},\frac{\diff y_2}{\diff t}=\frac{y_2}{t}$, 
   解得 $y_1=kt,y_2=kt$, 不妨取基解矩阵为 $\begin{pmatrix}0&t\\t&0\end{pmatrix}$, 则通解为
@@ -91,7 +97,7 @@ P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
   取 $y_1=\e^t$, 得 $y_3=\e^t$, 取 $y_1=\e^{-t}$, 得 $y_3=-\e^{-t}$, 
   不妨取基解矩阵为 $\begin{pmatrix}\e^t&0&\e^{-t}\\0&\e^t&0\\\e^t&0&-\e^{-t}\end{pmatrix}$, 则通解为
   \[\bm{y}(t)=C_1\begin{pmatrix}\e^t\\0\\\e^t\end{pmatrix}+C_2\begin{pmatrix}0\\\e^t\\0\end{pmatrix}+C_3\begin{pmatrix}\e^{-t}\\0\\-\e^{-t}\end{pmatrix}.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -108,7 +114,7 @@ P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
   \end{cases}$.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 由 $\frac{\diff x}{\diff t}=1-\frac{2}{t}x$ 得 
   $x=\e^{-\int\frac{2}{t}\diff t}\left(C+\int\e^{\int\frac{2}{t}\diff t}\diff t\right)=\frac{t}{3}+\frac{C}{t^2}$, 
   代入初值条件 $x(1)=\frac{1}{3}$ 得 $x(t)=\frac{t}{3}$. 
@@ -120,7 +126,7 @@ P159证明: $H(C_1\bm{y}_1^0+C_2\bm{y}_2^0)=C_1H(\bm{y}_1^0)+C_2H(\bm{y}_2^0)$.
   故 $\frac{\diff y}{\diff t}=-\frac{y}{t}+t$, 
   解得 $y(t)=\frac{C}{t}+\frac{t^2}{3}$, 
   代入初值条件 $y(1)=\frac{4}{3}$ 得 $y(t)=\frac{1}{t}+\frac{t^2}{3}$.
-\end{solve}
+\end{solution}
 
 
 
@@ -337,17 +343,17 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
 
 \begin{exercise}
   求出常系数齐次线性微分方程组(6.25)的通解, 其中的矩阵 $\bm{A}$ 分别为:
-  \begin{mathtasks2}
+  \begin{enumerate}
     \item $\displaystyle\begin{pmatrix}3&4\\5&2\end{pmatrix}$;
     \item $\displaystyle\begin{pmatrix}0&a\\-a&0\end{pmatrix}$;
     \item $\displaystyle\begin{pmatrix}-1&1&0\\0&-1&0\\1&0&-4\end{pmatrix}$;
     \item $\displaystyle\begin{pmatrix}-5&-10&-20\\5&5&10\\2&4&9\end{pmatrix}$;
     \item $\displaystyle\begin{pmatrix}1&\frac{2}{3}&-\frac{2}{3}\\0&\frac{2}{3}&\frac{1}{3}\\0&-\frac{1}{3}&\frac{4}{3}\end{pmatrix}$;
     \item $\displaystyle\begin{pmatrix}1&1&1&1\\1&1&-1&-1\\1&-1&1&-1\\1&-1&-1&1\end{pmatrix}$.
-  \end{mathtasks2}
+  \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $|\bm{A}-\lambda\bm{E}|=(\lambda-7)(\lambda+2)=0\Rightarrow\lambda=7$ 或 $\lambda=-2$.
 
   当 $\lambda=7$ 时, $\begin{pmatrix}-4&4\\5&-5\end{pmatrix}\to\begin{pmatrix}1&-1\\0&0\end{pmatrix}$, 
@@ -363,16 +369,16 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
   \[\bm{y}=C_1\begin{pmatrix}\e^{7x}\\\e^{7x}\end{pmatrix}
     + C_2\begin{pmatrix}4\e^{-2x}\\-5\e^{-2x}\end{pmatrix}.\]
 
-  (2) $|\bm{A}-\lambda\bm{E}|=\lambda^2+a^2=0\Rightarrow\lambda=\pm a\ii$.
+  (2) $|\bm{A}-\lambda\bm{E}|=\lambda^2+a^2=0\Rightarrow\lambda=\pm a\upi$.
 
-  当 $\lambda=a\ii$ 时, $\begin{pmatrix}-a\ii&a\\-a&-a\ii\end{pmatrix}\to\begin{pmatrix}-\ii&1\\0&0\end{pmatrix}$,
-  取特征向量为 $\bm{r}=\begin{pmatrix}1\\\ii\end{pmatrix}$.
+  当 $\lambda=a\upi$ 时, $\begin{pmatrix}-a\upi&a\\-a&-a\upi\end{pmatrix}\to\begin{pmatrix}-\upi&1\\0&0\end{pmatrix}$,
+  取特征向量为 $\bm{r}=\begin{pmatrix}1\\\upi\end{pmatrix}$.
 
-  当 $\lambda=-a\ii$ 时, $\begin{pmatrix}a\ii&a\\-a&a\ii\end{pmatrix}\to\begin{pmatrix}\ii&1\\0&0\end{pmatrix}$, 
-  取特征向量为 $\bm{r}=\begin{pmatrix}\ii\\1\end{pmatrix}$.
+  当 $\lambda=-a\upi$ 时, $\begin{pmatrix}a\upi&a\\-a&a\upi\end{pmatrix}\to\begin{pmatrix}\upi&1\\0&0\end{pmatrix}$, 
+  取特征向量为 $\bm{r}=\begin{pmatrix}\upi\\1\end{pmatrix}$.
 
   故基解矩阵为
-  \[\bmitPhi(x)=\begin{pmatrix}\e^{\ii ax}&\ii\e^{-\ii ax}\\\ii\e^{\ii ax}&\e^{-\ii ax}\end{pmatrix}
+  \[\bmitPhi(x)=\begin{pmatrix}\e^{\upi ax}&\upi\e^{-\upi ax}\\\upi\e^{\upi ax}&\e^{-\upi ax}\end{pmatrix}
   \Rightarrow\widetilde{\bmitPhi}(x)=\begin{pmatrix}\cos ax&\sin ax\\-\sin ax&\cos ax\end{pmatrix}.\]
 
   从而通解为
@@ -392,21 +398,21 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
     \begin{pmatrix}1\\0\\\frac{1}{3}\end{pmatrix}\e^{-x}
     +C_3\begin{pmatrix}0\\0\\1\end{pmatrix}\e^{-4x}.\]
 
-  (4) $\displaystyle|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}-5-\lambda&-10&-20\\5&5-\lambda&10\\2&4&9-\lambda\end{vmatrix}=-(\lambda-5)(\lambda^2-4\lambda+5)=0\Rightarrow\lambda=5,2\pm\ii$.
+  (4) $\displaystyle|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}-5-\lambda&-10&-20\\5&5-\lambda&10\\2&4&9-\lambda\end{vmatrix}=-(\lambda-5)(\lambda^2-4\lambda+5)=0\Rightarrow\lambda=5,2\pm\upi$.
 
   当 $\lambda=5$ 时, 
   $\begin{pmatrix}-10&-10&-20\\5&0&10\\2&4&4\end{pmatrix}\to\begin{pmatrix}1&0&2\\0&1&0\\0&0&0\end{pmatrix}$, 
   取特征向量为 $\bm{r}=\begin{pmatrix}2\\0\\-1\end{pmatrix}$.
 
-  当 $\lambda=2+\ii$ 时, 
-  $\begin{pmatrix}-7-\ii&-10&-20\\5&3-\ii&10\\2&4&7-\ii\end{pmatrix}\to\begin{pmatrix}1&0&\frac{1}{2}(3+\ii)\\0&1&\frac{1}{2}(2-\ii)\\0&0&0\end{pmatrix}$
+  当 $\lambda=2+\upi$ 时, 
+  $\begin{pmatrix}-7-\upi&-10&-20\\5&3-\upi&10\\2&4&7-\upi\end{pmatrix}\to\begin{pmatrix}1&0&\frac{1}{2}(3+\upi)\\0&1&\frac{1}{2}(2-\upi)\\0&0&0\end{pmatrix}$
   (这里的矩阵行变换也不是很复杂, 主要就是凑出 $1$), 
-  取特征向量为 $\bm{r}=\begin{pmatrix}3+\ii\\2-\ii\\-2\end{pmatrix}$,
-  故对于特征值 $\lambda=2-\ii$ 可以取到特征向量 $\bm{r}=\begin{pmatrix}3-\ii\\2+\ii\\-2\end{pmatrix}$.
+  取特征向量为 $\bm{r}=\begin{pmatrix}3+\upi\\2-\upi\\-2\end{pmatrix}$,
+  故对于特征值 $\lambda=2-\upi$ 可以取到特征向量 $\bm{r}=\begin{pmatrix}3-\upi\\2+\upi\\-2\end{pmatrix}$.
 
   故基解矩阵为
   \[\begin{split}
-  &\bmitPhi(x)=\begin{pmatrix}2\e^{5x}&(3+\ii)\e^{(2+\ii)x}&(3-\ii)\e^{(2-\ii)x}\\0&(2-\ii)\e^{(2+\ii)x}&(2+\ii)\e^{(2-\ii)x}\\-\e^{5x}&-2\e^{(2+\ii)x}&-2\e^{(2-\ii)x}\end{pmatrix}\\
+  &\bmitPhi(x)=\begin{pmatrix}2\e^{5x}&(3+\upi)\e^{(2+\upi)x}&(3-\upi)\e^{(2-\upi)x}\\0&(2-\upi)\e^{(2+\upi)x}&(2+\upi)\e^{(2-\upi)x}\\-\e^{5x}&-2\e^{(2+\upi)x}&-2\e^{(2-\upi)x}\end{pmatrix}\\
   \Rightarrow&\widetilde{\bmitPhi}(x)\begin{pmatrix}2\e^{5x}&(3\cos x-\sin x)\e^{2x}&(\cos x+3\sin x)\e^{2x}\\0&(2\cos x+\sin x)\e^{2x}&(-\cos x+2\sin x)\e^{2x}\\\e^{5x}&-2\cos x\e^{2x}&-2\sin x\e^{2x}\end{pmatrix}.
   \end{split}\]
   从而通解为
@@ -461,7 +467,7 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
     C_1\begin{pmatrix}1\\1\\0\\0\end{pmatrix}\e^{2x}
     + C_2\begin{pmatrix}1\\0\\1\\0\end{pmatrix}\e^{2x}+C_3\begin{pmatrix}1\\0\\0\\1\end{pmatrix}\e^{2x}
     + C_4\begin{pmatrix}-1\\1\\1\\1\end{pmatrix}\e^{-2x}.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -481,7 +487,7 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $|\bm{A}-\lambda\bm{E}|=(\lambda-2)^2=0\Rightarrow\lambda_{1,2}=2$. 
   由 $(\bm{A}-2\bm{E})^2\bm{r}=0$ 得到两个线性无关的特征向量
   $\bm{r}_{10}=\begin{pmatrix}1\\0\end{pmatrix}$,
@@ -554,23 +560,23 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
     + C_2\begin{pmatrix}-x\\-x+1\end{pmatrix}\e^x
     + \begin{pmatrix}-x^2\e^x\\(-x^2+2x)\e^x\end{pmatrix}.\]
 
-  (4) $|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}2-\lambda&1&-2\\-1&-\lambda&0\\1&1&-1-\lambda\end{vmatrix}=-(\lambda-1)(\lambda^2+1)=0\Rightarrow\lambda=1,\pm\ii$.
+  (4) $|\bm{A}-\lambda\bm{E}|=\begin{vmatrix}2-\lambda&1&-2\\-1&-\lambda&0\\1&1&-1-\lambda\end{vmatrix}=-(\lambda-1)(\lambda^2+1)=0\Rightarrow\lambda=1,\pm\upi$.
 
   当 $\lambda=1$ 时, $\begin{pmatrix}1&1&-2\\-1&-1&0\\1&1&-2\end{pmatrix}\to\begin{pmatrix}1&1&0\\0&0&1\\0&0&0\end{pmatrix}$, 
   取特征向量为 $\bm{r}=\begin{pmatrix}1\\-1\\0\end{pmatrix}$.
 
-  当 $\lambda=\ii$ 时, $\begin{pmatrix}2-\ii&1&-2\\-1&-\ii&0\\1&1&-1-\ii\end{pmatrix}\to\begin{pmatrix}1&0&-1\\0&1&\ii\\0&0&0\end{pmatrix}$, 
-  取特征向量为 $\bm{r}=\begin{pmatrix}1\\\ii\\1\end{pmatrix}$.
+  当 $\lambda=\upi$ 时, $\begin{pmatrix}2-\upi&1&-2\\-1&-\upi&0\\1&1&-1-\upi\end{pmatrix}\to\begin{pmatrix}1&0&-1\\0&1&\upi\\0&0&0\end{pmatrix}$, 
+  取特征向量为 $\bm{r}=\begin{pmatrix}1\\\upi\\1\end{pmatrix}$.
 
-  当 $\lambda=-\ii$ 时, 可取特征向量为 $\bm{r}=\begin{pmatrix}\ii\\1\\\ii\end{pmatrix}$
+  当 $\lambda=-\upi$ 时, 可取特征向量为 $\bm{r}=\begin{pmatrix}\upi\\1\\\upi\end{pmatrix}$
   (注意共轭特征向量为共轭特征值的特征向量).
 
   故基解矩阵为
   \[\widetilde{\bmitPhi}(x) = 
   \begin{pmatrix}
-    \e^x&\e^{\ii x}&\ii\e^{-\ii x} \\
-    -\e^x&\ii\e^{\ii x}&\e^{-\ii x} \\
-    0&\e^{\ii x}&\ii\e^{-\ii x}
+    \e^x&\e^{\upi x}&\upi\e^{-\upi x} \\
+    -\e^x&\upi\e^{\upi x}&\e^{-\upi x} \\
+    0&\e^{\upi x}&\upi\e^{-\upi x}
   \end{pmatrix}\Rightarrow
   \bmitPhi(x) =
   \begin{pmatrix}
@@ -653,7 +659,7 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
     + C_2\begin{pmatrix}-x\\1\\0\end{pmatrix}\e^{-x}
     + C_3\begin{pmatrix}x^2\\-2x\\2\end{pmatrix}\e^{-x}
     + \begin{pmatrix}x^2-3x+3\\x\\x-1\end{pmatrix}.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -675,7 +681,7 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $|\bm{A}-\lambda\bm{E}|=(\lambda+4)^2=0\Rightarrow\lambda_{1,2}=-4$.
 
   由 $(\bm{A}+4\bm{E})^2\bm{r}=0$ 得两个线性无关的特征向量
@@ -706,18 +712,18 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
       \frac{1}{25}\e^x+\frac{7}{36}\e^{2x}
     \end{pmatrix}.\]
 
-  (2) $|\bm{A}-\lambda\bm{E}|=\lambda^2+4=0\Rightarrow\lambda=\pm2\ii$.
+  (2) $|\bm{A}-\lambda\bm{E}|=\lambda^2+4=0\Rightarrow\lambda=\pm2\upi$.
 
-  当 $\lambda=2\ii$ 时, $\begin{pmatrix}-2\ii&-2\\2&-2\ii\end{pmatrix}\to\begin{pmatrix}1&-\ii\\0&0\end{pmatrix}$, 
-  取特征向量为 $\bm{r}=\begin{pmatrix}\ii\\1\end{pmatrix}$.
+  当 $\lambda=2\upi$ 时, $\begin{pmatrix}-2\upi&-2\\2&-2\upi\end{pmatrix}\to\begin{pmatrix}1&-\upi\\0&0\end{pmatrix}$, 
+  取特征向量为 $\bm{r}=\begin{pmatrix}\upi\\1\end{pmatrix}$.
 
-  当 $\lambda=-2\ii$ 时, 取特征向量为 $\bm{r}=\begin{pmatrix}1\\\ii\end{pmatrix}$.
+  当 $\lambda=-2\upi$ 时, 取特征向量为 $\bm{r}=\begin{pmatrix}1\\\upi\end{pmatrix}$.
 
   故基解矩阵为
   \[\widetilde{\bmitPhi}(x) =
     \begin{pmatrix}
-      \ii\e^{2\ii x}&\e^{-2\ii x} \\
-      \e^{2\ii x}&\ii\e^{-2\ii x}
+      \upi\e^{2\upi x}&\e^{-2\upi x} \\
+      \e^{2\upi x}&\upi\e^{-2\upi x}
     \end{pmatrix}\Rightarrow\bmitPhi(x) =
     \begin{pmatrix}\cos2x&-\sin2x\\\sin2x&\cos2x\end{pmatrix}.\]
   故
@@ -785,7 +791,7 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
     + \begin{pmatrix}3\\2\end{pmatrix}\e^{2x}
     + \begin{pmatrix}-2\sin x+\cos x\\-2\sin x+2\cos x\end{pmatrix}.\]
   (4) $(-2x,-3x,2x)\e^{-x}$.
-\end{solve}
+\end{solution}
 
 
 
@@ -796,25 +802,25 @@ $\displaystyle\frac{\diff\bm{y}}{\diff x}=\bm{A}\bm{y}$ 的标准基解矩阵,
   其中 $a$ 和 $b$ 为实常数, 而且 $b\neq 0$.
 \end{exercise}
 
-\begin{solve}
-  $\begin{vmatrix}a-\lambda&-b\\b&a-\lambda\end{vmatrix}=(a-\lambda)^2+b^2=0\Rightarrow\lambda=a\pm b\ii$.
+\begin{solution}
+  $\begin{vmatrix}a-\lambda&-b\\b&a-\lambda\end{vmatrix}=(a-\lambda)^2+b^2=0\Rightarrow\lambda=a\pm b\upi$.
 
-  当 $\lambda=a+b\ii$ 时, 
-  $\begin{pmatrix}-b\ii&-b\\b&-b\ii\end{pmatrix}\to\begin{pmatrix}\ii&1\\0&0\end{pmatrix}$, 
-  取特征向量为 $\bm{r}=\begin{pmatrix}\ii\\1\end{pmatrix}$.
+  当 $\lambda=a+b\upi$ 时, 
+  $\begin{pmatrix}-b\upi&-b\\b&-b\upi\end{pmatrix}\to\begin{pmatrix}\upi&1\\0&0\end{pmatrix}$, 
+  取特征向量为 $\bm{r}=\begin{pmatrix}\upi\\1\end{pmatrix}$.
 
-  当 $\lambda=a-b\ii$ 时, 取特征向量为 $\bm{r}=\begin{pmatrix}1\\\ii\end{pmatrix}$.
+  当 $\lambda=a-b\upi$ 时, 取特征向量为 $\bm{r}=\begin{pmatrix}1\\\upi\end{pmatrix}$.
 
   故基解矩阵为
   \[\widetilde{\bmitPhi}(t) = 
-    \begin{pmatrix}\ii\e^{(a+b\ii)t}&\e^{(a-b\ii)t}\\\e^{(a+b\ii)t}&\ii\e^{(a-b\ii)t}\end{pmatrix}
+    \begin{pmatrix}\upi\e^{(a+b\upi)t}&\e^{(a-b\upi)t}\\\e^{(a+b\upi)t}&\upi\e^{(a-b\upi)t}\end{pmatrix}
     \Rightarrow\bmitPhi(t) =
     \begin{pmatrix}\e^{at}\cos bt&-\e^{at}\sin bt\\ \e^{at}\sin bt&\e^{at}\cos bt\end{pmatrix}.\]
   故通解为
   \[\begin{pmatrix}x\\y\end{pmatrix} =
     C_1\begin{pmatrix}\e^{at}\cos bt\\\e^{at}\sin bt\end{pmatrix}
     + C_2\begin{pmatrix}-\e^{at}\sin bt\\\e^{at}\cos bt\end{pmatrix}.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -901,7 +907,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
 
 当 $f(x)=[A_m(x)\cos(\beta x)+B_l(x)\sin(\beta x)]\e^{\alpha x}$ 时, 取
 \[\varphi^*(x)=x^k[C_n(x)\cos(\beta x)+D_n(x)\sin(\beta x)]\e^{\alpha x},\]
-其中 $\alpha\pm\ii\beta$ 为 $k$ 重特征根, $n=\max\{m,l\}$.
+其中 $\alpha\pm\upi\beta$ 为 $k$ 重特征根, $n=\max\{m,l\}$.
 
 
 
@@ -960,11 +966,11 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $W(x)=W(x_0)\e^{-\int_{x_0}^x0\diff s}=W(x_0)$.
 
   (2) 将 $y=\e^x$ 代入原方程得 $q(x)=-1$, 即原方程为 $y''-y=0$, 解得通解为 $y=C_1\e^x+C_2\e^{-x}$.
-\end{solve}
+\end{solution}
 
 
 
@@ -984,7 +990,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 假设存在 $x_0\in I$ 使得 $\varphi(x_0)=\varphi'(x_0)=0$, 
   则由解的存在唯一性定理知方程只有零解 $y=\varphi(x)=0$, 与 $\varphi(x)$ 是非零解相矛盾, 
   故 $\varphi(x)$ 在区间 $I$ 上只有简单零点.
@@ -1011,7 +1017,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
 
   情形2: $\varphi(x)$ 是非零解, 由 (1) 知 $\varphi(x)$ 的每一个零点都是孤立的, 
   利用 $\varphi(x)$ 的零点将区间 $(a,b)$ 分割为开区间之并.
-\end{solve}
+\end{solution}
 
 
 
@@ -1102,7 +1108,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   其中 $a_1,a_2,\cdots,a_n$ 都是常数, $x>0$. 试利用适当的变换把它化成常系数的齐次线性微分方程.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   令 $x=\e^t$, 则
   \begin{align*}
   & \frac{\diff y}{\diff x}=\frac{\diff y}{\diff t}\cdot\frac{\diff t}{\diff x}=\e^{-t}\frac{\diff y}{\diff t}, \\
@@ -1117,7 +1123,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   其中 $\beta_1,\beta_2,\beta_{k-1}$ 都是常数. 将其代入原方程就得到常系数齐次线性微分方程
   \[\frac{\diff^ny}{\diff t^n}+b_1\frac{\diff^{n-1}y}{\diff t^{n-1}}+\cdots+b_{n-1}\frac{\diff y}{\diff t}+b_ny=0,\]
   其中 $b_1,b_2,\cdots,b_n$ 是常数. 求解之, 再代回原变量, 便可得原方程通解.
-\end{solve}
+\end{solution}
 
 \begin{remark}
   $(\star)$ 式其实不太精细, 事实上, 利用归纳法容易证明下列关系式
@@ -1133,7 +1139,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   其中 $m,r,k$ 都是正的常数. 并就 $\Delta=r^2-4mk$ 大于, 等于和小于零的不同情况, 说明相应解的物理意义.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   特征方程为
   \[m\lambda^2+r\lambda+k=0.\]
   特征根为
@@ -1150,7 +1156,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   当且仅当 $-1<\frac{C_1}{C_2}<0$ 异号, 
   而且 $t_0=\frac{1}{\lambda_2-\lambda_1}\ln\left(-\frac{C_1}{C_2}\right)$.
   \end{enumerate}
-  \item $\Delta<0$ 即小阻尼情形, 此时 $\lambda_1=\alpha+\ii\beta,\lambda_2=\alpha-\ii\beta$, 
+  \item $\Delta<0$ 即小阻尼情形, 此时 $\lambda_1=\alpha+\upi\beta,\lambda_2=\alpha-\upi\beta$, 
   其中 $\alpha=-\frac{r}{2m}<0,\beta=\frac{\sqrt{-\Delta}}{2m}>0$, 通解为
   \[x(t)=\e^{\alpha t}(C_1\cos\beta t+C_2\sin\beta t)=A\e^{\alpha t}\cos(\beta t-\theta_0).\]
   故 $\lim_{t\to\infty}x(t)=0$, 且
@@ -1162,7 +1168,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   \[x(t)=\e^{-\frac{r}{2m}t}(C_1+C_2t).\]
   此时 $\lim_{t\to\infty}x(t)=0$ 且 $x(t)$ 至多有一个零点, 故弹簧不振动.\qedhere
   \end{enumerate}
-\end{solve}
+\end{solution}
 
 
 
@@ -1174,10 +1180,10 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   说明解的物理意义, 这里 $\omega_0=\sqrt{\frac{k}{m}}$是弹簧振子的固有频率.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   特征方程为
   \[m\lambda^2+k=0.\]
-  解得特征根为 $\lambda=\pm\sqrt{\frac{k}{m}}\ii=\pm\omega_0\ii$, 故相应齐次线性微分方程的解为
+  解得特征根为 $\lambda=\pm\sqrt{\frac{k}{m}}\upi=\pm\omega_0\upi$, 故相应齐次线性微分方程的解为
   \[x(t)=C_1\cos\omega_0t+C_2\sin\omega_0t.\]
   当 $\omega\neq\omega_0$ 时, 方程有特解 $x(t)=A\cos\omega t+B\sin\omega t$, 
   代入原方程得 $A=\frac{p}{k-m\omega^2}$, $B=0$, 故原方程通解为
@@ -1186,7 +1192,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   代入原方程得 $A=0,B=\frac{p}{2m\omega_0}$, 故原方程通解为
   \[x(t)=C_1\cos\omega_0t+C_2\sin\omega_0t+\frac{p}{2m\omega_0}t\sin\omega_0 t.\]
   此时发生了共振.
-\end{solve}
+\end{solution}
 
 
 
@@ -1210,7 +1216,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $\lambda^2+\lambda-2=0\Rightarrow\lambda_1=-2,\lambda_2=1$, 
   设方程的特解为 $y=ax+b$, 代入原方程得 $a=-1,b=-\frac{1}{2}$, 故原方程的通解为
   \[y=C_1\e^{-2x}+C_2\e^x-x-\frac{1}{2}.\]
@@ -1225,28 +1231,28 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   设特解为 $y=Ax+B\cos 2x+C\sin2x$, 代入原方程得 $A=\frac{3}{2},B=C=-\frac{1}{2}$, 故原方程通解为
   \[y=C_1+C_2\e^{-2c}+\frac{3}{2}x-\frac{1}{2}(\sin2x+\cos2x).\]
 
-  (4) $\lambda^3+3\lambda-4=0\Rightarrow\lambda=1,\frac{-1\pm\sqrt{15}\ii}{2}$, 
+  (4) $\lambda^3+3\lambda-4=0\Rightarrow\lambda=1,\frac{-1\pm\sqrt{15}\upi}{2}$, 
   故方程的实基本解组为
   $\e^x$, $\e^{-\frac{1}{2}x}\cos\frac{\sqrt{15}}{2}x$, 
   $\e^{-\frac{1}{2}x}\sin\frac{\sqrt{15}}{2}x$, 故通解为
   \[y=C_1\e^x+\left(C_2\cos\frac{\sqrt{15}}{2}x+C_3\sin\frac{\sqrt{15}}{2}x\right)\e^{-\frac{1}{2}x}.\]
 
-  (5) $\lambda^3-2\lambda^2-3\lambda+10=0\Rightarrow\lambda=-2,2\pm\ii$, 
+  (5) $\lambda^3-2\lambda^2-3\lambda+10=0\Rightarrow\lambda=-2,2\pm\upi$, 
   故实基本解组为 $\e^{-2x}$, $\e^{2x}\cos x$, $\e^{2x}\sin x$, 故通解为
   \[y=C_1\e^{-2x}+(C_2\cos x+C_3\sin x)\e^{2x}.\]
 
   (6) $\lambda^3-3a\lambda^2+3a^2\lambda-a^3=(\lambda-a)^3=0\Rightarrow\lambda_{1,2,3}=a$, 故通解为
   \[y=\left(C_1+C_2x+C_3x^2\right)\e^{ax}.\]
 
-  (7) $\lambda^4-4\lambda^3+8\lambda^2-8\lambda+3=(\lambda-1)^2(\lambda^2-2\lambda+3)=0\Rightarrow\lambda_{1,2}=1,\lambda_3=1+\sqrt{2}\ii,\lambda_4=1-\sqrt{2}\ii$, 故通解为
+  (7) $\lambda^4-4\lambda^3+8\lambda^2-8\lambda+3=(\lambda-1)^2(\lambda^2-2\lambda+3)=0\Rightarrow\lambda_{1,2}=1,\lambda_3=1+\sqrt{2}\upi,\lambda_4=1-\sqrt{2}\upi$, 故通解为
   \[y=(C_1+C_2x)\e^x+(C_3\cos\sqrt{2}x+C_4\sin\sqrt{2}x)\e^x.\]
 
-  (8) $\lambda^5+2\lambda^3+\lambda=\lambda(\lambda^2+1)^2=0\Rightarrow\lambda_1=0,\lambda_{2,3}=\ii,\lambda_{4,5}=-\ii$, 
-  故复基本解组为 $1$, $\e^{\ii x}$, $x\e^{\ii x}$, $\e^{-\ii x}$, $x\e^{-\ii x}$, 
+  (8) $\lambda^5+2\lambda^3+\lambda=\lambda(\lambda^2+1)^2=0\Rightarrow\lambda_1=0,\lambda_{2,3}=\upi,\lambda_{4,5}=-\upi$, 
+  故复基本解组为 $1$, $\e^{\upi x}$, $x\e^{\upi x}$, $\e^{-\upi x}$, $x\e^{-\upi x}$, 
   相应的实基本解组为 $1$, $\cos x$, $\sin x$, $x\cos x$, $x\sin x$, 故通解为
   \[y=C_1+(C_2+C_3x)\cos x+(C_4+C_5x)\sin x.\]
 
-  (9) $\lambda^4+2\lambda^2+1=(\lambda^2+1)^2=0\Rightarrow\lambda_{1,2}=\ii,\lambda_{3,4}=-\ii$,
+  (9) $\lambda^4+2\lambda^2+1=(\lambda^2+1)^2=0\Rightarrow\lambda_{1,2}=\upi,\lambda_{3,4}=-\upi$,
   故对应齐次方程的通解为
   \[\varphi(x)=C_1\sin x+C_2\cos x+C_3x\sin x+C_4x\cos x.\]
   设特解为 $\varphi^*(x)=x^2(A\cos x+B\sin x)$, 则
@@ -1264,13 +1270,13 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   解得 $C_1=-\frac{21}{8},C_2=1,C_3=2,C_4=\frac{5}{8}$, 故原方程的解为
   \[y=\left(-\frac{1}{8}x^2+2x-\frac{21}{8}\right)\sin x+\left(\frac{5}{8}x+1\right)\cos x.\]
 
-  (10) $\lambda^4+1=0\Rightarrow\lambda=\e^{\ii\left(\frac{\pi}{4}+\frac{1}{2}k\pi\right)}$ 
+  (10) $\lambda^4+1=0\Rightarrow\lambda=\e^{\upi\left(\frac{\pi}{4}+\frac{1}{2}k\pi\right)}$ 
   $(k=0,1,2,3)$, 
   也即 
-  $\lambda_1=\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\ii$,
-  $\lambda_2=-\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\ii$,
-  $\lambda_3=-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\ii$,
-  $\lambda_4=\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\ii$, 
+  $\lambda_1=\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\upi$,
+  $\lambda_2=-\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}\upi$,
+  $\lambda_3=-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\upi$,
+  $\lambda_4=\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\upi$, 
   故相应的齐次线性微分方程的解为
   \[\varphi(x) = 
   \left(C_1\cos\frac{\sqrt{2}}{2}x+C_2\sin\frac{\sqrt{2}}{2}x\right)\e^{\frac{\sqrt{2}}{2}x}
@@ -1280,7 +1286,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   + \left(C_3\cos\frac{\sqrt{2}}{2}x+C_4\sin\frac{\sqrt{2}}{2}x\right)\e^{-\frac{\sqrt{2}}{2}x}+\e^x.\]
   结合初值条件知 $C_i=0$ $(i=1,2,3,4)$, 故原方程满足初值条件的解为 $y=\e^x$.
 
-  (11) $\lambda^2-2\lambda+2=0\Rightarrow\lambda=1\pm\ii$, 故相应齐次线性微分方程的通解为
+  (11) $\lambda^2-2\lambda+2=0\Rightarrow\lambda=1\pm\upi$, 故相应齐次线性微分方程的通解为
   \[\varphi(x)=(C_1\cos x+C_2\sin x)\e^x.\]
   设原方程的特解为 $\varphi^*(x)=x(A\cos x+B\sin x)\e^x$, 代入原方程得 $A=0,B=2$, 
   故特解为 $\varphi^*(x)=2x\e^x\sin x$, 故原方程的通解为
@@ -1295,7 +1301,7 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
   (13) 令 $x=\e^t$, 则原方程化为
   \[\frac{\diff}{\diff t}\left(\frac{\diff}{\diff t}-1\right)y+5\frac{\diff}{\diff t}y+13y
     = \frac{\diff^2y}{\diff t^2}+4\frac{\diff y}{\diff t}+13y=0.\]
-  特征方程为 $\lambda^2+4\lambda+13=0\Rightarrow\lambda=-2\pm3\ii$, 
+  特征方程为 $\lambda^2+4\lambda+13=0\Rightarrow\lambda=-2\pm3\upi$, 
   故实基本解组为 $\e^{-2t}\cos3t,\e^{-2t}\sin3t$, 
   代回原变量即得基本解组为 $\frac{1}{x^2}\cos(3\ln x),\frac{1}{x^2}\sin(3\ln x)$, 故通解为
   \[y=\frac{1}{x^2}(C_1\cos(3\ln x)+C_2\sin(3\ln x)).\]
@@ -1311,4 +1317,4 @@ $(n_1+n_2+\cdots+n_s=n)$, 则齐次方程基本解组为:
     = \frac{\diff^2y}{\diff t^2}-3\frac{\diff y}{\diff t}+2y=0.\]
   特征方程为 $\lambda^2-3\lambda+2=0\Rightarrow\lambda_1=1,\lambda_2=2$, 故通解为
   \[y=C_1\e^t+C_2\e^{2t}=C_1u+C_2u^2=C_1(2x+1)+C_2(2x+1)^2.\qedhere\]
-\end{solve}
+\end{solution}

@@ -11,10 +11,10 @@
   利用线性单摆方程测量你所在地的重力常数 $g$.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   利用单摆周期 $T=2\pi\sqrt{\frac{l}{g}}$ 即得 $g=\frac{4\pi^2}{T^2}l$, 
   测量摆长以及单摆完成一个周期运动的时间即可得出所在地的重力常数 $g$.
-\end{solve}
+\end{solution}
 
 
 
@@ -50,9 +50,9 @@
   在悬链线问题中当 $L=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ 时如何处理?
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   此时悬链线即为直线段, 其方程为  $y=\frac{y_2-y_1}{x_2-x_1}(x-x_1)+y_1$ $(x_1\leq x\leq x_2)$.
-\end{solve}
+\end{solution}
 
 
 
@@ -61,7 +61,7 @@
   使运动 $(x(t),y(t),z(t))$ 的轨道在一条直线上并且趋向 $O$ 点 (即二体发生碰撞); 或者使轨道是一圆周.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   (i) 运动 $(x(t),y(t),z(t))$ 的轨道在一条直线上并且趋向 $O$ 点 (即二体发生碰撞)时, 
   $\frac{\diff\theta}{\diff t}=0$, 由 (5.28) 知 $C_3=0$, 再由 (5.27) 知
   $\frac{\diff r}{\diff t}=-\sqrt{\frac{2\mu}{r}+C_4}$.
@@ -70,7 +70,7 @@
   故 $r=r_0$, 由 (5.27) 知 $C_4=\left(r_0\frac{\diff\theta}{\diff t}\right)^2-\frac{2\mu}{r_0}$, 
   又由 (5.28) 知 $r_0^2\frac{\diff\theta}{\diff t}=-C_3$, 
   故 $C_4=\frac{C_3^2}{r_0^2}-\frac{2\mu}{r_0}$.
-\end{solve}
+\end{solution}
 
 
 
@@ -82,7 +82,7 @@
   把单摆方程 (5.7), 悬链线方程 (5.15) 和二体运动方程 (5.20) 分别写成标准微分方程组.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   (i) 单摆方程为
   \[\frac{\diff^2x}{\diff t^2}+a^2\sin x=0.\]
   令 $x_1=x,x_2=\frac{\diff x}{\diff t}$, 则标准微分方程组为
@@ -112,7 +112,7 @@
   \frac{\diff s_5}{\diff t} = s_6,\\
   \frac{\diff s_6}{\diff t} = -\frac{Gm_ss_5}{(\sqrt{s_1^2+s_3^2+s_5^2})^3}.
   \end{cases}\]
-\end{solve}
+\end{solution}
 
 
 
@@ -120,7 +120,7 @@
   对 $n$ 维向量形式的微分方程, 叙述相应的皮卡存在和唯一性定理以及佩亚诺存在定理, 并写出证明的主要步骤.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (Picard存在和唯一性定理)设初值问题
   \[(E):\frac{\diff\bm{y}}{\diff x}=\bm{f}(x,\bm{y}),\bm{y}(x_0)=\bm{y}_0.\]
   其中函数 $\bm{f}(x,\bm{y})$ 在矩阵区域
@@ -185,7 +185,7 @@
   故积分方程的解是唯一的.
 
   (佩亚诺存在定理)定理的叙述和证明可参考教材.
-\end{solve}
+\end{solution}
 
 
 
@@ -193,7 +193,7 @@
   对 $n$ 阶线性微分方程组的初值问题, 试叙述并证明解的存在和唯一性定理.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   设 $\bm{A}(x)$ 和 $\bm{f}(x)$ 在区间 $a<x<b$ 上连续, 则初值问题
   \[(E):\frac{\diff\bm{y}}{\diff x}=\bm{A}(x)\bm{y}+\bm{f}(x),\bm{y}(x_0)=\bm{y}_0\]
   的解 $\bm{y}=\bm{y}(x)$ 在区间 $a<x<b$ 上存在且唯一, 其中 $a<x_0<b$, $\bm{y}_0\in\mathbb{R}^n$.
@@ -202,7 +202,7 @@
   $\forall\bm{y}_1,\bm{y}_2\in\mathbb{R}^n$, 有
   \[\|\bm{f}(x,\bm{y}_1)-\bm{f}(x,\bm{y}_2)\|
     = \|\bm{A}(x)(\bm{y}_1-\bm{y}_2)\|\leq\|\bm{A}(x)\|\cdot\|\bm{y}_1-\bm{y}_2\|.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 

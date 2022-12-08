@@ -37,7 +37,7 @@
 \end{exercise}
 
 
-\begin{solve}
+\begin{solution}
   柯西定理:考虑微分方程组的初值问题
   \[(E):\begin{cases}
   \frac{\diff y_1}{\diff x}=f_1(x,y_1,\cdots,y_n),y_1(0)=0\\
@@ -75,7 +75,7 @@
     可以证明当 $\displaystyle|x|<\rho=a\left(1-\e^{\frac{-b}{(n+1)aM}}\right)$ 时,
     上述解可以展开成收敛的幂级数, 故初值问题 $(E)$ 在 $|x|<\rho$ 上有唯一的解析解.
   \end{proof}
-\end{solve}
+\end{solution}
 
 
 
@@ -86,7 +86,7 @@
   则 $(E)$ 的解析解 $y=y(x)$ 在 $|x-x_0|<a$ 内存在且唯一.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   令 $y_1=y,y_2=y'$, 则初值问题 $(E)$ 等价于
   \[\begin{cases}
   \frac{\diff y_1}{\diff x} = y_2 = f_1(x,y_1,y_2),\quad y_1(x_0)=y_0,\\
@@ -98,7 +98,7 @@
   \[\rho=\tilde{a}\left(1-\e^{\frac{-b}{3\tilde{a}M}}\right),\tilde{a}<a,b<\infty.\]
   由于 $\lim\limits_{b\to\infty}\rho=\tilde{a}$, 
   又 $\tilde{a}<a$ 是任意的, 故 $(E)$ 的解析解在 $|x-x_0|<a$ 上存在且唯一.
-\end{solve}
+\end{solution}
 
 
 
@@ -121,7 +121,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 设方程有幂级数解
   \[y=\sum_{n=0}^{\infty}a_nx^n.\]
   则
@@ -155,7 +155,7 @@
   分别取 $a_0=1,a_1=0$ 和 $a_0=0,a_1=1$ 得两个线性无关的幂级数解
   \[y_1=1-\frac{1}{2}x^2-\frac{1}{6}x^3-\frac{1}{24}x^4-\frac{1}{60}x^5-\cdots,\]
   \[y_2=x-\frac{1}{6}x^3-\frac{1}{12}x^4-\frac{1}{24}x^5-\cdots.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -168,11 +168,11 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) $y''(0)=-1$, $y^{(3)}(0)=0$, $y^{(4)}(0)=3$, $y=1-\frac{1}{2!}x^2+\frac{3}{4!}x^4+\cdots$;
 
   (2) $y''(0)=0$, $y^{(3)}(0)=-2$, $y^{(4)}(0)=0$, $y=x-\frac{2}{3!}x^3+\cdots$.
-\end{solve}
+\end{solution}
 
 
 
@@ -182,7 +182,7 @@
   其中 $\lambda$ 是常数.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   设方程有幂级数解
   \[y=\sum_{n=0}^{\infty}a_nx^n.\]
   则
@@ -198,7 +198,7 @@
   故方程的解为
   \[y = a_0\left[1+\sum_{n=1}^{\infty}\frac{\prod_{k=0}^{n-1}(4k-\lambda)}{(2n)!}x^{2n}\right]
     + a_1\left[x+\sum_{n=1}^{\infty}\frac{\prod_{k=1}^n(4k-2-\lambda)}{(2n+1)!}x^{2n+1}\right].\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -208,7 +208,7 @@
   在 $x=0$ 处展开的两个线性无关的幂级数解.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   设方程有幂级数解 $y=\sum_{n=0}^{\infty}a_nx^n$, 将之代入方程得
   \[\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n
     + \left(\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}\right)
@@ -233,7 +233,7 @@
   \[y=a_0\left(1-\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^6}{2\cdot3\cdot5\cdot6}
     + \cdots\right)+a_1\left(x-\frac{x^4}{3\cdot4}+\frac{x^6}{2\cdot3\cdot5\cdot6}-\cdots\right).\]
   分别取 $a_0=1,a_1=0$ 和 $a_0=0,a_1=1$ 可得两个线性无关的解.
-\end{solve}
+\end{solution}
 
 
 
@@ -415,7 +415,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   \begin{enumerate}[(1)]
     \item $x=\pm 1$ 为常点, $x=0$ 为正则奇点;
     \item $x=\pm 1$ 为正则奇点, $x=0$ 为常点;
@@ -423,7 +423,7 @@
     \item $x=\pm 1$ 为正则奇点, $x=0$ 为非正则奇点;
     \item $x=0,x=1$ 为常点, $x=-1$ 为非正则奇点.\qedhere
   \end{enumerate}
-\end{solve}
+\end{solution}
 
 
 
@@ -438,7 +438,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 设广义幂级数解为
   \[y=\sum_{k=0}^{\infty}C_kx^{k+\rho}.\]
   将之代入方程得
@@ -500,7 +500,7 @@
   \[C_k=\frac{C_{k-1}}{k^2}=\cdots=\frac{C_0}{(k!)^2}\quad (k\geq 1).\]
   故方程的解为
   \[y=C_0\left[1+\sum_{n=1}^{\infty}\frac{x^n}{(n!)^2}\right].\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -643,7 +643,7 @@
   的通解.
 \end{exercise}
 
-\begin{solve} 
+\begin{solution} 
   令 $x=\left(\frac{3}{2}u\right)^{\frac{2}{3}},y=x^{\frac{1}{2}}v$, 则
   \begin{equation}
     u=\frac{2}{3}x^{\frac{3}{2}},v=yx^{-\frac{1}{2}}. \tag{$\star$}
@@ -685,4 +685,4 @@
   \[v=C_1\rmJ_{\frac{1}{3}}(u)+C_2\rmJ_{-\frac{1}{3}}(u).\]
   从而原方程的解为
   \[y=\sqrt{x}\left[C_1\rmJ_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)+C_2\rmJ_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right].\qedhere\]
-\end{solve}
+\end{solution}

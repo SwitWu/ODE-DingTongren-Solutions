@@ -1,41 +1,12 @@
-\documentclass[withinsec]{mathexercise}
+\documentclass[withinsec,chinese,tikzcover]{mathexercise}
 
-\textbook{常微分方程教程}
-\textbookauthor{丁同仁 李承治}
-\textbookversion{第二版}
-\title{常微分教程习题解答}
-\author{武思豫}
+\input settings
 
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{fancyhdr}
-
-\usepackage{siunitx}
-\usepackage{tocloft}
-\tocloftpagestyle{empty}
-\usepackage{etoolbox}
-\patchcmd{\part}{plain}{empty}{}{}
-\patchcmd{\chapter}{plain}{empty}{}{}
-%\usepackage{showframe}%可以显示版面分布
-
-
-\newcommand\bmitPhi{\bm{\varPhi}}
-\newcommand\bmitPsi{\bm{\varPsi}}
-\newcommand\rmJ{\mathrm{J}}
-\renewcommand{\contentsname}{目录}
-
-\let\leq=\leqslant
-\let\geq=\geqslant
-
-\bibliographystyle{plain}
 \begin{document}
-% \maketitle
 
+\maketitle
 \tableofcontents
-\cleardoublepage
 
-\pagenumbering{arabic}
-\setcounter{page}{1}
 \input{preface.tex}
 \input{chapter01.tex}
 \input{chapter02.tex}

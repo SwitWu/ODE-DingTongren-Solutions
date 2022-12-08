@@ -18,7 +18,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 显然 $y=0$ 是满足初值条件的解, 当 $0<\alpha<1$ 时, 由下式
   \[\int_0^y\frac{\diff y}{|y|^{\alpha}}=x\]
   确定的函数 $\varPhi(x,y)$ 是满足初值条件的解, 且当 $x\neq 0$ 时, $y\neq 0$, 故此时解不唯一.
@@ -39,7 +39,7 @@
   \[\int_0^{y(x)}\frac{\diff y}{y\ln|y|}
     = \int_{x_0}^x\frac{1}{y(x)\ln|y(x)|}\frac{\diff y(x)}{\diff x}\diff x=x-x_0<\infty.\]
   矛盾, 故满足初值条件的解是唯一的.
-\end{solve}
+\end{solution}
 
 
 
@@ -49,7 +49,7 @@
   的皮卡序列, 并由此取极限求解.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   利用皮卡序列迭代公式
   \[y_{n+1}(x)=y_0+\int_{x_0}^xf(x,y_n(x))\diff x,\]
   知
@@ -62,7 +62,7 @@
   \[y_n(x)=\frac{x^{n+1}}{(n+1)!}+\frac{2x^n}{n!}+\frac{2x^{n-1}}{(n-1)!}+\cdots+\frac{2x^2}{2}+x.\]
   故
   \[\lim_{n\to\infty}y_n(x)=2\e^x-x-2.\qedhere\]
-\end{solve}
+\end{solution}
 
 
 
@@ -127,7 +127,7 @@
   试举例说明, 当 $I$ 是无限区间时上面的结论不成立.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   取定义在 $[0,+\infty)$ 上的函数序列
   \[f_n(x)=
     \begin{cases}
@@ -139,7 +139,7 @@
   首先若 $\{f_{n_k}(x)\}$ 一致收敛, 则必收敛到 $0$,但是
   \[\lim_{k\to\infty}d(f_{n_k},0)=\lim_{k\to\infty}\sup_{x\in[0,+\infty)}|f_{n_k}(x)-0|=1\neq 0.\]
   矛盾, 故 $\{f_n(x)\}$ 没有一致收敛的子序列.
-\end{solve}
+\end{solution}
 
 
 
@@ -147,11 +147,11 @@
   我们知道: 皮卡序列满足 Ascoli 引理的条件.试问: 能用皮卡序列来证明佩亚诺的存在定理吗?说明理由.
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   不能. 因为在定义皮卡序列的积分式中:
   \[y_{n+1}(x)=y_0+\int_{x_0}^xf(x,y_n(x))\diff x.\]
   $y_{n+1}(x)$ 通过 $y_n(x)$ 表示出来, 一旦限制在子序列上, 这种表示法就失效了.
-\end{solve}
+\end{solution}
 
 
 
@@ -243,7 +243,7 @@
   \end{enumerate}
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   (1) 因为 $\frac{1}{x^2+y^2}$ 在区域 $\mathbb{R}^2\backslash\{0\}$ 上连续,
   故由解的延伸定理知任意积分曲线必延伸到 $\mathbb{R}^2\backslash\{0\}$ 的边界.
   设 $y=y(x),x\in J$ 为一个饱和解, 则
@@ -277,7 +277,7 @@
   且 $|y\sin(xy)|\leq|y|$, 故由定理 3.5 知解的存在区间为 $(-\infty,+\infty)$.
 
   (4) 原方程的解为 $x=\arctan y+C$, 故解的存在区间为 $(C-\frac{\pi}{2},C+\frac{\pi}{2})$.
-\end{solve}
+\end{solution}
 
 
 
@@ -287,9 +287,9 @@
   它在区域 $G$ 的内部; 它并没有延伸到 $G$的边界, 这一点是否与解的延伸定理相矛盾?为什么?
 \end{exercise}
 
-\begin{solve}
+\begin{solution}
   $\frac{\diff y}{\diff x}=-\frac{x}{y}$, 因为 $-\frac{x}{y}$ 在区域 $G$ 上不连续,故不能运用延伸定理.
-\end{solve}
+\end{solution}
 
 
 
