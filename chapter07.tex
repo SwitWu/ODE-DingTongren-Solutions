@@ -1,10 +1,7 @@
 \chapter{幂级数解法}
 
 
-
 \section{柯西定理}
-
-
 
 \begin{figure}[htb]
   \caption{柯西定理图示}
@@ -111,13 +108,12 @@
 \section{幂级数解法}
 
 
-
 \begin{exercise}
   求出下列微分方程在 $x=x_0$ 处展开的两个线性无关的幂级数解, 并写出相应的递推公式:
   \begin{enumerate}[(1)]
-  \item $y''-xy'-y=0,x_0=0$;
-  \item $y''-xy'-y=0,x_0=1$;
-  \item $(1-x)y''+y=0,x_0=0$.
+  \item $y''-xy'-y=0$, $x_0=0$;
+  \item $y''-xy'-y=0$, $x_0=1$;
+  \item $(1-x)y''+y=0$, $x_0=0$.
   \end{enumerate}
 \end{exercise}
 
@@ -130,22 +126,22 @@
   将之代入原方程得
   \[\sum_{n=0}^{\infty}[(n+2)(n+1)a_{n+2}-(n+1)a_n]x^n=0.\]
   故递推公式为
-  \[(n+2)a_{n+2}-a_n=0\quad (n=0,1,\cdots).\]
+  \[(n+2)a_{n+2} - a_n = 0 \quad (n = 0,1,\cdots).\]
   故 $a_{2n}=\frac{1}{(2n)!!}a_0$, $a_{2n+1}=\frac{1}{(2n+1)!!}a_1$ $(n\geq 0)$, 从而得方程有幂级数解
   \[y=a_0\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!!}+a_1\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!!}.\]
   分别取 $a_0=1,a_1=0$ 和 $a_0=0,a_1=1$ 得两个线性无关的幂级数解
-  \[y_1=\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!!},\quad
-    y_2=\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!!}.\]
+  \[y_1 = \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!!},\quad
+    y_2 = \sum_{n=0}^{\infty} \frac{x^{2n+1}}{(2n+1)!!}.\]
 
   (2) 设方程有幂级数解
-  \[y=\sum_{n=0}^{\infty}a_n(x-1)^n.\]
+  \[y = \sum_{n=0}^{\infty}a_n(x-1)^n.\]
   则
-  \[y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}(x-1)^n,\]
-  \[y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n.\]
+  \[y' = \sum_{n=0}^{\infty}(n+1)a_{n+1}(x-1)^n,\]
+  \[y'' = \sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n.\]
   将之代入原方程得
-  \[\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}-(n+1)(a_{n+1}+a_n)\big](x-1)^n=0.\]
+  \[\sum_{n=0}^{\infty} \big[(n+2)(n+1)a_{n+2}-(n+1)(a_{n+1}+a_n)\big](x-1)^n = 0.\]
   故递推公式为
-  \[a_{n+2}=\frac{a_{n+1}+a_n}{n+2}\quad (n=0,1,\cdots).\]
+  \[a_{n+2} = \frac{a_{n+1}+a_n}{n+2}\quad (n = 0,1,\cdots).\]
   分别取 $a_0=1,a_1=0$ 和 $a_0=0,a_1=1$ 可得两个线性无关的解.
 
   (3) 所设幂级数形式与 (1) 相同, 代入原方程可得
@@ -160,7 +156,7 @@
 
 
 \begin{exercise}
-  对于下列初值问题求出 $y''(x_0),y^{(3)}(x_0)$和$y^{(4)}(x_0)$, 
+  对于下列初值问题求出 $y''(x_0),y^{(3)}(x_0)$ 和 $y^{(4)}(x_0)$, 
   从而写出相应初值问题的解在 $x_0$ 点的泰勒级数的前几项:
   \begin{enumerate}[(1)]
   \item $y''+xy'+y=0;\;y(0)=1,y'(0)=0;$
@@ -177,24 +173,24 @@
 
 
 \begin{exercise}
-  求解Hermite方程
+  求解 Hermite 方程
   \[y''-2xy'+\lambda y=0\quad (-\infty<x<\infty),\]
   其中 $\lambda$ 是常数.
 \end{exercise}
 
 \begin{solution} 
   设方程有幂级数解
-  \[y=\sum_{n=0}^{\infty}a_nx^n.\]
+  \[y = \sum_{n=0}^{\infty}a_nx^n.\]
   则
-  \[y'=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,\]
-  \[y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.\]
+  \[y' = \sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,\]
+  \[y'' = \sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.\]
   将之代入原方程得
-  \[\sum_{n=0}^{\infty}\big[(n+2)(n+1)a_{n+2}+(\lambda-2n)a_n\big]x^n=0.\]
+  \[\sum_{n=0}^{\infty} \big[(n+2)(n+1)a_{n+2}+(\lambda-2n)a_n\big]x^n = 0.\]
   故递推公式为
-  \[a_{n+2}=\frac{2n-\lambda}{(n+2)(n+1)}a_n\quad (n=0,1,\cdots).\]
+  \[a_{n+2} = \frac{2n-\lambda}{(n+2)(n+1)}a_n\quad (n=0,1,\cdots).\]
   从而
-  \[a_{2n}=\frac{\prod_{k=0}^{n-1}(4k-\lambda)}{(2n)!}a_0,\quad
-    a_{2n+1}=\frac{\prod_{k=1}^n(4k-2-\lambda)}{(2n+1)!}a_1\quad(n\geq1).\]
+  \[a_{2n} = \frac{\prod_{k=0}^{n-1}(4k-\lambda)}{(2n)!}a_0,\quad
+    a_{2n+1} = \frac{\prod_{k=1}^n(4k-2-\lambda)}{(2n+1)!}a_1\quad(n\geq1).\]
   故方程的解为
   \[y = a_0\left[1+\sum_{n=1}^{\infty}\frac{\prod_{k=0}^{n-1}(4k-\lambda)}{(2n)!}x^{2n}\right]
     + a_1\left[x+\sum_{n=1}^{\infty}\frac{\prod_{k=1}^n(4k-2-\lambda)}{(2n+1)!}x^{2n+1}\right].\qedhere\]
@@ -204,7 +200,7 @@
 
 \begin{exercise}
   求微分方程
-  \[y''+(\sin x)y=0\]
+  \[y'' + (\sin x) y = 0\]
   在 $x=0$ 处展开的两个线性无关的幂级数解.
 \end{exercise}
 
