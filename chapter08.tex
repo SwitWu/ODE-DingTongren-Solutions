@@ -5,20 +5,38 @@
 \setcounter{section}{1}
 \section{解的李雅普诺夫稳定性}
 
-
+定理 8.2, 8.3 和 8.4 的证明见 \cite{R-Yuan}.
 
 \begin{exercise}
   证明: 线性方程零解的渐进稳定性等价于它的全局稳定性.
 \end{exercise}
 
+\begin{proof}
+  只需要证明渐进稳定性蕴含全局渐进稳定性.
+  设 $X(t)$ 为基解矩阵, 则过 $(t_0, x_0)$ 的解可以表为
+  \[x(t; t_0,x_0) = X(t) X^{-1}(t_0)x_0.\]
+  因为零解吸引, 所以存在 $\delta_0>0$, 使得当 $|\tilde{x}_0| < \delta_0$ 时, 有
+  \[x(t; x_0, \tilde{x}_0) \to 0,\quad t\to\infty.\]
+  对任意 $x_0$, 存在常数 $c\neq 0$ 使得 $|c x_0| < \delta_0$, 故
+  \[x(t; t_0, cx_0) = X(t)X^{-1}(x_0)(cx_0) = c X(t)X^{-1}(t_0)x_0 \to 0,\quad t\to\infty.\]
+  于是 $X(t)X^{-1}(t_0)x_0\to 0$ ($t\to\infty$), 这说明零解是全局渐进稳定的.
+\end{proof}
 
 
 \begin{exercise}
   设 $x$ 和 $t$ 都是标量, 试求出方程
   \[\frac{\diff x}{\diff t} = a(t)x\]
-  的零解为稳定或渐进稳定的条件.
+  的零解为稳定或渐进稳定的充要条件.
 \end{exercise}
 
+\begin{solution}
+  方程的解为
+  \[x(t) = C \e^{\int_0^t a(s) \diff s}.\]
+  于是零解稳定的充要条件为
+  \[\int_0^{\infty} a(s) \diff s < \infty.\]
+  零解渐进稳定的充要条件为
+  \[\int_0^{\infty} a(s) \diff s = -\infty. \qedhere\]
+\end{solution}
 
 
 \begin{exercise}
@@ -37,8 +55,8 @@
   \[\frac{\diff\bm{x}}{\diff t} = \bm{A}\bm{x},\]
   其中 $\bm{A}$ 是一个 $2\times 2$ 的常矩阵. 记
   \[\begin{cases}
-    p = -\tr[\bm{A}], \\
-    q = \det[\bm{A}].
+    p = -\tr\bm{A}, \\
+    q = \det\bm{A}.
   \end{cases}\]
   再设 $p^2+q^2\neq 0$, 试证:
   \begin{enumerate}[(1)]
@@ -48,6 +66,19 @@
   \end{enumerate}
 \end{exercise}
 
+\begin{proof}
+  特征多项式为 $\chi_A(\lambda) = \lambda^2 + p\lambda +q$. 于是特征根 $\lambda_1$,
+  $\lambda_2$ 满足
+  \[\lambda_1 + \lambda_2 = -p,\qquad \lambda_1\lambda_2 = q.\]
+
+  (1) 当 $p>0$ 且 $q>0$ 时, $\lambda_1$ 和 $\lambda_2$ 的实部都为负, 因此零解是渐进稳定的.
+
+  (2) 当 $p>0$ 且 $q=0$ 或 $p=0$ 且 $q>0$ 时, $\lambda_1$ 和 $\lambda_2$ 一个为零, 一个为负,
+  因此零解是稳定的但不是渐进稳定的.
+
+  (3) 其它情形下, 零解不是稳定的.
+\end{proof}
+
 
 
 \begin{exercise}
@@ -55,6 +86,14 @@
   \[\dot{x} = y-xf(x,y),\quad \dot{y} = -x-yf(x,y)\]
   零解的稳定性, 其中函数 $f(x,y)$ 在 $(0,0)$ 附近是连续可微的.
 \end{exercise}
+
+\begin{solution}
+  取 $V(x,y) = \frac12 (x^2+y^2)$, 则
+  \[\frac{\diff V}{\diff t}(x(t), y(t)) = -(x^2+y^2) f(x,y).\]
+  由定理 8.4 知, 若存在 $\varepsilon>0$, 使得当 $0< x^2 + y^2 < \varepsilon$ 时,
+  $f(x,y) > 0$ ($f(x,y)\geq 0$, 或 $f(x,y)<0$),
+  则零解是渐进稳定的 (稳定的, 或不稳定的).
+\end{solution}
 
 
 
@@ -64,6 +103,18 @@
   的零解是稳定的, 但不是渐进稳定的.
 \end{exercise}
 
+\begin{proof}
+  令 $y = \dot{x}$, 则 $\ddot{x} + g(x) = 0$ 等价于
+  \[\begin{cases}
+    \dot{x} = y, \\
+    \dot{y} = -g(x).
+  \end{cases}\]
+  取 $V(x,y) = \frac{1}{2}y^2 + \int_0^x g(s) \diff s$, 则由条件可知
+  $V(x,y)$ 满足\textbf{条件 I}, 又因为
+  \[\frac{\diff V}{\diff t} = 0,\]
+  因此零解是稳定的, 但不是渐进稳定的.
+\end{proof}
+
 
 
 \begin{exercise}
@@ -71,6 +122,23 @@
   \[\dot{x} = y,\quad \dot{y} = -1+x^2\]
   的两个平衡点的稳定性.
 \end{exercise}
+
+\begin{solution}
+  方程有两个平衡点 $(1,0)$ 和 $(-1,0)$.
+
+  (1) 考虑 $(1,0)$ 点. 令 $u = x-1$, $v = y$, 则方程变为
+  \[\frac{\diff u}{\diff t} = v,\qquad \frac{\diff v}{\diff t} = u^2+2u.\]
+  线性部分的特征函数为 $\lambda^2-2=0$, 特征根是 $\lambda_{1,2} = \pm\sqrt{2}$,
+  它有一个正实部的根, 所以 $(1,0)$ 是不稳定的.
+
+  (2) 考虑 $(-1,0)$ 点. 令 $u = x+1$, $v=y$, 则方程变为
+  \[\frac{\diff u}{\diff t} = v,\qquad \frac{\diff v}{\diff t} = -2u + u^2.\]
+  线性部分的特征根为纯虚根 $\pm\sqrt{2}\mathrm{i}$.
+  取 $V = u^2 + \frac{1}{2}v^2 -\frac{1}{2}u^3$, 则 $V$ 在 $(0,0)$
+  附近是定正的, 且
+  \[\frac{\diff V}{\diff t} = (2u-u^2) \dot{u} + v\dot{v} = 0,\]
+  因此 $(-1,0)$ 是稳定的.
+\end{solution}
 
 
 
@@ -80,6 +148,25 @@
     \item $\dot{x} = -y-xy^2$, $\dot{y} = x-x^4y$;
     \item $\dot{x} = -y^3-x^5$, $\dot{y} = x^3-y^5$;
     \item $\dot{x} = -x+2x(x+y)^2$, $\dot{y} = -y^3+2y^3(x+y)^2$;
-    \item $\dot{x} = 2x^2y+y^3$, $\dot{y} = -xy^2=2x^5$.
+    \item $\dot{x} = 2x^2y+y^3$, $\dot{y} = -xy^2 + 2x^5$.
   \end{enumerate}
 \end{exercise}
+
+\begin{solution}
+  (1) 取 $V(x,y) = \frac12 (x^2+y^2)$, 则
+  \[\frac{\diff V}{\diff t} = -x^2 y^2 - x^4y^2 \leq 0.\]
+  因此零解是稳定的.
+
+  (2) 取 $V(x,y) = \frac{1}{4}(x^4+y^4)$, 则
+  \[\frac{\diff V}{\diff t} = -(x^8+y^8) \leq 0.\]
+  因此零解是稳定的.
+
+  (3) 取 $V(x,y) = \frac14 x^4 + \frac12 y^2$, 则在 $(0,0)$ 的小邻域中有
+  \[\frac{\diff V}{\diff t} = (x^4+y^4) \bigl(2(x+y)^2 - 1\bigr) \leq 0.\]
+  因此零解是稳定的.
+
+  (4) 取 $V(x,y) = xy$, 则
+  \[\frac{\diff V}{\diff t} = x^2y^2 + y^4 + 2x^6.\]
+  因此 $\frac{\diff V}{\diff t}$ 是正定的, 但 $V$ 本身不是半负定的,
+  由 \cite[定理 3.3]{Ma-Zhou-Li} 知零解是不稳定的.
+\end{solution}
