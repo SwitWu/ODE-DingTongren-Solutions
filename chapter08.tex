@@ -170,3 +170,32 @@
   因此 $\frac{\diff V}{\diff t}$ 是正定的, 但 $V$ 本身不是半负定的,
   由 \cite[定理 3.3]{Ma-Zhou-Li} 知零解是不稳定的.
 \end{solution}
+
+
+\section{平面上的动力系统, 奇点与极限环}
+
+\begin{exercise}
+  设线性系统 (8.22) 以 $(0,0)$ 为高阶奇点, 试作出其相图.
+\end{exercise}
+
+
+\begin{exercise}
+  判断下列方程的奇点 $(0,0)$ 的类型, 并作出该奇点附近的相图:
+  \begin{enumerate}[(1)]
+    \item $\dot{x} = 4y-x$, $\dot{y} = -9x+y$;
+    \item $\dot{x} = 2x+y+xy^2$, $\dot{y} = x+2y+x^2+y^2$;
+    \item $\dot{x} = 2x+4y+\sin y$, $\dot{y} = x+y+\e^y-1$;
+    \item $\dot{x} = x+2y$, $\dot{y} = 5y-2x+x^3$;
+    \item $\dot{x} = x(1-y)$, $\dot{y} = y(1-x)$.
+  \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+  设函数 $P(x,y)$ 和 $Q(x,y)$ 在单连通区域 $D$ 内连续可微, 且
+  \[\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \neq 0,
+    \qquad (x,y)\in D.\]
+  试证系统
+  \[\dot{x} = P(x,y),\quad \dot{y} = Q(x,y)\]
+  在 $D$ 内不存在闭轨线.
+\end{exercise}
