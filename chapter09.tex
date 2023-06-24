@@ -8,6 +8,17 @@
   则定理的结论可以加强到: $x_1 < x_0 < x_2$.
 \end{exercise}
 
+\begin{proof}
+  假设
+  \[\psi(x) > 0, \quad (x_1 < x < x_2).\]
+  中间的论述过程与定理 9.2 的完全类似，最后得到
+  \[\e^{\int_{x_1}^{x_2} p(x) \diff x} v(x_2) > v(x_1).\]
+  但是
+  \[v(x_1) = \psi(x_1)\phi'(x_1) \geq 0,
+    \quad v(x_2) = \psi(x_2)\phi'(x_2)\leq 0.\]
+  矛盾.
+\end{proof}
+
 
 \begin{exercise}
   如果微分方程
